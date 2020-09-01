@@ -82,7 +82,7 @@
           <div class="content-overlay"></div>
           <img class="content-image" src="{{asset('images/product/vita7.jpg')}}">
           <div class="content-details fadeIn-top float-left">
-            <h6>{{$pro->proName}}</h6>
+            <h6>{!!$pro->proName!!}</h6>
             <p class="price">${{$pro->proPrice}}</p>
             <p>{{$pro->proDescription}}</p>
            

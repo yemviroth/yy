@@ -50,11 +50,11 @@
 
       <div class="col-4 col-md-5 col-sm-12 col-xs-12">
       
-              <h5 class="font-weight-bold">{{$products[0]->proName}}</h5>
+              <h5 class="font-weight-bold">{!!$products[0]->proName!!}</h5>
               <hr>
               <h6>Price : {{$products[0]->proPrice}}</h6>
               <h6 class="text-kh-bold">Description</h6>
-              <p>{{$products[0]->proDescription}}</p>
+              <p>{!!$products[0]->proDescription!!}</p>
               <hr>
               <h6 class="text-kh-bold">Total : </h6>
          

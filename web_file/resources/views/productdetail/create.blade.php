@@ -16,6 +16,44 @@ TROPICANA - ROOMS
   <div class="card-body">
     <!-- <h5 class="card-title">Special title treatment</h5> -->
         
+    <form action="{{route('productdetail.store')}}" method="POST" enctype="multipart/form-data">
+            @csrf
+            <div class="form-group">
+
+            <label>Product Name : </label>
+             <input type="text" class="form-control" name="proName">
+            </div>
+            
+           
+            <Strong>Description : </Strong>
+            <textarea class="form-control" name="proDescription" id="description-textarea" rows="8"></textarea>
+            <br/>
+            <br/>
+            <button type="submit">Save</button>
+        </form>
+    </div>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/tinymce/4.9.5/tinymce.min.js"></script>
+    <script>
+        var editor_config = {
+            selector: '#description-textarea',
+            directionality: document.dir,
+            path_absolute: "/",
+            menubar: 'edit insert view format table',
+            plugins: [
+                "advlist autolink lists link image charmap preview hr anchor pagebreak",
+                "searchreplace wordcount visualblocks visualchars code fullscreen",
+                "insertdatetime media save table contextmenu directionality",
+                "paste textcolor colorpicker textpattern"
+            ],
+            toolbar: "insertfile undo redo | formatselect styleselect | bold italic strikethrough forecolor backcolor permanentpen formatpainter | alignleft aligncenter alignright alignjustify | bullist numlist outdent indent | link image media | fullscreen code",
+            relative_urls: false,
+            language: document.documentElement.lang,
+            height: 300,
+        }
+        tinymce.init(editor_config);
+    </script>
+
+
     
         <form action="{{route('productdetail.store')}}" method="POST" enctype="multipart/form-data">
         @csrf
@@ -24,6 +62,14 @@ TROPICANA - ROOMS
                     <div class="col-md-12 p-1">
                         <div class="row">
                                 <div class="col-12">
+                                
+
+                          
+        
+
+
+
+
                                     Description: 
                                 <textarea class="form-control" id="summary-ckeditor" name="summary-ckeditor"></textarea
                                         @if ($errors->any())

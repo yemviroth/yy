@@ -28,7 +28,11 @@ Route::resource('service','ServiceController');
 
 
 
-
+use Illuminate\Http\Request;
+Route::post('/', function (Request $request) {
+    $content = $request->content1;
+    return view('/')->with(compact('content'));
+})->name('tinymce.store');
 
 
 
