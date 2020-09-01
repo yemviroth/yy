@@ -6,6 +6,20 @@ body {
    font-family: 'Francois One','Bayon'!important;
    font-size: 2em;
 }
+
+.text-kh{
+  font-family: 'Francois One','Bayon'!important;
+}
+
+.text-kh-bold{
+  font-family: 'Francois One','Bayon'!important;
+  font-weight: bold;
+}
+
+.img-view img{
+  width: 80%;
+  height: 80%;
+}
 .nav-me{
   padding-left: 3rem;
 	/* font-weight: bold; */

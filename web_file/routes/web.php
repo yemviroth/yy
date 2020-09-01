@@ -67,13 +67,19 @@ Route::middleware(['auth'])->group(function () {
     Route::resource('rooms','RoomsController');
     Route::resource('user','UserController');
     
-    
+    // product detail
+    Route::get('products/create','ProductController@create')->name('productdetail.create');
+    Route::post('products/store','ProductController@store')->name('productdetail.store');
+    Route::post('ckeditor/image_upload', 'CKEditorController@upload')->name('upload');
 });
 
 Route::get('rooms','RoomsController@index')->name('rooms.index');
 Route::get('rooms/{room}','RoomsController@show')->name('rooms.show');
 
+
+// Product Detail
 Route::get('products/{product}','ProductController@show')->name('productdetail.show');
+
 
 Route::get('sitemap/',function (){ 
   return view('sitemap.sitemap');

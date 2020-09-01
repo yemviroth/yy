@@ -20,7 +20,7 @@
     <script src="{{asset('js/bootstrap.min.js')}}"></script>
 
     <script src="{{asset('owlcarousel/owl.carousel.min.js')}}"></script>
-    
+    <script src="https://cdn.ckeditor.com/4.14.0/standard/ckeditor.js"></script>
 
     <title>
       
@@ -37,11 +37,11 @@
 
     <!-- nav bar -->
     
-    <section class="text-center bg-header" style=""><img  src="{{asset('images/logo.png')}}" class="p-3" >
+    
             
-    <nav class="navbar navbar-expand-lg navbar-light bg-header" >
+    <nav class="navbar navbar-expand-lg bg-me" style="border:1px solid;">
            <!-- style="background-color: #d8d8d8;" --><!--  -->
-            
+           <img  src="{{asset('images/logo.png')}}">   
                
             
            
@@ -59,10 +59,10 @@
                 <a class="nav-link" target="_blank" href="{{route('home.index')}}">HOME <span class="sr-only">(current)</span></a>
               </li>
               <li class="nav-item {{ (\Request::route()->getName()=='rooms.main' ? 'active' : '') }}">
-                <a class="nav-link" href="{{route('rooms.main')}}">ROOM MAIN</a>
+                <a class="nav-link" href="{{route('rooms.main')}}">CATEGORY</a>
 
                 <li class="nav-item {{ (\Request::route()->getName()=='rooms.list' ? 'active' : '') }}">
-                <a class="nav-link" href="{{route('rooms.list')}}">ROOM LIST</a>
+                <a class="nav-link" href="{{route('rooms.list')}}">PRODUCT</a>
               </li>
             
                <li class="nav-item {{ (\Request::route()->getName()=='rooms.detail.list' ? 'active' : '') }}">
@@ -118,6 +118,7 @@
         </div>
 
     </nav>
+    <br><br><br>
 </section>
 
     <!-- end of navbar -->

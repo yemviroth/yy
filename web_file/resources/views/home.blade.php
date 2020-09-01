@@ -78,13 +78,15 @@
 <div class="col-sm-12 col-md-4">
       <div class="">
         <div class="content">
-        <a href="" target="">
+        <a href="{{route('productdetail.show',$pro->proId)}}" target="">
           <div class="content-overlay"></div>
           <img class="content-image" src="{{asset('images/product/vita7.jpg')}}">
           <div class="content-details fadeIn-top float-left">
             <h6>{{$pro->proName}}</h6>
             <p class="price">${{$pro->proPrice}}</p>
             <p>{{$pro->proDescription}}</p>
+           
+           
           </div>
         </a>
       </div>
