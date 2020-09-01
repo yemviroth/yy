@@ -51,10 +51,16 @@ class ProductController extends Controller
     public function show($id)
     {
          // $product = Product::findOrFail($id);
-         $product = DB::table('products')
+         $products = DB::table('products')
          ->where('proId',$id)
          ->get();
-        return view ('productdetail.show',compact('products'));
+
+         $cates = DB::table('category')
+         ->orderBy('cateId','desc')
+         ->get();
+
+
+        return view ('productdetail.show',compact('products','cates'));
     }
 
     /**

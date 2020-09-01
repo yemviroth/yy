@@ -8,6 +8,7 @@
     @yield('meta')
 
     <link rel="shortcut icon" href="{{asset('favicon.ico')}}" type="image/x-icon">
+    <link href='https://fonts.googleapis.com/css?family=Bayon|Francois+One' rel='stylesheet' type='text/css'>
     <!-- Bootstrap CSS -->
     <link rel="stylesheet" href="{{asset('css/bootstrap.css')}}">
     <link rel="stylesheet" type="text/css" href="{{asset('fontawesome-free-5.12.0-web/css/all.min.css')}}  ">

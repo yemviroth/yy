@@ -66,16 +66,19 @@
 </div> -->
 
 <!-- explorer -->
-<div class="header-title p-4 text-center">ផលិតផលថ្មី</div>
+
+
+
 <section class="p-2" style="background: #fff">
-  <div class="container-fluid">
+<div class="header-title p-4 text-center">ផលិតផលថ្មី</div>
+  <div class="container">
    <div class="row">
      @foreach ($product as $pro)
             
 <div class="col-sm-12 col-md-4">
       <div class="">
         <div class="content">
-        <a href="https://unsplash.com/photos/HkTMcmlMOUQ" target="_blank">
+        <a href="" target="">
           <div class="content-overlay"></div>
           <img class="content-image" src="{{asset('images/product/vita7.jpg')}}">
           <div class="content-details fadeIn-top float-left">
@@ -88,40 +91,9 @@
     </div>
 </div>
 
-<!-- <div class="col-lg-3 col-md-4 col-sm-6 col-xs-12">
-    <div class="hovereffect">
-        <img class="img-responsive" src="{{asset('images/product/vita7.jpg')}}" alt="">
-            <div class="overlay">
-                <h2>Effect 13</h2>
-        <p>
-          <a href="#">LINK HERE</a>
-        </p>
-            </div>
-    </div>
-</div> -->
 @endforeach
 
-      <div class="row">
-        
-        <!-- slide -->
 
-          <div class="container-fluid">
-
-     <!-- Set up your HTML -->
-  <div class="owl-carousel owl-theme">
-    
-
-       
-       
-
-  </div>
-
-   
-    
-
-
-
-      </div>
       
     </div>
   </div>
@@ -131,53 +103,8 @@
 
 <!-- service -->
 
-<section class="p-5">
-  <div class="container-fluid">
-    <div class="row">
-      <div class="col">
-        <h2 class="title">{{Config::get('mysiteVars.home_welcome_text6.'. session()->get('LANG'))}}</h2>
-        <h2><b>{{Config::get('mysiteVars.home_welcome_text7.'. session()->get('LANG'))}}</b></h2>
-      </div>
-    </div> 
 
-    <div class="row">
-      <div class="col-sm ">
-        <h3 class="title-sm mt-3"><a href="{{route('spa.index')}}">{{Config::get('mysiteVars.service_spa_title.'. session()->get('LANG'))}}</a></a></h3>
-        <img class="w-100 mt-3" src="{{asset('images/thumbnail/spa.jpg?ver=11')}}">
-         {{Config::get('mysiteVars.service_spa_text.'. session()->get('LANG'))}}
-      
-      </div>
-
-      <div class="col-sm">
-        <h3 class="title-sm mt-3"><a href="{{route('gym.index')}}">{{Config::get('mysiteVars.service_gym_title.'. session()->get('LANG'))}}</a></h3>
-        <img class="w-100 mt-3" src="{{asset('images/thumbnail/gym.jpg?ver=11')}}">
-          {{Config::get('mysiteVars.service_gym_text.'. session()->get('LANG'))}}
-      
-      </div>
-
-      <div class="col-sm">
-        <h3 class="title-sm mt-3"><a href="{{route('healthybar')}}">{{Config::get('mysiteVars.service_healtybar_title.'. session()->get('LANG'))}}</a></h3>
-        <img class="w-100 mt-3" src="{{asset('images/thumbnail/healthybar.jpg?ver=11')}}">
-       {{Config::get('mysiteVars.healtybar_text1.'. session()->get('LANG'))}}
-
-      
-      </div>
-
-      <div class="col-sm">
-        <h3 class="title-sm mt-3"><a href="{{route('restaurant.index')}}">{{Config::get('mysiteVars.service_restaurant_title.'. session()->get('LANG'))}}</a></h3>
-        <img class="w-100 mt-3" src="{{asset('images/thumbnail/restaurant.jpg?ver=11')}}">
-       {{Config::get('mysiteVars.service_restaurant_text.'. session()->get('LANG'))}}
-
-      
-      </div>
-
-      <div class="col-sm">
-        <h3 class="title-sm mt-3"><a href="{{route('snooker')}}">{{Config::get('mysiteVars.service_snooker_title.'. session()->get('LANG'))}}</a></h3>
-        <img class="w-100 mt-3" src="{{asset('images/thumbnail/snooker.jpg?ver=11')}}">
-          {{Config::get('mysiteVars.service_snooker_text.'. session()->get('LANG'))}}
-        
-      </div>
-
+  
      
 
         
