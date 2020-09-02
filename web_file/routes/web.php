@@ -72,6 +72,10 @@ Route::middleware(['auth'])->group(function () {
     Route::resource('user','UserController');
     
     // product detail
+    Route::match(['put', 'patch'],'products/{proId}','ProductController@update')->name('productdetail.update');
+
+    
+    Route::get('products/{product}/edit','ProductController@edit')->name('productdetail.edit');
     Route::get('products/create','ProductController@create')->name('productdetail.create');
     Route::post('products/store','ProductController@store')->name('productdetail.store');
     Route::post('ckeditor/image_upload', 'CKEditorController@upload')->name('upload');

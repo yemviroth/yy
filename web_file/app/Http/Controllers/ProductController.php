@@ -216,7 +216,17 @@ class ProductController extends Controller
      */
     public function edit($id)
     {
-        //
+         // $product = Product::findOrFail($id);
+         $products = DB::table('products')
+         ->where('proId',$id)
+         ->get();
+
+         $cates = DB::table('category')
+         ->orderBy('cateId','desc')
+         ->get();
+
+
+        return view ('productdetail.edit',compact('products','cates'));
     }
 
     /**
@@ -229,8 +239,79 @@ class ProductController extends Controller
     public function update(Request $request, $id)
     {
         //
-    }
 
+        $niceNames = [
+            'proName' => 'Product Name',           
+            
+            'proPrice' => 'Price',
+            'filephoto1' => 'Photo1',
+            'proDescription' => 'Description',
+            'proOrderBy' => 'Ordre By',
+            'proOther' => 'Other',
+
+         
+
+        ]; 
+
+        $request->validate([
+            'proName' => 'required',
+            'proPrice' => 'required',
+            'filephoto1' => 'required|image|max:2048',
+           
+
+            
+        ],[],$niceNames);
+
+        if (Auth::check()) {
+            $request->request->add(['createdBy' => Auth::user()->name]);
+
+       
+        //Photo1
+        // Get filename with extension
+        $filenameWithExt = $request->file('filephoto1')->getClientOriginalName();        
+        // Get jus the filename
+        $filename = pathinfo($filenameWithExt,PATHINFO_FILENAME);
+        // Get Extension
+        $extention = $request->file('filephoto1')->getClientOriginalExtension();
+        // Create new filename
+        //$filenameToStore = $filename.'_'.time().'.'.$extention;
+        $filenameToStore = 'theYeon_'.$filename.'.'.time().'.'.$extention;
+        $fullpath = public_path('images\\product\\').$filenameToStore;    
+        
+        //Resize
+        $image = $request->file('filephoto1');
+        $img = Image::make($_FILES['filephoto1']['tmp_name']);
+        
+        // $name_thumbnail = 'room_'.$request->input('name').'_thumbnail.'.$extention;
+        $name_thumbnail = $request->$filename.$extention;
+        $fullpath__thumbnail = public_path('images\\').$name_thumbnail;
+
+        $destinationPath = public_path('\images\thumbnail');
+        
+        $img->resize(570, 378, function ($constraint) {
+            $constraint->aspectRatio();
+        })->save($destinationPath.'\\'.$name_thumbnail);    
+            
+        if (file_exists($fullpath__thumbnail)) {
+            @unlink($fullpath__thumbnail);
+        }
+        //end Resize
+
+        if (file_exists($fullpath)) {
+            @unlink($fullpath);
+        }
+        // Upload image
+        //$path = $request->file('roster_photo')->storeAs('public/photos/roster'.$request->input('roster_photo'), $filenameToStore);
+        request()->filephoto1->move(public_path('images\product'), $filenameToStore);
+        // request()->filephoto1->move(public_path('images\product'), $filenameToStore);
+        // assign new value
+        //$request->merge(['roster_photo' => $filenameToStore]);
+        $request->request->add(['proImage' => $filenameToStore]);
+        Product::update($request->all());
+        
+       return redirect()->route('home.index')->with('message','Item has been Add Success');
+    }
+}
     /**
      * Remove the specified resource from storage.
      *

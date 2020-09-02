@@ -6,7 +6,7 @@ use DB;
 // use DB;
 // use App\Room;
 
-use Illuminate\Support\Facades\DB;
+// use Illuminate\Support\Facades\DB;
 use Illuminate\Http\Request;
 use App\Product;
 use App\Category;
@@ -47,9 +47,9 @@ class RoomsController extends Controller
         //     $lang ='EN';
         // }
          
-         $product =   Product::all();
+        //  $product =   Product::all();
                           
-                                ->get();
+        //                         ->get();
                    
          // $details = RoomDetail::with('RoomMain')->orderBy('id', 'asc')
          //                        ->where('lang',$lang)
@@ -57,14 +57,14 @@ class RoomsController extends Controller
                                 
 
          return view ('rooms.index',compact('rooms'),compact('details'));
-    }
+    
                    
          // $details = RoomDetail::with('RoomMain')->orderBy('id', 'asc')
          //                        ->where('lang',$lang)
          //                        ->get();
                                 
 
-         return view ('rooms.index',compact('rooms'),compact('details'));
+        //  return view ('rooms.index',compact('rooms'),compact('details'));
     }
 
     /**
