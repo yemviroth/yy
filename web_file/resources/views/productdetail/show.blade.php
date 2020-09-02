@@ -39,13 +39,13 @@
         <h6 class="text-kh-bold"><  Previous   Next ></h6>
         <div class="card">
         <div class="img-view">
-          <img src="{{asset('images/product/vita7.jpg')}}" alt="">
+          <img src="{{asset('images/product/'.$products[0]->proImage)}}" alt="">
         </div>
         </div>
       </div>
 
       <div class="col-5 col-md-5 col-sm-12 col-xs-12">
-      <img class="content-image" src="{{asset('images/product/vita7.jpg')}}">
+      <img class="content-image" src="{{asset('images/product/'.$products[0]->proImage)}}">
       </div>
 
       <div class="col-4 col-md-5 col-sm-12 col-xs-12">
@@ -53,6 +53,10 @@
               <h5 class="font-weight-bold">{!!$products[0]->proName!!}</h5>
               <hr>
               <h6>Price : {{$products[0]->proPrice}}</h6>
+              <p>{{$products[0]->proTextIntro}}</p>
+              <hr>
+              <h6 class="text-kh-bold">How To</h6>
+              <p>{{$products[0]->proHowTo}}</p>
               <h6 class="text-kh-bold">Description</h6>
               <p>{!!$products[0]->proDescription!!}</p>
               <hr>

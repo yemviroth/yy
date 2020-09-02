@@ -7,8 +7,13 @@ body {
    font-size: 2em;
 }
 
-.text-kh{
+.text-kh-bayon{
   font-family: 'Francois One','Bayon'!important;
+}
+
+.text-kh{
+  font-family: Battambang,Arial,Helvetica,sans-serif;
+  color:#000;
 }
 
 .text-kh-bold{

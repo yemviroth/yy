@@ -43,20 +43,33 @@ class ProductController extends Controller
      */
     public function store(Request $request)
     {
-        $this->validate($request,[
-            'proName'=> 'required',
-            'proDescription'=> 'required',
-            'filephoto1' => 'required|image|max:2048',
+        $niceNames = [
+            'proName' => 'Product Name',           
             
+            'proPrice' => 'Price',
+            'filephoto1' => 'Photo1',
+            'proDescription' => 'Description',
+            'proOrderBy' => 'Ordre By',
+            'proOther' => 'Other',
 
-        ]);
-        //Log::create($request->all());
-        //Create New Data
-        $pro = new Product;
-        $pro->proName = $request->proName;
-        $pro->proDescription = $request->proDescription;
+         
+
+        ]; 
+
+        $request->validate([
+            'proName' => 'required',
+            'proPrice' => 'required',
+            'filephoto1' => 'required|image|max:2048',
+           
+
+            
+        ],[],$niceNames);
+
+        if (Auth::check()) {
+            $request->request->add(['createdBy' => Auth::user()->name]);
+
        
-             //Photo1
+        //Photo1
         // Get filename with extension
         $filenameWithExt = $request->file('filephoto1')->getClientOriginalName();        
         // Get jus the filename
@@ -65,7 +78,7 @@ class ProductController extends Controller
         $extention = $request->file('filephoto1')->getClientOriginalExtension();
         // Create new filename
         //$filenameToStore = $filename.'_'.time().'.'.$extention;
-        $filenameToStore = 'theYeon_'.$request->input('name').'.'.$extention;
+        $filenameToStore = 'theYeon_'.$filename.'.'.time().'.'.$extention;
         $fullpath = public_path('images\\product\\').$filenameToStore;    
         
         //Resize
@@ -73,7 +86,7 @@ class ProductController extends Controller
         $img = Image::make($_FILES['filephoto1']['tmp_name']);
         
         // $name_thumbnail = 'room_'.$request->input('name').'_thumbnail.'.$extention;
-        $name_thumbnail = $request->input('name').$extention;
+        $name_thumbnail = $request->$filename.$extention;
         $fullpath__thumbnail = public_path('images\\').$name_thumbnail;
 
         $destinationPath = public_path('\images\thumbnail');
@@ -92,14 +105,15 @@ class ProductController extends Controller
         }
         // Upload image
         //$path = $request->file('roster_photo')->storeAs('public/photos/roster'.$request->input('roster_photo'), $filenameToStore);
-        request()->filephoto1->move(public_path('images'), $filenameToStore);
+        request()->filephoto1->move(public_path('images\product'), $filenameToStore);
+        // request()->filephoto1->move(public_path('images\product'), $filenameToStore);
         // assign new value
         //$request->merge(['roster_photo' => $filenameToStore]);
         $request->request->add(['proImage' => $filenameToStore]);
-
-
-        $pro->save();
+        Product::create($request->all());
+        
        return redirect()->route('home.index')->with('message','Item has been Add Success');
+    }
         //
     //     $niceNames = [
     //         'name' => 'Room Name',           
