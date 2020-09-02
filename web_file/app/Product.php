@@ -6,8 +6,9 @@ use Illuminate\Database\Eloquent\Model;
 
 class Product extends Model
 {
-    protected $fillable = ['proId','cateId','proName','proPrice','proDescription','proOther','proOrderBy','createdAt','createdBy'];
-    
+    // protected $timestamps = false;
+    protected $fillable = ['proId','cateId','proName','proPrice','proDescription','proOther','proOrderBy','createdBy'];
+  
     // public function details()
     // {
     // 	return $this->hasMany('App\RoomDetail','room_id');

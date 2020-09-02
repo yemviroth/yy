@@ -24,6 +24,15 @@ TROPICANA - ROOMS
              <input type="text" class="form-control" name="proName">
             </div>
             
+            <div class="w-100"></div>
+            <div class="form-group">
+                <label for="">Product Image :</label>
+                <input type="file" name="filephoto1" class="form-control" id="filephoto1">
+                @if ($errors->has('filephoto1'))
+                    <div class="error"> <strong>{{ $errors->first('filephoto1') }}</strong></div>
+                @endif
+            </div>
+          
            
             <Strong>Description : </Strong>
             <textarea class="form-control" name="proDescription" id="description-textarea" rows="8"></textarea>
@@ -111,55 +120,7 @@ TROPICANA - ROOMS
                                             <div class="error"> <strong>{{ $errors->first('filephoto1') }}</strong></div>
                                         @endif
                                     </div>
-                                    <div class="w-100"></div>
-                                    <div class="col-sm-12 col-md-4 col-lg-4 col-xl-4">
-                                        <strong>Photo2:</strong>                                    
-                                        <input type="file" name="filephoto2" class="form-control" id="filephoto2">
-                                        @if ($errors->has('filephoto1'))
-                                            <div class="error"> <strong>{{ $errors->first('filephoto2') }}</strong></div>
-                                        @endif
-                                    </div>
-                                    <div class="w-100"></div>
-                                    <div class="col-sm-12 col-md-4 col-lg-4 col-xl-4">
-                                        <strong>Photo3:</strong>                                    
-                                        <input type="file" name="filephoto3" class="form-control" id="filephoto3">
-                                        @if ($errors->has('filephoto3'))
-                                            <div class="error"> <strong>{{ $errors->first('filephoto3') }}</strong></div>
-                                        @endif
-                                    </div>
-                                    <div class="w-100"></div>
-                                    <div class="col-sm-12 col-md-4 col-lg-4 col-xl-4">
-                                        <strong>Photo4:</strong>                                    
-                                        <input type="file" name="filephoto4" class="form-control" id="filephoto4">
-                                        @if ($errors->has('filephoto4'))
-                                            <div class="error"> <strong>{{ $errors->first('filephoto4') }}</strong></div>
-                                        @endif
-                                    </div>
-                                    <div class="w-100"></div>
-                                    <div class="col-sm-12 col-md-4 col-lg-4 col-xl-4">
-                                        <strong>Photo5:</strong>                                    
-                                        <input type="file" name="filephoto5" class="form-control" id="filephoto5">
-                                        @if ($errors->has('filephoto5'))
-                                            <div class="error"> <strong>{{ $errors->first('filephoto5') }}</strong></div>
-                                        @endif
-                                    </div>
-                                    <div class="w-100"></div>
-                                    <div class="col-sm-12 col-md-4 col-lg-4 col-xl-4">
-                                        <strong>Photo6:</strong>                                    
-                                        <input type="file" name="filephoto6" class="form-control" id="filephoto6">
-                                        @if ($errors->has('filephoto6'))
-                                            <div class="error"> <strong>{{ $errors->first('filephoto6') }}</strong></div>
-                                        @endif
-                                    </div>
-                                    <div class="w-100"></div>
-                                    <div class="col-sm-12 col-md-4 col-lg-4 col-xl-4">
-                                        <strong>Photo7:</strong>                                    
-                                        <input type="file" name="filephoto7" class="form-control" id="filephoto7">
-                                        @if ($errors->has('filephoto7'))
-                                            <div class="error"> <strong>{{ $errors->first('filephoto7') }}</strong></div>
-                                        @endif
-                                    </div>
-                                    <div class="w-100"></div>         
+                                           
 
                                     <div class="col-sm-12 col-md-4 col-lg-4 col-xl-4">
                                         <strong>Published:</strong>
