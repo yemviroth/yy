@@ -6,14 +6,10 @@ TROPICANA - ROOMS
 
 <div class="container-fluid" >
        
-    <div class="row"  style="margin-bottom: -12px;">
-        <div class="col-md-2 col-lg-2">
-            <h4 style="color:black" class="mytitle"><i class="fas fa-list-ul"></i> List Room Detail</h4>
-        </div>
-    </div>
-    <div class="row">
-            <div class="container-fluid">
-                <div class="col-md-12 card p-1"  style="border:1px solid #38c172;">
+
+    <div class="row p-4">
+            <!-- <div class="container-fluid"> -->
+               
                
                         @if ($message = Session::get('success'))
                         <div id="malert" class="alert alert-success alert-dismissible fade show"  role="alert">{{ $message }}
@@ -23,7 +19,7 @@ TROPICANA - ROOMS
                         </div>
                         
                     @endif
-               
+              
 
                     <div class="col-12">
                         <div class="row">
@@ -38,7 +34,7 @@ TROPICANA - ROOMS
                                    
                                
                         </div>
-                        <div class="container-fluid  collapse @if (Request::is('rooms/search'))
+                        <div class="collapse @if (Request::is('rooms/search'))
                             show 
                         @endif"  id="collapseSearch">
                         <form action="{{ route('rooms.index') }}" method="get">
@@ -65,8 +61,8 @@ TROPICANA - ROOMS
                                 </div>
                             </form>
                             </div>
-                        <div class="w-100"></div>
-                        <div class="table-responsive">
+                 
+                        <div class="">
 
                         <table class="table  table-sm table-bordered  table-responsive" >
                             <tr class="thead-dark">
@@ -119,7 +115,7 @@ TROPICANA - ROOMS
                 </div>
                  
             </div>
-       </div>
+       <!-- </div> -->
 
   
 

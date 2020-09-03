@@ -73,7 +73,8 @@ Route::middleware(['auth'])->group(function () {
     
     // product detail
     // Route::match(['put', 'patch'],'products/update/{proId}','ProductController@update')->name('productdetail.update');
-    Route::PUT('products/update/{proId}','ProductController@update');
+    // Route::PUT('products/update/{proId}','ProductController@update');
+    Route::PUT('products/update/{proId}','ProductController@update')->name('productdetail.update');
 
     Route::get('products/list','ProductController@list')->name('productdetail.list');
 

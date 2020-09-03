@@ -10,8 +10,8 @@ TROPICANA - ROOMS
 
 
     <div class="card">
-  <div class="card-header bg-dark text-light h4">
-    <i class="fas fa-plus-square"></i>    New Product
+  <div class="card-header bg-dark text-light">
+    <span><i class="fas fa-plus-square"></i></span><span class="ml-2">Add New Product</span>  
   </div>
   <div class="card-body">
     <!-- <h5 class="card-title">Special title treatment</h5> -->
@@ -77,7 +77,7 @@ TROPICANA - ROOMS
             <div class="form-group row">
                 <label for="proTextIntro" class="col-md-2 col-form-label text-md-right">Product Intro :</label>
                 <div class="col-md-10">
-                    <input type="text" id="proIntro" class="form-control" name="proTextIntro">
+                <textarea class="form-control" name="proTextIntro" id="textIntro-textarea" rows="2"></textarea>
                 </div>
             </div>
 
@@ -89,14 +89,28 @@ TROPICANA - ROOMS
                 </div>
            </div>
 
-          
-
-          
-
-
-            <button class="btn btn-success text-md-left" type="submit">Save</button>
+           <div class="form-group row">
+              <label for="Is In Stock" class="col-md-2 col-form-label text-md-right">Product Is In Stock :</label>    
+            
+                <div class="col-md-10">
+                    <select  name="published" class="form-control">
+                        <option @if (old('published') =='Yes') {{'selected'}} @endif value="Yes">Yes</option>
+                        <option @if (old('published') =='No') {{'selected'}} @endif value="No" >No</option>
+                        
+                    </select>
+                </div>
+           </div>
+            <hr>
+                <div class="float-right">
+                        
+                        <button class="btn  btn-secondary text-md-left" type="">Back</button>
+                        <button class="btn  btn-success text-md-left" type="submit">Submit</button>
+                    
+                </div>
+           
         </form>
     </div>
+    
     <script src="https://cdnjs.cloudflare.com/ajax/libs/tinymce/4.9.5/tinymce.min.js"></script>
     <script>
         var editor_config = {
@@ -118,45 +132,34 @@ TROPICANA - ROOMS
         tinymce.init(editor_config);
     </script>
    
-                                          <div class="col-sm-12 col-md-4 col-lg-4 col-xl-4">
-                                        <strong>Published:</strong>
-                                        <select  name="published" class="form-control">
-                                          <option @if (old('published') =='Yes') {{'selected'}} @endif value="Yes">Yes</option>
-                                          <option @if (old('published') =='No') {{'selected'}} @endif value="No" >No</option>
-                                          
-                                        </select>
-                                      </div>
-                                      
+   <script>
+        var editor_config = {
+            selector: '#textIntro-textarea',
+            directionality: document.dir,
+            path_absolute: "/",
+           
+            plugins: [
+                
+              
+              
+                "paste textcolor colorpicker textpattern"
+            ],
+            toolbar: " bold italic strikethrough | alignleft aligncenter alignright alignjustify | ",
+            relative_urls: false,
+            language: document.documentElement.lang,
+            height: 100,
+        }
+        tinymce.init(editor_config);
+    </script>
                                     
-                                    <div class="w-100"></div>
-                                 
-                                    <div class="col-md-12  mt-2">
-                                          <hr>
-                                        <a href="{{route('rooms.main')}}" class="btn btn-success">Back</a>
-                                        <button type="submit" class="btn btn-primary">Submit</button>
-                                    </div>
-                        </div>
-                            
-                    </div>
-            </div>
-               
-                
-                    
-                
-                    
           
-        </div>
-
-    
-    </form>
-    
-
+        
 
   </div>
 </div>
 
 </div>
-
+<br><br>
 
 <script>
 CKEDITOR.replace( 'summary-ckeditor', {
