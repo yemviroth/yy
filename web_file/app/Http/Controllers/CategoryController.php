@@ -56,7 +56,7 @@ class RoomsController extends Controller
          //                        ->get();
                                 
 
-         return view ('rooms.index',compact('rooms'),compact('details'));
+        //  return view ('rooms.index',compact('rooms'),compact('details'));
     
                    
          // $details = RoomDetail::with('RoomMain')->orderBy('id', 'asc')
@@ -301,14 +301,12 @@ class RoomsController extends Controller
 
 
           //$rooms = DB::table('rooms')->orderBy('id','asc')->orderBy('rooms.id','asc')->get();
-          $rooms = Room::with('RoomMain')->orderBy('id', 'asc')
-                                // ->where('lang','EN')
-                                ->get();
+          
 
             
                    
 
-         return view ('rooms.list',compact('rooms'));
+        //  return view ('rooms.list',compact('rooms'));
 
 
         

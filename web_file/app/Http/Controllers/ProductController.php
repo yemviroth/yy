@@ -2,7 +2,7 @@
 
 namespace App\Http\Controllers;
 
-
+use Illuminate\Database\Eloquent\Collection;
 use Illuminate\Support\Facades\DB;
 use Illuminate\Http\Request;
 use App\Product;
@@ -112,7 +112,7 @@ class ProductController extends Controller
         $request->request->add(['proImage' => $filenameToStore]);
         Product::create($request->all());
         
-       return redirect()->route('home.index')->with('message','Item has been Add Success');
+       return redirect()->route('productdetail.list')->with('message','Item has been Add Success');
     }
         //
     //     $niceNames = [
@@ -236,82 +236,106 @@ class ProductController extends Controller
      * @param  int  $id
      * @return \Illuminate\Http\Response
      */
+
+    // public function update(Request $request, $id)
+    // {   
+    //     $products = DB::table('products')
+    //     ->where('proId',$id)
+    //     ->get();
+
+    //     $products->save($request->all());
+    //     //             $products->save();
+    //     //        return redirect()->route('productdetail.list')
+    //     //                             ->with('success', 'Room created successfully');
+    // }
+   
+
     public function update(Request $request, $id)
     {
         //
 
-        $niceNames = [
-            'proName' => 'Product Name',           
+        // $niceNames = [
+        //     'proName' => 'Product Name',           
             
-            'proPrice' => 'Price',
-            'filephoto1' => 'Photo1',
-            'proDescription' => 'Description',
-            'proOrderBy' => 'Ordre By',
-            'proOther' => 'Other',
+        //     'proPrice' => 'Price',
+        //     'filephoto1' => 'Photo1',
+        //     'proDescription' => 'Description',
+        //     'proOrderBy' => 'Ordre By',
+        //     'proOther' => 'Other',
 
          
 
-        ]; 
+        // ]; 
 
-        $request->validate([
-            'proName' => 'required',
-            'proPrice' => 'required',
-            'filephoto1' => 'required|image|max:2048',
+        // $request->validate([
+        //     'proName' => 'required',
+        //     'proPrice' => 'required',
+        //     'filephoto1' => 'required|image|max:2048',
            
 
             
-        ],[],$niceNames);
-
+        // ],[],$niceNames);
+      
+        // $products=Product::Where('proId',$id)->save();
+        
+        $this->validate($request,[
+            'proName'=>'required'
+        ]);
+        $pro = Product::where('proId', $id)
+        ->first();
+        // $pro->proName = $request->input('proName');
+        
         if (Auth::check()) {
-            $request->request->add(['createdBy' => Auth::user()->name]);
-
+            // $request->request->add(['updated_by' => Auth::user()->name]);
        
-        //Photo1
-        // Get filename with extension
-        $filenameWithExt = $request->file('filephoto1')->getClientOriginalName();        
-        // Get jus the filename
-        $filename = pathinfo($filenameWithExt,PATHINFO_FILENAME);
-        // Get Extension
-        $extention = $request->file('filephoto1')->getClientOriginalExtension();
-        // Create new filename
-        //$filenameToStore = $filename.'_'.time().'.'.$extention;
-        $filenameToStore = 'theYeon_'.$filename.'.'.time().'.'.$extention;
-        $fullpath = public_path('images\\product\\').$filenameToStore;    
-        
-        //Resize
-        $image = $request->file('filephoto1');
-        $img = Image::make($_FILES['filephoto1']['tmp_name']);
-        
-        // $name_thumbnail = 'room_'.$request->input('name').'_thumbnail.'.$extention;
-        $name_thumbnail = $request->$filename.$extention;
-        $fullpath__thumbnail = public_path('images\\').$name_thumbnail;
+      
 
-        $destinationPath = public_path('\images\thumbnail');
-        
-        $img->resize(570, 378, function ($constraint) {
-            $constraint->aspectRatio();
-        })->save($destinationPath.'\\'.$name_thumbnail);    
-            
-        if (file_exists($fullpath__thumbnail)) {
-            @unlink($fullpath__thumbnail);
-        }
-        //end Resize
+       // Get filename with extension
 
-        if (file_exists($fullpath)) {
-            @unlink($fullpath);
-        }
-        // Upload image
-        //$path = $request->file('roster_photo')->storeAs('public/photos/roster'.$request->input('roster_photo'), $filenameToStore);
-        request()->filephoto1->move(public_path('images\product'), $filenameToStore);
-        // request()->filephoto1->move(public_path('images\product'), $filenameToStore);
-        // assign new value
-        //$request->merge(['roster_photo' => $filenameToStore]);
-        $request->request->add(['proImage' => $filenameToStore]);
-        Product::update($request->all());
-        
-       return redirect()->route('home.index')->with('message','Item has been Add Success');
-    }
-}
+       if ($request->hasFile('filephoto')) {
+           # code...
+      
+       $filenameWithExt = $request->file('filephoto')->getClientOriginalName();
+       
+       // Get jus the filename
+       $filename = pathinfo($filenameWithExt,PATHINFO_FILENAME);
+
+       // Get Extension
+       $extention = $request->file('filephoto')->getClientOriginalExtension();
+
+       // Create new filename
+       //$filenameToStore = $filename.'_'.time().'.'.$extention;
+       $filenameToStore =$filename.'.'.$extention;
+       $fullpath = public_path('images\\product\\').$filenameToStore;
+       
+       if (file_exists($fullpath)) {
+           @unlink($fullpath);
+       }
+
+       // Upload image
+       //$path = $request->file('roster_photo')->storeAs('public/photos/roster'.$request->input('roster_photo'), $filenameToStore);
+
+       request()->filephoto->move(public_path('images\product'), $filenameToStore);
+
+       // assign new value
+     
+       $request->request->add(['proImage' => $filenameToStore]);
+
+       }
+      
+       $pro->update($request->all());
+       return redirect()->route('productdetail.list')
+                            ->with('success', 'Product created successfully');
+     } 
+       
+       return redirect()->route('productdetail.list')
+                            ->with('success', 'Product created successfully');
+ 
+
+   }
+
+
+
     /**
      * Remove the specified resource from storage.
      *
@@ -321,5 +345,18 @@ class ProductController extends Controller
     public function destroy($id)
     {
         //
+    }
+
+    public function list()
+    {
+        //
+        $products = DB::table('products')
+        ->orderBy('proId','desc')
+        ->get();
+
+        $cates = DB::table('category')
+        ->orderBy('cateId','desc')
+        ->get();
+        return view ('productdetail.list',compact('products','cates'));
     }
 }

@@ -72,7 +72,10 @@ Route::middleware(['auth'])->group(function () {
     Route::resource('user','UserController');
     
     // product detail
-    Route::match(['put', 'patch'],'products/{proId}','ProductController@update')->name('productdetail.update');
+    // Route::match(['put', 'patch'],'products/update/{proId}','ProductController@update')->name('productdetail.update');
+    Route::PUT('products/update/{proId}','ProductController@update');
+
+    Route::get('products/list','ProductController@list')->name('productdetail.list');
 
     
     Route::get('products/{product}/edit','ProductController@edit')->name('productdetail.edit');

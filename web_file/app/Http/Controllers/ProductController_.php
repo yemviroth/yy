@@ -49,7 +49,7 @@ class RoomsController extends Controller
          
          $product =   Product::all();
                                 // ->where('lang',$lang)
-                                ->get();
+                                // ->get();
                    
          // $details = RoomDetail::with('RoomMain')->orderBy('id', 'asc')
          //                        ->where('lang',$lang)

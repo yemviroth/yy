@@ -11,17 +11,22 @@ TROPICANA - ROOMS
 
     <div class="card">
   <div class="card-header bg-dark text-light h4">
-    <i class="fas fa-plus-square"></i>    New Product
+    <i class="fas fa-plus-square"></i>    Edit Product
   </div>
   <div class="card-body">
     <!-- <h5 class="card-title">Special title treatment</h5> -->
         
-    <form action="{{route('productdetail.update',$products[0]->proId)}}" enctype="multipart/form-data" class="">
-    <input type="hidden" name="_method" value="PUT">
-    <input type="hidden" name="_token" value="{{ csrf_token() }}">
+    <form action="{{url('products/update/'.$products[0]->proId)}}" enctype="multipart/form-data" class="" method="post">
+    <!-- <form action="{{action('ProductController@update',$products[0]->proId)}}" enctype="multipart/form-data" class="" method="post"> -->
             <!-- @method('PUT') -->
-            <input type="hidden" name="_method" value="PUT">
-            <input type="hidden" name="_token" value="{{ csrf_token() }}">
+            {{csrf_field()}}
+            {{method_field('PUT')}}
+            <!-- @csrf
+            @method('PUT') -->
+            <!-- <input type="hidden" name="_method" value="POST"> -->
+		        		
+                     
+
             <div class="form-group row">
                 <label for="" class="col-md-2 col-form-label text-md-right">Product Category :</label>
                 <div class="col-md-10">
@@ -47,7 +52,7 @@ TROPICANA - ROOMS
 
                 <label for="proOrderBy" class="col-md-2 col-form-label text-md-right">Product Order List :</label>
                 <div class="col-md-4">
-                    <input type="text" id="proOrderBy" value="{{$products[0]->proOrderBy}} class="form-control" name="proOrderBy">
+                    <input type="text" id="proOrderBy" value="{{$products[0]->proOrderBy}}" class="form-control" name="proOrderBy">
                 </div>
 
             </div>
@@ -58,10 +63,10 @@ TROPICANA - ROOMS
                 <div class="col-md-10">
                  <div class="custom-file col-sm-12">
 
-                    <input type="file" name="filephoto1" class="custom-file-input" id="validatedCustomFile" required>
+                    <input type="file" name="filephoto" class="custom-file-input" id="validatedCustomFile" required>
                     <label class="custom-file-label" for="validatedCustomFile">Choose file...</label>
-                    @if ($errors->has('proImage'))
-                    <div class="error"> <strong>{{ $errors->first('filephoto1') }}</strong></div>
+                    @if ($errors->has('filephoto'))
+                    <div class="error"> <strong>{{ $errors->first('filephoto') }}</strong></div>
                 @endif
 
                      </div>

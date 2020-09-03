@@ -74,7 +74,7 @@
       
      
 
-        <nav class="navbar navbar-expand-lg navbar-light bg-header" >
+        <nav class="navbar navbar-expand-lg navbar-light bg-header" id="header" >
            <!-- style="background-color: #d8d8d8;" --><!--  -->
             
                <a class="navbar-brand" href="{{route('home.index')}}"><span class="header-text" style="color:#057374; overflow: hidden;"><img src="https://theyeon.net/web/upload/webdesignu/logo.png"></span></a>
@@ -218,7 +218,18 @@
 });
 </script>
 
+<script>
+// When the user scrolls down 50px from the top of the document, resize the header's font size
+window.onscroll = function() {scrollFunction()};
 
+function scrollFunction() {
+  if (document.body.scrollTop > 50 || document.documentElement.scrollTop > 20) {
+    document.getElementById("header").style.opacity = "80%";
+  } else {
+    document.getElementById("header").style.opacity = "100%";
+  }
+}
+</script>
 
   </body>
 </html>

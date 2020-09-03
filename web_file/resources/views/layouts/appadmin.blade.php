@@ -61,8 +61,8 @@
               <li class="nav-item {{ (\Request::route()->getName()=='rooms.main' ? 'active' : '') }}">
                 <a class="nav-link" href="{{route('rooms.main')}}">CATEGORY</a>
 
-                <li class="nav-item {{ (\Request::route()->getName()=='rooms.list' ? 'active' : '') }}">
-                <a class="nav-link" href="{{route('rooms.list')}}">PRODUCT</a>
+                <li class="nav-item {{ (\Request::route()->getName()=='productdetail.list' ? 'active' : '') }}">
+                <a class="nav-link" href="{{route('productdetail.list')}}">PRODUCT</a>
               </li>
             
                <li class="nav-item {{ (\Request::route()->getName()=='rooms.detail.list' ? 'active' : '') }}">
