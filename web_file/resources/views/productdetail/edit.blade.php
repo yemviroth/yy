@@ -96,12 +96,33 @@ TROPICANA - ROOMS
                 </div>
            </div>
 
-          
+           <div class="form-group row">
+              <label for="Is In Stock" class="col-md-2 col-form-label text-md-right">Product Is In Stock :</label>    
+            
+                <div class="col-md-10">
+                    <select  name="published" class="form-control">
+                        <option @if (old('published') =='Yes') {{'selected'}} @endif value="Yes">Yes</option>
+                        <option @if (old('published') =='No') {{'selected'}} @endif value="No" >No</option>
+                        
+                    </select>
+                </div>
+           </div>
+            <hr>
+                <div class="float-right">
+                        
+                        <button class="btn btn-lg btn-secondary text-md-left" type="">Back</button>
+                        <button class="btn btn-lg btn-primary text-md-left" type="submit">Update</button>
+                    
+                </div>
+         
+            
+            
 
-          
 
+           
 
-            <button class="btn btn-success text-md-left" type="submit">Save</button>
+            
+
         </form>
     </div>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/tinymce/4.9.5/tinymce.min.js"></script>
@@ -117,7 +138,7 @@ TROPICANA - ROOMS
                 "insertdatetime media save table contextmenu directionality",
                 "paste textcolor colorpicker textpattern"
             ],
-            toolbar: "insertfile undo redo | formatselect styleselect | bold italic strikethrough forecolor backcolor permanentpen formatpainter | alignleft aligncenter alignright alignjustify | bullist numlist outdent indent | link image media | fullscreen code",
+            toolbar: "insertfile undo redo | formatselect styleselect | bold italic strikethrough forecolor backcolor permanentpen formatpainter | alignleft aligncenter alignright alignjustify | bullist numlist outdent indent | link image media |",
             relative_urls: false,
             language: document.documentElement.lang,
             height: 300,
@@ -125,37 +146,9 @@ TROPICANA - ROOMS
         tinymce.init(editor_config);
     </script>
    
-                                          <div class="col-sm-12 col-md-4 col-lg-4 col-xl-4">
-                                        <strong>Published:</strong>
-                                        <select  name="published" class="form-control">
-                                          <option @if (old('published') =='Yes') {{'selected'}} @endif value="Yes">Yes</option>
-                                          <option @if (old('published') =='No') {{'selected'}} @endif value="No" >No</option>
-                                          
-                                        </select>
-                                      </div>
+                                         
                                       
-                                    
-                                    <div class="w-100"></div>
-                                 
-                                    <div class="col-md-12  mt-2">
-                                          <hr>
-                                        <a href="{{route('rooms.main')}}" class="btn btn-success">Back</a>
-                                        <button type="submit" class="btn btn-primary">Submit</button>
-                                    </div>
-                        </div>
-                            
-                    </div>
-            </div>
-               
-                
-                    
-                
-                    
-          
-        </div>
-
-    
-    </form>
+                 
     
 
 
@@ -163,7 +156,7 @@ TROPICANA - ROOMS
 </div>
 
 </div>
-
+<br><br>
 
 <script>
 CKEDITOR.replace( 'summary-ckeditor', {
