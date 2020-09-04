@@ -64,7 +64,7 @@ class ProductController extends Controller
 
             
         ],[],$niceNames);
-
+       
         if (Auth::check()) {
             $request->request->add(['createdBy' => Auth::user()->name]);
 
@@ -283,6 +283,7 @@ class ProductController extends Controller
         ]);
         $pro = Product::where('proId', $id)
         ->first();
+        // $pro = DB::table('products')->where('proId',$id);
         // $pro->proName = $request->input('proName');
         
         if (Auth::check()) {

@@ -61,32 +61,44 @@ TROPICANA - ROOMS
             <div class="form-group row">
                 <label for="full_name" class="col-md-2 col-form-label text-md-right">Image :</label>
                 <div class="col-md-10">
-                 <div class="custom-file col-sm-12">
+                 <div class="custom-file col-sm-9">
 
-                    <input type="file" name="filephoto" class="custom-file-input" id="validatedCustomFile" required>
+                    <input type="file" name="filephoto" class="custom-file-input" id="validatedCustomFile">
                     <label class="custom-file-label" for="validatedCustomFile">Choose file...</label>
                     @if ($errors->has('filephoto'))
                     <div class="error"> <strong>{{ $errors->first('filephoto') }}</strong></div>
-                @endif
+                    @endif
 
-                     </div>
+                </div>
+
+                <div class="col-sm-3 img-view">
+                    @if($products[0]->proImage)
+                        <img src="{{asset('images/product/'.$products[0]->proImage)}}" alt="">
+                    @endif
+                </div>
+
                 </div>
             </div>
 
 
-            <div class="form-group row">
-                <label for="proHowTo" class="col-md-2 col-form-label text-md-right">How To Use :</label>
-                <div class="col-md-10">
-                    <input type="text" id="proHowTo" value="{{$products[0]->proHowTo}}" class="form-control" name="proHowTo">
-                </div>
-            </div>
 
             <div class="form-group row">
                 <label for="proTextIntro" class="col-md-2 col-form-label text-md-right">Product Intro :</label>
                 <div class="col-md-10">
-                    <input type="text" id="proIntro" value="{{$products[0]->proTextIntro}}" class="form-control" name="proTextIntro">
+                <textarea class="form-control" name="proTextIntro" id="proTextIntro" rows="2">{{$products[0]->proTextIntro}}</textarea>
+                
                 </div>
             </div>
+
+            <div class="form-group row">
+                <label for="proHowTo" class="col-md-2 col-form-label text-md-right">How To Use :</label>
+                <div class="col-md-10">
+                    <textarea class="form-control" name="proHowTo" id="proHowTo-textarea" rows="2">{{$products[0]->proHowTo}}</textarea>
+                    
+                </div>
+            </div>
+
+           
 
             <div class="form-group row">
               <label for="proDescription" class="col-md-2 col-form-label text-md-right">Description :</label>    
@@ -100,9 +112,9 @@ TROPICANA - ROOMS
               <label for="Is In Stock" class="col-md-2 col-form-label text-md-right">Product Is In Stock :</label>    
             
                 <div class="col-md-10">
-                    <select  name="published" class="form-control">
-                        <option @if (old('published') =='Yes') {{'selected'}} @endif value="Yes">Yes</option>
-                        <option @if (old('published') =='No') {{'selected'}} @endif value="No" >No</option>
+                    <select  name="proIsInStock" class="form-control">
+                        <option @if ($products[0]->proIsInStock=='Yes') {{'selected'}} @endif value="Yes">Yes</option>
+                        <option @if ($products[0]->proIsInStock=='No') {{'selected'}} @endif value="No" >No</option>
                         
                     </select>
                 </div>
@@ -147,8 +159,25 @@ TROPICANA - ROOMS
     </script>
    
                                          
-                                      
-                 
+   <script>
+        var editor_config = {
+            selector: '#proHowTo-textarea',
+            directionality: document.dir,
+            path_absolute: "/",
+           
+            plugins: [
+                
+              
+              
+                "paste textcolor colorpicker textpattern"
+            ],
+            toolbar: " bold italic strikethrough | alignleft aligncenter alignright alignjustify | ",
+            relative_urls: false,
+            language: document.documentElement.lang,
+            height: 100,
+        }
+        tinymce.init(editor_config);
+    </script>
     
 
 

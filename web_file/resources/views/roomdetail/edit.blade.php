@@ -18,7 +18,7 @@ TROPICANA - ROOMS Detail
         
     
        <!--  <form action="{{route('rooms.detail.update',$details->id)}}" method="Get" enctype="multipart/form-data"> -->
-            <form action="{{route('rooms.detail.update',$details->id)}}" method="post" enctype="multipart/form-data">            
+            <form action="{{route('category.update',$details->id)}}" method="post" enctype="multipart/form-data">            
         
          <input type="hidden" name="_method" value="PUT">
     <input type="hidden" name="_token" value="{{ csrf_token() }}">

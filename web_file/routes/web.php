@@ -75,14 +75,20 @@ Route::middleware(['auth'])->group(function () {
     // Route::match(['put', 'patch'],'products/update/{proId}','ProductController@update')->name('productdetail.update');
     // Route::PUT('products/update/{proId}','ProductController@update');
     Route::PUT('products/update/{proId}','ProductController@update')->name('productdetail.update');
-
     Route::get('products/list','ProductController@list')->name('productdetail.list');
 
     
     Route::get('products/{product}/edit','ProductController@edit')->name('productdetail.edit');
     Route::get('products/create','ProductController@create')->name('productdetail.create');
-    Route::post('products/store','ProductController@store')->name('productdetail.store');
+    Route::POST('products/store','ProductController@store')->name('productdetail.store');
     Route::post('ckeditor/image_upload', 'CKEditorController@upload')->name('upload');
+
+    // Category
+    Route::get('category/list','CategoryController@list')->name('category.list');
+    Route::get('category/create','CategoryController@create')->name('category.create');
+    Route::POST('category/store','CategoryController@store')->name('category.store');
+    Route::get('category/{cateId}/edit','CategoryController@edit')->name('category.edit');
+    Route::PUT('category/update/{cateId}','CategoryController@update')->name('category.update');
 });
 
 Route::get('rooms','RoomsController@index')->name('rooms.index');

@@ -58,8 +58,8 @@
               <li class="nav-item {{ (\Request::route()->getName()=='home.index' ? 'active' : '') }}">
                 <a class="nav-link" target="_blank" href="{{route('home.index')}}">HOME <span class="sr-only">(current)</span></a>
               </li>
-              <li class="nav-item {{ (\Request::route()->getName()=='rooms.main' ? 'active' : '') }}">
-                <a class="nav-link" href="{{route('rooms.main')}}">CATEGORY</a>
+              <li class="nav-item {{ (\Request::route()->getName()=='category.list' ? 'active' : '') }}">
+                <a class="nav-link" href="{{route('category.list')}}">CATEGORY</a>
 
                 <li class="nav-item {{ (\Request::route()->getName()=='productdetail.list' ? 'active' : '') }}">
                 <a class="nav-link" href="{{route('productdetail.list')}}">PRODUCT</a>

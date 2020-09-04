@@ -8,8 +8,9 @@ class Product extends Model
 {
     // protected $timestamps = false;
     // protected $primaryKey =['proId'];
-    protected $fillable = ['proId','cateId','proName','proPrice','proImage','proHowTo','proDescription','proTextIntro','proOrderBy','createdBy'];
+    protected $fillable = ['proId','cateId','proName','proPrice','proImage','proHowTo','proDescription','proTextIntro','proOrderBy','createdBy','proIsInStock',];
     // protected $primaryKey =['proId'];
+    protected $primaryKey = 'proId';
 //    protected $table ='products';
     // public function details()
     // {

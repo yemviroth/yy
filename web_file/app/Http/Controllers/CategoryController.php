@@ -16,7 +16,7 @@ use App\Http\Controllers\Controller;
 use Auth;
 use Image;
 
-class RoomsController extends Controller
+class CategoryController extends Controller
 {
     /**
      * Display a listing of the resource.
@@ -74,8 +74,8 @@ class RoomsController extends Controller
      */
     public function create()
     {
-        $mains = RoomMain::orderBy('id', 'asc')->get();
-        return view ('rooms.create',compact('mains'));
+        // $mains = RoomMain::orderBy('id', 'asc')->get();
+        return view ('category.create');
     }
 
     /**
@@ -88,33 +88,33 @@ class RoomsController extends Controller
     {
         //
         $niceNames = [
-            'name' => 'Room Name',
-            'price' => 'Room Price',
-            'description' => 'Description',     
-            'name_th' => 'Room Name Thai',            
-            'name_ch' => 'Room Name China',
-            'description_th' => 'Description Thai',                      
-            'description_ch' => 'Description China',                      
+            'cateName' => 'Category Name',
+            // 'price' => 'Room Price',
+            // 'description' => 'Description',     
+            // 'name_th' => 'Room Name Thai',            
+            // 'name_ch' => 'Room Name China',
+            // 'description_th' => 'Description Thai',                      
+            // 'description_ch' => 'Description China',                      
 
         ]; 
 
         $request->validate([
-            'name' => 'required',
-            'name_th' => 'required',
-            'name_ch' => 'required',
-            'price' => 'required',
-            'description' => 'required',
-            'description_th' => 'required',
-            'description_ch' => 'required',
+            'cateName' => 'required',
+            // 'name_th' => 'required',
+            // 'name_ch' => 'required',
+            // 'price' => 'required',
+            // 'description' => 'required',
+            // 'description_th' => 'required',
+            // 'description_ch' => 'required',
             
         ],[],$niceNames);
 
         if (Auth::check()) {
-            $request->request->add(['created_by' => Auth::user()->name]);                    
+            $request->request->add(['cateCreated_by' => Auth::user()->name]);                    
 
-        Room::create($request->all());
-        return redirect()->route('rooms.list')
-                             ->with('success', 'Room created successfully');
+        Category::create($request->all());
+        return redirect()->route('category.list')
+                             ->with('success', 'Category created successfully');
 
       }                       
 
@@ -172,11 +172,11 @@ class RoomsController extends Controller
           // $edits=DB::select(DB::raw("SELECT r.*,d.text,d.icon FROM rooms r LEFT JOIN room_details d on r.id=d.room_id where r.id=$id  ORDER BY r.id asc, d.`order` asc")) ;
 
         //  $edits = Room::with('details')->findOrFail($id);
-        $edits = Room::findOrFail($id);
+        $edits = Category::where('cateId','$id')->first();;
 
-         //dd($edits);
-         return view ('rooms.edit',compact('edits'));
-          // return $edits;
+     
+        // return view ('category.edit',compact('edit'));
+         dd($edits);
 
     }
 
@@ -202,71 +202,29 @@ class RoomsController extends Controller
          // ->with('success', 'Room Update successfully');
 
        $niceNames = [
-            'name' => 'Room Name',
-            'price' => 'Room Price',
-            'description' => 'Description',     
-            'name_th' => 'Room Name Thai',            
-            'name_ch' => 'Room Name China',
-            'description_th' => 'Description Thai',                      
-            'description_ch' => 'Description China',                      
+                        
 
         ]; 
 
         $request->validate([
-            'name' => 'required',
-            'name_th' => 'required',
-            'name_ch' => 'required',
-            'price' => 'required',
-            'description' => 'required',
-            'description_th' => 'required',
-            'description_ch' => 'required',
+            'cateName' => 'required',
+           
             
         ],[],$niceNames);
 
-        $room = Room::findOrFail($id);
+        $cate = Category::where('cateId','$id');
         if (Auth::check()) {
              $request->request->add(['updated_by' => Auth::user()->name]);
         
        
 
-        // Get filename with extension
-
-        if ($request->hasFile('filephoto')) {
-            # code...
-       
-        $filenameWithExt = $request->file('filephoto')->getClientOriginalName();
         
-        // Get jus the filename
-        $filename = pathinfo($filenameWithExt,PATHINFO_FILENAME);
-
-        // Get Extension
-        $extention = $request->file('filephoto')->getClientOriginalExtension();
-
-        // Create new filename
-        //$filenameToStore = $filename.'_'.time().'.'.$extention;
-        $filenameToStore = $request->input('name').'.'.$extention;
-        $fullpath = public_path('images\\').$filenameToStore;
-        
-        if (file_exists($fullpath)) {
-            @unlink($fullpath);
-        }
-
-        // Upload image
-        //$path = $request->file('roster_photo')->storeAs('public/photos/roster'.$request->input('roster_photo'), $filenameToStore);
-
-        request()->filephoto->move(public_path('images'), $filenameToStore);
-
-        // assign new value
-      
-        // $request->request->add(['photo' => $filenameToStore]);
-
-        }
        
-        $room->update($request->all());
-        return redirect()->route('rooms.list')
-                             ->with('success', 'Room created successfully');
+        $cate->update($request->all());
+        return redirect()->route('category.list')
+                             ->with('success', 'Category Update successfully');
       }  
-      return redirect()->route('rooms.list');                     
+      return redirect()->route('category.list');                     
 
     }
 
@@ -287,28 +245,9 @@ class RoomsController extends Controller
 
     public function list()
     {
-        // $rooms = DB::table('rooms')->orderBy('id','asc')->get();
-        //$rooms = Room::all();
-        // $roomdetail = $rooms->roomdetails;
-        //dd($roomdetail);
-         //dd($rooms);  
-
-        //  $rooms = DB::table('rooms')
-        //             ->leftJoin('room_details', 'rooms.id', '=', 'room_details.room_id')
-        //             ->select('id,created_at')
-        //             ->orderBy('rooms.id','asc')->get();
-        //   $rooms=DB::select(DB::raw("SELECT r.*,d.text FROM rooms r LEFT JOIN room_details d on r.id=d.room_id ")) ;
-
-
-          //$rooms = DB::table('rooms')->orderBy('id','asc')->orderBy('rooms.id','asc')->get();
-          
-
-            
-                   
-
-        //  return view ('rooms.list',compact('rooms'));
-
-
+        $cates = Category::orderBy('cateId','asc')->get();
+        // DB::table('category')->orderBy('cateId','asc')->get();
+        return view('category.list',compact('cates'));
         
         //return view ('rooms.list')->with('rooms',$rooms);
     }
@@ -564,10 +503,10 @@ class RoomsController extends Controller
 
           // $edits=DB::select(DB::raw("SELECT r.*,d.text,d.icon FROM rooms r LEFT JOIN room_details d on r.id=d.room_id where r.id=$id  ORDER BY r.id asc, d.`order` asc")) ;
 
-         $edits = RoomMain::findOrFail($id);
+        //  $edit = Category::where('cateId','$id');
 
-         //dd($edits);
-         return view ('roommain.edit',compact('edits'));
+        //  //dd($edits);
+        //  return view ('category.edit',compact('edit'));
           // return $edits;
 
     }

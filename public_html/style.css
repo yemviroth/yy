@@ -21,6 +21,28 @@ body {
   font-weight: bold;
 }
 
+.wrapper{
+  width:90%;
+  margin: 0 auto;
+}
+
+/* @media (min-width: 600px) {
+  .wrapper{max-width: 600px;width: 600px; margin: 0 auto;}
+  
+}
+@media (min-width: 768px) {
+  .wrapper{max-width: 900px; margin: 0 auto;}
+}
+@media (min-width: 992px) {
+  .wrapper{max-width: 900px; margin: 0 auto;}
+}
+@media (min-width: 1024px) {
+  .wrapper{width: 970px; margin: 0 auto;}
+}
+@media (min-width: 1200px){
+  .wrapper{width: 1170px;max-width: 1170px; margin: 0 auto;}
+} */
+
 .img-view img{
   width: 80%;
   height: 80%;
@@ -448,9 +470,9 @@ border:0px solid gray;
   bottom: 0;
   right: 0;
   opacity: 0;
-  -webkit-transition: all 0.4s ease-in-out 0s;
+  /* -webkit-transition: all 0.4s ease-in-out 0s;
   -moz-transition: all 0.4s ease-in-out 0s;
-  transition: all 0.4s ease-in-out 0s;
+  transition: all 0.4s ease-in-out 0s; */
 }
 
 .content:hover .content-overlay{
