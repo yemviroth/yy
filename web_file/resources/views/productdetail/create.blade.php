@@ -23,9 +23,11 @@ TROPICANA - ROOMS
             <div class="form-group row">
                 <label for="" class="col-md-2 col-form-label text-md-right">Product Category :</label>
                 <div class="col-md-10">
-                <select class="custom-select my-1 mr-sm-2" id="inlineFormCustomSelectPref">
+                <select name="cateId" class="custom-select my-1 mr-sm-2" id="inlineFormCustomSelectPref">
                             <option selected>Choose Product Category</option>
-                    
+                            @foreach($cate as $cat)
+                            <option value="{{$cat->cateId}}">{{$cat->cateName}}</option>
+                            @endforeach
                     </select>
                 </div>
             </div>

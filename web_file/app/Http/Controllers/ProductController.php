@@ -6,6 +6,7 @@ use Illuminate\Database\Eloquent\Collection;
 use Illuminate\Support\Facades\DB;
 use Illuminate\Http\Request;
 use App\Product;
+use App\Category;
 use App\Room;
 use App\RoomDetail;
 use App\Http\Controllers\Controller;
@@ -32,7 +33,9 @@ class ProductController extends Controller
     public function create()
     {
         //
-        return view ('productdetail.create');
+        $cate = Category::orderBy('cateOrderBy','asc')->get();
+        return view ('productdetail.create',compact('cate'));
+        // dd($cate);
     }
 
     /**
@@ -352,8 +355,7 @@ class ProductController extends Controller
     {
         //
         $products = DB::table('products')
-        ->orderBy('proId','desc')
-        ->get();
+        ->orderBy('proId','desc')->paginate(5);
 
         $cates = DB::table('category')
         ->orderBy('cateId','desc')

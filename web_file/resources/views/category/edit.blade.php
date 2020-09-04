@@ -14,10 +14,11 @@ TROPICANA - ROOMS
                         <span><i class="fas fa-plus-square"></i></span><span class="ml-2">Add Category</span>
                         </p>
                     </div>
-                    <form action="{{route('category.update',$edit->cateId)}}" method="POST" enctype="multipart/form-data" class="">
+                    <form action="{{route('category.update',$edit->cateId)}}" method="POST" class="">
                     <div class="modal-body">
 
-                                        @csrf
+                    {{csrf_field()}}
+                     {{method_field('PUT')}}
                                         <div class="form-group row">
                                             <label for="cateName" class="col-md-3 form-label text-md-right">Category Name :</label>
                                             <div class="col-md-9">
@@ -25,9 +26,9 @@ TROPICANA - ROOMS
                                             </div>                                            
                                         </div>
                                         <div class="form-group row">
-                                            <label for="cateName" class="col-md-3 form-label text-md-right">In Order :</label>
+                                            <label for="cateOrderBy" class="col-md-3 form-label text-md-right">In Order :</label>
                                             <div class="col-md-9">
-                                                <input type="text" value="{{$edit->cateOrderBy}}" id="proName" class="form-control" name="cateName" required>
+                                                <input type="text" value="{{$edit->cateOrderBy}}" id="proName" class="form-control" name="cateOrderBy" required>
                                             </div>
                                         </div>
 

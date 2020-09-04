@@ -89,6 +89,7 @@ Route::middleware(['auth'])->group(function () {
     Route::POST('category/store','CategoryController@store')->name('category.store');
     Route::get('category/{cateId}/edit','CategoryController@edit')->name('category.edit');
     Route::PUT('category/update/{cateId}','CategoryController@update')->name('category.update');
+    Route::match(['delete'],'category/{cateId}','CategoryController@destroy')->name('category.destroy');
 });
 
 Route::get('rooms','RoomsController@index')->name('rooms.index');

@@ -69,11 +69,11 @@ TROPICANA - ROOMS
                         <td>{{$cate->cateOrderBy}}</td>
 
                         <td>
-                            <form action="" method="POST">
+                            <form action="{{route('category.destroy',$cate->cateId)}}" method="POST">
                                                     
                                 @csrf
                                 @method('DELETE')                                                                                                
-                                {{-- <button name="btndelete"  data-toggle="tooltip" title="Delete" type="submit" class="btn btn-sm btn-danger"><i class="fas fa-trash"></i></button>                                             --}}
+                                
                                 <a  style="font-size:8px;" class="btn btn-sm btn-primary" href="{{route('category.edit', $cate->cateId)}}"><i class="fas fa-edit"></i></a>
                                 <button  style="font-size:8px;" name="btndelete"  data-toggle="tooltip" title="Delete" type="submit" class="btn btn-sm btn-danger" onclick="return confirm('Are you sure you want to delete this items : {{$cate->cateName}} ?');"><i class="fas fa-trash"></i></button>                                            
                             </form>

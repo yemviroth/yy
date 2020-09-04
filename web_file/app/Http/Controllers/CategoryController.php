@@ -172,11 +172,12 @@ class CategoryController extends Controller
           // $edits=DB::select(DB::raw("SELECT r.*,d.text,d.icon FROM rooms r LEFT JOIN room_details d on r.id=d.room_id where r.id=$id  ORDER BY r.id asc, d.`order` asc")) ;
 
         //  $edits = Room::with('details')->findOrFail($id);
-        $edits = Category::where('cateId','$id')->first();;
+        // $edit = Category::where('cateId','$id')->first();
+        $edit=Category::where('cateId',$id)->first();
 
      
-        // return view ('category.edit',compact('edit'));
-         dd($edits);
+        return view ('category.edit',compact('edit'));
+       //       dd($edit);
 
     }
 
@@ -212,9 +213,9 @@ class CategoryController extends Controller
             
         ],[],$niceNames);
 
-        $cate = Category::where('cateId','$id');
+        $cate = Category::where('cateId',$id)->first();;
         if (Auth::check()) {
-             $request->request->add(['updated_by' => Auth::user()->name]);
+            //  $request->request->add(['updated_by' => Auth::user()->name]);
         
        
 
@@ -237,15 +238,17 @@ class CategoryController extends Controller
     public function destroy($id)
     {
         //
-        $room = Room::findOrFail($id);
-        $room->delete();
-        return redirect()->route('rooms.list')
-                             ->with('success', 'Room deleted successfully');
+        // $cate = Category::where('cateId',$id)->first();
+        $edit = Category::where('cateId',$id)->first();
+        $edit->delete();
+        return redirect()->route('category.list')
+                             ->with('success', 'category deleted successfully');
+        // dd($edit);
     }
 
     public function list()
     {
-        $cates = Category::orderBy('cateId','asc')->get();
+        $cates = Category::orderBy('cateOrderBy','asc')->get();
         // DB::table('category')->orderBy('cateId','asc')->get();
         return view('category.list',compact('cates'));
         

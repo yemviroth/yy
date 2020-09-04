@@ -104,14 +104,23 @@ TROPICANA - ROOMS
                                 </td>
 
                             </tr>
+                            
                             @endforeach                        
                                                 
                          </table>
                         </div>
-                
-                    {{--
-                     $rooms->appends(Request::capture()->except('page'))->render()
-                     --}}
+
+                        <div class="container">
+                            <div class="row justify-content-center">
+                                <div class="col-m-6">
+                                {{ $products->links() }}
+                                </div>
+                            </div>
+                            
+                        </div>
+                       
+                      
+              
                 </div>
                  
             </div>
