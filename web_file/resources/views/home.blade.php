@@ -1,15 +1,6 @@
 @extends('layouts.app')
 @section('meta')
-  <meta content='http://tropicanacasinopoipet.com/' property='og:url'/>
-  <meta content='Tropicana Casino Poipet' property='og:title'/>    
-  <meta content='{{Config::get('mysiteVars.meta_about.'. session()->get('LANG'))}}' name='description'/>
-@endsection
-@php
-  $mytitle = " - Tropicana Resort & Casino";    
-@endphp
-@section('title')
-{{Config::get('mysiteVars.menu_home.'. session()->get('LANG'))}}{{$mytitle}}
-@endsection
+
 
 @section('content')
 <br><br><br><br>
@@ -24,21 +15,21 @@
   </ol>
   <div class="carousel-inner">
     <div class="carousel-item active">
-      <img src="{{asset('images/slide/slide1.jpg')}}" class="d-block img-fluid " alt="...">
+      <img src="{{asset('images/slide/slide1.jpg')}}" class="d-block " alt="...">
       <div class="carousel-caption d-none d-md-block">
         <!-- <h5>First slide label</h5> -->
         <!-- <p>Nulla vitae elit libero, a pharetra augue mollis interdum.</p> -->
       </div>
     </div>
     <div class="carousel-item">
-      <img src="{{asset('images/slide/slide2.jpg')}}" class="d-block img-fluid" alt="...">
+      <img src="{{asset('images/slide/slide2.jpg')}}" class="d-block" alt="...">
       <div class="carousel-caption d-none d-md-block">
         <!-- <h5>Second slide label</h5> -->
         <!-- <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit.</p> -->
       </div>
     </div>
     <div class="carousel-item">
-      <img src="{{asset('images/slide/slide3.jpg')}}" class="d-block img-fluid" alt="...">
+      <img src="{{asset('images/slide/slide3.jpg')}}" class="d-block" alt="...">
       <div class="carousel-caption d-none d-md-block">
         <!-- <h5>Third slide label</h5> -->
         <!-- <p>Praesent commodo cursus magna, vel scelerisque nisl consectetur.</p> -->
@@ -67,43 +58,91 @@
 
 <!-- explorer -->
 
-<div class="wrapper">
-<div class="container-fluid">
-  <section class="p-2" style="background: #fff">
-    <div class="header-title p-4 text-center">ផលិតផលថ្មី</div>
-      
-        
-        
-        
-       
-      <div class="row">
-        @foreach ($product as $pro)
+
+ 
+    
+              <script type="text/javascript">
+              marqueeInit({
+                uniqueid: 'mycrawler',
+                style: {
+                  'padding': '5px',
+                  'width': '100%',
+                  'background': '#ffff'
+                },
+                inc: 5, //speed - pixel increment for each iteration of this marquee's movement
+                mouse: 'cursor driven', //mouseover behavior ('pause' 'cursor driven' or false)
+                moveatleast: 2,
+                neutral: 150,
+                persist: true,
+                savedirection: true
+              });
+              </script>
                 
-            <div class="col-sm-4 col-md-4 col-xs-4">
-                  <div class="">
-                    <div class="content">
-                    <a href="{{route('productdetail.show',$pro->proId)}}" target="">
-                      <div class="content-overlay"></div>
-                      <img class="content-image" src="{{asset('images/product/'.$pro->proImage)}}">
-                      <div class="content-details fadeIn-top float-left">
-                        <h6>{!!$pro->proName!!}</h6>
-                        <p class="price">${{$pro->proPrice}}</p>
-                        <p>{!!$pro->proDescription!!}</p>
-                      
-                      
+              <br><br><br>
+          <div class="marquee" id="mycrawler2" style="width:100%;">
+                    @foreach ($product as $pro)  
+
+                  <a href="{{route('productdetail.show',$pro->proId)}}"><img src="{{asset('images/product/'.$pro->proImage)}}" style="width:250px" alt=""></a>
+                  @endforeach
+          </div>
+
+          
+
+       
+  
+  <script type="text/javascript">
+marqueeInit({
+	uniqueid: 'mycrawler2',
+	style: {
+		'padding': '2px',
+    'width': '100%',
+		// 'height': '180px'
+	},
+	inc: 5, //speed - pixel increment for each iteration of this marquee's movement
+	mouse: 'cursor pause', //mouseover behavior ('pause' 'cursor driven' or false)
+	moveatleast: 2,
+	neutral: 150,
+	savedirection: true,
+	random: true
+});
+</script>
+       
+        <hr>
+
+<section class="p-2" style="background: #fff">
+    <div class="header-title p-4 text-center">ផលិតផលថ្មី</div>        
+    <div class="wrapper">
+
+      <div class="container-fluid">
+
+          <div class="row">
+            @foreach ($product as $pro)
+                    
+                <div class="col-sm-4 col-md-4 col-xs-4">
+                      <div class="">
+                        <div class="content">
+                        <a href="{{route('productdetail.show',$pro->proId)}}" target="">
+                          <div class="content-overlay"></div>
+                          <img class="content-image" src="{{asset('images/product/'.$pro->proImage)}}">
+                          <div class="content-details fadeIn-top float-left">
+                            <h6>{!!$pro->proName!!}</h6>
+                            <p class="price">${{$pro->proPrice}}</p>
+                            <p>{!!$pro->proDescription!!}</p>
+                          
+                          
+                          </div>
+                        </a>
                       </div>
-                    </a>
-                  </div>
+                    </div>
                 </div>
-            </div>
 
-        @endforeach
+            @endforeach
 
-      </div> 
-    </section>
-    </div>
-  </div>
-
+          </div> 
+        </section>
+        </div>
+      </div>
+</section>
 
 
 <!-- end service -->

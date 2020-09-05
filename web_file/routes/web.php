@@ -1,5 +1,5 @@
 <?php
-
+// use Category;
 /*
 |--------------------------------------------------------------------------
 | Web Routes
@@ -10,7 +10,7 @@
 | contains the "web" middleware group. Now create something great!
 |
 */
-
+use App\Category;
 // Route::get('/', function () {
 //     return view('home');
 // });
@@ -23,6 +23,13 @@ Auth::routes([
 // Auth::routes();
 
 Route::get('/', 'HomeController@index')->name('home.index');
+
+View::composer(['*'],function($view){
+  $cates = Category::orderBy('cateOrderBy','asc')->get();
+  $view->with('cates',$cates);
+});
+
+
 Route::get('/about','AboutController@index')->name('about.index');
 Route::resource('service','ServiceController');
 
@@ -54,7 +61,6 @@ Route::middleware(['auth'])->group(function () {
     Route::get('rooms/main/{id}/edit','RoomsController@main_edit')->name('rooms.main.edit');
     //Route::put('rooms/main/update','RoomsController@main_update')->name('rooms.main.update');
     Route::match(['put', 'patch'],'rooms/main/{id}','RoomsController@main_update')->name('rooms.main.update');
-
 
     Route::get('rooms/list','RoomsController@list')->name('rooms.list');
     

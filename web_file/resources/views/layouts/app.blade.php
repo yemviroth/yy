@@ -8,7 +8,7 @@
     
     @yield('meta')
 
-    <link rel="shortcut icon" href="{{asset('favicon.ico')}}" type="image/x-icon">
+    <!-- <link rel="shortcut icon" href="{{asset('favicon.ico')}}" type="image/x-icon"> -->
     <link href='https://fonts.googleapis.com/css?family=Bayon|Francois+One' rel='stylesheet' type='text/css'>
     <!-- Bootstrap CSS -->
     <link rel="stylesheet" href="{{asset('css/bootstrap.css')}}">
@@ -28,14 +28,14 @@
     <script src="{{asset('js/bootstrap.min.js')}}"></script>
 
     <script src="{{asset('owlcarousel/owl.carousel.min.js')}}"></script>
-    
+    <script  src="http://www.dynamicdrive.com/dynamicindex2/crawler/crawler.js"></script>
     
 
-    <title>
+
       
-      @yield('title')
+ 
+      <title>TheYeon Cambodia</title>
 
-    </title>
   </head>
   <body style="font-size: 0.9rem">
 

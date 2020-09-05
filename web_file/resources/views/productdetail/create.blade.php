@@ -13,7 +13,7 @@ TROPICANA - ROOMS
   <div class="card-header bg-dark text-light">
     <span><i class="fas fa-plus-square"></i></span><span class="ml-2">Add New Product</span>  
   </div>
-  <div class="card-body">
+  <div class="card-body shadow">
     <!-- <h5 class="card-title">Special title treatment</h5> -->
         
     <form action="{{route('productdetail.store')}}" method="POST" enctype="multipart/form-data" class="">

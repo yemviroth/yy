@@ -7,7 +7,7 @@ TROPICANA - ROOMS
 <div class="container p-4">
     <div class="row justify-content-center">
         <div class="col-md-8 ">
-                <div class="modal-content m=3">
+                <div class="modal-content shadow m-3">
                     <div class="modal-header modal-md  text-light bg-dark">
                     
                         <p class="modal-title">

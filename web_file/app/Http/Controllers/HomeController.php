@@ -6,7 +6,7 @@ use Illuminate\Http\Request;
 use DB;
 use App\RoomMain;
 use App\Room;
-
+use App\Category;
 class HomeController extends Controller
 {
     /**
@@ -45,7 +45,7 @@ class HomeController extends Controller
            
                    
               $product = DB::table('products')->orderBy('proId','asc')->get();
-               $cates = DB::table('category')->orderBy('cateId','asc')->get();
+               $cates = Category::orderBy('cateId','asc')->get();
 
          return view ('home',compact('product','cates'));
     }

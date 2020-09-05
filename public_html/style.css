@@ -1,5 +1,8 @@
+/* @import url('https://fonts.googleapis.com/css?family=Koulen|Roboto:400,700|Suwannaphum'); */
+@import url('https://fonts.googleapis.com/css?family=Hanuman:400,700');
 body {
        font-family: 'Roboto',nanum gothic,sans-serif,dotum,verdana,arial;
+       /* font-family: "Suwannaphum", "Roboto"; */
 }
 .header-title{
    /* font-family: Koulen,Arial,Helvetica,sans-serif !important; */
@@ -25,6 +28,11 @@ body {
   width:90%;
   margin: 0 auto;
 }
+
+.table-condensed{
+  font-size: 13px !important;
+}
+
 
 /* @media (min-width: 600px) {
   .wrapper{max-width: 600px;width: 600px; margin: 0 auto;}
@@ -52,7 +60,9 @@ body {
 	/* font-weight: bold; */
     
       font-size: 13px;
-      font-family: 'Francois One','Bayon'!important;
+      /* font-family: 'Francois One','Bayon'!important; */
+      /* font-family: "Suwannaphum", "Roboto"; */
+      font-family: "Hanuman", "Khmer OS";
 }
 .title{
 	color: #057374;
@@ -419,10 +429,11 @@ border:0px solid gray;
 .dropdown-content a {
 
   color: black;
- padding: 5px;
+ /* padding: 5px; */
  padding-left: 20px;
   text-decoration: none;
   display: block;
+  margin: 15px;
 }
 
 .dropdown-content a:hover {

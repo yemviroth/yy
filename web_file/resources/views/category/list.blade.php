@@ -17,7 +17,7 @@ TROPICANA - ROOMS
     
 
         <div class="col-12">
-            <div class="row">
+            <div class="row justify-content-center">
                 <div class=" ml-0 mr-2 pt-0 pb-1">                                    
                     <a href="{{ route('category.create') }}" class="btn btn-sm btn-success"><i class="fas fa-plus-square"></i> Create New Prouct Category</a>                                
                 </div>
@@ -50,23 +50,46 @@ TROPICANA - ROOMS
                     </div>
                 </form>
                 </div> -->
-        <div class="row">
-            <div class="col-md-12">
+   
+        <div class="row justify-content-center">
+            <div class="col-md-6">
            
 
-                <table class="table  table-sm table-bordered table-responsive" >
+                
+
+            </div>        
+                        
+                
+              
+</div>
+
+<div class="container">
+
+<div class="container p-4">
+    <div class="row justify-content-center">
+        <div class="col-md-12 ">
+                <div class="modal-content shadow m-3">
+                    <div class="modal-header modal-md">
+                    
+                        <p class="modal-title">
+                        <span><i class="fas fa-clipboard-list"></i><span class="ml-2">Category List</span>
+                        </p>
+                    </div>
+                    <div class="table-responsive">
+                    <table class="table" >
                     <tr class="thead-dark">
                         <th>Category Name</th>
-                        <th>Category Description</th>
-                        <th>Category OrderBy</th>
+                        <th>OrderBy</th>
+                        <th>Description</th>
                         <th>Action</th>
                     
                     </tr>
                     @foreach($cates as $cate)
                     <tr style="height:10px">
                         <td>{{$cate->cateName}}</td>
-                        <td>{{$cate->cateDescription}}</td>
                         <td>{{$cate->cateOrderBy}}</td>
+                        <td>{{$cate->cateDescription}}</td>
+                       
 
                         <td>
                             <form action="{{route('category.destroy',$cate->cateId)}}" method="POST">
@@ -83,11 +106,14 @@ TROPICANA - ROOMS
                     @endforeach                        
                                         
                 </table>
+                    </div>
+                    
+                </div>
+        </div>
+    </div>
+</div>
 
-            </div>        
-                        
-                
-              
+
 </div>
 
 @endsection

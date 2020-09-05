@@ -33,12 +33,16 @@ TROPICANA - ROOMS
                 <select name="cateId" class="custom-select my-1 mr-sm-2" id="inlineFormCustomSelectPref">
                             <option selected>Choose Product Category</option>
                             @foreach($cates as $cat)
-                            <option value="{{$cat->cateId}}">{{$cat->cateName}}</option>
+                            @if ($products[0]->cateId == $cat->cateId)
+                                <option value="{{ $cat->cateId }}" selected>{{ $cat->cateName }}</option>
+                            @else
+                                 <option value="{{$cat->cateId}}">{{$cat->cateName}}</option>
+                            @endif
                             @endforeach   
                     </select>
                 </div>
             </div>
-
+            
             <div class="form-group row">
                 <label for="proName" class="col-md-2 col-form-label text-md-right">Product Name :</label>
                 <div class="col-md-10">
@@ -63,34 +67,35 @@ TROPICANA - ROOMS
             <div class="form-group row">
                 <label for="full_name" class="col-md-2 col-form-label text-md-right">Image :</label>
                 <div class="col-md-10">
-                 <div class="custom-file col-sm-9">
-
-                    <input type="file" name="filephoto" class="custom-file-input" id="validatedCustomFile">
-                    <label class="custom-file-label" for="validatedCustomFile">Choose file...</label>
-                    @if ($errors->has('filephoto'))
-                    <div class="error"> <strong>{{ $errors->first('filephoto') }}</strong></div>
-                    @endif
-
-                </div>
-
-                <div class="col-sm-3 img-view">
+                    <div class="custom-file col-sm-7">
+                        <input type="file" class="custom-file-input" id="customFile" name="filephoto" onchange="loadFile(event)">
+                        <label class="custom-file-label" for="filephoto">Choose file</label>
+                        <script>
+                            var loadFile = function(event) {
+                                var image = document.getElementById('output');
+                                image.src = URL.createObjectURL(event.target.files[0]);
+                            };
+                            </script>
+                        @if ($errors->has('filephoto'))
+                        <div class="error"> <strong>{{ $errors->first('filephoto') }}</strong></div>
+                        @endif
+                                
+                    </div>
                     @if($products[0]->proImage)
-                        <img src="{{asset('images/product/'.$products[0]->proImage)}}" alt="">
+                        <img class="img-view col-md-2 text-md-right" style="width:100px" id="output" src="{{asset('images/product/'.$products[0]->proImage)}}" alt="">
                     @endif
                 </div>
-
+               
+            </div>                       
+                <div class="form-group row">
+                    <label for="proTextIntro" class="col-md-2 col-form-label text-md-right">Product Intro :</label>
+                    <div class="col-md-10">
+                    <textarea class="form-control" name="proTextIntro" id="proTextIntro" rows="2">{{$products[0]->proTextIntro}}</textarea>
+                    
+                    </div>
                 </div>
-            </div>
 
-
-
-            <div class="form-group row">
-                <label for="proTextIntro" class="col-md-2 col-form-label text-md-right">Product Intro :</label>
-                <div class="col-md-10">
-                <textarea class="form-control" name="proTextIntro" id="proTextIntro" rows="2">{{$products[0]->proTextIntro}}</textarea>
                 
-                </div>
-            </div>
 
             <div class="form-group row">
                 <label for="proHowTo" class="col-md-2 col-form-label text-md-right">How To Use :</label>
@@ -124,7 +129,7 @@ TROPICANA - ROOMS
             <hr>
                 <div class="float-right">
                         
-                        <button class="btn btn-lg btn-secondary text-md-left" type="">Back</button>
+                        <a href="{{route('productdetail.list')}}" class="btn btn-lg btn-secondary text-md-left">Back</a>
                         <button class="btn btn-lg btn-primary text-md-left" type="submit">Update</button>
                     
                 </div>
@@ -139,6 +144,7 @@ TROPICANA - ROOMS
 
         </form>
     </div>
+  
     <script src="https://cdnjs.cloudflare.com/ajax/libs/tinymce/4.9.5/tinymce.min.js"></script>
     <script>
         var editor_config = {
@@ -227,5 +233,15 @@ $(function () {
         }
     });
 });
+
+$(".custom-file-input").on("change", function() {
+  var fileName = $(this).val().split("\\").pop();
+  $(this).siblings(".custom-file-label").addClass("selected").html(fileName);
+});
 </script>
+</script>
+
+
+<!-- script input image  -->
+
 @endsection

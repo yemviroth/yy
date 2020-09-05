@@ -8,9 +8,7 @@ TROPICANA - ROOMS
        
 
     <div class="row p-4">
-            <!-- <div class="container-fluid"> -->
-               
-               
+                          
                         @if ($message = Session::get('success'))
                         <div id="malert" class="alert alert-success alert-dismissible fade show"  role="alert">{{ $message }}
                             <button type="button" class="close" data-dismiss="alert" aria-label="Close">
@@ -18,7 +16,7 @@ TROPICANA - ROOMS
                               </button>
                         </div>
                         
-                    @endif
+                         @endif
               
 
                     <div class="col-12">
@@ -34,49 +32,32 @@ TROPICANA - ROOMS
                                    
                                
                         </div>
-                        <div class="collapse @if (Request::is('rooms/search'))
-                            show 
-                        @endif"  id="collapseSearch">
-                        <form action="{{ route('rooms.index') }}" method="get">
-                                {{-- @csrf --}}
-                                <div class="row">
-                                        <div class=" col-12 mb-1 form-inline p-1" style="border: 1px #ccc solid;">
-                                            
-
-                                                <div class="ml-2">
-                                                    Date: <input type="text" value="@php if (session()->has('index_logging_logdate')) { echo session()->get('index_logging_logdate');}@endphp" name="logdate" id="logdate" autocomplete="off" class="form-control form-control-sm">
-                                                </div> 
-                                                <div class="ml-2">
-                                                        Problem: <input type="text" value="@php if (session()->has('index_logging_problem')) { echo session()->get('index_logging_problem');}@endphp" name="problem" class="form-control form-control-sm">
-                                                 </div> 
-                                                
-                                                 <div class="ml-2">
-                                                                                                                            
-                                                                <button name="btnsearch" type="submit" class="btn btn-sm btn-success"><i class="fas fa-search"></i></button>
-                                                            
-                                                 </div> 
-                                                
-                                        </div>
-                                    
-                                </div>
-                            </form>
-                            </div>
+                       
                  
                         <div class="">
 
-                        <table class="table  table-sm table-bordered  table-responsive" >
+
+               <div class="modal-content shadow">
+                    <div class="modal-header modal-md">
+                    
+                        <p class="modal-title">
+                        <span><i class="fas fa-clipboard-list"></i><span class="ml-2">Products List</span>
+                        </p>
+                    </div>
+                    <div class="table-responsive">
+                    <table class="table table-condensed" >
                             <tr class="thead-dark">
                                 <th>catId</th>
                                 <th>Product Name</th>
                                 <th>Price</th>
                                 <th>Image</th>
-                                <th style="width:200px">How To Use</th>
-                                <th style="width:200px">Description</th>
+                                <th style="width:300px">How To Use</th>
+                                <th style="width:300px">Description</th>
                                 <th style="width:200px">product Intro</th>
                                 <th>Order</th>
                                 <th>Created At</th>
                                 <th>Update At</th>
-                                <th>Created By</th>
+                                <th>By</th>
                                 <th>Action</th>
                             </tr>
                             @foreach($products as $pro)
@@ -84,7 +65,7 @@ TROPICANA - ROOMS
                                 <td>{{$pro->cateId}}</td>
                                 <td>{{$pro->proName}}</td>
                                 <td>{{$pro->proPrice}}</td>
-                                <td><img src="{!!asset('images/product/'.$pro->proImage)!!}" class="img-fluid" style="width: 150px;"></td>
+                                <td><img src="{!!asset('images/product/'.$pro->proImage)!!}" class="img-fluid" style="width: 100px;"></td>
                                 <td>{{$pro->proHowTo}}</td>
                                 <td>{!! Str::limit($pro->proDescription,150)!!}</td>
                                 <td>{{$pro->proTextIntro}}</td>
@@ -107,9 +88,13 @@ TROPICANA - ROOMS
                             
                             @endforeach                        
                                                 
-                         </table>
-                        </div>
-
+                            </table>
+                    </div>
+                    
+                </div>
+        </div>
+    </div>
+<hr>
                         <div class="container">
                             <div class="row justify-content-center">
                                 <div class="col-m-6">

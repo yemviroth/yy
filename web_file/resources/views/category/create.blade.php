@@ -7,7 +7,7 @@ TROPICANA - ROOMS
 <div class="container p-4">
     <div class="row justify-content-center">
         <div class="col-md-8 ">
-                <div class="modal-content m=3">
+                <div class="modal-content shadow m=3">
                     <div class="modal-header modal-md  text-light bg-dark">
                     
                         <p class="modal-title">
@@ -25,9 +25,9 @@ TROPICANA - ROOMS
                                             </div>                                            
                                         </div>
                                         <div class="form-group row">
-                                            <label for="cateName" class="col-md-3 form-label text-md-right">In Order :</label>
+                                            <label for="cateOrderBy" class="col-md-3 form-label text-md-right">In Order :</label>
                                             <div class="col-md-9">
-                                                <input type="text" id="proName" class="form-control" name="cateName" required>
+                                                <input type="text" id="cateOrderBy" class="form-control" name="cateOrderBy" required>
                                             </div>
                                         </div>
 
