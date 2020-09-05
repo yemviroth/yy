@@ -47,10 +47,11 @@ TROPICANA - ROOMS
                     <div class="table-responsive">
                     <table class="table table-condensed" >
                             <tr class="thead-dark">
-                                <th>catId</th>
+                                 <th>Image</th>
+                               
                                 <th>Product Name</th>
                                 <th>Price</th>
-                                <th>Image</th>
+                                <th>catId</th>
                                 <th style="width:300px">How To Use</th>
                                 <th style="width:300px">Description</th>
                                 <th style="width:200px">product Intro</th>
@@ -62,10 +63,11 @@ TROPICANA - ROOMS
                             </tr>
                             @foreach($products as $pro)
                             <tr style="height:10px">
-                                <td>{{$pro->cateId}}</td>
+                                <td><img src="{!!asset('images/product/'.$pro->proImage)!!}" class="img-fluid" style="width: 100px;"></td>
+                                
                                 <td>{{$pro->proName}}</td>
                                 <td>{{$pro->proPrice}}</td>
-                                <td><img src="{!!asset('images/product/'.$pro->proImage)!!}" class="img-fluid" style="width: 100px;"></td>
+                                <td>{{$pro->cateId}}</td>
                                 <td>{{$pro->proHowTo}}</td>
                                 <td>{!! Str::limit($pro->proDescription,150)!!}</td>
                                 <td>{{$pro->proTextIntro}}</td>

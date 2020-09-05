@@ -96,7 +96,7 @@
                       <a class="nav-link" href="{{route('home.index')}}">ផលិតផល <span class="sr-only">(current)</span></a>
                             <div class="dropdown-content">
                                   @foreach ($cates as $cate)
-                                     <a href="#">{{$cate->cateName}}</a>
+                                     <a href="{{route('category.show', $cate->cateId)}}">{{$cate->cateName}}</a>
                                   @endforeach
                                 
                                 </div>

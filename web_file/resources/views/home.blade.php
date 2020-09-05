@@ -79,7 +79,7 @@
               </script>
                 
               <br><br><br>
-          <div class="marquee" id="mycrawler2" style="width:100%;">
+          <div class="marquee d-none d-sm-block" id="mycrawler2" style="width:100%;">
                     @foreach ($product as $pro)  
 
                   <a href="{{route('productdetail.show',$pro->proId)}}"><img src="{{asset('images/product/'.$pro->proImage)}}" style="width:250px" alt=""></a>
@@ -118,7 +118,8 @@ marqueeInit({
           <div class="row">
             @foreach ($product as $pro)
                     
-                <div class="col-sm-4 col-md-4 col-xs-4">
+                <div class="col-sm-4 col-md-4 col-6 p-3">
+                 
                       <div class="">
                         <div class="content">
                         <a href="{{route('productdetail.show',$pro->proId)}}" target="">

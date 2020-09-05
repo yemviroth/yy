@@ -1,115 +1,51 @@
 @extends('layouts.app')
-@section('title')
-@php
-  $mytitle = " - Tropicana Resort & Casino";    
-@endphp
-<!-- @if(session()->get('LANG')=='EN')
-                {{$products[0]->proName}}{{$mytitle}}
-                @elseif(session()->get('LANG')=='TH')
-                  {{$rooms[0]->name_th}}{{$mytitle}}
-                @elseif(session()->get('LANG')=='CH')
-                  {{$rooms[0]->name_ch}}{{$mytitle}}
-              @endif -->
-@endsection
+
 @section('content')
+<br><br><br><br>
+ <!-- slide -->
+  
 
-<!-- navigator -->
-<!-- <section>
-    <div class="container-fluid">
-      <div class="row">
-        <div class="col">
-          <p class="navigator-link" style="font-weight: bold;"><a href="{{route('home.index')}}">{{Config::get('mysiteVars.menu_home.'. session()->get('LANG'))}}</a><i class="fas fa-caret-right pl-1 pr-1"></i><a href="{{route('rooms.index')}}" style="color: #057374">{{Config::get('mysiteVars.menu_rooms.'. session()->get('LANG'))}}</a></p>
+       
+        <hr>
+
+<section class="p-2" style="background: #fff">
+    <div class="header-title p-4 text-center">ផលិតផលថ្មី</div>        
+    <div class="wrapper">
+
+      <div class="container-fluid">
+
+          <div class="row">
+            @foreach ($pros as $pro)
+                    
+                <div class="col-sm-4 col-md-4 col-xs-4">
+                      <div class="">
+                        <div class="content">
+                        <a href="{{route('productdetail.show',$pro->proId)}}" target="">
+                          <div class="content-overlay"></div>
+                          <img class="content-image" src="{{asset('images/product/'.$pro->proImage)}}">
+                          <div class="content-details fadeIn-top float-left">
+                            <h6>{!!$pro->proName!!}</h6>
+                            <p class="price">${{$pro->proPrice}}</p>
+                            <p>{!!$pro->proDescription!!}</p>
+                          
+                          
+                          </div>
+                        </a>
+                      </div>
+                    </div>
+                </div>
+
+            @endforeach
+
+          </div> 
+        </section>
         </div>
       </div>
-    </div>
-  </section> -->
-  <!-- end of navigator -->
-  
-  
+</section>
 
-  <div class="container"  style="padding-top:8%;">
-  
-    
-    <div class="text-center header-title">Skin Care</div>
-    
-    
-    <div class="row pt-5">
 
-      <div class="col-md-2 col-sm-12 col-xs-12">
-        <h6 class="text-kh-bold"><  Previous   Next ></h6>
-        <div class="card">
-        <div class="img-view">
-          <img src="{{asset('images/product/'.$products[0]->proImage)}}" alt="">
-        </div>
-        </div>
-      </div>
 
-      <div class="col-md-5 col-sm-12 col-xs-12">
-      <img class="content-image" src="{{asset('images/product/'.$products[0]->proImage)}}">
-      </div>
 
-      <div class="col-md-5 col-sm-12 col-xs-12">
-      
-              <h5 class="font-weight-bold">{!!$products[0]->proName!!}</h5>
-              <hr>
-              <h6>Price : {{$products[0]->proPrice}}</h6>
-              <p>{{$products[0]->proTextIntro}}</p>
-              <hr>
-              <h6 class="text-kh-bold">How To</h6>
-              <p>{{$products[0]->proHowTo}}</p>
-              <h6 class="text-kh-bold">Description</h6>
-              <p>{!!$products[0]->proDescription!!}</p>
-              <hr>
-              <h6 class="text-kh-bold">Total : </h6>
-         
-      </div>
-    </div>
-         
-  </div>
- 
-  
-  
 
-  
-  
-  </section>
-  
-  <!-- end service -->
-
-@endsection
-
-@section('script')
-
-<script type="text/javascript">
-  var owl = $('.owl-carousel');
-  owl.owlCarousel({
-      loop:true,
-      nav:true,
-      margin:10,
-      autoplay:true,
-      responsive:{
-          0:{
-              items:1
-          },
-          600:{
-              items:1
-          // },            
-          // 960:{
-          //     items:5
-          // },
-          // 1200:{
-          //     items:6
-          }
-      }
-  });
-  // owl.on('mousewheel', '.owl-stage', function (e) {
-  //     if (e.deltaY>0) {
-  //         owl.trigger('next.owl');
-  //     } else {
-  //         owl.trigger('prev.owl');
-  //     }
-  //     e.preventDefault();
-  // });
-  </script>
   
 @endsection

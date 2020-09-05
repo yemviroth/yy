@@ -133,30 +133,24 @@ class CategoryController extends Controller
         // $details=DB::select(DB::raw("SELECT r.*,d.text,d.icon FROM rooms r LEFT JOIN room_details d on r.id=d.room_id where r.id=$id  ORDER BY r.id asc, d.`order` asc")) ;
 
         // return view ('roomdetail.index',compact('details'));
-        if (session()->has("LANG")) {
-            $lang = session()->get('LANG');     
-        }
+       
 
-        if ( empty($lang)) {
-            $lang ='EN';
-        }
-        
+//         $rooms = Room::with('RoomMain')->orderBy('id', 'asc')
+//                 // ->where('lang',$lang)
+//                 ->where('id',$id)
+//                 ->get();
 
-        $rooms = Room::with('RoomMain')->orderBy('id', 'asc')
-                // ->where('lang',$lang)
-                ->where('id',$id)
-                ->get();
-
-        $details = RoomDetail::with('RoomMain')->orderBy('id', 'asc')
-                ->where('lang',$lang)
-                //->where('id',$rooms[0]->RoomMain->id)
-                ->where('room_id',$rooms[0]->RoomMain->id)
-                ->get();          
-// 
-        // return view ('roomdetail.index',compact('rooms'));        
-        return view ('roomdetail.index',compact('rooms'),compact('details')); 
-
-
+//         $details = RoomDetail::with('RoomMain')->orderBy('id', 'asc')
+//                 ->where('lang',$lang)
+//                 //->where('id',$rooms[0]->RoomMain->id)
+//                 ->where('room_id',$rooms[0]->RoomMain->id)
+//                 ->get();          
+// // 
+//         // return view ('roomdetail.index',compact('rooms'));        
+//         return view ('roomdetail.index',compact('rooms'),compact('details')); 
+        $pros = Product::where('cateId',$id)->get();
+        return view ('category.show',compact('pros')); 
+// dd($pros);
     }
 
     /**

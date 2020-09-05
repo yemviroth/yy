@@ -105,6 +105,9 @@ Route::get('rooms/{room}','RoomsController@show')->name('rooms.show');
 // Product Detail
 Route::get('products/{product}','ProductController@show')->name('productdetail.show');
 
+//Category
+Route::get('category/{cateId}','CategoryController@show')->name('category.show');
+
 
 Route::get('sitemap/',function (){ 
   return view('sitemap.sitemap');

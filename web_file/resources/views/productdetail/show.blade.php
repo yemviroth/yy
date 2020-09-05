@@ -35,7 +35,7 @@
     
     <div class="row pt-5">
 
-      <div class="col-md-2 col-sm-12 col-xs-12">
+      <div class="col-md-2 col-sm-12 col-xs-12 d-none d-sm-block d-md-block">
         <h6 class="text-kh-bold"><  Previous   Next ></h6>
         <div class="card">
         <div class="img-view">
