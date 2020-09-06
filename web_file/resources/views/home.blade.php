@@ -69,7 +69,7 @@
                   'width': '100%',
                   'background': '#ffff'
                 },
-                inc: 5, //speed - pixel increment for each iteration of this marquee's movement
+                inc: 2, //speed - pixel increment for each iteration of this marquee's movement
                 mouse: 'cursor driven', //mouseover behavior ('pause' 'cursor driven' or false)
                 moveatleast: 2,
                 neutral: 150,
@@ -79,10 +79,10 @@
               </script>
                 
               <br><br><br>
-          <div class="marquee d-none d-sm-block" id="mycrawler2" style="width:100%;">
+          <div class="marquee" id="mycrawler2" style="width:100%;">
                     @foreach ($product as $pro)  
 
-                  <a href="{{route('productdetail.show',$pro->proId)}}"><img src="{{asset('images/product/'.$pro->proImage)}}" style="width:250px" alt=""></a>
+                  <a href="{{route('productdetail.show',$pro->proId)}}"><img src="{{asset('images/product/'.$pro->proImage)}}" style="width:250px" class="" alt=""></a>
                   @endforeach
           </div>
 
@@ -98,7 +98,7 @@ marqueeInit({
     'width': '100%',
 		// 'height': '180px'
 	},
-	inc: 5, //speed - pixel increment for each iteration of this marquee's movement
+	inc: 3, //speed - pixel increment for each iteration of this marquee's movement
 	mouse: 'cursor pause', //mouseover behavior ('pause' 'cursor driven' or false)
 	moveatleast: 2,
 	neutral: 150,
@@ -122,21 +122,36 @@ marqueeInit({
                  
                       <div class="">
                         <div class="content">
-                        <a href="{{route('productdetail.show',$pro->proId)}}" target="">
-                          <div class="content-overlay"></div>
+                          <a href="{{route('productdetail.show',$pro->proId)}}" target="">
+                          <div class="content-overlay d-none d-md-block"></div>
                           <img class="content-image" src="{{asset('images/product/'.$pro->proImage)}}">
-                          <div class="content-details fadeIn-top float-left">
+                          <div class="content-details fadeIn-top float-left d-none d-md-block">
+                            @if($pro->proIsInStock=='No')
+                            <span class="badge badge-light mb-4">SOLDOUT</span>
+                            @endif
                             <h6>{!!$pro->proName!!}</h6>
                             <p class="price">${{$pro->proPrice}}</p>
-                            <p>{!!$pro->proDescription!!}</p>
-                          
+                            <p>{!!$pro->proTextIntro!!}</p>
                           
                           </div>
+                          
+                          <div class="d-block d-md-none">
+                            <div class="text-under-product">
+                                @if($pro->proIsInStock=='No')
+                                <span class="badge badge-dark mb-2">SOLDOUT</span>
+                                @endif
+                                <h6>{!!$pro->proName!!}</h6>
+                              <p class="price">${{$pro->proPrice}}</p>
+                              <p>{{ str_limit($pro->proTextIntro, 60) }}</p>
+                              
+                            </div>
+                         </div>
+
                         </a>
                       </div>
                     </div>
                 </div>
-
+                
             @endforeach
 
           </div> 

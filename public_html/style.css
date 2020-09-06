@@ -24,6 +24,28 @@ body {
   font-weight: bold;
 }
 
+.text-under-product{
+  font-size: .70rem;
+  text-decoration:none;
+  color:#000;
+}
+
+.text-under-product h6{
+  font-size: .72rem;
+  font-weight:500;
+}
+
+.text-under-product .price{
+  font-size: .80rem;
+  font-weight:bold;
+}
+
+.content a {
+  
+  text-decoration:none;
+}
+
+
 .wrapper{
   width:90%;
   margin: 0 auto;
@@ -472,7 +494,7 @@ border:0px solid gray;
 }
 
 .content .content-overlay {
-  background: rgba(0,0,0,0.7);
+  background: rgb(21 21 21 / 53%);
   position: absolute;
   height: 99%;
   width: 100%;
@@ -497,18 +519,18 @@ border:0px solid gray;
 .content-details {
   position: absolute;
   text-align: left;
-  padding-left: 1em;
-  padding-right: 1em;
+  padding-left: 3em;
+  padding-right: 3em;
   width: 100%;
   /*top: 50%;*/
   /*left: 50%;*/
   opacity: 0;
-  -webkit-transform: translate(-50%, -50%);
+ -webkit-transform: translate(-50%, -50%);
   -moz-transform: translate(-50%, -50%);
   transform: translate(-50%, -50%);
-  -webkit-transition: all 0.3s ease-in-out 0s;
+  /* -webkit-transition: all 0.3s ease-in-out 0s;
   -moz-transition: all 0.3s ease-in-out 0s;
-  transition: all 0.3s ease-in-out 0s;
+  transition: all 0.3s ease-in-out 0s; */ 
 }
 
 .content:hover .content-details{

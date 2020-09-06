@@ -28,7 +28,7 @@
     <script src="{{asset('js/bootstrap.min.js')}}"></script>
 
     <script src="{{asset('owlcarousel/owl.carousel.min.js')}}"></script>
-    <script  src="http://www.dynamicdrive.com/dynamicindex2/crawler/crawler.js"></script>
+    <script src="{{asset('js/crawler.js')}}"></script>
     
 
 
