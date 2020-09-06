@@ -206,9 +206,13 @@ class ProductController extends Controller
          $cates = DB::table('category')
          ->orderBy('cateId','desc')
          ->get();
+// $category=Category::with('subCategories')->where('cateId',$id)->first();
+// dd($category);
+// $category = Category::with('subCategories')->find(1);
+// dd($category);
 
 
-        return view ('productdetail.show',compact('products','cates'));
+       return view ('productdetail.show',compact('products','cates'));
     }
 
     /**

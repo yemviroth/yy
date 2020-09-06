@@ -11,6 +11,13 @@ class Product extends Model
     protected $fillable = ['proId','cateId','proName','proPrice','proImage','proHowTo','proDescription','proTextIntro','proOrderBy','createdBy','proIsInStock',];
     // protected $primaryKey =['proId'];
     protected $primaryKey = 'proId';
+
+    public function category()
+    {
+         return $this->belongsTo('App\Category','cateId');
+    }
+
+
 //    protected $table ='products';
     // public function details()
     // {

@@ -151,46 +151,49 @@
    
 
 <!-- footer -->
+<div class="wrapper">
 
-<footer class="pl-5 pr-5 pt-2 pb-2 wrapper" style="">
-  <div class="container-fluid">
-  <hr>
-    <div class="row">
-    
-      <div class="col-12 col-sm-12 col-md-7" style="font-size:.75rem;">
-          <h6 class="font-weight-bold">
-          COMPANY INFO
-          </h6>
-          <p class="pt-2">
-            
-            <span> COMPANY: THEYEON　CEO: KANG YOUNG AE　PHONE: 82-70-4266-2288　</span>
-            <span>E-MAIL: theyeonglobal@theyeon.net ADDRESS: 608, 6F, SK V1 Center Bldg, 171, Gasan digital 1-ro, Geumcheon-gu, Seoul, Korea</span>
-
-            E-COMMERCE PERMIT: 2013-SeoulJongno-0478　BUSINESS REGISTRATION NO: 264-81-02289 [BUSINESS INFORMATION]
-          </p>
-      </div>
-
-      <div class="col-12 col-sm-12 col-md-5 pl-4" style="font-size:.75rem;">
-          <h6 class="font-weight-bold">
-          Customer Service
-          </h6>
-          <p class="pt-2">
-            82-70-4266-2288
-            MON-FRI 10:00-18:00 ( KOREAN TIME )
-            SAT SUN HOLIDAY CLOSED
-          </p>
-      </div>
-
-    </div>
+<div class="container-fluid">
+    <footer class="pt-2 pb-2" style="font-size:.75rem;">
+      
       <hr>
-      <div class="row">
-        <div data-toggle="tooltip" data-placement="top" class="col text-center" title="Developed by MAKTA IT Group [Prem Phalin(+855 98920094), Yem Viroth (+855 69566295)">
-            <p class="float-left pt-2">COPYRIGHT © THEYEON CAMBODIA ALL RIGHTS RESERVED.</p>
+        <div class="row">
+        
+          <div class="col-12 col-sm-12 col-md-7">
+              <h6 class="font-weight-bold">
+              COMPANY INFO
+              </h6>
+              <p class="pt-2">
+                
+                <span> COMPANY: THEYEON　CEO: KANG YOUNG AE　PHONE: 82-70-4266-2288　</span>
+                <span>E-MAIL: theyeonglobal@theyeon.net ADDRESS: 608, 6F, SK V1 Center Bldg, 171, Gasan digital 1-ro, Geumcheon-gu, Seoul, Korea</span>
+
+                E-COMMERCE PERMIT: 2013-SeoulJongno-0478　BUSINESS REGISTRATION NO: 264-81-02289 [BUSINESS INFORMATION]
+              </p>
           </div>
-    </div>
-  </div>
-</footer>
+
+          <div class="col-12 col-sm-12 col-md-5 pl-4" style="font-size:.75rem;">
+              <h6 class="font-weight-bold">
+              Customer Service
+              </h6>
+              <p class="pt-2">
+                82-70-4266-2288
+                MON-FRI 10:00-18:00 ( KOREAN TIME )
+                SAT SUN HOLIDAY CLOSED
+              </p>
+          </div>
+
+        </div>
+          <hr>
+          <div class="row">
+            <div data-toggle="tooltip" data-placement="top" class="col text-center" title="Developed by MAKTA IT Group [Prem Phalin(+855 98920094), Yem Viroth (+855 69566295)">
+                <p class="float-left pt-2">COPYRIGHT © THEYEON CAMBODIA ALL RIGHTS RESERVED.</p>
+              </div>
+        </div>
+      
+    </footer>
 <!-- end footer -->
+</div>
 
 
 
