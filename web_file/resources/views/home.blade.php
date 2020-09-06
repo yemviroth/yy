@@ -118,13 +118,13 @@ marqueeInit({
           <div class="row">
             @foreach ($product as $pro)
                     
-                <div class="col-sm-4 col-md-4 col-6 p-3">
+                <div class="col-sm-4 col-md-4 col-6 p-1">
                  
                       <div class="">
                         <div class="content">
                           <a href="{{route('productdetail.show',$pro->proId)}}" target="">
                           <div class="content-overlay d-none d-md-block"></div>
-                          <img class="content-image" src="{{asset('images/product/'.$pro->proImage)}}">
+                          <img class="content-image img-fluid" src="{{asset('images/product/'.$pro->proImage)}}">
                           <div class="content-details fadeIn-top float-left d-none d-md-block">
                             @if($pro->proIsInStock=='No')
                             <span class="badge badge-light mb-4">SOLDOUT</span>
@@ -135,12 +135,14 @@ marqueeInit({
                           
                           </div>
                           
+
                           <div class="d-block d-md-none">
                             <div class="text-under-product">
+                                
+                                <h6>{!!$pro->proName!!}</h6>
                                 @if($pro->proIsInStock=='No')
                                 <span class="badge badge-dark mb-2">SOLDOUT</span>
                                 @endif
-                                <h6>{!!$pro->proName!!}</h6>
                               <p class="price">${{$pro->proPrice}}</p>
                               <p>{{ str_limit($pro->proTextIntro, 60) }}</p>
                               

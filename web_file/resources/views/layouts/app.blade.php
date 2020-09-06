@@ -46,7 +46,7 @@
 
     <!-- nav bar -->
     <!-- <div style="margin-top: 2px;padding-right: 10px;position: absolute; left: 95%;" class="float-right pt-3"> -->
-       <div style="width:100px;
+       <!-- <div style="width:100px;
             height:auto;
             
             color:#FFF;
@@ -61,7 +61,7 @@
         <a href="{{route('translate.show','TH')}}"><span class="@if(session()->get('LANG')=='TH') lang_active @endif flag-icon flag-icon-th mr-1 h4" style=""></span></a> 
         
        
-      </div>
+      </div> -->
     <div style="clear:both;"> </div>
     <section class="" style="">
       <!-- <div style=" margin-top: 2px;margin-right:5px;z-index: 10000" class="float-right"> -->
@@ -151,58 +151,41 @@
    
 
 <!-- footer -->
-<footer class="pl-5 pr-5 pt-2 pb-2" style=" background: #d8d8d8;">
+
+<footer class="pl-5 pr-5 pt-2 pb-2 wrapper" style="">
   <div class="container-fluid">
+  <hr>
     <div class="row">
-      <div class="col-sm-4 col-md-4 col-lg-4 col-xl-4">
-        <h4 class="title"  style="font-size:16px;">TROPICANA RESORT & CASINO</h4>
-        <h5 class="title-sm"  style="font-size:14px;"><b>{{Config::get('mysiteVars.service_spa_title.'. session()->get('LANG'))}} - {{Config::get('mysiteVars.service_restaurant_title.'. session()->get('LANG'))}} - {{Config::get('mysiteVars.service_gym_title.'. session()->get('LANG'))}}</b></h5>
-        <p></p>
+    
+      <div class="col-12 col-sm-12 col-md-7" style="font-size:.75rem;">
+          <h6 class="font-weight-bold">
+          COMPANY INFO
+          </h6>
+          <p class="pt-2">
+            
+            <span> COMPANY: THEYEON　CEO: KANG YOUNG AE　PHONE: 82-70-4266-2288　</span>
+            <span>E-MAIL: theyeonglobal@theyeon.net ADDRESS: 608, 6F, SK V1 Center Bldg, 171, Gasan digital 1-ro, Geumcheon-gu, Seoul, Korea</span>
+
+            E-COMMERCE PERMIT: 2013-SeoulJongno-0478　BUSINESS REGISTRATION NO: 264-81-02289 [BUSINESS INFORMATION]
+          </p>
       </div>
 
-      <div class="col-sm-4 col-md-4 col-lg-4 col-xl-4">
-          <div class="row text-left">
-            <div class="col text-left quick-link"  style="font-size:16px;">
-              <h4 class="title"  style="font-size:16px;"  >{{Config::get('mysiteVars.buttom_quick_link.'. session()->get('LANG'))}}</h4>
-              <hr align="left" width="20%" style="background-color: #057374; height: 1px">
-              <p><a href="{{route('rooms.index')}}">{{Config::get('mysiteVars.menu_rooms.'. session()->get('LANG'))}}</a></p>
-              <!--
-              <p><a href="{{route('spa.index')}}">{{Config::get('mysiteVars.service_spa_title.'. session()->get('LANG'))}}</a></p>
-              <p><a href="{{route('gym.index')}}">{{Config::get('mysiteVars.service_gym_title.'. session()->get('LANG'))}}</a></p>
-              <p><a href="{{route('restaurant.index')}}">{{Config::get('mysiteVars.service_restaurant_title.'. session()->get('LANG'))}}</a></p>
-              -->
-              <p><a href="{{route('service.index')}}">{{Config::get('mysiteVars.menu_services.'. session()->get('LANG'))}}</a></p>
-              <p><a href="{{route('gallery.index')}}">{{Config::get('mysiteVars.menu_gallerys.'. session()->get('LANG'))}}</a></p>
-              <p><a href="{{route('contact.index')}}">{{Config::get('mysiteVars.menu_contact_us.'. session()->get('LANG'))}}</a></p>
-              <p><a href="{{route('about.index')}}">{{Config::get('mysiteVars.menu_about_us.'. session()->get('LANG'))}}</a></p>
-              <p><a href="{{route('sitemap')}}">{{Config::get('mysiteVars.title_sitemap.'. session()->get('LANG'))}}</a></p>
-
-            </div>
-          </div>
+      <div class="col-12 col-sm-12 col-md-5 pl-4" style="font-size:.75rem;">
+          <h6 class="font-weight-bold">
+          Customer Service
+          </h6>
+          <p class="pt-2">
+            82-70-4266-2288
+            MON-FRI 10:00-18:00 ( KOREAN TIME )
+            SAT SUN HOLIDAY CLOSED
+          </p>
       </div>
-      <div class="col-sm-4 col-md-4 col-lg-4 col-xl-4">
-          <div class="row text-left">
-            <div class="col text-left quick-link"  style="font-size:16px;">
 
-              <h4 class="title"  style="font-size:16px;">{{Config::get('mysiteVars.buttom_get_in_touch.'. session()->get('LANG'))}}</h4>
-              <hr align="left" width="20%" style="background-color: #057374; height: 1px">
-              <p><i class="fas fa-map-marker-alt pr-2"></i>{{Config::get('mysiteVars.buttom_address.'. session()->get('LANG'))}}</p>
-              <p><span class="flag-icon flag-icon-th mr-3"> </span> 081-996 4023</p>
-
-              <p><span class="pr-5"> </span>  081-996 4032</p>
-              <p><span class="pr-5"> </span>  081-996 4038</p>
-              <p><span class="pr-5"> </span>  081-996 1546</p>
-             
-                         
-              <p><span class="flag-icon flag-icon-kh mr-3"></span> (855) 012-808 203</span>
-
-            </div>
-          </div>
-      </div>
     </div>
-    <div class="row" style="border-top: 1px solid #ccc">
+      <hr>
+      <div class="row">
         <div data-toggle="tooltip" data-placement="top" class="col text-center" title="Developed by MAKTA IT Group [Prem Phalin(+855 98920094), Yem Viroth (+855 69566295)">
-          <center><small>&copy; Copyright 2020, TROPICANA RESORT & CASINO</small></center>
+            <p class="float-left pt-2">COPYRIGHT © THEYEON CAMBODIA ALL RIGHTS RESERVED.</p>
           </div>
     </div>
   </div>

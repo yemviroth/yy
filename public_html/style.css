@@ -31,8 +31,12 @@ body {
 }
 
 .text-under-product h6{
-  font-size: .72rem;
-  font-weight:500;
+  font-size: .7rem;
+    /* font-weight: 500; */
+    /* letter-spacing: 0.15em; */
+    margin-bottom: 0.5em;
+    /* text-transform: uppercase; */
+    line-height: 1.2rem;
 }
 
 .text-under-product .price{
@@ -49,6 +53,12 @@ body {
 .wrapper{
   width:90%;
   margin: 0 auto;
+}
+
+@media (max-width: 575.98px) {
+  .wrapper {
+      min-width: 100%;
+  }
 }
 
 .table-condensed{
@@ -487,7 +497,7 @@ border:0px solid gray;
 
 .content {
   position: relative;
-  width: 90%;
+  width: 100%;
   max-width: 400px;
   margin: auto;
   overflow: hidden;
