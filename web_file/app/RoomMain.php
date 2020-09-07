@@ -9,10 +9,7 @@ class RoomMain extends Model
     protected $fillable = ['name','photo1','photo2','photo3','photo4','photo5','photo6','photo7','published','created_by','updated_by'];
     protected $table = 'room_main';
     //
-    public function rooms()
-    {
-    	return $this->hasMany('App\Room','room_id');
-    }
+   
 
     public function details()
     {

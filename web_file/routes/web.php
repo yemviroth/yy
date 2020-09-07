@@ -108,6 +108,8 @@ Route::get('products/{product}','ProductController@show')->name('productdetail.s
 //Category
 Route::get('category/{cateId}','CategoryController@show')->name('category.show');
 
+//SubCategory
+Route::get('subCates/{subCateId}','CategoryController@show')->name('category/subcategory.show');
 
 Route::get('sitemap/',function (){ 
   return view('sitemap.sitemap');

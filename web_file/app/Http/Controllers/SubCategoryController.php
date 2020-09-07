@@ -16,7 +16,7 @@ use App\Http\Controllers\Controller;
 use Auth;
 use Image;
 
-class CategoryController extends Controller
+class SubCategoryController extends Controller
 {
     /**
      * Display a listing of the resource.
@@ -25,46 +25,7 @@ class CategoryController extends Controller
      */
     public function index()
     {
-        //
-        // return view ('rooms.index');
-        //$rooms=DB::select(DB::raw("SELECT r.*,d.text FROM rooms r LEFT JOIN room_details d on r.id=d.room_id ")) ;
-
-
-        // $rooms = DB::table('rooms')->orderBy('id','asc')->get();
-
-        // $details=DB::select(DB::raw("SELECT r.*,d.text,d.icon FROM rooms r LEFT JOIN room_details d on r.id=d.room_id ORDER BY r.id asc, d.`order` asc"));
-
-        //  return view ('rooms.index',compact('rooms'),compact('details'));
-
-
-        // $lang = Session::get('LANG');
-
-        // if (session()->has("LANG")) {
-        //     $lang = session()->get('LANG');     
-        // }
-
-        // if ( empty($lang)) {
-        //     $lang ='EN';
-        // }
-         
-        //  $product =   Product::all();
-                          
-        //                         ->get();
-                   
-         // $details = RoomDetail::with('RoomMain')->orderBy('id', 'asc')
-         //                        ->where('lang',$lang)
-         //                        ->get();
-                                
-
-        //  return view ('rooms.index',compact('rooms'),compact('details'));
-    
-                   
-         // $details = RoomDetail::with('RoomMain')->orderBy('id', 'asc')
-         //                        ->where('lang',$lang)
-         //                        ->get();
-                                
-
-        //  return view ('rooms.index',compact('rooms'),compact('details'));
+        
     }
 
     /**
@@ -74,8 +35,8 @@ class CategoryController extends Controller
      */
     public function create()
     {
-        // $mains = RoomMain::orderBy('id', 'asc')->get();
-        return view ('category.create');
+      
+        // return view ('category.create');
     }
 
     /**
@@ -128,29 +89,10 @@ class CategoryController extends Controller
      */
     public function show($id)
     {
-        // return view('roomdetail.index');
-
-        // $details=DB::select(DB::raw("SELECT r.*,d.text,d.icon FROM rooms r LEFT JOIN room_details d on r.id=d.room_id where r.id=$id  ORDER BY r.id asc, d.`order` asc")) ;
-
-        // return view ('roomdetail.index',compact('details'));
-       
-
-//         $rooms = Room::with('RoomMain')->orderBy('id', 'asc')
-//                 // ->where('lang',$lang)
-//                 ->where('id',$id)
-//                 ->get();
-
-//         $details = RoomDetail::with('RoomMain')->orderBy('id', 'asc')
-//                 ->where('lang',$lang)
-//                 //->where('id',$rooms[0]->RoomMain->id)
-//                 ->where('room_id',$rooms[0]->RoomMain->id)
-//                 ->get();          
-// // 
-//         // return view ('roomdetail.index',compact('rooms'));        
-//         return view ('roomdetail.index',compact('rooms'),compact('details')); 
-        $pros = Category::with('products','subCategories')->where('cateId',$id)->get();
+        
+        $subCates = Category::with('products','subCategories')->where('subCateId',$id)->get();
        // $pros = Product::where('cateId',$id)->get();
-        return view ('category.show',compact('pros')); 
+        return view ('subcategory.show',compact('$subCates')); 
         //dd($pros);
 // dd($pros);
     }

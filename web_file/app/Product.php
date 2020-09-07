@@ -8,13 +8,19 @@ class Product extends Model
 {
     // protected $timestamps = false;
     // protected $primaryKey =['proId'];
-    protected $fillable = ['proId','cateId','proName','proPrice','proImage','proHowTo','proDescription','proTextIntro','proOrderBy','createdBy','proIsInStock',];
+    protected $fillable = ['proId','proName','proPrice','proImage','proHowTo','proDescription','proTextIntro','proOrderBy','createdBy','proIsInStock','cateId','subCateId'];
     // protected $primaryKey =['proId'];
+    // protected $table = 'products';
     protected $primaryKey = 'proId';
 
-    public function category()
+    public function Category()
     {
-         return $this->belongsTo('App\Category','cateId');
+    	return $this->belongsTo('App\Category','cateId');
+    }
+
+    public function SubCategory()
+    {
+    	return $this->belongsTo('App\SubCategory','subCateId');
     }
 
 

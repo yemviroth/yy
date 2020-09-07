@@ -15,7 +15,7 @@
             @foreach ($pros as $pross)
               @foreach($pross->subCategories as $subcate)  
 
-                <a href="{{route('category/subcategory.show',$subcate->subCateId)}}">{{$subcate->subCateName}}</a>
+                <a href="/{{$subcate->subCateId}}">{{$subcate->subCateName}}</a>
               @endforeach
           @endforeach  
         </div>

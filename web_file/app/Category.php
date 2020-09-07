@@ -9,14 +9,16 @@ class Category extends Model
     protected $fillable = ['cateId','cateName','cateDescription','cateOrderBy','created_at','updated_at','cateCreatedBy'];
     protected $primaryKey = 'cateId';
 
-public function products()
-{
-return $this->hasMany('App\Product','proId');
-}
+    public function Products()
+    {
+    	return $this->hasMany('App\Product','cateId');
+    }
+
+
 
 public function subCategories()
 {
-return $this->hasMany('App\Category','cateId');
+return $this->hasMany('App\SubCategory','cateId');
 }
     // public function details()
     // {

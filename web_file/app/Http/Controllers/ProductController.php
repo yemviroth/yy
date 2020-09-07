@@ -7,6 +7,7 @@ use Illuminate\Support\Facades\DB;
 use Illuminate\Http\Request;
 use App\Product;
 use App\Category;
+use App\SubCategory;
 use App\Room;
 use App\RoomDetail;
 use App\Http\Controllers\Controller;
@@ -199,13 +200,24 @@ class ProductController extends Controller
     public function show($id)
     {
          // $product = Product::findOrFail($id);
-         $products = DB::table('products')
+
+        $products = DB::table('products')
          ->where('proId',$id)
-         ->get();
+        ->get();
 
          $cates = DB::table('category')
          ->orderBy('cateId','desc')
          ->get();
+
+     
+    //     $subcate=$categ->subCateName;
+
+    // //     $categ = Category::with('products')->where('cateId',1)->first();
+    // //    $prod = $categ->proName;
+    //     dd($subcate);
+        
+
+
 // $category=Category::with('subCategories')->where('cateId',$id)->first();
 // dd($category);
 // $category = Category::with('subCategories')->find(1);
@@ -213,6 +225,7 @@ class ProductController extends Controller
 
 
        return view ('productdetail.show',compact('products','cates'));
+    //    return view ('productdetail.show',compact('cates'));
     }
 
     /**
