@@ -9,25 +9,19 @@
         <hr>
 
 <section class="p-2" style="background: #fff">
-    <div class="header-title pt-4 text-center">{{$pros[0]->cateName}}</div>
+    <div class="header-title pt-4 text-center">{{$pros[0]->subCategories_Category->cateName }}</div>
         <div class="text-center pt-2">
-        
-            @foreach ($pros as $pross)
-              @foreach($pross->subCategories as $subcate)  
+           @foreach ($category as $cate)
+              @foreach($cate->subCategories as $subcate)  
 
-                <a href="/{{$subcate->subCateId}}">{{$subcate->subCateName}}</a>
+                <a href="{{route('category/subcategory.show',$subcate->subCateId)}}">{{$subcate->subCateName}}</a>
               @endforeach
           @endforeach  
         </div>
-      
-     
-    <div class="wrapper">
-
-      <div class="container-fluid">
-
-          <div class="row">
-            @foreach ($pros as $pross)
-               @foreach($pross->products as $pro)     
+        </div>
+        <div class="row">
+           @foreach ($pros as $pross)
+               @foreach($pross->subCategories_product as $pro)     
             <div class="col-sm-4 col-md-4 col-6 mt-3">
                  
                  <div class="">
@@ -64,10 +58,8 @@
                </div>
            </div>
                 @endforeach
-
             @endforeach
-
-          </div> 
+          </div>
         </section>
         </div>
       </div>

@@ -96,6 +96,9 @@ Route::middleware(['auth'])->group(function () {
     Route::get('category/{cateId}/edit','CategoryController@edit')->name('category.edit');
     Route::PUT('category/update/{cateId}','CategoryController@update')->name('category.update');
     Route::match(['delete'],'category/{cateId}','CategoryController@destroy')->name('category.destroy');
+
+    //subcate
+    Route::post('subcat', 'CategoryController@subCat')->name('subcat');
 });
 
 Route::get('rooms','RoomsController@index')->name('rooms.index');
@@ -109,7 +112,8 @@ Route::get('products/{product}','ProductController@show')->name('productdetail.s
 Route::get('category/{cateId}','CategoryController@show')->name('category.show');
 
 //SubCategory
-Route::get('subCates/{subCateId}','CategoryController@show')->name('category/subcategory.show');
+Route::get('subCates/{subCateId}','CategoryController@subCate_show')->name('category/subcategory.show');
+
 
 Route::get('sitemap/',function (){ 
   return view('sitemap.sitemap');

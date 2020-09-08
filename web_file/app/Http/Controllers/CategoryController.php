@@ -8,8 +8,10 @@ use DB;
 
 // use Illuminate\Support\Facades\DB;
 use Illuminate\Http\Request;
+use Illuminate\Support\Facades\Route;
 use App\Product;
 use App\Category;
+use App\subCategory;
 use App\RoomDetail;
 use App\Http\Controllers\Controller;
 
@@ -153,6 +155,31 @@ class CategoryController extends Controller
         return view ('category.show',compact('pros')); 
         //dd($pros);
 // dd($pros);
+    }
+
+    public function subCate_show($id){
+        $category = Category::with('products','subCategories')->where('cateId',$id)->get();
+        $pros = subCategory::with('subCategories_product','subCategories_Category')
+        ->where('subCateId',$id)
+        ->get();
+       // $pros = Product::where('cateId',$id)->get();
+        return view ('category/subcategory.show',compact('pros','category')); 
+        // dd($pros->subCategories_product);
+      
+    }
+
+    public function subCate(Request $request)
+    {
+        $parent_id = $request->cateId;
+         
+        $subcategories = Category::where('cateId',$parent_id)
+                              ->with('subcategories')
+                              ->get();
+        return response()->json([
+            'subcategories' => $subcategories
+        ]);
+
+        
     }
 
     /**

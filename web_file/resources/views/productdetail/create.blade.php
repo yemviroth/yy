@@ -23,14 +23,59 @@ TROPICANA - ROOMS
             <div class="form-group row">
                 <label for="" class="col-md-2 col-form-label text-md-right">Product Category :</label>
                 <div class="col-md-10">
-                <select name="cateId" class="custom-select my-1 mr-sm-2" id="inlineFormCustomSelectPref">
-                            <!-- <option selected value="">Choose Product Category</option> -->
+                <select name="cateId" class="custom-select my-1 mr-sm-2" id="category">
+                            <option selected value="">Choose Product Category</option>
                             @foreach($cate as $cat)
                             <option value="{{$cat->cateId}}">{{$cat->cateName}}</option>
                             @endforeach
                     </select>
                 </div>
             </div>
+
+             <div class="form-group row">
+                <label for="subCateId" class="col-md-2 col-form-label text-md-right">Sub Category :</label>
+                <div class="col-md-10">
+                <select name="subCateId" class="custom-select my-1 mr-sm-2" id="subcategory">
+                            <!-- <option selected value="">Choose Product Category</option> -->
+                           
+                    </select>
+                </div>
+            </div>
+
+        <script type="text/javascript">
+            $.ajaxSetup({
+                headers: {
+                    'X-CSRF-TOKEN': $('meta[name="csrf-token"]').attr('content')
+                }
+            });
+            $(document).ready(function () {
+              
+                $('#category').on('change',function(e) {
+                  
+                 var cat_id = e.target.value;
+                 $.ajax({
+                        
+                       url:"{{ route('subcat') }}",
+                       type:"POST",
+                       data: {
+                           cateId: cateId
+                        },
+                       
+                       success:function (data) {
+                        $('#subcategory').empty();
+                        $.each(data.subcategories[0].subcategories,function(index,subcategory){
+                             
+                            $('#subcategory').append('<option value="'+subcategory.subCateId+'">'+subcategory.subCateName+'</option>');
+                        })
+                       }
+                   })
+                });
+            });
+        </script>
+
+
+
+
 
             <div class="form-group row">
                 <label for="proName" class="col-md-2 form-label text-md-right">Product Name :</label>
