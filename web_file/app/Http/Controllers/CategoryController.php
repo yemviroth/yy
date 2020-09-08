@@ -168,16 +168,11 @@ class CategoryController extends Controller
       
     }
 
-    public function subCate(Request $request)
+    public function subCate($cateId)
     {
-        $parent_id = $request->cateId;
-         
-        $subcategories = Category::where('cateId',$parent_id)
-                              ->with('subcategories')
-                              ->get();
-        return response()->json([
-            'subcategories' => $subcategories
-        ]);
+        $data = SubCategory::where('cateId',$cateId)->get();
+        \Log::info($data);
+        return response()->json(['data' => $data]);
 
         
     }
@@ -272,8 +267,10 @@ class CategoryController extends Controller
     public function list()
     {
         $cates = Category::orderBy('cateOrderBy','asc')->get();
+        // $subcates = Category::with('products','subCategories')->where('cateId',$cates[0]->cateId)->get();
+        $subcates = SubCategory::orderBy('cateId','asc')->get();
         // DB::table('category')->orderBy('cateId','asc')->get();
-        return view('category.list',compact('cates'));
+        return view('category.list',compact('cates','subcates'));
         
         //return view ('rooms.list')->with('rooms',$rooms);
     }

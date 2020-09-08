@@ -79,14 +79,39 @@ TROPICANA - ROOMS
                     <table class="table" >
                     <tr class="thead-dark">
                         <th>Category Name</th>
+                        <th>Sub Category</th>
                         <th>OrderBy</th>
                         <th>Description</th>
                         <th>Action</th>
                     
                     </tr>
                     @foreach($cates as $cate)
+                       
                     <tr style="height:10px">
-                        <td>{{$cate->cateName}}</td>
+                        <td>
+                            {{$cate->cateName}}
+                           
+                        </td>
+                        <td>
+                        <table class="table-striped table-sm">
+                   
+                                <tr>
+                                    <th>Category ID</th>
+                                    <th>Sub Category Name</th>
+                                </tr>
+                     
+
+                                @foreach($subcates as $subcate)
+                                    @if($cate->cateId == $subcate->cateId) 
+                                <tr>
+                                    <td>{{$subcate->subCateId}}</td>
+                                    <td>{{$subcate->subCateName}}</td>
+                                </tr>
+                                    @endif
+                                @endforeach
+                            </table>
+                        
+                        </td>
                         <td>{{$cate->cateOrderBy}}</td>
                         <td>{{$cate->cateDescription}}</td>
                        
@@ -103,6 +128,7 @@ TROPICANA - ROOMS
                         </td>
 
                     </tr>
+                      
                     @endforeach                        
                                         
                 </table>

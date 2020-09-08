@@ -35,43 +35,45 @@ TROPICANA - ROOMS
              <div class="form-group row">
                 <label for="subCateId" class="col-md-2 col-form-label text-md-right">Sub Category :</label>
                 <div class="col-md-10">
-                <select name="subCateId" class="custom-select my-1 mr-sm-2" id="subcategory">
-                            <!-- <option selected value="">Choose Product Category</option> -->
+                <select name="subCateId" class="custom-select my-1 mr-sm-2" id="subCategory">
+                <option value="0">-- Select Sub Category --</option>
                            
                     </select>
                 </div>
             </div>
 
         <script type="text/javascript">
-            $.ajaxSetup({
-                headers: {
-                    'X-CSRF-TOKEN': $('meta[name="csrf-token"]').attr('content')
+        $(document).ready(function () {
+           $('#category').change(function () {
+             var id = $(this).val();
+
+             $('#subCategory').find('option').not(':first').remove();
+
+             $.ajax({
+                url:'{{route('categories','')}}/'+id,
+                type:'get',
+                dataType:'json',
+                success:function (response) {
+                    var len = 0;
+                    if (response.data != null) {
+                        len = response.data.length;
+                    }
+
+                    if (len>0) {
+                        for (var i = 0; i<len; i++) {
+                             var id = response.data[i].subCateId;
+                             var name = response.data[i].subCateName;
+
+                             var option = "<option value='"+id+"'>"+name+"</option>"; 
+
+                             $("#subCategory").append(option);
+                        }
+                    }
                 }
-            });
-            $(document).ready(function () {
-              
-                $('#category').on('change',function(e) {
-                  
-                 var cat_id = e.target.value;
-                 $.ajax({
-                        
-                       url:"{{ route('subcat') }}",
-                       type:"POST",
-                       data: {
-                           cateId: cateId
-                        },
-                       
-                       success:function (data) {
-                        $('#subcategory').empty();
-                        $.each(data.subcategories[0].subcategories,function(index,subcategory){
-                             
-                            $('#subcategory').append('<option value="'+subcategory.subCateId+'">'+subcategory.subCateName+'</option>');
-                        })
-                       }
-                   })
-                });
-            });
-        </script>
+             })
+           });
+        });
+    </script>
 
 
 

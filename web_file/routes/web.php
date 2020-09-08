@@ -98,7 +98,23 @@ Route::middleware(['auth'])->group(function () {
     Route::match(['delete'],'category/{cateId}','CategoryController@destroy')->name('category.destroy');
 
     //subcate
-    Route::post('subcat', 'CategoryController@subCat')->name('subcat');
+    // Route::post('subcat', 'CategoryController@subCat')->name('subcat');
+//     Route::post('/subcat', function (Request $request) {
+
+//       $cateId = $request->cateId;
+      
+//       $subcategories = Category::where('cateId',$cateId)
+//                             ->with('subcategories')
+//                             ->get();
+  
+//       return response()->json([
+//           'subcategories' => $subcategories
+//       ]);
+     
+//   })->name('subcat');
+// 
+
+Route::get('categories/{cateId}','CategoryController@subCate')->name('categories');
 });
 
 Route::get('rooms','RoomsController@index')->name('rooms.index');
