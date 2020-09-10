@@ -17,6 +17,14 @@ body {
 .text-kh{
   font-family: Battambang,Arial,Helvetica,sans-serif;
   color:#000;
+  font-size: .9rem;
+  /* line-height: 2rem; */
+}
+
+.text-kh .price{
+  font-weight: bold;
+  font-size: 2rem;
+  /* line-height: 2rem; */
 }
 
 .text-kh-bold{
@@ -84,8 +92,8 @@ body {
 } */
 
 .img-view img{
-  width: 70%;
-  height: 70%;
+  width: 50%;
+  height: 50%;
 }
 .nav-me{
   padding-left: 3rem;

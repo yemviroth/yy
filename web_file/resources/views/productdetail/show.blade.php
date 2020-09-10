@@ -35,7 +35,7 @@
       
       <div class="row pt-5">
 
-        <div class="col-md-2 col-sm-12 col-xs-12 d-none d-sm-block d-md-block">
+        <div class="col-md-2 col-sm-12 col-12 d-none d-sm-block d-md-block">
           <h6 class="text-kh-bold"><  Previous   Next ></h6>
           <div class="">
           <div class="img-view">
@@ -44,22 +44,22 @@
           </div>
         </div>
 
-        <div class="col-md-5 col-sm-12 col-xs-12">
+        <div class="col-md-5 col-sm-12 col-12">
         <img class="content-image" src="{{asset('images/product/'.$products[0]->proImage)}}">
         </div>
 
-        <div class="col-md-5 col-sm-12 col-xs-12">
+        <div class="col-md-5 col-sm-12 col-12 text-kh">
         
                 <h5 class="font-weight-bold">{!!$products[0]->proName!!}</h5>
-                <hr>
-                <h6>Price : {{$products[0]->proPrice}}</h6>
-                <p>{{$products[0]->proTextIntro}}</p>
-                <hr>
-                <h6 class="text-kh-bold">How To</h6>
-                <p>{{$products[0]->proHowTo}}</p>
-                <h6 class="text-kh-bold">Description</h6>
-                <p>{!!$products[0]->proDescription!!}</p>
-                <hr>
+                
+                <h6 class="pt-2 price">${{$products[0]->proPrice}}</h6>
+                <p class="pt-3">{!!$products[0]->proTextIntro!!}</p>
+                
+                <h6 class="text-kh-bold">របៀបប្រើ</h6>
+                <p>{!!$products[0]->proHowTo!!}</p>
+                <h6 class="text-kh-bold">បរិយាយ </h6>
+                <div class="text-kh">{!!$products[0]->proDescription!!}</div>
+                
                 <h6 class="text-kh-bold">Total : </h6>
           
         </div>

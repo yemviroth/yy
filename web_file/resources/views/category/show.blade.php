@@ -24,7 +24,13 @@
     <div class="wrapper">
 
       <div class="container-fluid">
-
+      @foreach ($pros as $pross)
+            <div class="text-kh">
+              <p class="font-weight-bold">ចំនួនផលិតផល :   {{$pros[0]->products->count()}}</p>
+            </div>      
+              
+               
+      @endforeach
           <div class="row">
             @foreach ($pros as $pross)
                @foreach($pross->products as $pro)     

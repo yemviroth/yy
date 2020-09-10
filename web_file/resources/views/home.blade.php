@@ -118,7 +118,7 @@ marqueeInit({
           <div class="row">
             @foreach ($product as $pro)
                     
-                <div class="col-sm-4 col-md-4 col-6 p-1">
+                <div class="col-sm-4 col-md-4 col-6 p-1 text-kh">
                  
                       <div class="">
                         <div class="content">
