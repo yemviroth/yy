@@ -94,18 +94,24 @@ TROPICANA - ROOMS
                         </td>
                         <td>
                         <table class="table-striped table-sm">
-                   
+                
+                     
                                 <tr>
-                                    <th>Category ID</th>
-                                    <th>Sub Category Name</th>
+                                    <th>ID</th>
+                                    <th>Sub Name</th>
+                                    <th>Action</th>
                                 </tr>
                      
+                   
 
                                 @foreach($subcates as $subcate)
                                     @if($cate->cateId == $subcate->cateId) 
                                 <tr>
                                     <td>{{$subcate->subCateId}}</td>
                                     <td>{{$subcate->subCateName}}</td>
+                                    <td>
+                                        <button class="btn btn-sm btn-danger">edit</button>
+                                    </td>
                                 </tr>
                                     @endif
                                 @endforeach
