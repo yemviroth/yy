@@ -1,12 +1,17 @@
 /* @import url('https://fonts.googleapis.com/css?family=Koulen|Roboto:400,700|Suwannaphum'); */
 @import url('https://fonts.googleapis.com/css?family=Hanuman:400,700');
+@import url('https://fonts.googleapis.com/css?family=Kantumruy:400,700|Ubuntu:400,500,700&subset=khmer');
 body {
        font-family: 'Roboto',nanum gothic,sans-serif,dotum,verdana,arial;
        /* font-family: "Suwannaphum", "Roboto"; */
 }
+p {
+  font-family: Ubuntu,Kantumruy,sans-serif!important;
+}
 .header-title{
    /* font-family: Koulen,Arial,Helvetica,sans-serif !important; */
-   font-family: 'Francois One','Bayon'!important;
+   /* font-family: 'Francois One','Bayon'!important; */
+   font-family: Ubuntu,Kantumruy,sans-serif;
    font-size: 1.4rem;
 }
 
@@ -15,7 +20,8 @@ body {
 }
 
 .text-kh{
-  font-family: Battambang,Arial,Helvetica,sans-serif;
+  /* font-family: Battambang,Arial,Helvetica,sans-serif; */
+  font-family: Ubuntu,Kantumruy,sans-serif;
   color:#000;
   font-size: .9rem;
   /* line-height: 2rem; */
@@ -28,7 +34,8 @@ body {
 }
 
 .text-kh-bold{
-  font-family: 'Francois One','Bayon'!important;
+  /* font-family: 'Francois One','Bayon'!important; */
+  font-family: Ubuntu,Kantumruy,sans-serif;
   font-weight: bold;
 }
 
@@ -102,7 +109,8 @@ body {
       font-size: 13px;
       /* font-family: 'Francois One','Bayon'!important; */
       /* font-family: "Suwannaphum", "Roboto"; */
-      font-family: "Hanuman", "Khmer OS";
+      /* font-family: "Hanuman", "Khmer OS"; */
+      font-family: Ubuntu,Kantumruy,sans-serif;
 }
 .title{
 	color: #057374;
@@ -212,7 +220,7 @@ body {
     height: 100%;
     /* font-weight: 300; */
     font-size: 18px;
-    font-family: 'Francois One','Bayon'!important;
+    /* font-family: 'Francois One','Bayon'!important; */
     text-align: left;
     color: #0b0000;
 

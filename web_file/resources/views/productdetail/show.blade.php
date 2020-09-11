@@ -44,11 +44,11 @@
           </div>
         </div>
 
-        <div class="col-md-5 col-sm-12 col-12">
+        <div class="pr-5 col-md-5 col-sm-12 col-12">
         <img class="content-image" src="{{asset('images/product/'.$products[0]->proImage)}}">
         </div>
 
-        <div class="col-md-5 col-sm-12 col-12 text-kh">
+        <div class="pl-5 col-md-5 col-sm-12 col-12 text-kh">
         
                 <h5 class="font-weight-bold">{!!$products[0]->proName!!}</h5>
                 
