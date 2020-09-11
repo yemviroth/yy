@@ -104,7 +104,7 @@ p {
 }
 .nav-me{
   padding-left: 3rem;
-	/* font-weight: bold; */
+	 font-weight: bold  !important; 
     
       font-size: 13px;
       /* font-family: 'Francois One','Bayon'!important; */
@@ -215,14 +215,14 @@ p {
 } 
 .navbar .nav-item .nav-link
 {
-     display: block;
-    width: 100%;
-    height: 100%;
-    /* font-weight: 300; */
-    font-size: 18px;
-    /* font-family: 'Francois One','Bayon'!important; */
-    text-align: left;
-    color: #0b0000;
+        display: block;
+     width: 100%;
+     height: 100%;
+     font-weight: 600;
+     font-size: 1.1rem;
+     /* font-family: 'Francois One','Bayon'!important; */
+     text-align: left;
+     color: #0b0000;
 
     
 }

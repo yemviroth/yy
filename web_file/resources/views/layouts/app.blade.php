@@ -123,18 +123,18 @@
                 
                 
                 ">
-                <a class="nav-link"   href="{{route('rooms.index')}}">{{Config::get('mysiteVars.menu_rooms.'. session()->get('LANG'))}}</a>
+                <a class="nav-link"   href="{{route('rooms.index')}}">ប្រវត្តិ Branh</a>
               </li>
                 <li class="nav-item {{ (\Request::route()->getName()=='service.index' ? 'active' : '') }}">
-                <a class="nav-link" href="{{route('service.index')}}">{{Config::get('mysiteVars.menu_services.'. session()->get('LANG'))}}</a>
+                <a class="nav-link" href="{{route('service.index')}}">កំណត់ចំណាំ</a>
               </li>
             </li>
                 <li class="nav-item {{ (\Request::route()->getName()=='gallery.index' ? 'active' : '') }}">
-                <a class="nav-link" href="{{route('gallery.index')}}">{{Config::get('mysiteVars.menu_gallerys.'. session()->get('LANG'))}}</a>
+                <a class="nav-link" href="{{route('gallery.index')}}">សំណួរចំលើយ</a>
               </li>
             
                <li class="nav-item {{ (\Request::route()->getName()=='contact.index' ? 'active' : '') }}">
-                <a class="nav-link" href="{{route('contact.index')}}">{{Config::get('mysiteVars.menu_contact_us.'. session()->get('LANG'))}}</a>
+                <a class="nav-link" href="{{route('contact.index')}}">ទំនាក់ទំនង</a>
               </li>
             
             </ul>

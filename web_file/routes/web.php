@@ -129,6 +129,9 @@ Route::get('category/{cateId}','CategoryController@show')->name('category.show')
 
 //SubCategory
 Route::get('subCates/{subCateId}','CategoryController@subCate_show')->name('category/subcategory.show');
+Route::get('category/subCates/create','CategoryController@subCate_create')->name('category/subcategory.create');
+Route::POST('category/subCates/store','CategoryController@subCate_store')->name('category/subcategory.store');
+
 
 
 Route::get('sitemap/',function (){ 

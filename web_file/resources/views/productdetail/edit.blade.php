@@ -30,7 +30,7 @@ TROPICANA - ROOMS
             <div class="form-group row">
                 <label for="" class="col-md-2 col-form-label text-md-right">Product Category :</label>
                 <div class="col-md-10">
-                <select name="cateId" class="custom-select my-1 mr-sm-2" id="inlineFormCustomSelectPref">
+                 <select name="cateId" class="custom-select my-1 mr-sm-2" id="category">
                             <option selected>Choose Product Category</option>
                             @foreach($cates as $cat)
                             @if ($products[0]->cateId == $cat->cateId)
@@ -42,6 +42,18 @@ TROPICANA - ROOMS
                     </select>
                 </div>
             </div>
+
+            <div class="form-group row">
+                    <label for="subCateId" class="col-md-2 col-form-label text-md-right">Sub Category :</label>
+                    <div class="col-md-10">
+                        <select name="subCateId" class="custom-select my-1 mr-sm-2" id="subCategory">
+                            <option value="0">-- Select Sub Category --</option>
+                                   
+                        </select>
+                    </div>
+            </div>
+
+
             
             <div class="form-group row">
                 <label for="proName" class="col-md-2 col-form-label text-md-right">Product Name :</label>
@@ -241,6 +253,40 @@ $(".custom-file-input").on("change", function() {
 </script>
 </script>
 
+
+
+<script type="text/javascript">
+        $(document).ready(function () {
+           $('#category').change(function () {
+             var id = $(this).val();
+
+             $('#subCategory').find('option').not(':first').remove();
+
+             $.ajax({
+                url:'{{route('categories','')}}/'+id,
+                type:'get',
+                dataType:'json',
+                success:function (response) {
+                    var len = 0;
+                    if (response.data != null) {
+                        len = response.data.length;
+                    }
+
+                    if (len>0) {
+                        for (var i = 0; i<len; i++) {
+                             var id = response.data[i].subCateId;
+                             var name = response.data[i].subCateName;
+
+                             var option = "<option value='"+id+"'>"+name+"</option>"; 
+
+                             $("#subCategory").append(option);
+                        }
+                    }
+                }
+             })
+           });
+        });
+    </script>
 
 <!-- script input image  -->
 

@@ -80,6 +80,7 @@ class CategoryController extends Controller
         return view ('category.create');
     }
 
+
     /**
      * Store a newly created resource in storage.
      *
@@ -176,6 +177,49 @@ class CategoryController extends Controller
 
         
     }
+
+    public function subCate_create()
+    {
+        // $mains = RoomMain::orderBy('id', 'asc')->get();
+        $cates = Category::orderBy('cateId','desc')->get();
+        return view ('category/subcategory.create',compact('cates'));
+    }
+
+    public function subCate_store(Request $request)
+    {
+         $niceNames = [
+            // 'cateName' => 'Category Name',
+            // 'price' => 'Room Price',
+            // 'description' => 'Description',     
+            // 'name_th' => 'Room Name Thai',            
+            // 'name_ch' => 'Room Name China',
+            // 'description_th' => 'Description Thai',                      
+            // 'description_ch' => 'Description China',                      
+
+        ]; 
+
+        $request->validate([
+            // 'cateName' => 'required',
+            // 'name_th' => 'required',
+            // 'name_ch' => 'required',
+            // 'price' => 'required',
+            // 'description' => 'required',
+            // 'description_th' => 'required',
+            // 'description_ch' => 'required',
+            
+        ],[],$niceNames);
+
+        if (Auth::check()) {
+            $request->request->add(['cateCreated_by' => Auth::user()->name]);                    
+
+        SubCategory::create($request->all());
+        return redirect()->route('category.list')
+                             ->with('success', 'Category created successfully');
+
+      }      
+    }
+
+
 
     /**
      * Show the form for editing the specified resource.

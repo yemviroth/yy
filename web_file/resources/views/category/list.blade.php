@@ -49,7 +49,7 @@ TROPICANA - ROOMS
         <div class="form-group row">
             <div class="col-12 col-md-8">
                 <a href="{{ route('category.create') }}" class="btn btn-success"><i class="fas fa-plus-square"></i> New Category</a>                                
-                <a href="{{ route('category.create') }}" class="btn btn-info "><i class="fas fa-plus-square"></i> New Sub Category</a>                                
+                <a href="{{ route('category/subcategory.create') }}" class="btn btn-info "><i class="fas fa-plus-square"></i> New Sub Category</a>                                
             </div> 
 
             <div class="col-12 col-md-4">

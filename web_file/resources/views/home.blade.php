@@ -6,7 +6,7 @@
 <br><br><br><br>
  <!-- slide -->
   <section>
-    <div id="carouselExampleCaptions" class="carousel slide" data-ride="carousel">
+    <div id="carouselExampleCaptions" class="carousel slide carousel-fade" data-ride="carousel">
   <ol class="carousel-indicators">
     <li data-target="#carouselExampleCaptions" data-slide-to="0" class="active"></li>
     <li data-target="#carouselExampleCaptions" data-slide-to="1"></li>
@@ -179,7 +179,7 @@ responsive:{
 0:{
    items:1
 },
-600:{
+100:{
    items:3
 // },
 // 1000:{

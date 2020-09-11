@@ -30,7 +30,7 @@
     <div class="container-fluid"  style="padding-top:8%;">
       
         
-      <div class="text-center header-title">Skin Care</div>
+      <div class="text-center header-title pt-5">Skin Care</div>
       
       
       <div class="row pt-5">
