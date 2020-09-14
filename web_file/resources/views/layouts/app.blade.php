@@ -21,6 +21,7 @@
   <link rel="stylesheet" href="{{asset('js/simple-lightbox.min.css')}}">
 
   <link rel="stylesheet" href="{{ asset('style.css')}}">
+  <link rel="stylesheet" href="{{ asset('css/sidebarNavigation.css')}}">
     <link rel="stylesheet" type="text/css" href="https://cdnjs.cloudflare.com/ajax/libs/flag-icon-css/3.3.0/css/flag-icon.min.css">
     
     <!-- Optional JavaScript -->
@@ -29,7 +30,7 @@
     <script src="{{asset('js/popper.min.js') }}"></script>
     <script src="{{asset('js/bootstrap.min.js')}}"></script>
 
-
+    <script src="{{asset('js/sidebarNavigation.js')}}"></script>
 
     <script src="{{asset('owlcarousel/owl.carousel.min.js')}}"></script>
     <script src="{{asset('js/crawler.js')}}"></script>
@@ -76,7 +77,11 @@
       @endphp
       
 
+      <!-- sid nav -->
       
+    
+
+      <!-- end side nav -->
      
 
         <nav class="navbar navbar-expand-lg navbar-light bg-header" id="header" >
