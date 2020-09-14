@@ -24,13 +24,21 @@
     <div class="wrapper">
 
       <div class="container-fluid">
-      @foreach ($pros as $pross)
-            <div class="text-kh">
-              <p class="font-weight-bold">ចំនួនផលិតផល :   {{$pros[0]->products->count()}}</p>
-            </div>      
-              
-               
-      @endforeach
+        <div class="row pt-4">
+          <div class="col-md-6">
+              @foreach ($pros as $pross)
+                    <div class="text-kh">
+                      <p class="font-weight-bold">ចំនួនផលិតផល :   {{$pros[0]->products->count()}}</p>
+                    </div>      
+                      
+                      
+              @endforeach
+          </div>
+          <div class="col-md-6 text-right text-kh">
+            Sort : <a href="{{url()->current()}}/?sort=1">ផលិតផលថ្មី </a> | <a href="{{url()->current()}}/?sort=2"">ឈ្មោះផលិតផល </a>| <a href="{{url()->current()}}/?sort=3"">តំលៃខ្ពស់ </a>| <a href="{{url()->current()}}/?sort=4"">តំលៃទាប </a>
+          </div>
+        </div>
+     
           <div class="row">
             @foreach ($pros as $pross)
                @foreach($pross->products as $pro)     

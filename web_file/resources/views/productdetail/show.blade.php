@@ -50,14 +50,14 @@
 
         <div class="pl-5 col-md-5 col-sm-12 col-12 text-kh">
         
-                <h5 class="font-weight-bold">{!!$products[0]->proName!!}</h5>
+                <h5 class="font-weight-normal">{!!$products[0]->proName!!}</h5>
                 
-                <h6 class="pt-2 price">${{$products[0]->proPrice}}</h6>
-                <p class="pt-3">{!!$products[0]->proTextIntro!!}</p>
+                <h6 class="pt-3 price">${{$products[0]->proPrice}}</h6>
+                <p class="pt-3 text-muted">{!!$products[0]->proTextIntro!!}</p>
                 
-                <h6 class="text-kh-bold">របៀបប្រើ</h6>
+                <h6 class="text-kh-bold pt-3">របៀបប្រើ</h6>
                 <p>{!!$products[0]->proHowTo!!}</p>
-                <h6 class="text-kh-bold">បរិយាយ </h6>
+                <h6 class="text-kh-bold pt-3">បរិយាយ </h6>
                 <div class="text-kh">{!!$products[0]->proDescription!!}</div>
                 
                 <h6 class="text-kh-bold">Total : </h6>

@@ -12,6 +12,8 @@
     <link href='https://fonts.googleapis.com/css?family=Bayon|Francois+One' rel='stylesheet' type='text/css'>
     <!-- Bootstrap CSS -->
     <link rel="stylesheet" href="{{asset('css/bootstrap.css')}}">
+    <link rel="stylesheet" href="{{asset('css/bootstrap-grid.css')}}">
+
     <link rel="stylesheet" type="text/css" href="{{asset('fontawesome-free-5.12.0-web/css/all.min.css')}}  ">
     <link rel="stylesheet" href="{{asset('owlcarousel/owl.carousel.min.css')}} ">
 <link rel="stylesheet" href="{{asset('owlcarousel/owl.theme.default.min.css')}}">
@@ -26,6 +28,8 @@
     <script src="{{asset('js/jquery-3.4.1.slim.min.js')}}"></script>
     <script src="{{asset('js/popper.min.js') }}"></script>
     <script src="{{asset('js/bootstrap.min.js')}}"></script>
+
+
 
     <script src="{{asset('owlcarousel/owl.carousel.min.js')}}"></script>
     <script src="{{asset('js/crawler.js')}}"></script>

@@ -76,7 +76,7 @@ TROPICANA - ROOMS
                                 <td>{{$pro->updated_at}}</td>
                                 <td>{{$pro->createdBy}}</td>
                                 <td>
-                                <form action="" method="POST">
+                                <form action="{{route('productdetail.destroy',$pro->proId)}}" method="POST">
                                                             <a  style="font-size:8px;" class="btn btn-sm btn-success" href="{{route('productdetail.show', $pro->proId)}}"><i class="fas fa-eye"></i></a>
                                                             <a  style="font-size:8px;" class="btn btn-sm btn-primary" href="{{route('productdetail.edit', $pro->proId)}}"><i class="fas fa-edit"></i></a>
                                                             @csrf

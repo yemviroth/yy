@@ -2,11 +2,7 @@
 
 @section('content')
 <br><br><br><br>
- <!-- slide -->
-  
 
-       
-        <hr>
 
 <section class="p-2" style="background: #fff">
     <div class="header-title pt-4 text-center">{{$pros[0]->subCategories_Category->cateName }}</div>
@@ -19,6 +15,24 @@
           @endforeach  
         </div>
         </div>
+    <div class="wrapper">
+      <div class="container-fluid">
+        <div class="row pt-4">
+            <div class="col-md-6">
+                <div class="text-kh">
+                        <p class="font-weight-bold">ចំនួនផលិតផល :   {{$pros[0]->subCategories_product->count() }}</p>
+                      </div>   
+            </div>
+            <div class="col-md-6 text-right text-kh">
+              Sort : <a href="{{url()->current()}}/?sort=1">ផលិតផលថ្មី </a> | <a href="{{url()->current()}}/?sort=2"">ឈ្មោះផលិតផល </a>| <a href="{{url()->current()}}/?sort=3"">តំលៃខ្ពស់ </a>| <a href="{{url()->current()}}/?sort=4"">តំលៃទាប </a>
+            </div>
+          </div>
+        </div> 
+    </div>
+      
+        
+
+
         <div class="row">
            @foreach ($pros as $pross)
                @foreach($pross->subCategories_product as $pro)     

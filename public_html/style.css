@@ -76,6 +76,19 @@ p {
   }
 }
 
+
+@media (max-width: 992px){
+  .col-md-5 {
+      max-width: 100% !important;
+      margin: 0 auto !important;
+      flex: auto;}
+  .d-md-block {
+      display: none !important;
+  }
+}
+
+
+
 .table-condensed{
   font-size: 13px !important;
 }
@@ -97,6 +110,10 @@ p {
 @media (min-width: 1200px){
   .wrapper{width: 1170px;max-width: 1170px; margin: 0 auto;}
 } */
+
+
+
+
 
 .img-view img{
   width: 50%;

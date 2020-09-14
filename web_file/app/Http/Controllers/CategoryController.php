@@ -131,41 +131,85 @@ class CategoryController extends Controller
      */
     public function show($id)
     {
-        // return view('roomdetail.index');
 
-        // $details=DB::select(DB::raw("SELECT r.*,d.text,d.icon FROM rooms r LEFT JOIN room_details d on r.id=d.room_id where r.id=$id  ORDER BY r.id asc, d.`order` asc")) ;
+        // $pros = Category::with('products','subCategories')->where('cateId',$id)->get();
 
-        // return view ('roomdetail.index',compact('details'));
-       
+        $pros = Category::with(['products' => function ($q){
+            $q->orderBy('proId', 'DESC');
+        }],'subCategories')->where('cateId',$id)
+        ->get();
 
-//         $rooms = Room::with('RoomMain')->orderBy('id', 'asc')
-//                 // ->where('lang',$lang)
-//                 ->where('id',$id)
-//                 ->get();
+        if(request()->has('sort')){
+            if(request('sort')==1){
+                $pros = Category::with(['products' => function ($q){
+                    $q->orderBy('proId', 'DESC');
+                }],'subCategories')->where('cateId',$id)
+                ->get();
+            }else if(request('sort')==2){
+                $pros = Category::with(['products' => function ($q){
+                    $q->orderBy('proName');
+                }],'subCategories')->where('cateId',$id)
+                ->get();
+            }else if(request('sort')==3){
+                $pros = Category::with(['products' => function ($q){
+                    $q->orderBy('proPrice','desc');
+                }],'subCategories')->where('cateId',$id)
+                ->get();
+            }else if(request('sort')==4){
+                $pros = Category::with(['products' => function ($q){
+                    $q->orderBy('proPrice','asc');
+                }],'subCategories')->where('cateId',$id)
+                ->get();
+            }
 
-//         $details = RoomDetail::with('RoomMain')->orderBy('id', 'asc')
-//                 ->where('lang',$lang)
-//                 //->where('id',$rooms[0]->RoomMain->id)
-//                 ->where('room_id',$rooms[0]->RoomMain->id)
-//                 ->get();          
-// // 
-//         // return view ('roomdetail.index',compact('rooms'));        
-//         return view ('roomdetail.index',compact('rooms'),compact('details')); 
-        $pros = Category::with('products','subCategories')->where('cateId',$id)->get();
+            
+        }
        // $pros = Product::where('cateId',$id)->get();
         return view ('category.show',compact('pros')); 
-        //dd($pros);
-// dd($pros);
+
     }
+
 
     public function subCate_show($id){
         $category = Category::with('products','subCategories')->where('cateId',$id)->get();
+
+     
+
         $pros = subCategory::with('subCategories_product','subCategories_Category')
         ->where('subCateId',$id)
         ->get();
-       // $pros = Product::where('cateId',$id)->get();
+
+       
+        
+
+        if(request()->has('sort')){
+            if(request('sort')==1){
+                $pros = subCategory::with(['subCategories_product' => function ($q){
+                    $q->orderBy('proId', 'DESC');
+                }],'subCategories_Category')->where('cateId',$id)
+                ->get();      
+             }else if(request('sort')==2){
+                $pros = subCategory::with(['subCategories_product' => function ($q){
+                    $q->orderBy('proName', 'DESC');
+                }],'subCategories_Category')->where('cateId',$id)
+                ->get();      
+             }else if(request('sort')==3){
+                $pros = subCategory::with(['subCategories_product' => function ($q){
+                    $q->orderBy('proPrice', 'DESC');
+                }],'subCategories_Category')->where('cateId',$id)
+                ->get();      
+             }else if(request('sort')==4){
+                $pros = subCategory::with(['subCategories_product' => function ($q){
+                    $q->orderBy('proPrice', 'asc');
+                }],'subCategories_Category')->where('cateId',$id)
+                ->get();      
+             }
+        }
+
         return view ('category/subcategory.show',compact('pros','category')); 
-        // dd($pros->subCategories_product);
+
+
+
       
     }
 
@@ -177,6 +221,35 @@ class CategoryController extends Controller
 
         
     }
+
+    public function subCate_edit($id)
+    {
+        $cates = Category::orderBy('cateId','desc')->get();
+        $edit=SubCategory::where('subCateId',$id)->first();
+       return view ('category/subcategory.edit',compact('edit','cates'));
+       //       dd($edit);
+
+    }
+
+    public function subCate_update(Request $request, $id)
+    {
+        $subcate = SubCategory::where('subCateId',$id)->first();
+        $subcate->update($request->all());
+        return redirect()->route('category.list')
+                             ->with('success', 'Category created successfully');
+
+    }
+
+    public function subCate_destroy($id)
+    {
+        $subcate = SubCategory::where('subCateId',$id)->first();
+        $subcate->destroy($id);
+        return redirect()->route('category.list')
+                             ->with('danger', 'Sub Category Deleted successfully');
+
+    }
+
+
 
     public function subCate_create()
     {
@@ -282,6 +355,7 @@ class CategoryController extends Controller
        
 
         
+
        
         $cate->update($request->all());
         return redirect()->route('category.list')

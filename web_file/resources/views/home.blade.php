@@ -162,6 +162,15 @@ marqueeInit({
       </div>
 </section>
 
+      <div class="container pt-5">
+          <div class="row justify-content-center">
+              <div class="col-m-6">
+              {{ $product->links() }}
+              </div>
+          </div>
+          
+      </div>
+
 
 <!-- end service -->
 

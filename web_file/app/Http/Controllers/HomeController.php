@@ -44,7 +44,7 @@ class HomeController extends Controller
 
            
                    
-              $product = DB::table('products')->orderBy('proId','asc')->get();
+              $product = DB::table('products')->orderBy('proId','asc')->paginate(9);;
                $cates = Category::orderBy('cateId','asc')->get();
 
          return view ('home',compact('product','cates'));

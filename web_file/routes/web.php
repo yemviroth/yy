@@ -83,7 +83,7 @@ Route::middleware(['auth'])->group(function () {
     Route::PUT('products/update/{proId}','ProductController@update')->name('productdetail.update');
     Route::get('products/list','ProductController@list')->name('productdetail.list');
 
-    
+    Route::match(['delete'],'products/{product}','ProductController@destroy')->name('productdetail.destroy');
     Route::get('products/{product}/edit','ProductController@edit')->name('productdetail.edit');
     Route::get('products/create','ProductController@create')->name('productdetail.create');
     Route::POST('products/store','ProductController@store')->name('productdetail.store');
@@ -131,8 +131,9 @@ Route::get('category/{cateId}','CategoryController@show')->name('category.show')
 Route::get('subCates/{subCateId}','CategoryController@subCate_show')->name('category/subcategory.show');
 Route::get('category/subCates/create','CategoryController@subCate_create')->name('category/subcategory.create');
 Route::POST('category/subCates/store','CategoryController@subCate_store')->name('category/subcategory.store');
-
-
+Route::get('category/subCates/{subCateId}','CategoryController@subCate_edit')->name('category/subcategory.edit');
+Route::PUT('category/subCates/update/{subCateId}','CategoryController@subCate_update')->name('category/subcategory.update');
+Route::match(['delete'],'category/subCates/{subCateId}','CategoryController@subCate_destroy')->name('category/subcategory.destroy');
 
 Route::get('sitemap/',function (){ 
   return view('sitemap.sitemap');

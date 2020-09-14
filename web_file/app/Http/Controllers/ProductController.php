@@ -366,6 +366,11 @@ class ProductController extends Controller
     public function destroy($id)
     {
         //
+        $pros = Product::where('proId',$id)->first();
+        $pros->destroy($id);
+        return redirect()->route('productdetail.list')
+        ->with('danger', 'Sub Category Deleted successfully');
+       
     }
 
     public function list()

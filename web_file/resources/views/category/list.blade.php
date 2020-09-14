@@ -55,7 +55,7 @@ TROPICANA - ROOMS
             <div class="col-12 col-md-4">
                 <form class="" action="">
                     
-                        <input type="text" class="form-control" placeholder="Search">
+                        <input id="myInput" type="text" class="form-control" placeholder="Search">
                     
                 </form>     
             </div>
@@ -83,7 +83,7 @@ TROPICANA - ROOMS
 
 
                     <div class="table-responsive">
-                        <table class="table" >
+                        <table class="table  table-sm p-2" >
                             <tr class="thead-dark">
                                 <th>Category Name</th>
                                 <th>Sub Category</th>
@@ -93,7 +93,7 @@ TROPICANA - ROOMS
                             
                             </tr>
                             @foreach($cates as $cate)
-                            
+                            <tbody id="myTable">
                             <tr style="">
                                 <td>
                                     {{$cate->cateName}}
@@ -104,25 +104,35 @@ TROPICANA - ROOMS
                         
                             
                                         <tr>
-                                            <th>ID</th>
+                                           
                                             <th>Sub Name</th>
                                             <th>Action</th>
                                         </tr>
                             
                         
-
-                                        @foreach($subcates as $subcate)
+                                                                     
+                                            
+                                            @foreach($subcates as $subcate)
                                             @if($cate->cateId == $subcate->cateId) 
                                         <tr>
-                                            <td>{{$subcate->subCateId}}</td>
+                                       
                                             <td>{{$subcate->subCateName}}</td>
                                             <td>
-                                                <button class="btn btn-sm btn-warning"><i class="fas fa-edit"></i></button>
-                                                <button class="btn btn-sm btn-danger"><i class="fas fa-trash"></i></button>
+                                            <form action="{{route('category/subcategory.destroy',$subcate->subCateId)}}" method="POST">
+                                                            
+                                            @csrf
+                                            @method('DELETE')                                                                   
+
+                                                <a href="{{route('category/subcategory.edit', $subcate->subCateId)}}" class="btn btn-sm btn-warning"><i class="fas fa-edit"></i></a>
+                                                <button type="submit"  class="btn btn-sm btn-danger" onclick="return confirm('Are you sure you want to delete this items : {{$subcate->subCateName}} ?');"><i class="fas fa-trash"></i></button>
+                                            </form>
                                             </td>
                                         </tr>
                                             @endif
                                         @endforeach
+                                            
+                                        
+                                       
                                     </table>
                                 
                                 </td>
@@ -142,7 +152,7 @@ TROPICANA - ROOMS
                                 </td>
 
                             </tr>
-                            
+                            </tbody>
                             @endforeach                        
                                                 
                         </table>
@@ -157,3 +167,14 @@ TROPICANA - ROOMS
 </div>
 
 @endsection
+
+<script>
+$(document).ready(function(){
+  $("#myInput").on("keyup", function() {
+    var value = $(this).val().toLowerCase();
+    $("#myTable tr").filter(function() {
+      $(this).toggle($(this).text().toLowerCase().indexOf(value) > -1)
+    });
+  });
+});
+</script>

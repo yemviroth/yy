@@ -765,6 +765,8 @@ html {
     flex-grow: 1;
     max-width: 100%;
   }
+
+  
   .row-cols-lg-1 > * {
     -ms-flex: 0 0 100%;
     flex: 0 0 100%;
@@ -1669,6 +1671,8 @@ html {
 }
 
 @media (min-width: 768px) {
+
+  
   .flex-md-row {
     -ms-flex-direction: row !important;
     flex-direction: row !important;
