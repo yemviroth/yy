@@ -21,8 +21,14 @@
   <link rel="stylesheet" href="{{asset('js/simple-lightbox.min.css')}}">
 
   <link rel="stylesheet" href="{{ asset('style.css')}}">
-  <link rel="stylesheet" href="{{ asset('css/sidebarNavigation.css')}}">
+  <!-- <link rel="stylesheet" href="{{ asset('css/sidebarNavigation.css')}}"> -->
     <link rel="stylesheet" type="text/css" href="https://cdnjs.cloudflare.com/ajax/libs/flag-icon-css/3.3.0/css/flag-icon.min.css">
+
+
+    <!-- test side nav -->
+    <link rel="stylesheet" href="{{ asset('style3.css')}}">
+   
+    <!-- nav -->
     
     <!-- Optional JavaScript -->
      <!-- jQuery first, then Popper.js, then Bootstrap JS -->
@@ -30,7 +36,7 @@
     <script src="{{asset('js/popper.min.js') }}"></script>
     <script src="{{asset('js/bootstrap.min.js')}}"></script>
 
-    <script src="{{asset('js/sidebarNavigation.js')}}"></script>
+    <!-- <script src="{{asset('js/sidebarNavigation.js')}}"></script> -->
 
     <script src="{{asset('owlcarousel/owl.carousel.min.js')}}"></script>
     <script src="{{asset('js/crawler.js')}}"></script>
@@ -49,54 +55,110 @@
       // echo "<br>";
     @endphp
 
-    <!-- nav bar -->
-    <!-- <div style="margin-top: 2px;padding-right: 10px;position: absolute; left: 95%;" class="float-right pt-3"> -->
-       <!-- <div style="width:100px;
-            height:auto;
-            
-            color:#FFF;
-            padding:5px 2px;
-            text-align:center;
-            top:0;
-            position:absolute;
-            right:0;">
-
-        
-        <a href="{{route('translate.show','EN')}}"><span class="@if(session()->get('LANG')=='EN') lang_active @endif   flag-icon flag-icon-gb mr-1 h4" style=""></span></a> 
-        <a href="{{route('translate.show','TH')}}"><span class="@if(session()->get('LANG')=='TH') lang_active @endif flag-icon flag-icon-th mr-1 h4" style=""></span></a> 
-        
-       
-      </div> -->
-    <div style="clear:both;"> </div>
-    <section class="" style="">
-      <!-- <div style=" margin-top: 2px;margin-right:5px;z-index: 10000" class="float-right"> -->
-        
-         
-      @php
-        //echo Config::get('mysiteVars.welcome.'. session()->get('LANG'));
-      @endphp
-      
+   
+   
+   
+    <section>
+   
 
       <!-- sid nav -->
       
-    
+      <nav id="sidebar">
+            <div id="dismiss">
+            <i class="fas fa-times fa-2x"></i>
+            </div>
 
+            <div class="sidebar-header">
+                <h3>The Yeon Cambodia</h3>
+            </div>
+            <div class="form-group p-2">
+            <input type="text" class="form-control" placeholder="ស្វែងរក">
+            </div>
+            
+            <ul class="nav nav-pills mb-3 p-5" id="pills-tab" role="tablist">
+              <li class="nav-item">
+                <a class="nav-link active" id="pills-home-tab" data-toggle="pill" href="#pills-home" role="tab" aria-controls="pills-home" aria-selected="true">Home</a>
+              </li>
+              <li class="nav-item">
+                <a class="nav-link" id="pills-profile-tab" data-toggle="pill" href="#pills-profile" role="tab" aria-controls="pills-profile" aria-selected="false">Profile</a>
+              </li>
+              <li class="nav-item">
+                <a class="nav-link" id="pills-contact-tab" data-toggle="pill" href="#pills-contact" role="tab" aria-controls="pills-contact" aria-selected="false">Contact</a>
+              </li>
+            </ul>
+            <div class="tab-content" id="pills-tabContent">
+              <div class="tab-pane fade show active" id="pills-home" role="tabpanel" aria-labelledby="pills-home-tab">...</div>
+              <div class="tab-pane fade" id="pills-profile" role="tabpanel" aria-labelledby="pills-profile-tab">...</div>
+              <div class="tab-pane fade" id="pills-contact" role="tabpanel" aria-labelledby="pills-contact-tab">...</div>
+            </div>
+
+            <ul class="list-unstyled components">
+                <p>Dummy Heading</p>
+
+                <li class="{{ (\Request::route()->getName()=='home.index' ? 'active' : '') }}">             
+                      <a class="" data-toggle="collapse" aria-expanded="false" href="#homeSubmenu">ផលិតផល</a>   
+
+                      <ul class="collapse list-unstyled" id="homeSubmenu">
+                        <li>
+                            <a href="#">Home 1</a>
+                        </li>
+                        <li>
+                            <a href="#">Home 2</a>
+                        </li>
+                        <li>
+                            <a href="#">Home 3</a>
+                        </li>
+                    </ul>
+                </li>
+
+                    
+                    
+                <li>
+                    <a href="#">About</a>
+                    <a href="#pageSubmenu" data-toggle="collapse" aria-expanded="false">Pages</a>
+                    <ul class="collapse list-unstyled" id="pageSubmenu">
+                        <li>
+                            <a href="#">Page 1</a>
+                        </li>
+                        <li>
+                            <a href="#">Page 2</a>
+                        </li>
+                        <li>
+                            <a href="#">Page 3</a>
+                        </li>
+                    </ul>
+                </li>
+                <li>
+                    <a href="#">Portfolio</a>
+                </li>
+                <li>
+                    <a href="#">Contact</a>
+                </li>
+            </ul>
+
+            <ul class="list-unstyled CTAs">
+                <li>
+                    <a href="https://bootstrapious.com/tutorial/files/sidebar.zip" class="download">Download source</a>
+                </li>
+                <li>
+                    <a href="https://bootstrapious.com/p/bootstrap-sidebar" class="article">Back to article</a>
+                </li>
+            </ul>
+        </nav>
+
+      
       <!-- end side nav -->
      
-
-        <nav class="navbar navbar-expand-lg navbar-light bg-header" id="header" >
+<!-- nav me  -->
+<nav class="navbar navbar-expand-lg navbar-light bg-header" id="header" >
            <!-- style="background-color: #d8d8d8;" --><!--  -->
-            
-               <a class="navbar-brand" href="{{route('home.index')}}"><span class="header-text" style="color:#057374; overflow: hidden;"><img src="https://theyeon.net/web/upload/webdesignu/logo.png"></span></a>
+           <button type="button" id="sidebarCollapse" class="btn d-inline-block d-lg-none navbar-left">
+           <i class="fas fa-align-justify"></i>
+                        
+              </button>
+               <a class="navbar-brand" href="{{route('home.index')}}"><span class="header-text" style="color:#057374; overflow: hidden;"><img src="{{asset('images')}}/logo.png"></span></a>
             
            
-        
-              <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
-                <span class="navbar-toggler-icon"></span>
-              </button>
-          
-          
-            
             <div class="collapse navbar-collapse  nav-me" style="padding-top:2rem;padding-bottom:0.7rem;color:#0000;" id="navbarSupportedContent">
             <ul class="navbar-nav ">
             
@@ -114,25 +176,8 @@
               <li class="nav-item {{ (\Request::route()->getName()=='about.index' ? 'active' : '') }}">
                 <a class="nav-link" href="{{route('about.index')}}">អំពីយើង</a>
               </li>
-               <li class="nav-item 
-                  @php
-                      // if (\Request::route()->getName();) {
-                      //   echo 'active';
-                      // }else {
-                      //   echo '';
-                      // }
-
-                      if (request()->is('rooms') || request()->is('rooms/*')) {
-                        echo 'active';
-                     } else{
-                      echo '';
-                     }
-                  @endphp
-                 
-                
-                
-                ">
-                <a class="nav-link"   href="{{route('rooms.index')}}">ប្រវត្តិ Branh</a>
+               <li class="nav-item"> 
+                               <a class="nav-link"   href="{{route('rooms.index')}}">ប្រវត្តិ Branh</a>
               </li>
                 <li class="nav-item {{ (\Request::route()->getName()=='service.index' ? 'active' : '') }}">
                 <a class="nav-link" href="{{route('service.index')}}">កំណត់ចំណាំ</a>
@@ -151,9 +196,14 @@
           </div>
 
     </nav>
+<!-- end nav me -->
+     
 </section>
 
     <!-- end of navbar -->
+
+    <div class="overlay"></div>
+    <div class=""></div>
 @yield('content')
 
 
@@ -226,6 +276,41 @@ function scrollFunction() {
   }
 }
 </script>
+
+<script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>
+    <!-- Popper.JS -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.0/umd/popper.min.js" integrity="sha384-cs/chFZiN24E4KMATLdqdvsezGxaGsi4hLGOzlXwp5UZB1LY//20VyM2taTB4QvJ" crossorigin="anonymous"></script>
+    <!-- Bootstrap JS -->
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.1.0/js/bootstrap.min.js" integrity="sha384-uefMccjFJAIv6A+rW+L4AHf99KvxDjWSu1z9VI8SKNVmz4sk7buKt/6v9KI65qnm" crossorigin="anonymous"></script>
+    <!-- jQuery Custom Scroller CDN -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/malihu-custom-scrollbar-plugin/3.1.5/jquery.mCustomScrollbar.concat.min.js"></script>
+
+    <script type="text/javascript">
+        $(document).ready(function () {
+            // $("#sidebar").mCustomScrollbar({
+            //     theme: ""
+            // });
+
+            $('#dismiss, .overlay').on('click', function () {
+                $('#sidebar').removeClass('active');
+                $('.overlay').removeClass('active');
+            });
+
+            $('.wrapper').on('click', function () {
+                $('#sidebar').removeClass('active');
+                $('.overlay').removeClass('active');
+            });
+
+            $('#sidebarCollapse').on('click', function () {
+                $('#sidebar').addClass('active');
+                $('.overlay').addClass('active');
+                $('.collapse.in').toggleClass('in');
+                $('a[aria-expanded=true]').attr('aria-expanded', 'false');
+            });
+        });
+    </script>
+
+
 
   </body>
 </html>

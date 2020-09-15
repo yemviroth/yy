@@ -5,9 +5,6 @@
  <!-- slide -->
   
 
-       
-        <hr>
-
 <section class="p-2" style="background: #fff">
     <div class="header-title pt-4 text-center">{{$pros[0]->cateName}}</div>
         <div class="text-center pt-2">

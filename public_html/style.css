@@ -66,7 +66,7 @@ p {
 
 
 .wrapper{
-  width:90%;
+  width: 75%;
   margin: 0 auto;
 }
 
@@ -84,6 +84,21 @@ p {
       flex: auto;}
   .d-md-block {
       display: none !important;
+  }
+  .wrapper {
+    width: 100%;
+    margin: 0 auto;
+    }
+  
+  .navbar-brand{
+    float:none !important;
+    margin: 0 auto;
+    padding-left: 10%;
+  }
+
+  .navbar-toggle .navbar-left {
+    float: left;
+    margin-left: 10px;
   }
 }
 
@@ -202,6 +217,7 @@ p {
 .navbar{
     background: #d8d8d8 !important;
     width: 100%;
+    line-height: 20px;
     position: fixed;
     margin: 0 auto;
     text-align: center;
@@ -531,7 +547,7 @@ border:0px solid gray;
 .content {
   position: relative;
   width: 100%;
-  max-width: 400px;
+  /* max-width: 400px; */
   margin: auto;
   overflow: hidden;
 }
@@ -745,43 +761,43 @@ border:0px solid gray;
 
 
 
-
-#sidebar {
+/*  */
+/* #sidebar {
   min-width: 250px;
   max-width: 250px;
   height: 100vh;
   position: fixed;
   top: 0;
-  left: 0;
+  left: 0; */
   /* top layer */
-  z-index: 9999;
-}
+  /* z-index: 9999; */
+/* } */
 
-.overlay {
-  display: none;
-  position: fixed;
+/* .overlay { */
+  /* display: none; */
+  /* position: fixed; */
   /* full screen */
-  width: 100vw;
-  height: 100vh;
+  /* width: 100vw; */
+  /* height: 100vh; */
   /* transparent black */
-  background: rgba(0, 0, 0, 0.7);
+  /* background: rgba(0, 0, 0, 0.7); */
   /* middle layer, i.e. appears below the sidebar */
-  z-index: 998;
-  opacity: 0;
+  /* z-index: 998; */
+  /* opacity: 0; */
   /* animate the transition */
-  transition: all 0.5s ease-in-out;
-}
+  /* transition: all 0.5s ease-in-out; */
+/* } */
 /* display .overlay when it has the .active class */
-.overlay.active {
+/* .overlay.active {
   display: block;
   opacity: 1;
-}
-
+} */
+/* 
 #dismiss {
   width: 35px;
   height: 35px;
-  position: absolute;
+  position: absolute; */
   /* top right corner of the sidebar */
-  top: 10px;
+  /* top: 10px;
   right: 10px;
-}
+} */
