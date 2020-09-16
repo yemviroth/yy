@@ -8,6 +8,19 @@ body {
 p {
   font-family: Ubuntu,Kantumruy,sans-serif!important;
 }
+
+.li-block{
+  display: inline-flex;
+  list-style: none;
+}
+  .li-block li > a{
+  padding: 20px;
+  border: 1px solid #000;
+  width: 50%;
+  
+}
+
+
 .header-title{
    /* font-family: Koulen,Arial,Helvetica,sans-serif !important; */
    /* font-family: 'Francois One','Bayon'!important; */

@@ -71,25 +71,35 @@
             <div class="sidebar-header">
                 <h3>The Yeon Cambodia</h3>
             </div>
-            <div class="form-group p-2">
+            <div class="form-group p-4">
             <input type="text" class="form-control" placeholder="ស្វែងរក">
             </div>
-            
-            <ul class="nav nav-pills mb-3 p-5" id="pills-tab" role="tablist">
-              <li class="nav-item">
-                <a class="nav-link active" id="pills-home-tab" data-toggle="pill" href="#pills-home" role="tab" aria-controls="pills-home" aria-selected="true">Home</a>
+            <hr>
+            <ul class="li-block"">
+                  @foreach($cates as $cate)
+                    <li class="w-50"><a href="">{{$cate->cateName}}</a></li>
+                  @endforeach
+                </ul>
+
+            <ul class="nav nav-pills mb-1 p-4" id="pills-tab" role="tablist">
+              <li class="nav-item" style="width:50%">
+                <a class="nav-link active" id="pills-home-tab" data-toggle="pill" href="#pills-home" role="tab" aria-controls="pills-home" aria-selected="true">ផលិតផល</a>
               </li>
-              <li class="nav-item">
+              <li class="nav-item" style="width:50%">
                 <a class="nav-link" id="pills-profile-tab" data-toggle="pill" href="#pills-profile" role="tab" aria-controls="pills-profile" aria-selected="false">Profile</a>
               </li>
-              <li class="nav-item">
-                <a class="nav-link" id="pills-contact-tab" data-toggle="pill" href="#pills-contact" role="tab" aria-controls="pills-contact" aria-selected="false">Contact</a>
-              </li>
+              
             </ul>
-            <div class="tab-content" id="pills-tabContent">
-              <div class="tab-pane fade show active" id="pills-home" role="tabpanel" aria-labelledby="pills-home-tab">...</div>
+            <div class="tab-content pl-4" id="pills-tabContent">
+              <div class="tab-pane show active" id="pills-home" role="tabpanel" aria-labelledby="pills-home-tab">
+                <ul class="nav  nav-stacked" style="display:block;">
+                  @foreach($cates as $cate)
+                    <li><a href="">{{$cate->cateName}}</a></li>
+                  @endforeach
+                </ul>
+              </div>
               <div class="tab-pane fade" id="pills-profile" role="tabpanel" aria-labelledby="pills-profile-tab">...</div>
-              <div class="tab-pane fade" id="pills-contact" role="tabpanel" aria-labelledby="pills-contact-tab">...</div>
+              
             </div>
 
             <ul class="list-unstyled components">
@@ -151,6 +161,9 @@
      
 <!-- nav me  -->
 <nav class="navbar navbar-expand-lg navbar-light bg-header" id="header" >
+
+    
+    
            <!-- style="background-color: #d8d8d8;" --><!--  -->
            <button type="button" id="sidebarCollapse" class="btn d-inline-block d-lg-none navbar-left">
            <i class="fas fa-align-justify"></i>
@@ -192,9 +205,23 @@
               </li>
             
             </ul>
-            
-          </div>
+            </div>
 
+            
+
+            
+              <form class="form-inline my-2 my-lg-0">
+                <input class="form-control mr-sm-2" type="search" placeholder="Search" aria-label="Search">
+                <button class="btn btn-outline-success my-2 my-sm-0" type="submit"><i class="fas fa-search"></i></button>
+              </form>
+      
+         
+
+          
+
+            
+          
+      
     </nav>
 <!-- end nav me -->
      
