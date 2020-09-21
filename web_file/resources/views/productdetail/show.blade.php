@@ -30,25 +30,25 @@
     <div class="container-fluid"  style="padding-top:8%;">
       
         
-      <div class="text-center header-title pt-5">Skin Care</div>
+      <div class="text-center header-title pt-2">Skin Care</div>
       
       
       <div class="row pt-5">
 
         <div class="col-md-2 col-sm-12 col-12 d-none d-sm-block d-md-block">
-          <h6 class="text-kh-bold"><  Previous   Next ></h6>
+          <h6 class=""><  Previous   Next ></h6>
           <div class="">
           <div class="img-view">
-            <img class="shadow" src="{{asset('images/product/'.$products[0]->proImage)}}" alt="">
+            <img class="border" src="{{asset('images/product/'.$products[0]->proImage)}}" alt="">
           </div>
           </div>
         </div>
 
-        <div class="pr-5 col-md-5 col-sm-12 col-12">
-        <img class="content-image" src="{{asset('images/product/'.$products[0]->proImage)}}">
+        <div class="pr-sm-5 col-md-5 col-sm-12 col-12">
+        <img class="img-fluid" src="{{asset('images/product/'.$products[0]->proImage)}}">
         </div>
 
-        <div class="pl-5 col-md-5 col-sm-12 col-12 text-kh">
+        <div class="pl-sm-5 col-md-5 col-sm-12 col-12 text-kh">
         
                 <h5 class="font-weight-normal">{!!$products[0]->proName!!}</h5>
                 

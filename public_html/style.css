@@ -13,11 +13,28 @@ p {
   display: inline-flex;
   list-style: none;
 }
-  .li-block li > a{
-  padding: 20px;
+  .li-block li a{
+  display: block;
   border: 1px solid #000;
-  width: 50%;
+ font-size: 0.5rem !important;
   
+}
+
+.list-group-item {
+   padding: 0px default;
+}
+
+.list-hor ul li a{
+  padding:15px; 
+}
+
+.list-horizon{
+
+padding:10px;
+display:block;
+text-align:center;
+font-weight: 100;
+font-size: 0.7rem;
 }
 
 
@@ -79,7 +96,7 @@ p {
 
 
 .wrapper{
-  width: 75%;
+  width: 90%;
   margin: 0 auto;
 }
 
@@ -87,10 +104,24 @@ p {
   .wrapper {
       min-width: 100%;
   }
+   .img-fluid-sm{
+    height:20px;
+  }
+}
+
+
+@media (max-width: 280px) {
+
+  .img-fluid-sm{
+    height:17px;
+  }
 }
 
 
 @media (max-width: 992px){
+  .d-sm-none{
+    display: block!important;
+  }
   .col-md-5 {
       max-width: 100% !important;
       margin: 0 auto !important;
@@ -98,6 +129,9 @@ p {
   .d-md-block {
       display: none !important;
   }
+
+   
+
   .wrapper {
     width: 100%;
     margin: 0 auto;
@@ -149,13 +183,18 @@ p {
 }
 .nav-me{
   padding-left: 3rem;
-	 font-weight: bold  !important; 
+	 font-weight: 500  !important; 
     
-      font-size: 13px;
+      font-size: 13px !important;
       /* font-family: 'Francois One','Bayon'!important; */
       /* font-family: "Suwannaphum", "Roboto"; */
       /* font-family: "Hanuman", "Khmer OS"; */
       font-family: Ubuntu,Kantumruy,sans-serif;
+}
+
+.nav-link .active{
+  border-bottom: 3px solid red !important;
+
 }
 .title{
 	color: #057374;
