@@ -130,7 +130,7 @@
               });
               </script>
                 
-<div class="row">
+<!-- <div class="row"> -->
         <div class="d-none d-md-block">
           
           <div class="marquee" id="mycrawler2" style="width:100%;">
@@ -140,7 +140,7 @@
                   @endforeach
           </div>
         </div>      
-</div>                       
+<!-- </div>                        -->
 
           
 

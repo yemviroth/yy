@@ -26,6 +26,18 @@ class ProductController extends Controller
         //
     }
 
+     public function search(Request $request)
+    {
+        // $request -> validate(['
+        //     'search' => 'required',
+        //     ']);
+        $search = $request->input('search');
+         $pros = Product::where('proName','Like','%'.$search.'%')->get();
+        return view('productdetail.search',compact('pros'));
+        //dd($pros);
+
+    }
+
     /**
      * Show the form for creating a new resource.
      *
@@ -209,6 +221,8 @@ class ProductController extends Controller
          ->orderBy('cateId','desc')
          ->get();
 
+         // $products = Product::with('Category')->where('proId',$id)->get();
+
      
     //     $subcate=$categ->subCateName;
 
@@ -222,6 +236,8 @@ class ProductController extends Controller
 // dd($category);
 // $category = Category::with('subCategories')->find(1);
 // dd($category);
+
+
 
 
        return view ('productdetail.show',compact('products','cates'));

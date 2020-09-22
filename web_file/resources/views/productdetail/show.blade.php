@@ -1,36 +1,23 @@
 @extends('layouts.app')
-@section('title')
-@php
-  $mytitle = " - Tropicana Resort & Casino";    
-@endphp
-<!-- @if(session()->get('LANG')=='EN')
-                {{$products[0]->proName}}{{$mytitle}}
-                @elseif(session()->get('LANG')=='TH')
-                  {{$rooms[0]->name_th}}{{$mytitle}}
-                @elseif(session()->get('LANG')=='CH')
-                  {{$rooms[0]->name_ch}}{{$mytitle}}
-              @endif -->
-@endsection
+
 @section('content')
 
-<!-- navigator -->
-<!-- <section>
-    <div class="container-fluid">
-      <div class="row">
-        <div class="col">
-          <p class="navigator-link" style="font-weight: bold;"><a href="{{route('home.index')}}">{{Config::get('mysiteVars.menu_home.'. session()->get('LANG'))}}</a><i class="fas fa-caret-right pl-1 pr-1"></i><a href="{{route('rooms.index')}}" style="color: #057374">{{Config::get('mysiteVars.menu_rooms.'. session()->get('LANG'))}}</a></p>
-        </div>
-      </div>
-    </div>
-  </section> -->
-  <!-- end of navigator -->
-  
+
   
 <div class="wrapper">
     <div class="container-fluid"  style="padding-top:8%;">
       
         
-      <div class="text-center header-title pt-2">Skin Care</div>
+      <div class="text-center header-title pt-2">
+     
+        @foreach($products as $pro)
+          @foreach($cates as $cate)
+            @if($cate->cateId == $pro->cateId)
+              {{$cate->cateName}}
+            @endif
+          @endforeach
+        @endforeach
+      </div>
       
       
       <div class="row pt-5">

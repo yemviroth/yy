@@ -210,9 +210,9 @@
                 <a class="nav-link" href="{{route('service.index')}}">កំណត់ចំណាំ</a>
               </li>
             </li>
-                <li class="nav-item {{ (\Request::route()->getName()=='gallery.index' ? 'active' : '') }}">
+               <!--  <li class="nav-item {{ (\Request::route()->getName()=='gallery.index' ? 'active' : '') }}">
                 <a class="nav-link" href="{{route('gallery.index')}}">សំណួរចំលើយ</a>
-              </li>
+              </li> -->
             
                <li class="nav-item {{ (\Request::route()->getName()=='contact.index' ? 'active' : '') }}">
                 <a class="nav-link" href="{{route('contact.index')}}">ទំនាក់ទំនង</a>
@@ -256,15 +256,20 @@
       </div>
       <div class="modal-body">
         
-        <form class="form-group row">
+        <form action="{{route('search')}}" method="POST" class="form-group row">
+          @csrf
           <div class="container-fluid">
             <div class="row">
-              <div class="col-10">
-                <input class="form-control mr-sm-2" type="search" placeholder="Search" aria-label="Search">
-              </div>
-              <div class="col-2">
-                 <button class="btn btn-outline-success my-2 my-sm-0 d-inline" type="submit"><i class="fas fa-search"></i></button>
-              </div>
+              
+                <div class="col-10">
+                  
+                    <input name="search" class="form-control mr-sm-2" type="search" placeholder="Search" aria-label="Search">
+                </div>
+                  <div class="col-2">
+                     <button class="btn btn-outline-success my-2 my-sm-0 d-inline" type="submit"><i class="fas fa-search"></i></button>
+                  </div>
+              </form>
+              
             </div>
 
           </div>
@@ -273,6 +278,7 @@
         </form>
       </div>
       <div class="modal-footer text-kh text-light">
+
         <button type="button" class="btn btn-sm btn-secondary" data-dismiss="modal">បិទ</button>
         
       </div>

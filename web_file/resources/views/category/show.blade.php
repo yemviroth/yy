@@ -31,8 +31,8 @@
                       
               @endforeach
           </div>
-          <div class="col-md-6 text-right text-kh">
-            <strong>តម្រៀប :</strong> <a href="{{url()->current()}}/?sort=1">ផលិតផលថ្មី </a> | <a href="{{url()->current()}}/?sort=2"">ឈ្មោះផលិតផល </a>| <a href="{{url()->current()}}/?sort=3"">តំលៃខ្ពស់ </a>| <a href="{{url()->current()}}/?sort=4"">តំលៃទាប </a>
+          <div class="d-none d-md-block d-lg-block col-md-6 text-right text-kh">
+            <strong>តម្រៀប :</strong> <a href="{{url()->current()}}/?sort=1">ផលិតផលថ្មី </a> | <a href="{{url()->current()}}/?sort=2">ឈ្មោះផលិតផល </a>| <a href="{{url()->current()}}/?sort=3">តំលៃខ្ពស់ </a>| <a href="{{url()->current()}}/?sort=4">តំលៃទាប </a>
           </div>
         </div>
      
