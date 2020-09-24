@@ -148,6 +148,10 @@ Route::get('snooker/',function (){
   return view('snooker.index');
 })->name('snooker');
 
+Route::get('about/ingre',function (){ 
+  return view('about/ingre/ingre');
+})->name('ingrediant');
+
 
 Route::resource('translate','TranslateController');
 

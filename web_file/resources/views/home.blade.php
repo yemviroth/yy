@@ -18,7 +18,7 @@
           </ol>
           <div class="carousel-inner">
             <div class="carousel-item active">
-              <img src="{{asset('images/slide/slide1.jpg')}}" class="d-block" style="width:100%; height:38vw" alt="...">
+              <img src="{{asset('images/slide/slide1.jpg')}}" class="d-block" style="width:100%; height:35vw" alt="...">
               
               <div class="carousel-caption d-none d-md-block">
                 <!-- <h5>First slide label</h5> -->
@@ -26,14 +26,14 @@
               </div>
             </div>
             <div class="carousel-item">
-              <img src="{{asset('images/slide/slide2.jpg')}}" class="d-block" style="width:100%; height:38vw" alt="...">
+              <img src="{{asset('images/slide/slide2.jpg')}}" class="d-block" style="width:100%; height:35vw" alt="...">
               <div class="carousel-caption d-none d-md-block">
                 <!-- <h5>Second slide label</h5> -->
                 <!-- <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit.</p> -->
               </div>
             </div>
             <div class="carousel-item">
-              <img src="{{asset('images/slide/slide3.jpg')}}" class="d-block" style="width:100%; height:38vw" alt="...">
+              <img src="{{asset('images/slide/slide3.jpg')}}" class="d-block" style="width:100%; height:35vw" alt="...">
               <div class="carousel-caption d-none d-md-block">
                 <!-- <h5>Third slide label</h5> -->
                 <!-- <p>Praesent commodo cursus magna, vel scelerisque nisl consectetur.</p> -->
@@ -42,11 +42,11 @@
            
           </div>
           <a class="carousel-control-prev" href="#carouselExampleCaptions" role="button" data-slide="prev">
-            <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+            <span class="fas fa-chevron-left fa-5x" aria-hidden="true"></span>
             <span class="sr-only">Previous</span>
           </a>
           <a class="carousel-control-next" href="#carouselExampleCaptions" role="button" data-slide="next">
-            <span class="carousel-control-next-icon" aria-hidden="true"></span>
+            <span class="fas fa-chevron-right fa-5x" aria-hidden="true"></span>
             <span class="sr-only">Next</span>
           </a>
         </div>
@@ -168,7 +168,7 @@ marqueeInit({
   <div class="d-sm-none">
   <div class="row text-kh">
     @foreach($cates as $cate)
-     <div class="col-4 border">
+     <div class="col-4 border border-secondary">
           <a class="list-horizon" href="{{route('category.show', $cate->cateId)}}"><strong>{{$cate->cateName}}</strong></a>
       </div>
     @endforeach

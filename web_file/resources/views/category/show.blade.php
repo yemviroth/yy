@@ -5,14 +5,14 @@
   <div class="d-sm-none pt-5">
   <div class="row text-kh">
     @foreach($cates as $cate)
-     <div class="col-4 border">
+     <div class="col-4 border border-secondary">
           <a class="list-horizon" href="{{route('category.show', $cate->cateId)}}"><strong>{{$cate->cateName}}</strong></a>
       </div>
     @endforeach           
     </div>
   </diV>
 
-
+<div class="w-100 d-none d-md-block pt-5"></div>
 <section class="pt-5" style="background: #fff">
     <div class="header-title pt-4 text-center">{{$pros[0]->cateName}}</div>
         <div class="text-center pt-2">

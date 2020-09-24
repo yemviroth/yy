@@ -19,15 +19,39 @@
         @endforeach
       </div>
       
+      <?php
+      
+      if ($previous!==null) {
+        $pre = URL::to( 'products/' . $previous );
+        
+      }else {
+        $pre=url()->current().'/#';
+    
+      }
+      
+    
+
+      ?>
+
+
+
       
       <div class="row pt-5">
 
         <div class="col-md-2 col-sm-12 col-12 d-none d-sm-block d-md-block">
-          <h6 class=""> <a href="{{ URL::to( 'products/' . $previous ) }}" @if ($previous=='') class="isDisabled"@endif>Previous</a>   <a href="{{ URL::to( 'products/' . $next ) }}">Next ></a></h6>
+                   
           <div class="">
-          <div class="img-view">
+         
+
+          <div class="img-view text-kh">
+          <a href="{{$pre}}" class="{{isset($previous) ? '' : 'isDisabled'}}"><i class="fas fa-chevron-left fa-2x"></i></a> 
             <img class="border" src="{{asset('images/product/'.$products[0]->proImage)}}" alt="">
+            <a href="{{ isset($next) ? URL::to( 'products/' . $next) : url()->current().'/#' }}" class="{{isset($next) ? '' : 'isDisabled'}}">
+            <i class="fas fa-chevron-right fa-2x"></i>
+            </a>
           </div>
+
+          
           </div>
         </div>
 

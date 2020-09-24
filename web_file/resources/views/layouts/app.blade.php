@@ -107,7 +107,7 @@
                     <div class="tab-pane show active" id="pills-home" role="tabpanel" aria-labelledby="pills-home-tab">
                       <ul class="nav  nav-stacked" style="display:block;">
                         @foreach($cates as $cate)
-                          <li><a href="">{{$cate->cateName}}</a></li>
+                          <li><a href="{{route('category.show', $cate->cateId)}}">{{$cate->cateName}}</a></li>
                         @endforeach
                       </ul>
                     </div>
@@ -204,7 +204,15 @@
                 </div>
               </li>
               <li class="nav-item {{ (\Request::route()->getName()=='about.index' ? 'active' : '') }}">
-                <a class="nav-link" href="{{route('about.index')}}">អំពីយើង</a>
+                
+                <div class="dropdown">
+                    <a class="nav-link" href="#">អំពីយើង</a>
+                      <div class="dropdown-content">
+                        <a href="{{route('about.index')}}">Branh Story</a>
+                        <a href="{{route('about.index')}}">ដំណាងចែកចាយ</a>
+                        <a href="{{route('ingrediant')}}">គ្រឿងផ្សំ</a>                                                                 
+                      </div>
+                </div>
               </li>
                <li class="nav-item"> 
                                <a class="nav-link"   href="{{route('rooms.index')}}">ប្រវត្តិ Branh</a>
@@ -228,7 +236,7 @@
 
             
               
-            <button class="btn btn-sm btn-outline-dark border-0" data-toggle="modal" data-target="#exampleModalCenter"><i class="fas fa-search"></i></button>      
+            <button class="btn btn-sm btn-outline-dark border-0" data-toggle="modal" data-target=".bd-example-modal-lg"><i class="fas fa-search"></i></button>      
          
 
          
@@ -247,9 +255,50 @@
     <div class=""></div>
 @yield('content')
 
+<div class="modal bd-example-modal-lg" tabindex="-1" role="dialog" aria-labelledby="myLargeModalLabel" aria-hidden="true">
+  <div class="modal-dialog modal-lg">
+    <div class="modal-content">
+    <div class="modal-header">
+        <h5 class="modal-title text-kh" id="exampleModalCenterTitle">ស្វែងរក</h5>
+        <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+          <span aria-hidden="true">&times;</span>
+        </button>
+      </div>
+    <form action="{{route('search')}}" method="GET" class="form-group">
+          @csrf
+          <div class="container-fluid">
+            <div class="row pt-2">
+              
+                <div class="col-10">
+                  
+                    <input name="search" class="form-control mr-sm-1" type="search" placeholder="Search" aria-label="Search">
+                </div>
+                  <div class="col-2">
+                     <button class="btn btn-outline-success d-inline" type="submit"><i class="fas fa-search"></i></button>
+                  </div>
+              </form>
+              
+            </div>
 
-    <div class="modal fade" id="exampleModalCenter" tabindex="-1" role="dialog" aria-labelledby="exampleModalCenterTitle" aria-hidden="true">
-  <div class="modal-dialog modal-dialog-centered" role="document">
+          </div>
+        </form>
+
+        <div class="modal-footer text-kh text-light">
+
+        <button type="button" class="btn btn-sm btn-secondary" data-dismiss="modal">បិទ</button>
+        
+      </div>
+    </div>
+
+    
+
+  </div>
+</div>
+
+
+
+    <div class="modal" id="exampleModalCenter" tabindex="-1" role="dialog" aria-labelledby="exampleModalCenterTitle" aria-hidden="true">
+  <div class="modal-dialog modal-lg modal-dialog-centered" role="document">
     <div class="modal-content">
       <div class="modal-header">
         <h5 class="modal-title text-kh" id="exampleModalCenterTitle">ស្វែងរក</h5>
@@ -259,32 +308,9 @@
       </div>
       <div class="modal-body">
         
-        <form action="{{route('search')}}" method="GET" class="form-group row">
-          @csrf
-          <div class="container-fluid">
-            <div class="row">
-              
-                <div class="col-10">
-                  
-                    <input name="search" class="form-control mr-sm-2" type="search" placeholder="Search" aria-label="Search">
-                </div>
-                  <div class="col-2">
-                     <button class="btn btn-outline-success my-2 my-sm-0 d-inline" type="submit"><i class="fas fa-search"></i></button>
-                  </div>
-              </form>
-              
-            </div>
-
-          </div>
-                     
-               
-        </form>
-      </div>
-      <div class="modal-footer text-kh text-light">
-
-        <button type="button" class="btn btn-sm btn-secondary" data-dismiss="modal">បិទ</button>
         
       </div>
+      
     </div>
   </div>
 </div>
