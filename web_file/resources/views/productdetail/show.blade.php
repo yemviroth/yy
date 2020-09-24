@@ -23,7 +23,7 @@
       <div class="row pt-5">
 
         <div class="col-md-2 col-sm-12 col-12 d-none d-sm-block d-md-block">
-          <h6 class=""><  Previous   Next ></h6>
+          <h6 class=""> <a href="{{ URL::to( 'products/' . $previous ) }}" @if ($previous=='') class="isDisabled"@endif>Previous</a>   <a href="{{ URL::to( 'products/' . $next ) }}">Next ></a></h6>
           <div class="">
           <div class="img-view">
             <img class="border" src="{{asset('images/product/'.$products[0]->proImage)}}" alt="">
@@ -31,11 +31,11 @@
           </div>
         </div>
 
-        <div class="pr-sm-5 col-md-5 col-sm-12 col-12">
+        <div class="p-sm-3 col-md-5 col-sm-12 col-12">
         <img class="img-fluid" src="{{asset('images/product/'.$products[0]->proImage)}}">
         </div>
 
-        <div class="pl-sm-5 col-md-5 col-sm-12 col-12 text-kh">
+        <div class="p-sm-4 col-md-5 col-sm-12 col-12 text-kh">
         
                 <h5 class="font-weight-normal">{!!$products[0]->proName!!}</h5>
                 

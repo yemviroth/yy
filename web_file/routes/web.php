@@ -123,7 +123,7 @@ Route::get('rooms/{room}','RoomsController@show')->name('rooms.show');
 
 // Product Detail
 Route::get('products/{product}','ProductController@show')->name('productdetail.show');
-Route::POST('/search','ProductController@search')->name('search');
+Route::GET('/search/','ProductController@search')->name('search');
 
 //Category
 Route::get('category/{cateId}','CategoryController@show')->name('category.show');

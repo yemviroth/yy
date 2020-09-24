@@ -32,7 +32,35 @@ class ProductController extends Controller
         //     'search' => 'required',
         //     ']);
         $search = $request->input('search');
-         $pros = Product::where('proName','Like','%'.$search.'%')->get();
+        
+
+
+
+        if(request()->has('sort')){
+            if(request('sort')==1){
+                $pros = Product::where('proName','Like','%'.$search.'%')
+                ->orderBy('proId','desc')
+                ->get();
+            }else if(request('sort')==2){
+                $pros = Product::where('proName','Like','%'.$search.'%')
+                ->orderBy('proName','desc')
+                ->get();
+            }else if(request('sort')==3){
+                 $pros = Product::where('proName','Like','%'.$search.'%')
+                ->orderBy('proPrice','desc')
+                ->get();
+            }else if(request('sort')==4){
+                  $pros = Product::where('proName','Like','%'.$search.'%')
+                ->orderBy('proPrice','asc')
+                ->get();
+            }           
+        }else{
+             $pros = Product::where('proName','Like','%'.$search.'%')
+             ->orderBy('proId','desc')
+             ->get();
+        }        
+
+
         return view('productdetail.search',compact('pros'));
         //dd($pros);
 
@@ -238,9 +266,13 @@ class ProductController extends Controller
 // dd($category);
 
 
+             // get previous user id
+        $previous = DB::table('products')->where('proId', '<', $products[0]->proId)->max('proId');
 
+        // get next user id
+        $next = DB::table('products')->where('proId', '>', $products[0]->proId)->min('proId');
 
-       return view ('productdetail.show',compact('products','cates'));
+       return view ('productdetail.show',compact('products','cates','previous','next'));
     //    return view ('productdetail.show',compact('cates'));
     }
 

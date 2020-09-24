@@ -1,11 +1,19 @@
 @extends('layouts.app')
 
 @section('content')
-<br><br><br><br>
- <!-- slide -->
-  
+ 
+  <div class="d-sm-none pt-5">
+  <div class="row text-kh">
+    @foreach($cates as $cate)
+     <div class="col-4 border">
+          <a class="list-horizon" href="{{route('category.show', $cate->cateId)}}"><strong>{{$cate->cateName}}</strong></a>
+      </div>
+    @endforeach           
+    </div>
+  </diV>
 
-<section class="p-2" style="background: #fff">
+
+<section class="pt-5" style="background: #fff">
     <div class="header-title pt-4 text-center">{{$pros[0]->cateName}}</div>
         <div class="text-center pt-2">
         
@@ -25,7 +33,7 @@
           <div class="col-md-6">
               @foreach ($pros as $pross)
                     <div class="text-kh">
-                      <p class="font-weight-bold">ចំនួនផលិតផល :   {{$pros[0]->products->count()}}</p>
+                      <p class="font-weight-bold">ចំនួនផលិតផល : <span class="badge badge-primary badge-pill">{{$pros[0]->products->count()}}</span></p>  
                     </div>      
                       
                       
@@ -34,6 +42,23 @@
           <div class="d-none d-md-block d-lg-block col-md-6 text-right text-kh">
             <strong>តម្រៀប :</strong> <a href="{{url()->current()}}/?sort=1">ផលិតផលថ្មី </a> | <a href="{{url()->current()}}/?sort=2">ឈ្មោះផលិតផល </a>| <a href="{{url()->current()}}/?sort=3">តំលៃខ្ពស់ </a>| <a href="{{url()->current()}}/?sort=4">តំលៃទាប </a>
           </div>
+
+          <div class="d-none d-sm-none d-xs-block col-md-6 col-sm-12 text-right text-kh">
+             <div class="input-group mb-3">
+              <!--   <div class="input-group-prepend">
+                  <label class="input-group-text" for="sort">តម្រៀប</label>
+                </div> -->
+                <select name="sort" class="custom-select" id="sort" onchange="location='{{url()->current()}}/?sort='+ this.value">
+                  <option value="0" selected>--តម្រៀប--</option>
+                  <option value="1" @if(request()->input('sort')==1) selected @endif>ផលិតផលថ្មី</option>
+                  <option value="2" @if(request()->input('sort')==2) selected @endif>ឈ្មោះផលិតផល</option>
+                  <option value="3" @if(request()->input('sort')==3) selected @endif>តំលៃខ្ពស់</option>
+                  <option value="4" @if(request()->input('sort')==4) selected @endif>តំលៃទាប</option>
+                </select>
+              </div>
+          </div>
+         
+          
         </div>
      
           <div class="row">
@@ -90,3 +115,37 @@
 
   
 @endsection
+
+ <!--  <script type="text/javascript">
+        $(document).ready(function () {
+           $('#sort').change(function () {
+             var sortt = $(this).val();
+
+             $('#subCategory').find('option').not(':first').remove();
+
+             $.ajax({
+                url:'{{route('categories','')}}/?'+sortt,
+                type:'get',
+                dataType:'json',
+                success:function (response) {
+                    var len = 0;
+                    if (response.data != null) {
+                        len = response.data.length;
+                    }
+
+                    if (len>0) {
+                        for (var i = 0; i<len; i++) {
+                             var id = response.data[i].subCateId;
+                             var name = response.data[i].subCateName;
+
+                             var option = "<option value='"+id+"'>"+name+"</option>"; 
+
+                             $("#subCategory").append(option);
+                        }
+                    }
+                }
+             })
+           });
+        });
+    </script> -->
+

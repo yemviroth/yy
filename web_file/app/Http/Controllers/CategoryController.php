@@ -134,6 +134,8 @@ class CategoryController extends Controller
 
         // $pros = Category::with('products','subCategories')->where('cateId',$id)->get();
 
+        
+
         $pros = Category::with(['products' => function ($q){
             $q->orderBy('proId', 'DESC');
         }],'subCategories')->where('cateId',$id)

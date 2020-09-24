@@ -4,7 +4,7 @@
     <!-- Required meta tags -->
     <meta charset="utf-8">
     <!-- <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no"> -->
-    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="viewport" content="width=device-width, initial-scale=1,shrink-to-fit=yes">
     
     @yield('meta')
 
@@ -69,20 +69,23 @@
             </div>
 
             <div class="sidebar-header">
-                <h5>The Yeon Cambodia</h5>
+                <h5 class="text-center">The Yeon Cambodia</h5>
             </div>
-            <div class="p-3">
+            <div class="p-3 font-weight-bold">
               
-                <div class="form-group">
-                  <input type="text" class="form-control" placeholder="ស្វែងរក">
-                </div>
+                <div>
+                  <form action="{{route('search')}}" method="GET" class="form-group">
+                   @csrf
+                  <input value="{{request()->input('search')}}" name="search" type="text" class="form-control" placeholder="ស្វែងរក">
+                </form>
+                </div> 
                   <hr>
                   <div class="">
                     <ul class="list-group list-group-horizontal">
                        
-                          <li class="list-group-item flex-fill text-center" style="padding:1px;;"><a href="">About Us</a></li>
+                          <li class="list-group-item flex-fill text-center" style="padding:1px;;"><a href="">អំពីយើង</a></li>
                           <li class="list-group-item flex-fill text-center" style="padding:1px; "><a href="">About Us</a></li>
-                          <li class="list-group-item flex-fill text-center" style="padding:1px; "><a href="">About Us</a></li>
+                          <li class="list-group-item flex-fill text-center" style="padding:1px; "><a href="">ទំនាក់ទំនង</a></li>
 
                         
                     </ul>
@@ -96,7 +99,7 @@
                       <a class="nav-link active" id="pills-home-tab" data-toggle="pill" href="#pills-home" role="tab" aria-controls="pills-home" aria-selected="true">ផលិតផល</a>
                     </li>
                     <li class="nav-item" style="width:50%">
-                      <a class="nav-link" id="pills-profile-tab" data-toggle="pill" href="#pills-profile" role="tab" aria-controls="pills-profile" aria-selected="false">Profile</a>
+                      <a class="nav-link" id="pills-profile-tab" data-toggle="pill" href="#pills-profile" role="tab" aria-controls="pills-profile" aria-selected="false">តំណាងចែកចាយ</a>
                     </li>
                     
                   </ul>
@@ -256,7 +259,7 @@
       </div>
       <div class="modal-body">
         
-        <form action="{{route('search')}}" method="POST" class="form-group row">
+        <form action="{{route('search')}}" method="GET" class="form-group row">
           @csrf
           <div class="container-fluid">
             <div class="row">

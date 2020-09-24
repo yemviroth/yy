@@ -166,7 +166,7 @@ marqueeInit({
 
 <section>
   <div class="d-sm-none">
-  <div class="row">
+  <div class="row text-kh">
     @foreach($cates as $cate)
      <div class="col-4 border">
           <a class="list-horizon" href="{{route('category.show', $cate->cateId)}}"><strong>{{$cate->cateName}}</strong></a>
@@ -180,11 +180,24 @@ marqueeInit({
   
 <section class="pt-2" style="background: #fff">
 
-    <div class="header-title pt-2 text-center">ផលិតផលថ្មី</div>        
+    <div class="header-title pt-2 text-center d-none d-md-block d-lg-block">ផលិតផលថ្មី</div>        
     <div class="wrapper">
 
       <div class="container-fluid">
-
+          <div class="d-block d-sm-block d-md-none d-lg-none">
+            <div class="text-center list-tab my-3 mx-3">
+              <a href="#">
+                <img src="https://m.theyeon.net/web/upload/labelmobile/designu/btn_list_01.png" alt="">
+              </a>
+              <a href="#">
+                <img src="https://m.theyeon.net/web/upload/labelmobile/designu/btn_list_02.png" alt="">
+              </a>
+              <a href="#">
+                <img src="https://m.theyeon.net/web/upload/labelmobile/designu/btn_list_03.png" alt="">
+              </a>
+              
+            </div>
+          </div>
           <div class="row">
             @foreach ($product as $pro)
                     

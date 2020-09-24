@@ -10,7 +10,7 @@
     <section class="" style="background: #fff;padding-top:100px;">
     <div class="header-title text-center p-3">ស្វែងរកផលិតផល</div>
       
-        <form action="{{route('search')}}" method="POST" class="form-group pt-2">
+        <form action="{{route('search')}}" method="Get" class="form-group pt-2 mb-5">
           <div class="row">
             <div class="col-md-10 col-12 col-sm-12 mb-2">
                @csrf
@@ -27,28 +27,27 @@
           <div class="col-md-6 col-sm-12 ">
             
                    
-                      <p class="font-weight-bold text-kh">លទ្ធផលសម្រាប់ {{request()->input('search')}} មាន:   {{$pros->count()}}</p>
+                      <p class="font-weight-bold text-kh">លទ្ធផលសម្រាប់ {{request()->input('search')}} មាន:   <span class="badge badge-primary badge-pill">{{$pros->count()}}</span></p>
                  
                       
            
           </div>
           <div class="d-none d-md-block d-lg-block col-md-6 col-sm-12 text-right text-kh">
-            <strong>តម្រៀប :</strong> <a href="{{url()->current()}}/?sort=1">ផលិតផលថ្មី </a> | <a href="{{url()->current()}}/?sort=2">ឈ្មោះផលិតផល </a>| <a href="{{url()->current()}}/?sort=3">តំលៃខ្ពស់ </a>| <a href="{{url()->current()}}/?sort=4">តំលៃទាប </a>
+            <strong>តម្រៀប :</strong> <a href="{{url()->full()}}&sort=1">ផលិតផលថ្មី </a> | <a href="{{url()->full()}}&sort=2">ឈ្មោះផលិតផល </a>| <a href="{{url()->full()}}&sort=3">តំលៃខ្ពស់ </a>| <a href="{{url()->full()}}&sort=4">តំលៃទាប </a>
           </div>
 
-             <div class="d-none d-sm-none d-xs-block col-md-6 col-sm-12 text-right text-kh">
+            <div class="d-none d-sm-none d-xs-block col-md-6 col-sm-12 text-right text-kh">
              <div class="input-group mb-3">
-            <div class="input-group-prepend">
-              <label class="input-group-text" for="inputGroupSelect01">តម្រៀប</label>
-            </div>
-            <select class="custom-select" id="inputGroupSelect01">
-              <option selected>ផលិតផលថ្មី</option>
-              <option value="1">ឈ្មោះផលិតផល</option>
-              <option value="2">តំលៃខ្ពស់</option>
-              <option value="3">តំលៃទាប</option>
-            </select>
-          </div>
-              
+                <div class="input-group-prepend">
+                  <label class="input-group-text" for="sort">តម្រៀប</label>
+                </div>
+                <select name="sort" class="custom-select" id="sort" onchange="location='{{url()->full()}}&sort='+ this.value">
+                  <option value="1" @if(request()->input('sort')==1) selected @endif>ផលិតផលថ្មី</option>
+                  <option value="2" @if(request()->input('sort')==2) selected @endif>ឈ្មោះផលិតផល</option>
+                  <option value="3" @if(request()->input('sort')==3) selected @endif>តំលៃខ្ពស់</option>
+                  <option value="4" @if(request()->input('sort')==4) selected @endif>តំលៃទាប</option>
+                </select>
+              </div>
           </div>
 
           
