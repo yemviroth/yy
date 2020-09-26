@@ -7,11 +7,13 @@
 @section('content')
 
 
-
+@component('layouts.mobile-about-link')
+             
+@endcomponent
 
    
 
-    <section class="">
+    <section class="pt-3">
          <div id="carouselExampleCaptions" class="carousel slide" data-ride="carousel">
           <ol class="carousel-indicators">
             <li data-target="#carouselExampleCaptions" data-slide-to="0" class="active"></li>

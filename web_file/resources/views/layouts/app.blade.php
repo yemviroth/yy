@@ -83,9 +83,9 @@
                   <div class="">
                     <ul class="list-group list-group-horizontal">
                        
-                          <li class="list-group-item flex-fill text-center" style="padding:1px;;"><a href="">អំពីយើង</a></li>
-                          <li class="list-group-item flex-fill text-center" style="padding:1px; "><a href="">About Us</a></li>
-                          <li class="list-group-item flex-fill text-center" style="padding:1px; "><a href="">ទំនាក់ទំនង</a></li>
+                          <li class="list-group-item flex-fill text-center" style="padding:1px;;"><a href="{{route('about.index')}}">អំពីយើង</a></li>
+                          <li class="list-group-item flex-fill text-center" style="padding:1px; "><a href="{{route('about.index')}}">About Us</a></li>
+                          <li class="list-group-item flex-fill text-center" style="padding:1px; "><a href="{{route('contact.index')}}">ទំនាក់ទំនង</a></li>
 
                         
                     </ul>
@@ -253,6 +253,11 @@
 
     <div class="overlay"></div>
     <div class=""></div>
+
+@component('layouts.mobile-cate')
+             
+@endcomponent
+
 @yield('content')
 
 <div class="modal bd-example-modal-lg" tabindex="-1" role="dialog" aria-labelledby="myLargeModalLabel" aria-hidden="true">
