@@ -176,7 +176,9 @@
         </div>
       </div>
 
-
+    <div class="row">
+    {!!$products[0]->proDetail!!}
+    </div>    
 
 
 

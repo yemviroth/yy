@@ -25,7 +25,7 @@
     <script src="{{asset('js/bootstrap.min.js')}}"></script>
 
     <script src="{{asset('owlcarousel/owl.carousel.min.js')}}"></script>
-    <script src="https://cdn.ckeditor.com/4.14.0/standard/ckeditor.js"></script>
+    
 
     <title>
       

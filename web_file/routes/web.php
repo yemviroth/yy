@@ -157,6 +157,8 @@ Route::resource('translate','TranslateController');
 
 
 
-
+Route::get('/tinymce_test', function () {
+  return view('mceImageUpload::example');
+});
 
 

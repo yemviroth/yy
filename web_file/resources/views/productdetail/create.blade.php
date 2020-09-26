@@ -150,7 +150,26 @@ The Yeon Cambodia
             <div class="form-group row text-kh">
                 <label for="proHowTo" class="col-md-2 col-form-label text-md-right">How To Use :</label>
                 <div class="col-md-10">
-                <textarea class="form-control text-kh" name="proHowTo" id="proHowTo-textarea" rows="2"></textarea>
+                <textarea class="text-kh" name="proHowTo" id="proHowTo-textarea" rows="2"></textarea>
+                <script src="https://code.jquery.com/jquery-3.4.1.slim.min.js" integrity="sha384-J6qa4849blE2+poT4WnyKhv5vZF5SrPo0iEjwBvKU7imGFAV0wwj1yYfoRSJoZ+n" crossorigin="anonymous"></script>
+                    <link href="https://cdn.jsdelivr.net/npm/summernote@0.8.18/dist/summernote-lite.min.css" rel="stylesheet">
+                    <script src="https://cdn.jsdelivr.net/npm/summernote@0.8.18/dist/summernote-lite.min.js"></script>
+                <script>
+                        $('#proHowTo-textarea').summernote({
+                            placeholder: '',
+                            tabsize: 2,
+                            height: 100,
+                            toolbar: [
+                            ['style', ['style']],
+                            ['font', ['bold', 'underline', 'clear']],
+                            ['color', ['color']],
+                            ['para', ['ul', 'ol', 'paragraph']],
+                            ['table', ['table']],
+                            ['insert'],
+                            ['view', ['fullscreen', 'codeview', 'help']]
+                            ]
+                        });
+                        </script>
                 </div>
             </div>
 
@@ -160,7 +179,27 @@ The Yeon Cambodia
               <label for="proDescription" class="col-md-2 col-form-label text-md-right">Description :</label>    
             
                 <div class="col-md-10">
-                    <textarea class="form-control text-kh" name="proDescription" id="description-textarea" rows="8"></textarea>
+                    <!-- <textarea class="form-control text-kh" name="proDescription" id="description-textarea" rows="8"></textarea> -->
+                    <script src="https://code.jquery.com/jquery-3.4.1.slim.min.js" integrity="sha384-J6qa4849blE2+poT4WnyKhv5vZF5SrPo0iEjwBvKU7imGFAV0wwj1yYfoRSJoZ+n" crossorigin="anonymous"></script>
+                    <link href="https://cdn.jsdelivr.net/npm/summernote@0.8.18/dist/summernote-lite.min.css" rel="stylesheet">
+                    <script src="https://cdn.jsdelivr.net/npm/summernote@0.8.18/dist/summernote-lite.min.js"></script>
+                    <textarea class="text-kh" name="proDescription" id="summernote"></textarea>
+                        <script>
+                        $('#summernote').summernote({
+                            placeholder: '',
+                            tabsize: 2,
+                            height: 300,
+                            toolbar: [
+                            ['style', ['style']],
+                            ['font', ['bold', 'underline', 'clear']],
+                            ['color', ['color']],
+                            ['para', ['ul', 'ol', 'paragraph']],
+                            ['table', ['table']],
+                            ['insert', ['link', 'picture', 'video']],
+                            ['view', ['fullscreen', 'codeview', 'help']]
+                            ]
+                        });
+                        </script>
                 </div>
            </div>
 
@@ -175,6 +214,36 @@ The Yeon Cambodia
                     </select>
                 </div>
            </div>
+
+           <div class="form-group row">
+              <label for="proDetail" class="col-md-2 col-form-label text-md-right">Product Detail :</label>    
+            
+                <div class="col-md-10">
+                    <!-- <textarea class="form-control text-kh" name="proDescription" id="description-textarea" rows="8"></textarea> -->
+                    <script src="https://code.jquery.com/jquery-3.4.1.slim.min.js" integrity="sha384-J6qa4849blE2+poT4WnyKhv5vZF5SrPo0iEjwBvKU7imGFAV0wwj1yYfoRSJoZ+n" crossorigin="anonymous"></script>
+                    <link href="https://cdn.jsdelivr.net/npm/summernote@0.8.18/dist/summernote-lite.min.css" rel="stylesheet">
+                    <script src="https://cdn.jsdelivr.net/npm/summernote@0.8.18/dist/summernote-lite.min.js"></script>
+                    <textarea class="text-kh" name="proDetail" id="proDetail"></textarea>
+                        <script>
+                        $('#proDetail').summernote({
+                            placeholder: '',
+                            tabsize: 5,
+                            height: 400,
+                            toolbar: [
+                            ['style', ['style']],
+                            ['font', ['bold', 'underline', 'clear']],
+                            ['color', ['color']],
+                            ['para', ['ul', 'ol', 'paragraph']],
+                            ['table', ['table']],
+                            ['insert', ['link', 'picture', 'video']],
+                            ['view', ['fullscreen', 'codeview', 'help']]
+                            ]
+                        });
+                        </script>
+                </div>
+           </div>
+
+
             <hr>
                 <div class="float-right">
                         
@@ -186,64 +255,63 @@ The Yeon Cambodia
                 </div>
            
         </form>
-    </div>
-    
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/tinymce/4.9.5/tinymce.min.js"></script>
-    <script>
-        var editor_config = {
-            selector: '#description-textarea',
-            directionality: document.dir,
-            path_absolute: "/",
-            menubar: 'edit insert view format table',
-            plugins: [
-                "advlist autolink lists link image charmap preview hr anchor pagebreak",
-                "searchreplace wordcount visualblocks visualchars code fullscreen",
-                "insertdatetime media save table contextmenu directionality",
-                "paste textcolor colorpicker textpattern"
-            ],
-            toolbar: "insertfile undo redo | formatselect styleselect | bold italic strikethrough forecolor backcolor permanentpen formatpainter | alignleft aligncenter alignright alignjustify | bullist numlist outdent indent | link image media | fullscreen code",
-            relative_urls: false,
-            language: document.documentElement.lang,
-            height: 300,
-        }
-        tinymce.init(editor_config);
-    </script>
-   
-   <script>
-        var editor_config = {
-            selector: '#proHowTo-textarea',
-            directionality: document.dir,
-            path_absolute: "/",
-           
-            plugins: [
-                
-              
-              
-                "paste textcolor colorpicker textpattern"
-            ],
-            toolbar: " bold italic strikethrough | alignleft aligncenter alignright alignjustify | ",
-            relative_urls: false,
-            language: document.documentElement.lang,
-            height: 100,
-        }
-        tinymce.init(editor_config);
-    </script>
-                                    
-          
-        
-
+    </div>                                 
   </div>
 </div>
 
 </div>
+
+<!-- include summernote css/js -->
+<!-- <link href="https://cdn.jsdelivr.net/npm/summernote@0.8.16/dist/summernote.min.css" rel="stylesheet">
+<script src="https://cdn.jsdelivr.net/npm/summernote@0.8.16/dist/summernote.min.js"></script> -->
+
+
+
+<!-- <script src="https://code.jquery.com/jquery-2.2.4.min.js" integrity="sha256-BbhdlvQf/xTY9gja0Dq3HiwQF8LaCRTXxZKRutelT44=" crossorigin="anonymous"></script> -->
+<!-- <script src="//cdn.tinymce.com/4/tinymce.min.js"></script> -->
+<!-- <script>
+tinymce.init({
+  selector: '#description-textarea',
+  plugins: 'image code',
+  toolbar: 'undo redo | link image | code',
+  // enable title field in the Image dialog
+  image_title: true, 
+  // enable automatic uploads of images represented by blob or data URIs
+  automatic_uploads: true,
+  // add custom filepicker only to Image dialog
+  file_picker_types: 'image',
+  file_picker_callback: function(cb, value, meta) {
+    var input = document.createElement('input');
+    input.setAttribute('type', 'file');
+    input.setAttribute('accept', 'image/*');
+
+    input.onchange = function() {
+      var file = this.files[0];
+      var reader = new FileReader();
+      
+      reader.onload = function () {
+        var id = 'blobid' + (new Date()).getTime();
+        var blobCache =  tinymce.activeEditor.editorUpload.blobCache;
+        var base64 = reader.result.split(',')[1];
+        var blobInfo = blobCache.create(id, file, base64);
+        blobCache.add(blobInfo);
+
+        // call the callback and populate the Title field with the file name
+        cb(blobInfo.blobUri(), { title: file.name });
+      };
+      reader.readAsDataURL(file);
+    };
+    
+    input.click();
+  }
+});
+</script> -->
+
+
+
 <br><br>
 
-<script>
-CKEDITOR.replace( 'summary-ckeditor', {
-    filebrowserUploadUrl: "{{route('upload', ['_token' => csrf_token() ])}}",
-    filebrowserUploadMethod: 'form'
-});
-</script>
+
 
 
 

@@ -30,7 +30,7 @@ The Yeon Cambodia
             <div class="form-group row">
                 <label for="" class="col-md-2 col-form-label text-md-right">Product Category :</label>
                 <div class="col-md-10">
-                 <select name="cateId" class="custom-select my-1 mr-sm-2" id="category">
+                    <select name="cateId" class="custom-select my-1 mr-sm-2" id="category">
                             <option selected>Choose Product Category</option>
                             @foreach($cates as $cat)
                             @if ($products[0]->cateId == $cat->cateId)
@@ -138,6 +138,35 @@ The Yeon Cambodia
                     </select>
                 </div>
            </div>
+
+           <div class="form-group row">
+              <label for="proDescription" class="col-md-2 col-form-label text-md-right">Product Detail :</label>    
+            
+                <div class="col-md-10">
+                    
+                    <script src="https://code.jquery.com/jquery-3.4.1.slim.min.js" integrity="sha384-J6qa4849blE2+poT4WnyKhv5vZF5SrPo0iEjwBvKU7imGFAV0wwj1yYfoRSJoZ+n" crossorigin="anonymous"></script>
+                    <link href="https://cdn.jsdelivr.net/npm/summernote@0.8.18/dist/summernote-lite.min.css" rel="stylesheet">
+                    <script src="https://cdn.jsdelivr.net/npm/summernote@0.8.18/dist/summernote-lite.min.js"></script>
+                    <textarea class="text-kh" name="proDetail" id="proDetail" rows="8">{!!$products[0]->proDetail!!}</textarea>
+                        <script>
+                        $('#proDetail').summernote({
+                            placeholder: '',
+                            tabsize: 5,
+                            height: 400,
+                            toolbar: [
+                            ['style', ['style']],
+                            ['font', ['bold', 'underline', 'clear']],
+                            ['color', ['color']],
+                            ['para', ['ul', 'ol', 'paragraph']],
+                            ['table', ['table']],
+                            ['insert', ['link', 'picture', 'video']],
+                            ['view', ['fullscreen', 'codeview', 'help']]
+                            ]
+                        });
+                        </script>
+                </div>
+           </div>
+
             <hr>
                 <div class="float-right">
                         
