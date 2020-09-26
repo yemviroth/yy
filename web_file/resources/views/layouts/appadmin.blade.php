@@ -11,7 +11,12 @@
     <link rel="stylesheet" href="{{asset('owlcarousel/owl.carousel.min.css')}} ">
 <link rel="stylesheet" href="{{asset('owlcarousel/owl.theme.default.min.css')}}">
   <link rel="stylesheet" href="{{ asset('style.css')}}">
-    <link rel="stylesheet" type="text/css" href="https://cdnjs.cloudflare.com/ajax/libs/flag-icon-css/3.3.0/css/flag-icon.min.css">
+
+<!-- css -->
+ <!-- bootstrap-colorpicker -->
+<link rel="stylesheet" href="{{asset('css/bootstrap-colorpicker.css')}}">
+<script src="{{asset('js/bootstrap-colorpicker.js')}}"></script>
+<!-- end css -->
     
     <!-- Optional JavaScript -->
      <!-- jQuery first, then Popper.js, then Bootstrap JS -->
@@ -65,9 +70,9 @@
                 <a class="nav-link" href="{{route('productdetail.list')}}">PRODUCT</a>
               </li>
             
-               <li class="nav-item {{ (\Request::route()->getName()=='rooms.detail.list' ? 'active' : '') }}">
+             <!--   <li class="nav-item {{ (\Request::route()->getName()=='rooms.detail.list' ? 'active' : '') }}">
                 <a class="nav-link" href="{{route('rooms.detail.list')}}">ROOM DETAIL</a>
-              </li>
+              </li> -->
 
               <li class="nav-item {{ (\Request::route()->getName()=='user.index' ? 'active' : '') }}">
                 <a class="nav-link" href="{{route('user.index')}}">USER</a>

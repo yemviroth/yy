@@ -1,10 +1,10 @@
 @extends('layouts.appadmin')
 @section('title')
-TROPICANA - ROOMS
+The Yeon Cambodia
 @endsection
 @section('content')   
 
-<div class="container pt-4">
+<div class="container pt-4 text-kh">
      
 
 

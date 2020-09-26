@@ -162,11 +162,20 @@ font-size: 0.8rem;
     font-weight: bold;
     font-size: 1.6rem;
     /* line-height: 2rem; */
-}
+  }
+
+  .text-center-sm{
+    text-align: center;
+  }
+
 }
 
 
 @media (max-width: 992px){
+  .text-center-sm{
+    text-align: center;
+  }
+  
   .header-title{
     font-size: 20px;
   }

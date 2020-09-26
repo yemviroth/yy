@@ -319,12 +319,12 @@
 <div class="wrapper">
 
 <div class="container-fluid">
-    <footer class="pt-2 pb-2" style="font-size:.75rem;">
+    <footer class="pt-5 pb-2" style="font-size:.75rem;">
       
       <hr>
-        <div class="row">
+        <div class="row text-center-sm">
         
-          <div class="col-12 col-sm-12 col-md-7">
+          <div class="col-12 col-sm-12 col-md-6">
               <h6 class="font-weight-bold">
               COMPANY INFO
               </h6>
@@ -337,7 +337,7 @@
               </p>
           </div>
 
-          <div class="col-12 col-sm-12 col-md-5 pl-4" style="font-size:.75rem;">
+          <div class="col-12 col-sm-12 col-md-6 text-center-sm pl-4" style="font-size:.75rem;">
               <h6 class="font-weight-bold">
               Customer Service
               </h6>
@@ -350,9 +350,9 @@
 
         </div>
           <hr>
-          <div class="row">
-            <div data-toggle="tooltip" data-placement="top" class="col text-center" title="Developed by MAKTA IT Group [Prem Phalin(+855 98920094), Yem Viroth (+855 69566295)">
-                <p class="float-left pt-2">COPYRIGHT © THEYEON CAMBODIA ALL RIGHTS RESERVED.</p>
+          <div class="row text-center-sm">
+            <div data-toggle="tooltip" data-placement="top" class="col text-center" title="">
+                <p class="pt-2">COPYRIGHT © THEYEON CAMBODIA ALL RIGHTS RESERVED.</p>
               </div>
         </div>
       

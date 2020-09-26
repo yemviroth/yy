@@ -1,15 +1,16 @@
 @extends('layouts.appadmin')
 @section('title')
-TROPICANA - ROOMS
+The Yeon Cambodia
 @endsection
 @section('content')   
 
 <div class="container pt-4">
      
+     
 
 
 
-    <div class="card">
+    <div class="card text-kh">
   <div class="card-header bg-dark text-light">
     <span><i class="fas fa-plus-square"></i></span><span class="ml-2">Add New Product</span>  
   </div>
@@ -26,9 +27,9 @@ TROPICANA - ROOMS
                 <select name="cateId" class="custom-select my-1 mr-sm-2" id="category">
                             <option selected value="">Choose Product Category</option>
                             @foreach($cate as $cat)
-                            <option value="{{$cat->cateId}}">{{$cat->cateName}}</option>
+                            <option class="" value="{{$cat->cateId}}">{{$cat->cateName}}</option>
                             @endforeach
-                    </select>
+                </select>
                 </div>
             </div>
 
@@ -85,6 +86,22 @@ TROPICANA - ROOMS
                     <input type="text" id="proName" class="form-control" name="proName" required>
                 </div>
             </div>
+            <div class="form-group row">
+               <label for="proName" class="col-md-2 form-label text-md-right">Color :</label>
+                <div class="col-md-10">
+                
+                      <div class="input-group demo2">
+                        <input type="text" value="" class="form-control" />
+                        <span class="input-group-addon"><i></i></span>
+                    </div>
+                    <script>
+                        $(function(){
+                            $('.demo2').colorpicker();
+                        });
+                    </script>
+
+            </div>
+        </div>
 
             <div class="form-group row">
                 <label for="proPrice" class="col-md-2 col-form-label text-md-right">Product Price :</label>
@@ -130,10 +147,10 @@ TROPICANA - ROOMS
                 </div>
             </div>
 
-            <div class="form-group row">
+            <div class="form-group row text-kh">
                 <label for="proHowTo" class="col-md-2 col-form-label text-md-right">How To Use :</label>
                 <div class="col-md-10">
-                <textarea class="form-control" name="proHowTo" id="proHowTo-textarea" rows="2"></textarea>
+                <textarea class="form-control text-kh" name="proHowTo" id="proHowTo-textarea" rows="2"></textarea>
                 </div>
             </div>
 
@@ -143,7 +160,7 @@ TROPICANA - ROOMS
               <label for="proDescription" class="col-md-2 col-form-label text-md-right">Description :</label>    
             
                 <div class="col-md-10">
-                    <textarea class="form-control" name="proDescription" id="description-textarea" rows="8"></textarea>
+                    <textarea class="form-control text-kh" name="proDescription" id="description-textarea" rows="8"></textarea>
                 </div>
            </div>
 
@@ -231,7 +248,7 @@ CKEDITOR.replace( 'summary-ckeditor', {
 
 
 <script type="text/javascript" src="http://ajax.googleapis.com/ajax/libs/jquery/1.8.3/jquery.min.js"></script>
-<script language="javascript" type="text/javascript">
+<!-- <script language="javascript" type="text/javascript">
 $(function () {
     $("#fileupload").change(function () {
         $("#dvPreview").html("");
@@ -259,5 +276,5 @@ $(function () {
         }
     });
 });
-</script>
+</script> -->
 @endsection
