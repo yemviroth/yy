@@ -23,9 +23,12 @@
     <script src="{{asset('js/jquery-3.4.1.slim.min.js')}}"></script>
     <script src="{{asset('js/popper.min.js') }}"></script>
     <script src="{{asset('js/bootstrap.min.js')}}"></script>
-
+    
     <script src="{{asset('owlcarousel/owl.carousel.min.js')}}"></script>
     
+  
+    <script src="https://code.jquery.com/jquery-2.2.4.min.js" integrity="sha256-BbhdlvQf/xTY9gja0Dq3HiwQF8LaCRTXxZKRutelT44=" crossorigin="anonymous"></script>
+<script src="//cdn.tinymce.com/4/tinymce.min.js"></script>
 
     <title>
       

@@ -8,7 +8,7 @@ The Yeon Cambodia
      
      
 
-
+<?php echo ini_get('max_execution_time'); ?>
 
     <div class="card text-kh">
   <div class="card-header bg-dark text-light">
@@ -150,26 +150,8 @@ The Yeon Cambodia
             <div class="form-group row text-kh">
                 <label for="proHowTo" class="col-md-2 col-form-label text-md-right">How To Use :</label>
                 <div class="col-md-10">
-                <textarea class="text-kh" name="proHowTo" id="proHowTo-textarea" rows="2"></textarea>
-                <script src="https://code.jquery.com/jquery-3.4.1.slim.min.js" integrity="sha384-J6qa4849blE2+poT4WnyKhv5vZF5SrPo0iEjwBvKU7imGFAV0wwj1yYfoRSJoZ+n" crossorigin="anonymous"></script>
-                    <link href="https://cdn.jsdelivr.net/npm/summernote@0.8.18/dist/summernote-lite.min.css" rel="stylesheet">
-                    <script src="https://cdn.jsdelivr.net/npm/summernote@0.8.18/dist/summernote-lite.min.js"></script>
-                <script>
-                        $('#proHowTo-textarea').summernote({
-                            placeholder: '',
-                            tabsize: 2,
-                            height: 100,
-                            toolbar: [
-                            ['style', ['style']],
-                            ['font', ['bold', 'underline', 'clear']],
-                            ['color', ['color']],
-                            ['para', ['ul', 'ol', 'paragraph']],
-                            ['table', ['table']],
-                            ['insert'],
-                            ['view', ['fullscreen', 'codeview', 'help']]
-                            ]
-                        });
-                        </script>
+                <textarea class="form-control text-kh" name="proHowTo" id="proHowTo-textarea" rows="2"></textarea>
+                
                 </div>
             </div>
 
@@ -179,27 +161,8 @@ The Yeon Cambodia
               <label for="proDescription" class="col-md-2 col-form-label text-md-right">Description :</label>    
             
                 <div class="col-md-10">
-                    <!-- <textarea class="form-control text-kh" name="proDescription" id="description-textarea" rows="8"></textarea> -->
-                    <script src="https://code.jquery.com/jquery-3.4.1.slim.min.js" integrity="sha384-J6qa4849blE2+poT4WnyKhv5vZF5SrPo0iEjwBvKU7imGFAV0wwj1yYfoRSJoZ+n" crossorigin="anonymous"></script>
-                    <link href="https://cdn.jsdelivr.net/npm/summernote@0.8.18/dist/summernote-lite.min.css" rel="stylesheet">
-                    <script src="https://cdn.jsdelivr.net/npm/summernote@0.8.18/dist/summernote-lite.min.js"></script>
-                    <textarea class="text-kh" name="proDescription" id="summernote"></textarea>
-                        <script>
-                        $('#summernote').summernote({
-                            placeholder: '',
-                            tabsize: 2,
-                            height: 300,
-                            toolbar: [
-                            ['style', ['style']],
-                            ['font', ['bold', 'underline', 'clear']],
-                            ['color', ['color']],
-                            ['para', ['ul', 'ol', 'paragraph']],
-                            ['table', ['table']],
-                            ['insert', ['link', 'picture', 'video']],
-                            ['view', ['fullscreen', 'codeview', 'help']]
-                            ]
-                        });
-                        </script>
+                    <textarea class="form-control text-kh" name="proDescription" id="description-textarea" rows="8"></textarea>
+                   
                 </div>
            </div>
 
@@ -219,27 +182,7 @@ The Yeon Cambodia
               <label for="proDetail" class="col-md-2 col-form-label text-md-right">Product Detail :</label>    
             
                 <div class="col-md-10">
-                    <!-- <textarea class="form-control text-kh" name="proDescription" id="description-textarea" rows="8"></textarea> -->
-                    <script src="https://code.jquery.com/jquery-3.4.1.slim.min.js" integrity="sha384-J6qa4849blE2+poT4WnyKhv5vZF5SrPo0iEjwBvKU7imGFAV0wwj1yYfoRSJoZ+n" crossorigin="anonymous"></script>
-                    <link href="https://cdn.jsdelivr.net/npm/summernote@0.8.18/dist/summernote-lite.min.css" rel="stylesheet">
-                    <script src="https://cdn.jsdelivr.net/npm/summernote@0.8.18/dist/summernote-lite.min.js"></script>
-                    <textarea class="text-kh" name="proDetail" id="proDetail"></textarea>
-                        <script>
-                        $('#proDetail').summernote({
-                            placeholder: '',
-                            tabsize: 5,
-                            height: 400,
-                            toolbar: [
-                            ['style', ['style']],
-                            ['font', ['bold', 'underline', 'clear']],
-                            ['color', ['color']],
-                            ['para', ['ul', 'ol', 'paragraph']],
-                            ['table', ['table']],
-                            ['insert', ['link', 'picture', 'video']],
-                            ['view', ['fullscreen', 'codeview', 'help']]
-                            ]
-                        });
-                        </script>
+                    <textarea class="form-control text-kh" name="proDetail" id="proDetail-textarea" rows="8"></textarea>                  
                 </div>
            </div>
 
@@ -267,9 +210,9 @@ The Yeon Cambodia
 
 
 
-<!-- <script src="https://code.jquery.com/jquery-2.2.4.min.js" integrity="sha256-BbhdlvQf/xTY9gja0Dq3HiwQF8LaCRTXxZKRutelT44=" crossorigin="anonymous"></script> -->
-<!-- <script src="//cdn.tinymce.com/4/tinymce.min.js"></script> -->
-<!-- <script>
+<script src="https://code.jquery.com/jquery-2.2.4.min.js" integrity="sha256-BbhdlvQf/xTY9gja0Dq3HiwQF8LaCRTXxZKRutelT44=" crossorigin="anonymous"></script> -->
+<script src="//cdn.tinymce.com/4/tinymce.min.js"></script>
+ <script>
 tinymce.init({
   selector: '#description-textarea',
   plugins: 'image code',
@@ -305,7 +248,7 @@ tinymce.init({
     input.click();
   }
 });
-</script> -->
+</script>
 
 
 
@@ -316,7 +259,7 @@ tinymce.init({
 
 
 <script type="text/javascript" src="http://ajax.googleapis.com/ajax/libs/jquery/1.8.3/jquery.min.js"></script>
-<!-- <script language="javascript" type="text/javascript">
+<script language="javascript" type="text/javascript">
 $(function () {
     $("#fileupload").change(function () {
         $("#dvPreview").html("");

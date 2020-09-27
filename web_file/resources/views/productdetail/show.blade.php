@@ -59,6 +59,12 @@
 
         </div>
       </div>
+      <div class="container">
+      <div class="row w-100">
+           {!!$products[0]->proDetail!!}
+        </div> 
+      </div>
+         
     </div>
 
     <!-- row sm -->
@@ -116,6 +122,8 @@
               <p class="">{!!$products[0]->proDescription!!}</p>
             </div>
           </div>
+
+          
         </div>
 
       </div>

@@ -123,7 +123,7 @@ The Yeon Cambodia
               <label for="proDescription" class="col-md-2 col-form-label text-md-right">Description :</label>    
             
                 <div class="col-md-10">
-                    <textarea class="form-control" name="proDescription" id="description-textarea" rows="8">{!!$products[0]->proDescription!!}</textarea>
+                    <textarea class="form-control" name="proDescription" id="richTextArea" rows="8">{!!$products[0]->proDescription!!}</textarea>
                 </div>
            </div>
 
@@ -144,26 +144,9 @@ The Yeon Cambodia
             
                 <div class="col-md-10">
                     
-                    <script src="https://code.jquery.com/jquery-3.4.1.slim.min.js" integrity="sha384-J6qa4849blE2+poT4WnyKhv5vZF5SrPo0iEjwBvKU7imGFAV0wwj1yYfoRSJoZ+n" crossorigin="anonymous"></script>
-                    <link href="https://cdn.jsdelivr.net/npm/summernote@0.8.18/dist/summernote-lite.min.css" rel="stylesheet">
-                    <script src="https://cdn.jsdelivr.net/npm/summernote@0.8.18/dist/summernote-lite.min.js"></script>
-                    <textarea class="text-kh" name="proDetail" id="proDetail" rows="8">{!!$products[0]->proDetail!!}</textarea>
-                        <script>
-                        $('#proDetail').summernote({
-                            placeholder: '',
-                            tabsize: 5,
-                            height: 400,
-                            toolbar: [
-                            ['style', ['style']],
-                            ['font', ['bold', 'underline', 'clear']],
-                            ['color', ['color']],
-                            ['para', ['ul', 'ol', 'paragraph']],
-                            ['table', ['table']],
-                            ['insert', ['link', 'picture', 'video']],
-                            ['view', ['fullscreen', 'codeview', 'help']]
-                            ]
-                        });
-                        </script>
+                    
+                    <textarea class="form-control text-kh" name="proDetail" id="richTextArea" rows="8">{!!$products[0]->proDetail!!}</textarea>
+                       
                 </div>
            </div>
 
@@ -186,47 +169,7 @@ The Yeon Cambodia
         </form>
     </div>
   
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/tinymce/4.9.5/tinymce.min.js"></script>
-    <script>
-        var editor_config = {
-            selector: '#description-textarea',
-            directionality: document.dir,
-            path_absolute: "/",
-            menubar: 'edit insert view format table',
-            plugins: [
-                "advlist autolink lists link image charmap preview hr anchor pagebreak",
-                "searchreplace wordcount visualblocks visualchars code fullscreen",
-                "insertdatetime media save table contextmenu directionality",
-                "paste textcolor colorpicker textpattern"
-            ],
-            toolbar: "insertfile undo redo | formatselect styleselect | bold italic strikethrough forecolor backcolor permanentpen formatpainter | alignleft aligncenter alignright alignjustify | bullist numlist outdent indent | link image media |",
-            relative_urls: false,
-            language: document.documentElement.lang,
-            height: 300,
-        }
-        tinymce.init(editor_config);
-    </script>
-   
-                                         
-   <script>
-        var editor_config = {
-            selector: '#proHowTo-textarea',
-            directionality: document.dir,
-            path_absolute: "/",
-           
-            plugins: [
-                
-              
-              
-                "paste textcolor colorpicker textpattern"
-            ],
-            toolbar: " bold italic strikethrough | alignleft aligncenter alignright alignjustify | ",
-            relative_urls: false,
-            language: document.documentElement.lang,
-            height: 100,
-        }
-        tinymce.init(editor_config);
-    </script>
+
     
 
 
@@ -236,16 +179,54 @@ The Yeon Cambodia
 </div>
 <br><br>
 
+
 <script>
-CKEDITOR.replace( 'summary-ckeditor', {
-    filebrowserUploadUrl: "{{route('upload', ['_token' => csrf_token() ])}}",
-    filebrowserUploadMethod: 'form'
-});
+	tinymce.init({
+		selector : '#richTextArea',
+		plugins : 'image',
+		toolbar : 'image',
+    
+		images_upload_url : 'http://192.168.10.243:8080/tp/public_html/upload.php',
+		automatic_uploads : false,
+
+		images_upload_handler : function(blobInfo, success, failure) {
+			var xhr, formData;
+
+			xhr = new XMLHttpRequest();
+			xhr.withCredentials = false;
+			xhr.open('POST', 'http://192.168.10.243:8080/tp/public_html/upload.php');
+
+			xhr.onload = function() {
+				var json;
+
+				if (xhr.status != 200) {
+					failure('HTTP Error: ' + xhr.status);
+					return;
+				}
+
+				json = JSON.parse(xhr.responseText);
+
+				if (!json || typeof json.file_path != 'string') {
+					failure('Invalid JSON: ' + xhr.responseText);
+					return;
+				}
+
+				success(json.file_path);
+			};
+
+			formData = new FormData();
+			formData.append('file', blobInfo.blob(), blobInfo.filename());
+
+			xhr.send(formData);
+		},
+    });
+    
+    
 </script>
 
 
 
-<script type="text/javascript" src="http://ajax.googleapis.com/ajax/libs/jquery/1.8.3/jquery.min.js"></script>
+<!-- <script type="text/javascript" src="http://ajax.googleapis.com/ajax/libs/jquery/1.8.3/jquery.min.js"></script> -->
 <script language="javascript" type="text/javascript">
 $(function () {
     $("#fileupload").change(function () {
@@ -280,7 +261,7 @@ $(".custom-file-input").on("change", function() {
   $(this).siblings(".custom-file-label").addClass("selected").html(fileName);
 });
 </script>
-</script>
+
 
 
 
