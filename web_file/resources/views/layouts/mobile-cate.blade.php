@@ -2,7 +2,7 @@
 <div class="d-sm-none pt-5">
   <div class="row text-kh">
     @foreach($cates as $cate)
-     <div class="col-4 border">
+     <div class="col-6 col-sm-4 border">
           <a class="list-horizon" href="{{route('category.show', $cate->cateId)}}"><strong>{{$cate->cateName}}</strong></a>
       </div>
     @endforeach           

@@ -1,7 +1,7 @@
 <?php
 
-$url = array("localhost/public_html");
-$here = "localhost:8080/tp/public_html/";
+$url = array("localhost:8080/tp/public_html");
+$here = '\tp\public_html/';
 reset($_FILES);
 $temp = current($_FILES);
 
@@ -19,9 +19,10 @@ if(is_uploaded_file($temp['tmp_name']))
     }
       
     $fileName = "uploads/" . $temp['name'];
+    
     move_uploaded_file($temp['tmp_name'], $fileName);
   
-    echo json_encode(array('file_path' => '/tp/public_html//'.$fileName));
+    echo json_encode(array('file_path' => $here. $fileName));
 }
 
 ?>

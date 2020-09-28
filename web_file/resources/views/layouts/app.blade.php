@@ -12,8 +12,12 @@
   <!-- <link rel="shortcut icon" href="{{asset('favicon.ico')}}" type="image/x-icon"> -->
   <link href='https://fonts.googleapis.com/css?family=Bayon|Francois+One' rel='stylesheet' type='text/css'>
   <!-- Bootstrap CSS -->
-  <link rel="stylesheet" href="{{asset('css/bootstrap.css')}}">
-  <link rel="stylesheet" href="{{asset('css/bootstrap-grid.css')}}">
+
+  <!-- <link rel="stylesheet" href="{{asset('css/bootstrap.css')}}">
+  <link rel="stylesheet" href="{{asset('css/bootstrap-grid.css')}}"> -->
+
+  <link rel="stylesheet" href="https://unpkg.com/bootstrap-material-design@4.1.1/dist/css/bootstrap-material-design.min.css" integrity="sha384-wXznGJNEXNG1NFsbm0ugrLFMQPWswR3lds2VeinahP8N0zJw9VWSopbjv2x7WCvX" crossorigin="anonymous">
+
 
   <link rel="stylesheet" type="text/css" href="{{asset('fontawesome-free-5.12.0-web/css/all.min.css')}}  ">
   <link rel="stylesheet" href="{{asset('owlcarousel/owl.carousel.min.css')}} ">
@@ -23,7 +27,7 @@
 
   <link rel="stylesheet" href="{{ asset('style.css')}}">
   <!-- <link rel="stylesheet" href="{{ asset('css/sidebarNavigation.css')}}"> -->
-  
+
 
 
   <!-- test side nav -->
@@ -43,7 +47,7 @@
   <script src="{{asset('js/crawler.js')}}"></script>
 
 
-  
+
 
 
   <title>TheYeon Cambodia</title>
@@ -117,6 +121,26 @@
           <div class="tab-pane fade" id="pills-profile" role="tabpanel" aria-labelledby="pills-profile-tab">...</div>
 
         </div>
+
+        <!-- <ul class="nav nav-pills mb-3" id="pills-tab" role="tablist">
+          <li class="nav-item">
+            <a class="nav-link active" id="pills-home-tab" data-toggle="pill" href="#pills-home" role="tab" aria-controls="pills-home" aria-selected="true">Home</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" id="pills-profile-tab" data-toggle="pill" href="#pills-profile" role="tab" aria-controls="pills-profile" aria-selected="false">Profile</a>
+          </li>
+         
+        </ul>
+        <div class="tab-content" id="pills-tabContent">
+          <div class="tab-pane fade show active" id="pills-home" role="tabpanel" aria-labelledby="pills-home-tab">
+          @foreach($cates as $cate)
+              <li><a href="{{route('category.show', $cate->cateId)}}">{{$cate->cateName}}</a></li>
+              @endforeach
+          </div>
+          <div class="tab-pane fade" id="pills-profile" role="tabpanel" aria-labelledby="pills-profile-tab">...</div>
+          
+        </div> -->
+
 
 
       </div>

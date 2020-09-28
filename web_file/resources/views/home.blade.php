@@ -184,13 +184,13 @@
     <div class="container-fluid">
       <div class="d-block d-sm-block d-md-none d-lg-none">
         <div class="text-center list-tab my-3 mx-3">
-          <a href="#">
+          <a href="#" id="linkGrid-1">
             <img src="https://m.theyeon.net/web/upload/labelmobile/designu/btn_list_01.png" alt="">
           </a>
-          <a href="#">
+          <a href="#" id="linkGrid-2">
             <img src="https://m.theyeon.net/web/upload/labelmobile/designu/btn_list_02.png" alt="">
           </a>
-          <a href="#">
+          <a href="#" id="linkGrid-3">
             <img src="https://m.theyeon.net/web/upload/labelmobile/designu/btn_list_03.png" alt="">
           </a>
 
@@ -199,7 +199,7 @@
       <div class="row">
         @foreach ($product as $pro)
 
-        <div class="col-sm-4 col-md-3 col-lg-4 col-6 p-1 text-kh">
+        <div class="col-sm-4 col-md-3 col-lg-4 col-6 p-1 text-kh" id="proGrid">
 
           <div class="">
             <div class="content">
@@ -216,7 +216,7 @@
 
                 </div>
 
-
+        <!-- mobile -->
                 <div class="d-block d-lg-none">
                   <div class="text-under-product">
 
@@ -225,10 +225,11 @@
                     <span class="badge badge-dark mb-2">SOLDOUT</span>
                     @endif
                     <p class="price">${{$pro->proPrice}}</p>
-                    <p>{{ str_limit($pro->proTextIntro, 60) }}</p>
+                    <p>{!!str_limit($pro->proTextIntro, 60)!!}</p>
 
                   </div>
                 </div>
+        <!-- mobile -->
 
               </a>
             </div>
@@ -285,5 +286,36 @@
       $(this).find('.sm-menu').first().stop(true, true).slideUp(105)
     });
   });
+
+
+
+$(document).ready(function(){
+    $("#linkGrid-3").click(function(){
+      $("div #proGrid").removeClass("col-6");
+      $("div #proGrid").removeClass("col-4");
+      $("div #proGrid").removeClass("col-12");
+        $("div #proGrid").addClass("col-4");
+        
+    });
+
+    $("#linkGrid-1").click(function(){
+      $("div #proGrid").removeClass("col-6");
+      $("div #proGrid").removeClass("col-4");
+      $("div #proGrid").removeClass("col-12");
+        $("div #proGrid").addClass("col-12");
+        
+    });
+
+    $("#linkGrid-2").click(function(){
+      $("div #proGrid").removeClass("col-6");
+      $("div #proGrid").removeClass("col-4");
+      $("div #proGrid").removeClass("col-12");
+        $("div #proGrid").addClass("col-6");
+        
+    });
+});
+
+
+
 </script>
 @endsection

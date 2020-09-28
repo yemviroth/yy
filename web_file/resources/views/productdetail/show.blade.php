@@ -58,14 +58,15 @@
           <h6 class="text-kh-bold">Total : </h6>
 
         </div>
+        <div class="container text-kh">
+        {!!$products[0]->proDetail!!}
+        </div>
+        
       </div>
-      <div class="container">
-      <div class="row w-100">
-           {!!$products[0]->proDetail!!}
-        </div> 
-      </div>
-         
+     
+      
     </div>
+    
 
     <!-- row sm -->
     <div class="d-block d-lg-none">
@@ -98,7 +99,8 @@
 
           <div class="row">
             <div class="col-3">
-              Comment
+              
+              </p><strong>មតិយោបល់</strong>  </p>
             </div>
             <div class="col-9 text-mute">
               <p class="text-muted">{!!$products[0]->proTextIntro!!}</p>
@@ -107,7 +109,8 @@
 
           <div class="row">
             <div class="col-3 text-mute">
-              <p>របៀបប្រើ</p>
+      
+              </p><strong>របៀបប្រើ</strong>  </p>
             </div>
             <div class="col-9">
               <p class="text-muted">{!!$products[0]->proHowTo!!}</p>
@@ -116,7 +119,7 @@
 
           <div class="row">
             <div class="col-3 text-mute">
-              <p>បរិយាយ</p>
+              </p><strong>បរិយាយ</strong>  </p>
             </div>
             <div class="col-9">
               <p class="">{!!$products[0]->proDescription!!}</p>
@@ -173,20 +176,29 @@
 
       <div class="p-2 row border">
         <div class="col-sm-12 text-kh">
-          <div class="row">
+          <div class="row ">
             <div class="col-3">
               <strong>តំលៃសរុប</strong>
             </div>
             <div class="col-9">
               <h6 id="price" class="float-right">${{$products[0]->proPrice}}</h6>
+             
             </div>
           </div>
+          
+        </div>
+        
+      </div>
+      <br>
+      <div class="pt-2 row border">
+        <div class="col-sm-12 text-kh">
+        {!!$products[0]->proDetail!!}
         </div>
       </div>
 
-    <div class="row">
-    {!!$products[0]->proDetail!!}
-    </div>    
+    
+    
+    
 
 
 

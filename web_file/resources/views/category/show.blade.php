@@ -83,7 +83,7 @@
                     <span class="badge badge-dark mb-2">SOLDOUT</span>
                     @endif
                     <p class="price">${{$pro->proPrice}}</p>
-                    <p>{{ str_limit($pro->proTextIntro, 60) }}</p>
+                    <p>{!!str_limit($pro->proTextIntro, 60)!!}</p>
 
                   </div>
                 </div>

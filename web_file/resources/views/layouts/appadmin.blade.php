@@ -12,6 +12,9 @@
 <link rel="stylesheet" href="{{asset('owlcarousel/owl.theme.default.min.css')}}">
   <link rel="stylesheet" href="{{ asset('style.css')}}">
 
+
+  
+
 <!-- css -->
  <!-- bootstrap-colorpicker -->
 <link rel="stylesheet" href="{{asset('css/bootstrap-colorpicker.css')}}">
@@ -29,6 +32,10 @@
   
     <script src="https://code.jquery.com/jquery-2.2.4.min.js" integrity="sha256-BbhdlvQf/xTY9gja0Dq3HiwQF8LaCRTXxZKRutelT44=" crossorigin="anonymous"></script>
 <script src="//cdn.tinymce.com/4/tinymce.min.js"></script>
+
+<!-- <script src="https://cdn.tiny.cloud/1/qagffr3pkuv17a8on1afax661irst1hbr4e6tbv888sz91jc/tinymce/5/tinymce.min.js" referrerpolicy="origin"></script> -->
+
+<!-- <script src="https://cdnjs.cloudflare.com/ajax/libs/tinymce/5.4.2/tinymce.min.js" integrity="sha512-SPCExIkjTrrcv8Jfu4dzvDJfMe7A9CKmKE8v1fd+Ku3Dq5B9w8rfmrAHfz2RKU+4zOyT1JlprGA1bC2o8Z1yZA==" crossorigin="anonymous"></script> -->
 
     <title>
       
@@ -137,7 +144,7 @@
 
 @yield('script')
 
-
+<script src="{{asset('js/tinymce_image_upload.js')}}"></script>
 
   </body>
 </html>

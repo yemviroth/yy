@@ -2,8 +2,10 @@
 @import url('https://fonts.googleapis.com/css?family=Hanuman:400,700');
 @import url('https://fonts.googleapis.com/css?family=Kantumruy:400,700|Ubuntu:400,500,700&subset=khmer');
 body {
-       font-family: 'Roboto',nanum gothic,sans-serif,dotum,verdana,arial;
+       /* font-family: 'Roboto',nanum gothic,sans-serif,dotum,verdana,arial; */
        /* font-family: "Suwannaphum", "Roboto"; */
+       font-family: Ubuntu,Kantumruy,sans-serif!important;
+       background-color: #FFF !important;
 }
 p {
   font-family: Ubuntu,Kantumruy,sans-serif!important;
@@ -148,7 +150,7 @@ font-size: 0.8rem;
 @media (max-width: 280px) {
 
   .img-fluid-sm{
-    height:17px;
+    height:14px;
   }
   .header-title{
     font-size: 10px;
@@ -166,6 +168,10 @@ font-size: 0.8rem;
 
   .text-center-sm{
     text-align: center;
+  }
+
+  .list-horizon{
+    font-size: 0.7rem;;
   }
 
 }
@@ -260,7 +266,11 @@ font-size: 0.8rem;
   .wrapper{width: 1170px;max-width: 1170px; margin: 0 auto;}
 } */
 
-
+p img{
+  width: 100%;
+  margin: 0 auto;
+  text-align: center;
+}
 
 
 
