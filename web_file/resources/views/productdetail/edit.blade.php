@@ -112,7 +112,7 @@ The Yeon Cambodia
                 <div class="form-group row">
                     <label for="proHowTo" class="col-md-2 col-form-label text-md-right">How To Use :</label>
                     <div class="col-md-10">
-                        <textarea class="form-control" name="proHowTo" id="txt-sm" rows="2">{{$products[0]->proHowTo}}</textarea>
+                        <textarea class="form-control sm text-kh" name="proHowTo" id="txt-sm" rows="2">{{$products[0]->proHowTo}}</textarea>
 
                     </div>
                 </div>
@@ -123,7 +123,7 @@ The Yeon Cambodia
                     <label for="proDescription" class="col-md-2 col-form-label text-md-right">Description :</label>
 
                     <div class="col-md-10">
-                        <textarea class="form-control" name="proDescription" id="" rows="8">{!!$products[0]->proDescription!!}</textarea>
+                        <textarea class="form-control sm text-kh" name="proDescription" id="" rows="8">{!!$products[0]->proDescription!!}</textarea>
                     </div>
                 </div>
 
@@ -145,7 +145,7 @@ The Yeon Cambodia
                     <div class="col-md-10">
 
 
-                        <textarea class="form-control text-kh" name="proDetail" id="txt-lg" rows="8">{!!$products[0]->proDetail!!}</textarea>
+                        <textarea class="form-control sm text-kh" name="proDetail" id="txt-lg" rows="8">{!!$products[0]->proDetail!!}</textarea>
 
                     </div>
                 </div>

@@ -66,9 +66,9 @@
                 <img class="content-image img-fluid" src="{{asset('images/product/'.$pro->proImage)}}">
                 <div class="content-details fadeIn-top float-left d-none d-md-block">
                   @if($pro->proIsInStock=='No')
-                  <span class="badge badge-light mb-4">SOLDOUT</span>
+                  <h5><span class="p-1 badge badge-light mb-4 ">មិនមានក្នុងស្តុក</span></h5>
                   @endif
-                  <h6>{!!$pro->proName!!}</h6>
+                   <h6>{!!$pro->proName!!}</h6>
                   <p class="price">${{$pro->proPrice}}</p>
                   <p>{!!$pro->proTextIntro!!}</p>
 
@@ -79,10 +79,10 @@
                   <div class="text-under-product">
 
                     <h6>{!!$pro->proName!!}</h6>
-                    @if($pro->proIsInStock=='No')
-                    <span class="badge badge-dark mb-2">SOLDOUT</span>
-                    @endif
-                    <p class="price">${{$pro->proPrice}}</p>
+                    
+                    <p class="price">${{$pro->proPrice}} @if($pro->proIsInStock=='No')
+                    <span class="badge badge-dark mb-2 ml-5">មិនមានក្នុងស្តុក</span>
+                    @endif</p>
                     <p>{!!str_limit($pro->proTextIntro, 60)!!}</p>
 
                   </div>

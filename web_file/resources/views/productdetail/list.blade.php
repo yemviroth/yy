@@ -53,8 +53,8 @@ TROPICANA - ROOMS
                                 <th>Product Name</th>
                                 <th>Price</th>
                                 <th>catId</th>
-                                <th style="width:200px">How To Use</th>
-                                <th style="width:200px">Description</th>
+                                <!-- <th style="width:200px">How To Use</th>
+                                <th style="width:200px">Description</th> -->
                                 <th style="width:200px">product Intro</th>
                                 <!-- <th>Order</th> -->
                                 <th>Created At</th>
@@ -79,8 +79,8 @@ TROPICANA - ROOMS
                                 <td>{{$pro->proName}}</td>
                                 <td>{{$pro->proPrice}}</td>
                                 <td>{{$pro->cateId}}</td>
-                                <td>{{$pro->proHowTo}}</td>
-                                <td>{!! Str::limit($pro->proDescription,150)!!}</td>
+                                <!-- <td>{{$pro->proHowTo}}</td> -->
+                                <!-- <td>{!! Str::limit($pro->proDescription,150)!!}</td> -->
                                 <td>{{Str::limit($pro->proTextIntro,100)}}</td>
                                 <!-- <td>{{$pro->proOrderBy}}</td> -->
                                 <td>{{$pro->created_at}}</td>

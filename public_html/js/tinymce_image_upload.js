@@ -5,7 +5,7 @@
 	
 	
 	tinymce.init({
-		selector : 'text',
+		selector : '',
    
 		plugins : 'image textcolor colorpicker',
 		toolbar : 'image forecolor backcolor undo redo | styleselect | fontsizeselect | bold italic | link image ,alignleft aligncenter alignright | table',
@@ -130,10 +130,68 @@ tinymce.init({
    
   
    tinymce.init({
-	selector: "textarea",
+	selector: "textarea #txt-sm",
 	menubar: false,
 	plugins : 'textcolor colorpicker',
 	toolbar: 'undo redo | styleselect | forecolor | fontsizeselect | bold italic | alignleft aligncenter alignright alignjustify | outdent indent | link image | code'
 });
 	
 
+tinymce.init({
+	selector: "textarea.form-control.sm",
+	menubar: false,
+	placeholder: "Ask a question or post an update...",
+  menubar: false,
+  skin: "outside",
+  toolbar_location: "bottom",
+    plugins: [
+        "advlist autolink lists link image charmap print preview anchor",
+        "searchreplace visualblocks code fullscreen",
+		"insertdatetime media table contextmenu paste",
+		"textcolor colorpicker"
+    ],
+    toolbar: "insertfile undo redo | forecolor | fontsizeselect| styleselect | bold italic | alignleft aligncenter alignright alignjustify | bullist numlist outdent indent | link | table"
+});
+
+
+
+// --txtdescriopt
+/* <script src="https://code.jquery.com/jquery-2.2.4.min.js" integrity="sha256-BbhdlvQf/xTY9gja0Dq3HiwQF8LaCRTXxZKRutelT44=" crossorigin="anonymous"></script> --> */
+/* <script src="//cdn.tinymce.com/4/tinymce.min.js"></script> */
+//  <script>
+// tinymce.init({
+//   selector: '#description-textarea',
+//   plugins: 'image code',
+//   toolbar: 'undo redo | link image | code',
+//   // enable title field in the Image dialog
+//   image_title: true, 
+//   // enable automatic uploads of images represented by blob or data URIs
+//   automatic_uploads: true,
+//   // add custom filepicker only to Image dialog
+//   file_picker_types: 'image',
+//   file_picker_callback: function(cb, value, meta) {
+//     var input = document.createElement('input');
+//     input.setAttribute('type', 'file');
+//     input.setAttribute('accept', 'image/*');
+
+//     input.onchange = function() {
+//       var file = this.files[0];
+//       var reader = new FileReader();
+      
+//       reader.onload = function () {
+//         var id = 'blobid' + (new Date()).getTime();
+//         var blobCache =  tinymce.activeEditor.editorUpload.blobCache;
+//         var base64 = reader.result.split(',')[1];
+//         var blobInfo = blobCache.create(id, file, base64);
+//         blobCache.add(blobInfo);
+
+//         // call the callback and populate the Title field with the file name
+//         cb(blobInfo.blobUri(), { title: file.name });
+//       };
+//       reader.readAsDataURL(file);
+//     };
+    
+//     input.click();
+//   }
+// });
+// </script>

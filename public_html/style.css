@@ -226,7 +226,14 @@ font-size: 0.8rem;
     width: 80%;
     margin: 0 auto;
   }
+  .content-details p{
+    color: #fff;
+    font-size: 0.8em;
+   
+  }
 } 
+
+
 
 /* // Small devices (landscape phones, 576px and up)
 @media (min-width: 576px) { ... }
@@ -763,7 +770,7 @@ border:0px solid gray;
 }
 .content-details p{
   color: #fff;
-  font-size: 0.8em;
+  font-size: 0.85em;
  
 }
 
@@ -895,6 +902,8 @@ border:0px solid gray;
     font-size: 1.4rem;
   }
 }
+
+
 
 @include media-breakpoint-up(lg) {
   html {

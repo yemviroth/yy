@@ -93,11 +93,7 @@
             <li class="list-group-item flex-fill text-center" style="padding:1px;;"><a href="{{route('about.index')}}">អំពីយើង</a></li>
             <li class="list-group-item flex-fill text-center" style="padding:1px; "><a href="{{route('about.index')}}">About Us</a></li>
             <li class="list-group-item flex-fill text-center" style="padding:1px; "><a href="{{route('contact.index')}}">ទំនាក់ទំនង</a></li>
-
-
           </ul>
-
-
         </div>
 
 
@@ -119,6 +115,9 @@
             </ul>
           </div>
           <div class="tab-pane fade" id="pills-profile" role="tabpanel" aria-labelledby="pills-profile-tab">...</div>
+
+
+          
 
         </div>
 
@@ -146,7 +145,7 @@
       </div>
 
 
-      <!--  <ul class="list-unstyled components">
+       <!-- <ul class="list-unstyled components">
                 <p>Dummy Heading</p>
 
                 <li class="{{ (\Request::route()->getName()=='home.index' ? 'active' : '') }}">             
