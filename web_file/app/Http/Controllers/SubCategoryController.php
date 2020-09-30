@@ -151,7 +151,7 @@ class SubCategoryController extends Controller
             
         ],[],$niceNames);
 
-        $cate = Category::where('cateId',$id)->first();;
+        $cate = Category::where('cateId',$id)->first();
         if (Auth::check()) {
             //  $request->request->add(['updated_by' => Auth::user()->name]);
         

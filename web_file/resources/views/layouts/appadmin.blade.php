@@ -13,7 +13,14 @@
   <link rel="stylesheet" href="{{ asset('style.css')}}">
 
 
-  
+  <!-- <link rel="stylesheet" href="//cdn.datatables.net/1.10.22/css/jquery.dataTables.min.css">
+<script src="//cdn.datatables.net/1.10.22/js/jquery.dataTables.min.js"></script> -->
+
+<link rel="stylesheet" href="//cdn.datatables.net/1.10.7/css/jquery.dataTables.min.css">
+<script src="//code.jquery.com/jquery.js"></script>
+        <!-- DataTables -->
+        <script src="//cdn.datatables.net/1.10.7/js/jquery.dataTables.min.js"></script>
+
 
 <!-- css -->
  <!-- bootstrap-colorpicker -->
@@ -79,6 +86,11 @@
                 <li class="nav-item {{ (\Request::route()->getName()=='productdetail.list' ? 'active' : '') }}">
                 <a class="nav-link" href="{{route('productdetail.list')}}">PRODUCT</a>
               </li>
+
+              <li class="nav-item ">
+                <a class="nav-link" href="{{route('company.edit','1')}}">Company Info</a>
+              </li>
+
             
              <!--   <li class="nav-item {{ (\Request::route()->getName()=='rooms.detail.list' ? 'active' : '') }}">
                 <a class="nav-link" href="{{route('rooms.detail.list')}}">ROOM DETAIL</a>
@@ -136,6 +148,57 @@
     <br><br><br>
 </section>
 
+
+@if ($message = Session::get('success'))
+
+<div class="alert alert-success fade show" role="alert" style="position:fixed;z-index:1000; width: 96%; left:2%;bottom:2px;">
+  <button type="button" class="close" data-dismiss="alert" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+  <center><strong>{{ $message }}</strong></center>
+</div>
+
+@endif
+
+
+@if ($message = Session::get('error'))
+
+<div class="alert alert-error fade show" role="alert" style="position:fixed;z-index:1000; width: 96%; left:2%;bottom:2px;">
+  <button type="button" class="close" data-dismiss="alert" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+  <center><strong>{{ $message }}</strong></center>
+</div>
+
+@endif
+
+
+@if ($message = Session::get('warning'))
+
+<div class="alert alert-warning fade show" role="alert" style="position:fixed;z-index:1000; width: 96%; left:2%;bottom:2px;">
+  <button type="button" class="close" data-dismiss="alert" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+  <center><strong>{{ $message }}</strong></center>
+</div>
+
+@endif
+
+
+@if ($message = Session::get('info'))
+
+<div class="alert alert-info fade show" role="alert" style="position:fixed;z-index:1000; width: 96%; left:2%;bottom:2px;">
+  <button type="button" class="close" data-dismiss="alert" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+  <center><strong>{{ $message }}</strong></center>
+</div>
+
+@endif
+
+
+@if ($errors->any())
+
+<div class="alert alert-danger fade show" role="alert" style="position:fixed;z-index:1000; width: 96%; left:2%;bottom:2px;">
+  <button type="button" class="close" data-dismiss="alert" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+  <center><strong>{{ $message }}</strong></center>
+</div>
+
+@endif
+
+
     <!-- end of navbar -->
 @yield('content')
 
@@ -145,6 +208,26 @@
 @yield('script')
 
 <script src="{{asset('js/tinymce_image_upload.js')}}"></script>
+<script type="text/javascript"> 
+        setTimeout(function () { 
+  
+            // Closing the alert 
+            $('div #alert').alert('close'); 
+        }, 5000); 
+
+        window.setTimeout(function() {
+    $(".alert").fadeTo(500, 0).slideUp(500, function(){
+        $(this).remove(); 
+    });
+}, 4000);
+
+
+
+
+
+
+    </script> 
+
 
   </body>
 </html>

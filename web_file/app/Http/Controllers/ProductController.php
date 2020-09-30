@@ -13,6 +13,7 @@ use App\RoomDetail;
 use App\Http\Controllers\Controller;
 use Auth;
 use Image;
+use DataTables;
 class ProductController extends Controller
 
 {
@@ -421,15 +422,22 @@ class ProductController extends Controller
        
     }
 
-    public function list()
+    public function list(Request $request)
     {
         //
-        $products = DB::table('products')
-        ->orderBy('proId','desc')->paginate(5);
+        // $products = DB::table('products')
+        // ->orderBy('proId','desc')->paginate(5);
 
-        $cates = DB::table('category')
-        ->orderBy('cateId','desc')
-        ->get();
-        return view ('productdetail.list',compact('products','cates'));
+        // $cates = DB::table('category')
+        // ->orderBy('cateId','desc')
+        // ->get();
+        // return view ('productdetail.list',compact('products','cates'));
+
+        if($request->ajax()){
+            $data = DB::table('products')->get();
+            return DataTables::of($data)->make(true);
+        }
+        return view('productdetail.list');
+
     }
 }

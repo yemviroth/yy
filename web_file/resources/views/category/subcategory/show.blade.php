@@ -1,7 +1,8 @@
 @extends('layouts.app')
 
 @section('content')
-<br><br><br><br>
+<br>
+<div class="w-100 d-none d-md-block pt-5"></div>
 <div class="wrapper">
 <div class="container-fluid">
 

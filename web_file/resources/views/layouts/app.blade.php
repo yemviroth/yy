@@ -13,10 +13,10 @@
   <link href='https://fonts.googleapis.com/css?family=Bayon|Francois+One' rel='stylesheet' type='text/css'>
   <!-- Bootstrap CSS -->
 
-  <!-- <link rel="stylesheet" href="{{asset('css/bootstrap.css')}}">
-  <link rel="stylesheet" href="{{asset('css/bootstrap-grid.css')}}"> -->
+  <link rel="stylesheet" href="{{asset('css/bootstrap.css')}}">
+  <link rel="stylesheet" href="{{asset('css/bootstrap-grid.css')}}">
 
-  <link rel="stylesheet" href="https://unpkg.com/bootstrap-material-design@4.1.1/dist/css/bootstrap-material-design.min.css" integrity="sha384-wXznGJNEXNG1NFsbm0ugrLFMQPWswR3lds2VeinahP8N0zJw9VWSopbjv2x7WCvX" crossorigin="anonymous">
+  <!-- <link rel="stylesheet" href="https://unpkg.com/bootstrap-material-design@4.1.1/dist/css/bootstrap-material-design.min.css" integrity="sha384-wXznGJNEXNG1NFsbm0ugrLFMQPWswR3lds2VeinahP8N0zJw9VWSopbjv2x7WCvX" crossorigin="anonymous"> -->
 
 
   <link rel="stylesheet" type="text/css" href="{{asset('fontawesome-free-5.12.0-web/css/all.min.css')}}  ">
@@ -117,7 +117,7 @@
           <div class="tab-pane fade" id="pills-profile" role="tabpanel" aria-labelledby="pills-profile-tab">...</div>
 
 
-          
+
 
         </div>
 
@@ -145,7 +145,7 @@
       </div>
 
 
-       <!-- <ul class="list-unstyled components">
+      <!-- <ul class="list-unstyled components">
                 <p>Dummy Heading</p>
 
                 <li class="{{ (\Request::route()->getName()=='home.index' ? 'active' : '') }}">             
@@ -348,9 +348,9 @@
   </div>
 
   <!-- footer -->
-  <div class="wrapper">
+  <!-- <div class="wrapper"> -->
 
-    <div class="container-fluid">
+  <!-- <div class="container-fluid">
       <footer class="pt-5 pb-2" style="font-size:.75rem;">
 
         <hr>
@@ -362,7 +362,7 @@
             </h6>
             <p class="pt-2">
 
-              <span> COMPANY: THEYEON　CEO: KANG YOUNG AE　PHONE: 82-70-4266-2288　</span>
+              <span>ក្រុមហុន : {{$company[0]->campanyName}} នាយក: {{$company[0]->campanyCEO}}　</span>
               <span>E-MAIL: theyeonglobal@theyeon.net ADDRESS: 608, 6F, SK V1 Center Bldg, 171, Gasan digital 1-ro, Geumcheon-gu, Seoul, Korea</span>
 
               E-COMMERCE PERMIT: 2013-SeoulJongno-0478　BUSINESS REGISTRATION NO: 264-81-02289 [BUSINESS INFORMATION]
@@ -389,60 +389,62 @@
         </div>
 
       </footer>
-      <!-- end footer -->
-    </div>
+      
+    </div> -->
+
+@component('layouts.app-footer')
+@endcomponent
 
 
+  @yield('script')
 
-    @yield('script')
+  <script>
+    $(function() {
+      $('[data-toggle="tooltip"]').tooltip()
+    });
+  </script>
 
-    <script>
-      $(function() {
-        $('[data-toggle="tooltip"]').tooltip()
-      });
-    </script>
+  <script>
+    // When the user scrolls down 50px from the top of the document, resize the header's font size
+    window.onscroll = function() {
+      scrollFunction()
+    };
 
-    <script>
-      // When the user scrolls down 50px from the top of the document, resize the header's font size
-      window.onscroll = function() {
-        scrollFunction()
-      };
-
-      function scrollFunction() {
-        if (document.body.scrollTop > 50 || document.documentElement.scrollTop > 20) {
-          document.getElementById("header").style.opacity = "80%";
-        } else {
-          document.getElementById("header").style.opacity = "100%";
-        }
+    function scrollFunction() {
+      if (document.body.scrollTop > 50 || document.documentElement.scrollTop > 20) {
+        document.getElementById("header").style.opacity = "80%";
+      } else {
+        document.getElementById("header").style.opacity = "100%";
       }
-    </script>
+    }
+  </script>
 
 
 
-    <script type="text/javascript">
-      $(document).ready(function() {
-        // $("#sidebar").mCustomScrollbar({
-        //     theme: ""
-        // });
+  <script type="text/javascript">
+    $(document).ready(function() {
+      // $("#sidebar").mCustomScrollbar({
+      //     theme: ""
+      // });
 
-        $('#dismiss, .overlay').on('click', function() {
-          $('#sidebar').removeClass('active');
-          $('.overlay').removeClass('active');
-        });
-
-        $('.wrapper').on('click', function() {
-          $('#sidebar').removeClass('active');
-          $('.overlay').removeClass('active');
-        });
-
-        $('#sidebarCollapse').on('click', function() {
-          $('#sidebar').addClass('active');
-          $('.overlay').addClass('active');
-          $('.collapse.in').toggleClass('in');
-          $('a[aria-expanded=true]').attr('aria-expanded', 'false');
-        });
+      $('#dismiss, .overlay').on('click', function() {
+        $('#sidebar').removeClass('active');
+        $('.overlay').removeClass('active');
       });
-    </script>
+
+      $('.wrapper').on('click', function() {
+        $('#sidebar').removeClass('active');
+        $('.overlay').removeClass('active');
+      });
+
+      $('#sidebarCollapse').on('click', function() {
+        $('#sidebar').addClass('active');
+        $('.overlay').addClass('active');
+        $('.collapse.in').toggleClass('in');
+        $('a[aria-expanded=true]').attr('aria-expanded', 'false');
+      });
+    });
+  </script>
 
 
 

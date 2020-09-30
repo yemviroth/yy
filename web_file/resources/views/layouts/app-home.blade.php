@@ -321,49 +321,8 @@
     </div>
 
     <!-- footer -->
-    <div class="wrapper">
-
-        <div class="container-fluid">
-            <footer class="pt-5 pb-2" style="font-size:.75rem;">
-
-                <hr>
-                <div class="row text-center-sm">
-
-                    <div class="col-12 col-sm-12 col-md-6">
-                        <h6 class="font-weight-bold">
-                            COMPANY INFO
-                        </h6>
-                        <p class="pt-2">
-
-                            <span> COMPANY: THEYEON　CEO: KANG YOUNG AE　PHONE: 82-70-4266-2288　</span>
-                            <span>E-MAIL: theyeonglobal@theyeon.net ADDRESS: 608, 6F, SK V1 Center Bldg, 171, Gasan digital 1-ro, Geumcheon-gu, Seoul, Korea</span>
-
-                            E-COMMERCE PERMIT: 2013-SeoulJongno-0478　BUSINESS REGISTRATION NO: 264-81-02289 [BUSINESS INFORMATION]
-                        </p>
-                    </div>
-
-                    <div class="col-12 col-sm-12 col-md-6 text-center-sm pl-4" style="font-size:.75rem;">
-                        <h6 class="font-weight-bold">
-                            Customer Service
-                        </h6>
-                        <p class="pt-2">
-                            82-70-4266-2288
-                            MON-FRI 10:00-18:00 ( KOREAN TIME )
-                            SAT SUN HOLIDAY CLOSED
-                        </p>
-                    </div>
-
-                </div>
-                <hr>
-                <div class="row text-center-sm">
-                    <div data-toggle="tooltip" data-placement="top" class="col text-center" title="">
-                        <p class="pt-2">COPYRIGHT © THEYEON CAMBODIA ALL RIGHTS RESERVED.</p>
-                    </div>
-                </div>
-
-            </footer>
-            <!-- end footer -->
-        </div>
+    @component('layouts.app-footer')
+@endcomponent
 
 
 

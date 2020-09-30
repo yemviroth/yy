@@ -25,14 +25,13 @@
   <div class="text-center text-kh pt-3 pb-3 text-light">
     
   
-        <h3> អាស័យដ្ឋាន </h3>
-      <p> 608, 6F, SK V1 Center Bldg, 
-      171, Gasan digital 1-ro, 
-      Geumcheon-gu, Seoul, Korea </p>
-      <br/><h4> E-MAIL </h4>
-      <p> theyeonglobal@theyeon.net </p>
-      <br/><h4> លេខទូរស័ព្ទ </h4>
-      <p> 82-70-4266-2288 </p>
+        <h6> អាសយដ្ឋាន </h6>
+      <p> {{$company[0]->campanyAddress}} </p>
+      <br/><h6> E-MAIL </h6>
+      <p> {{$company[0]->campanyEmail}} </p>
+      <br/><h6> លេខទូរស័ព្ទ </h6>
+     
+      <h6> {{$company[0]->campanyPhone}} </h6>
   </div>
   <!-- end contact -->
 

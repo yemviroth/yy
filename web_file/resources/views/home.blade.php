@@ -5,7 +5,7 @@
 @section('content')
 <br>
 <!-- slide -->
-<div class="row" style="padding-top: 10px">
+<div class="" style="padding-top: 10px">
 
 
   <section class="d-none d-md-block">
@@ -18,7 +18,7 @@
       </ol>
       <div class="carousel-inner">
         <div class="carousel-item active">
-          <img src="{{asset('images/slide/slide1.jpg')}}" class="d-block" style="width:100%; height:38vw" alt="...">
+          <img src="{{asset('images/slide/slide1.jpg')}}" class="d-block" style="height:40vw" class="" alt="...">
 
           <div class="carousel-caption d-none d-md-block">
             <!-- <h5>First slide label</h5> -->
@@ -26,14 +26,14 @@
           </div>
         </div>
         <div class="carousel-item">
-          <img src="{{asset('images/slide/slide2.jpg')}}" class="d-block" style="width:100%; height:38vw" alt="...">
+          <img src="{{asset('images/slide/slide2.jpg')}}" class="d-block" style="height:40vw" class="" alt="...">
           <div class="carousel-caption d-none d-md-block">
             <!-- <h5>Second slide label</h5> -->
             <!-- <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit.</p> -->
           </div>
         </div>
         <div class="carousel-item">
-          <img src="{{asset('images/slide/slide3.jpg')}}" class="d-block" style="width:100%; height:38vw" alt="...">
+          <img src="{{asset('images/slide/slide3.jpg')}}" class="d-block" style="height:40vw" class="" alt="...">
           <div class="carousel-caption d-none d-md-block">
             <!-- <h5>Third slide label</h5> -->
             <!-- <p>Praesent commodo cursus magna, vel scelerisque nisl consectetur.</p> -->
@@ -53,7 +53,8 @@
   </section>
 </div>
 
-<div class="row">
+<!-- mobile -->
+<div class="">
   <section class="d-lg-none d-xl-none">
     <div id="carouselExampleCaptions" class="carousel slide carousel-fade" data-ride="carousel">
       <ol class="carousel-indicators">
@@ -64,7 +65,7 @@
       </ol>
       <div class="carousel-inner">
         <div class="carousel-item active">
-          <img src="{{asset('images/slide/slide-sm-1.jpg')}}" class="img-fluid" alt="...">
+          <img src="{{asset('images/slide/slide-sm-1.jpg')}}" class="w-100" alt="...">
 
           <div class="carousel-caption d-none d-md-block">
             <!-- <h5>First slide label</h5> -->
@@ -72,14 +73,14 @@
           </div>
         </div>
         <div class="carousel-item">
-          <img src="{{asset('images/slide/slide-sm-2.jpg')}}" class="img-fluid" alt="...">
+          <img src="{{asset('images/slide/slide-sm-2.jpg')}}" class="w-100" alt="...">
           <div class="carousel-caption d-none d-md-block">
             <!-- <h5>Second slide label</h5> -->
             <!-- <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit.</p> -->
           </div>
         </div>
         <div class="carousel-item">
-          <img src="{{asset('images/slide/slide-sm-3.jpg')}}" class="img-fluid" alt="...">
+          <img src="{{asset('images/slide/slide-sm-3.jpg')}}" class="w-100" alt="...">
           <div class="carousel-caption d-none d-md-block">
             <!-- <h5>Third slide label</h5> -->
             <!-- <p>Praesent commodo cursus magna, vel scelerisque nisl consectetur.</p> -->
@@ -98,20 +99,9 @@
     </div>
   </section>
 </div>
+<!-- end mobile -->
 
 <!-- end of slide -->
-
-<!-- welcome -->
-
-<!-- end welcome -->
-<!-- <div class="parallax">
- <div class="caption_pp"> <center><span class="text-light pacap">{{Config::get('mysiteVars.home_welcome_text3.'. session()->get('LANG'))}}</span></center></div>
-</div> -->
-
-<!-- explorer -->
-
-
-
 
 <script type="text/javascript">
   marqueeInit({
@@ -163,17 +153,27 @@
   });
 </script>
 
-
-
-<div class="d-sm-none">
-  <div class="row text-kh">
-    @foreach($cates as $cate)
-    <div class="col-4 border">
-      <a class="list-horizon" href="{{route('category.show', $cate->cateId)}}"><strong>{{$cate->cateName}}</strong></a>
-    </div>
-    @endforeach
+<!-- 
+<div class="">
+  <div class="container-fluid">
+    <div class="d-sm-none text-kh">
+      <div class="row">
+        @foreach($cates as $cate)
+        <div class="col-4 border">
+          <a class="list-horizon" href="{{route('category.show', $cate->cateId)}}"><strong>{{$cate->cateName}}</strong></a>
+        </div>
+        @endforeach
+      </div>
+    </diV>
   </div>
-</diV>
+</div> -->
+<div class="" style="margin-top:-50px;">
+@component('layouts.mobile-cate')
+@endcomponent
+</div>
+
+
+
 
 
 <section class="pt-2" style="background: #fff">
@@ -196,6 +196,7 @@
 
         </div>
       </div>
+
       <div class="row">
         @foreach ($product as $pro)
 
@@ -216,7 +217,7 @@
 
                 </div>
 
-        <!-- mobile -->
+                <!-- mobile -->
                 <div class="d-block d-lg-none">
                   <div class="text-under-product">
 
@@ -229,7 +230,7 @@
 
                   </div>
                 </div>
-        <!-- mobile -->
+                <!-- mobile -->
 
               </a>
             </div>
@@ -289,33 +290,30 @@
 
 
 
-$(document).ready(function(){
-    $("#linkGrid-3").click(function(){
+  $(document).ready(function() {
+    $("#linkGrid-3").click(function() {
       $("div #proGrid").removeClass("col-6");
       $("div #proGrid").removeClass("col-4");
       $("div #proGrid").removeClass("col-12");
-        $("div #proGrid").addClass("col-4");
-        
+      $("div #proGrid").addClass("col-4");
+
     });
 
-    $("#linkGrid-1").click(function(){
+    $("#linkGrid-1").click(function() {
       $("div #proGrid").removeClass("col-6");
       $("div #proGrid").removeClass("col-4");
       $("div #proGrid").removeClass("col-12");
-        $("div #proGrid").addClass("col-12");
-        
+      $("div #proGrid").addClass("col-12");
+
     });
 
-    $("#linkGrid-2").click(function(){
+    $("#linkGrid-2").click(function() {
       $("div #proGrid").removeClass("col-6");
       $("div #proGrid").removeClass("col-4");
       $("div #proGrid").removeClass("col-12");
-        $("div #proGrid").addClass("col-6");
-        
+      $("div #proGrid").addClass("col-6");
+
     });
-});
-
-
-
+  });
 </script>
 @endsection

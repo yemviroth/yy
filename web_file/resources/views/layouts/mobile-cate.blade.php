@@ -1,4 +1,8 @@
+
+
+
 <div class="pt-2 d-block d-md-none d-lg-none"></div>
+<div class="container-fluid">
 <div class="d-sm-none pt-5">
   <div class="row text-kh">
     @foreach($cates as $cate)
@@ -8,3 +12,4 @@
     @endforeach           
     </div>
   </diV>
+</div>

@@ -11,6 +11,7 @@
 |
 */
 use App\Category;
+use App\Campany;
 // Route::get('/', function () {
 //     return view('home');
 // });
@@ -26,7 +27,8 @@ Route::get('/', 'HomeController@index')->name('home.index');
 
 View::composer(['*'],function($view){
   $cates = Category::orderBy('cateOrderBy','asc')->get();
-  $view->with('cates',$cates);
+  $company = Campany::where('id','1')->get();
+  $view->with('cates',$cates)->with('company',$company);
 });
 
 
@@ -97,22 +99,10 @@ Route::middleware(['auth'])->group(function () {
     Route::PUT('category/update/{cateId}','CategoryController@update')->name('category.update');
     Route::match(['delete'],'category/{cateId}','CategoryController@destroy')->name('category.destroy');
 
-    //subcate
-    // Route::post('subcat', 'CategoryController@subCat')->name('subcat');
-//     Route::post('/subcat', function (Request $request) {
+    // 
 
-//       $cateId = $request->cateId;
-      
-//       $subcategories = Category::where('cateId',$cateId)
-//                             ->with('subcategories')
-//                             ->get();
-  
-//       return response()->json([
-//           'subcategories' => $subcategories
-//       ]);
-     
-//   })->name('subcat');
-// 
+    //Company
+    Route::resource('company','CampanyController');
 
 Route::get('categories/{cateId}','CategoryController@subCate')->name('categories');
 });
