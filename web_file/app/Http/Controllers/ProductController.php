@@ -395,11 +395,11 @@ class ProductController extends Controller
       
        $pro->update($request->all());
        return redirect()->route('productdetail.list')
-                            ->with('success', 'Product created successfully');
+                            ->with('success', 'Product Updated successfully');
      } 
        
        return redirect()->route('productdetail.list')
-                            ->with('success', 'Product created successfully');
+                            ->with('success', 'Product Update successfully');
  
 
    }
@@ -417,8 +417,9 @@ class ProductController extends Controller
         //
         $pros = Product::where('proId',$id)->first();
         $pros->destroy($id);
-        return redirect()->route('productdetail.list')
-        ->with('danger', 'Sub Category Deleted successfully');
+        // return redirect()->route('productdetail.list')
+        // ->with('danger', 'Sub Category Deleted successfully');
+        return back()->with('warning','Item Delete successfull!');
        
     }
 
@@ -434,10 +435,26 @@ class ProductController extends Controller
         // return view ('productdetail.list',compact('products','cates'));
 
         if($request->ajax()){
-            $data = DB::table('products')->get();
-            return DataTables::of($data)->make(true);
+            $data = DB::table('products')->orderBy('proId','desc')->get();
+            return DataTables::of($data)
+            // ->setRowData([
+            //     'proImage' => '<img src='.'{{asset("images/product/$proImage")}}'.'>',
+            // ])
+
+            ->addIndexColumn()
+            ->addColumn('action', function($row){
+                            $btn = '<form action="'.route('productdetail.destroy',$row->proId).'" method="POST">';
+                           $btn = $btn.'</div><a href="'.route('productdetail.show',$row->proId).'" class="edit btn btn-success btn-sm"><i class="fas fa-eye fa-sm" style="font-size:8px"></i></a></div>';
+                           $btn = $btn.'</div><a href="'.route('productdetail.edit',$row->proId).'" class="edit btn btn-warning btn-sm"><i class="fas fa-edit fa-sm" style="font-size:8px"></i></a></div>';
+                           $btn=$btn.csrf_field();
+                           $btn=$btn.method_field("DELETE");
+                           $btn = $btn.'<button class="delete btn btn-danger btn-sm" type="submit" data-toggle="confirmation" data-singleton="true" data-popout="true"><i class="fas fa-trash fa-sm" style="font-size:8px"></i></button></div>';         
+                           $btn=$btn.'</form>';
+                            return $btn;
+                    })
+                    ->rawColumns(['action'])                   
+            ->make(true);
         }
         return view('productdetail.list');
-
     }
 }

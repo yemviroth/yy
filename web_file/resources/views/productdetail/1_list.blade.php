@@ -90,13 +90,13 @@ TROPICANA - ROOMS
                                 <td>{{$pro->createdBy}}</td>
                                 <td>
                                 <form action="{{route('productdetail.destroy',$pro->proId)}}" method="POST">
-                                                            <a  style="font-size:10px;" class="btn btn-sm btn-success" href="{{route('productdetail.show', $pro->proId)}}"><i class="fas fa-eye"></i></a>
-                                                            <a  style="font-size:10px;" class="btn btn-sm btn-primary" href="{{route('productdetail.edit', $pro->proId)}}"><i class="fas fa-edit"></i></a>
-                                                            @csrf
-                                                            @method('DELETE')                                                                                                
-                                                            {{-- <button name="btndelete"  data-toggle="tooltip" title="Delete" type="submit" class="btn btn-sm btn-danger"><i class="fas fa-trash"></i></button>                                             --}}
-                                                            <button  style="font-size:10px;" name="btndelete"  data-toggle="tooltip" title="Delete" type="submit" class="btn btn-sm btn-danger" onclick="return confirm('Are you sure you want to delete this items : {{$pro->proName}} ?');"><i class="fas fa-trash"></i></button>                                            
-                                                        </form>
+                                    <a  style="font-size:10px;" class="btn btn-sm btn-success" href="{{route('productdetail.show', $pro->proId)}}"><i class="fas fa-eye"></i></a>
+                                    <a  style="font-size:10px;" class="btn btn-sm btn-primary" href="{{route('productdetail.edit', $pro->proId)}}"><i class="fas fa-edit"></i></a>
+                                    @csrf
+                                    @method('DELETE')                                                                                                
+                                    {{-- <button name="btndelete"  data-toggle="tooltip" title="Delete" type="submit" class="btn btn-sm btn-danger"><i class="fas fa-trash"></i></button>                                             --}}
+                                    <button  style="font-size:10px;" name="btndelete"  data-toggle="tooltip" title="Delete" type="submit" class="btn btn-sm btn-danger" onclick="return confirm('Are you sure you want to delete this items : {{$pro->proName}} ?');"><i class="fas fa-trash"></i></button>                                            
+                                </form>
                                 </td>
 
                             </tr>

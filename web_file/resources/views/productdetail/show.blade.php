@@ -45,7 +45,7 @@
 
         <div class="p-sm-4 col-md-5 col-sm-12 col-12 text-kh">
           @if($products[0]->proIsInStock=='No')
-            <h4><span class="badge badge-danger p-2">មិនមានក្នុងស្តុក</span></h4>
+            <h5><span class="badge badge-danger p-2">មិនមានក្នុងស្តុក</span></h5>
           @endif
           <h5 class="font-weight-normal">{!!$products[0]->proName!!}</h5>
 
@@ -93,8 +93,16 @@
         </div>
       </div>
 
-      <h5 class="font-weight-normal text-center pt-3 pb-3">{!!$products[0]->proName!!}</h5>
+      <div class="text-center">
+        <h5 class="font-weight-normal text-center pt-3 pb-3">{!!$products[0]->proName!!}</h5>
+          @if($products[0]->proIsInStock=='No')
+              <p class=" badge badge-danger badge-md p-2">មិនមានក្នុងស្តុក</p>
+            @endif
+          
+      </div>
+    
       <div class="row border ">
+      
         <div class="pt-4 col-sm-12 text-kh">
 
 
@@ -104,6 +112,7 @@
 
 
           <div class="row">
+         
             <div class="col-3">
               <strong>តំលៃ</strong>
             </div>

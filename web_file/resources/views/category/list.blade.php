@@ -83,17 +83,18 @@ TROPICANA - ROOMS
 
 
                     <div class="table-responsive">
-                        <table class="table  table-sm p-2" >
-                            <tr class="thead-dark">
+                        <table class="table  table-border p-2" id="myTable" >
+
+                            <thead class="thead-dark">
                                 <th>Category Name</th>
                                 <th>Sub Category</th>
                                 <th>OrderBy</th>
                                 <th>Description</th>
                                 <th>Action</th>
                             
-                            </tr>
+                            </thead>
                             @foreach($cates as $cate)
-                            <tbody id="myTable">
+                            <tbody id="">
                             <tr style="">
                                 <td>
                                     {{$cate->cateName}}

@@ -9,7 +9,7 @@
 
   @yield('meta')
 
-  <!-- <link rel="shortcut icon" href="{{asset('favicon.ico')}}" type="image/x-icon"> -->
+  <link rel="shortcut icon" href="{{asset('favicon.ico')}}" type="image/x-icon">
   <link href='https://fonts.googleapis.com/css?family=Bayon|Francois+One' rel='stylesheet' type='text/css'>
   <!-- Bootstrap CSS -->
 
@@ -31,6 +31,7 @@
 
 
   <!-- test side nav -->
+
   <link rel="stylesheet" href="{{ asset('style3.css')}}">
 
   <!-- nav -->

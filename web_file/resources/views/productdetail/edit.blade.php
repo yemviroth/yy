@@ -9,26 +9,19 @@ The Yeon Cambodia
 
 <div class="container-fluid pt-4 text-kh">
 
-    <div class="card shadow">
-        <div class="card-header bg-dark text-light h4">
+    <div class="card">
+        <div class="card-header">
             <i class="fas fa-plus-square"></i> Edit Product
         </div>
         <div class="card-body">
-            <!-- <h5 class="card-title">Special title treatment</h5> -->
-
+       
             <form action="{{url('products/update/'.$products[0]->proId)}}" enctype="multipart/form-data" class="" method="post">
-                <!-- <form action="{{action('ProductController@update',$products[0]->proId)}}" enctype="multipart/form-data" class="" method="post"> -->
-                <!-- @method('PUT') -->
+          
                 {{csrf_field()}}
                 {{method_field('PUT')}}
-                <!-- @csrf
-            @method('PUT') -->
-                <!-- <input type="hidden" name="_method" value="POST"> -->
-
-
-
+            
                 <div class="form-group row">
-                    <label for="" class="col-md-2 col-form-label text-md-right">Product Category :</label>
+                    <label for="" class="col-md-2 col-form-label">Product Category :</label>
                     <div class="col-md-10">
                         <select name="cateId" class="custom-select my-1 mr-sm-2" id="category">
                             <option selected>Choose Product Category</option>
@@ -63,15 +56,108 @@ The Yeon Cambodia
                 </div>
 
                 <div class="form-group row">
+                        <label for="proName" class="col-md-2 form-label text-md-right">Color :</label>
+                        <div class="col-md-2">
+                            <div id="" class="input-group dd colorpicker-component">
+                                <input autocomplete="off" name="proColor1" value="{{$products[0]->proColor1}}" placeholder="Color 1" type="text" class="form-control color1" />
+
+
+                            </div>
+
+                            <script>
+                                $(function() {
+                                    $('.dd').colorpicker();
+                                });
+
+
+                                $(document).ready(function() {
+                                    $(".color1").change(function() {
+                                        $(this).css("background-color", $(".color1").val());
+                                    });
+                                });
+                            </script>
+                        </div>
+
+                        <div class="col-md-2">
+                            <div id="" class="input-group color2 colorpicker-component">
+                                <input autocomplete="off" name="proColor2" value="{{$products[0]->proColor2}}" placeholder="Color 2" type="text"  class="form-control vaLcolor2" />
+                            </div>
+
+                            <script>
+                                $(function() {
+                                    $('.color2').colorpicker();
+                                });
+                                $(document).ready(function() {
+                                    $(".vaLcolor2").change(function() {
+                                        $(this).css("background-color", $(".vaLcolor2").val());
+                                    });
+                                });
+                            </script>
+                        </div>
+
+                        <div class="col-md-2">
+                            <div id="" class="input-group color3 colorpicker-component">
+                                <input autocomplete="off" name="proColor3" value="{{$products[0]->proColor3}}" placeholder="Color 3" type="text"  class="form-control vaLcolor3" />
+                            </div>
+
+                            <script>
+                                $(function() {
+                                    $('.color3').colorpicker();
+                                });
+                                $(document).ready(function() {
+                                    $(".vaLcolor3").change(function() {
+                                        $(this).css("background-color", $(".vaLcolor3").val());
+                                    });
+                                });
+                            </script>
+                        </div>
+
+                        <div class="col-md-2">
+                            <div id="" class="input-group color4 colorpicker-component">
+                                <input autocomplete="off" name="proColor4" value="{{$products[0]->proColor4}}" placeholder="Color 4" type="text" class="form-control vaLcolor4" />
+                            </div>
+
+                            <script>
+                                $(function() {
+                                    $('.color4').colorpicker();
+                                });
+                                $(document).ready(function() {
+                                    $(".vaLcolor4").change(function() {
+                                        $(this).css("background-color", $(".vaLcolor4").val());
+                                    });
+                                });
+                            </script>
+                        </div>
+
+                        <div class="col-md-2">
+                            <div id="" class="input-group color5 colorpicker-component">
+                                <input autocomplete="off" name="proColor5" value="{{$products[0]->proColor5}}" placeholder="Color 5" type="text" class="form-control vaLcolor5" />
+                            </div>
+
+                            <script>
+                                $(function() {
+                                    $('.color5').colorpicker();
+                                });
+                                $(document).ready(function() {
+                                    $(".vaLcolor5").change(function() {
+                                        $(this).css("background-color", $(".vaLcolor5").val());
+                                    });
+                                });
+                            </script>
+                        </div>
+                    </div>
+
+
+                <div class="form-group row">
                     <label for="proPrice" class="col-md-2 col-form-label text-md-right">Product Price :</label>
                     <div class="col-md-4">
                         <input type="text" id="proPrice" value="{{$products[0]->proPrice}}" class="form-control" name="proPrice" required>
                     </div>
 
-                    <label for="proOrderBy" class="col-md-2 col-form-label text-md-right">Product Order List :</label>
+                    <!-- <label for="proOrderBy" class="col-md-2 col-form-label text-md-right">Product Order List :</label>
                     <div class="col-md-4">
                         <input type="text" id="proOrderBy" value="{{$products[0]->proOrderBy}}" class="form-control" name="proOrderBy">
-                    </div>
+                    </div> -->
 
                 </div>
 
@@ -102,7 +188,7 @@ The Yeon Cambodia
                 <div class="form-group row">
                     <label for="proTextIntro" class="col-md-2 col-form-label text-md-right">Product Intro :</label>
                     <div class="col-md-10">
-                        <textarea class="form-control" name="proTextIntro" id="txt-sm" rows="2">{{$products[0]->proTextIntro}}</textarea>
+                        <textarea class="form-control" name="proTextIntro" id="txt-sm" rows="4">{{$products[0]->proTextIntro}}</textarea>
 
                     </div>
                 </div>
@@ -112,7 +198,7 @@ The Yeon Cambodia
                 <div class="form-group row">
                     <label for="proHowTo" class="col-md-2 col-form-label text-md-right">How To Use :</label>
                     <div class="col-md-10">
-                        <textarea class="form-control sm text-kh" name="proHowTo" id="txt-sm" rows="2">{{$products[0]->proHowTo}}</textarea>
+                        <textarea class="form-control sm text-kh" name="proHowTo" id="txt-sm" rows="8">{{$products[0]->proHowTo}}</textarea>
 
                     </div>
                 </div>
@@ -123,7 +209,7 @@ The Yeon Cambodia
                     <label for="proDescription" class="col-md-2 col-form-label text-md-right">Description :</label>
 
                     <div class="col-md-10">
-                        <textarea class="form-control sm text-kh" name="proDescription" id="" rows="8">{!!$products[0]->proDescription!!}</textarea>
+                        <textarea class="form-control sm text-kh" name="proDescription" id="" rows="9">{!!$products[0]->proDescription!!}</textarea>
                     </div>
                 </div>
 
@@ -145,7 +231,7 @@ The Yeon Cambodia
                     <div class="col-md-10">
 
 
-                        <textarea class="form-control sm text-kh" name="proDetail" id="txt-lg" rows="8">{!!$products[0]->proDetail!!}</textarea>
+                        <textarea class="form-control sm text-kh" name="proDetail" id="txt-lg" rows="10">{!!$products[0]->proDetail!!}</textarea>
 
                     </div>
                 </div>
@@ -258,6 +344,21 @@ $(".custom-file-input").on("change", function() {
            });
         });
     </script>
+
+<script>
+    $(document).ready(function() {
+       
+            $(".color1").css("background-color", $(".color1").val());
+            $(".vaLcolor2").css("background-color", $(".vaLcolor2").val());
+            $(".vaLcolor3").css("background-color", $(".vaLcolor3").val());
+            $(".vaLcolor4").css("background-color", $(".vaLcolor4").val());
+            $(".vaLcolor5").css("background-color", $(".vaLcolor5").val());
+        
+    });
+
+    
+</script>
+
 
 
 @endsection

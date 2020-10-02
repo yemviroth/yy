@@ -69,6 +69,12 @@
                   <h5><span class="p-1 badge badge-light mb-4 ">មិនមានក្នុងស្តុក</span></h5>
                   @endif
                    <h6>{!!$pro->proName!!}</h6>
+                 
+                   @if($pro->proColor1!="")<span class="badge pl-4 border" style="background-color:{!!$pro->proColor1!!};">  </span>@endif
+                    @if($pro->proColor2!="")<span class="badge pl-4 border" style="background-color:{!!$pro->proColor2!!};">  </span>@endif
+                    @if($pro->proColor3!="")<span class="badge pl-4 border" style="background-color:{!!$pro->proColor3!!};">  </span>@endif
+                    @if($pro->proColor4!="")<span class="badge pl-4 border" style="background-color:{!!$pro->proColor4!!};">  </span>@endif
+                    @if($pro->proColor5!="")<span class="badge pl-4 border" style="background-color:{!!$pro->proColor5!!};">  </span>@endif
                   <p class="price">${{$pro->proPrice}}</p>
                   <p>{!!$pro->proTextIntro!!}</p>
 
@@ -79,6 +85,12 @@
                   <div class="text-under-product">
 
                     <h6>{!!$pro->proName!!}</h6>
+                  
+                    @if($pro->proColor1!="")<span class="badge pl-4 border" style="background-color:{!!$pro->proColor1!!};">  </span>@endif
+                    @if($pro->proColor2!="")<span class="badge pl-4 border" style="background-color:{!!$pro->proColor2!!};">  </span>@endif
+                    @if($pro->proColor3!="")<span class="badge pl-4 border" style="background-color:{!!$pro->proColor3!!};">  </span>@endif
+                    @if($pro->proColor4!="")<span class="badge pl-4 border" style="background-color:{!!$pro->proColor4!!};">  </span>@endif
+                    @if($pro->proColor5!="")<span class="badge pl-4 border" style="background-color:{!!$pro->proColor5!!};">  </span>@endif
                     
                     <p class="price">${{$pro->proPrice}} @if($pro->proIsInStock=='No')
                     <span class="badge badge-dark mb-2 ml-5">មិនមានក្នុងស្តុក</span>

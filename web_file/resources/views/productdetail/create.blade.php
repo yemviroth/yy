@@ -41,6 +41,7 @@ The Yeon Cambodia
                         </div>
                     </div>
 
+
                     <script type="text/javascript">
                         $(document).ready(function () {
                         $('#category').change(function () {
@@ -77,6 +78,9 @@ The Yeon Cambodia
 
 
 
+                    <script src="https://cdnjs.cloudflare.com/ajax/libs/bootstrap-colorpicker/2.5.3/js/bootstrap-colorpicker.min.js"></script>
+
+
 
                     <div class="form-group row">
                         <label for="proName" class="col-md-2 form-label text-md-right">Product Name :</label>
@@ -86,19 +90,96 @@ The Yeon Cambodia
                     </div>
                     <div class="form-group row">
                         <label for="proName" class="col-md-2 form-label text-md-right">Color :</label>
-                        <div class="col-md-10">
+                        <div class="col-md-2">
+                            <div id="" class="input-group dd colorpicker-component">
+                                <input name="proColor1" placeholder="Color 1" type="text" class="form-control color1" />
 
-                            <div class="input-group demo2">
-                                <input type="text" value="" class="form-control" />
-                                <span class="input-group-addon"><i></i></span>
+
                             </div>
+
                             <script>
                                 $(function() {
-                                    $('.demo2').colorpicker();
+                                    $('.dd').colorpicker();
+                                });
+
+
+                                $(document).ready(function() {
+                                    $(".color1").change(function() {
+                                        $(this).css("background-color", $(".color1").val());
+                                    });
                                 });
                             </script>
-
                         </div>
+
+                        <div class="col-md-2">
+                            <div id="" class="input-group color2 colorpicker-component">
+                                <input name="proColor2" placeholder="Color 2" type="text"  class="form-control vaLcolor2" />
+                            </div>
+
+                            <script>
+                                $(function() {
+                                    $('.color2').colorpicker();
+                                });
+                                $(document).ready(function() {
+                                    $(".vaLcolor2").change(function() {
+                                        $(this).css("background-color", $(".vaLcolor2").val());
+                                    });
+                                });
+                            </script>
+                        </div>
+
+                        <div class="col-md-2">
+                            <div id="" class="input-group color3 colorpicker-component">
+                                <input name="proColor3" placeholder="Color 3" type="text"  class="form-control vaLcolor3" />
+                            </div>
+
+                            <script>
+                                $(function() {
+                                    $('.color3').colorpicker();
+                                });
+                                $(document).ready(function() {
+                                    $(".vaLcolor3").change(function() {
+                                        $(this).css("background-color", $(".vaLcolor3").val());
+                                    });
+                                });
+                            </script>
+                        </div>
+
+                        <div class="col-md-2">
+                            <div id="" class="input-group color4 colorpicker-component">
+                                <input name="proColor4" placeholder="Color 4" type="text" class="form-control vaLcolor4" />
+                            </div>
+
+                            <script>
+                                $(function() {
+                                    $('.color4').colorpicker();
+                                });
+                                $(document).ready(function() {
+                                    $(".vaLcolor4").change(function() {
+                                        $(this).css("background-color", $(".vaLcolor4").val());
+                                    });
+                                });
+                            </script>
+                        </div>
+
+                        <div class="col-md-2">
+                            <div id="" class="input-group color5 colorpicker-component">
+                                <input name="proColor5" placeholder="Color 5" type="text" class="form-control vaLcolor5" />
+                            </div>
+
+                            <script>
+                                $(function() {
+                                    $('.color5').colorpicker();
+                                });
+                                $(document).ready(function() {
+                                    $(".vaLcolor5").change(function() {
+                                        $(this).css("background-color", $(".vaLcolor5").val());
+                                    });
+                                });
+                            </script>
+                        </div>
+
+
                     </div>
 
                     <div class="form-group row">

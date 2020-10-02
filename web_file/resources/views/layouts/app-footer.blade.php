@@ -33,8 +33,8 @@
           <!-- <a href=" https://www.instagram.com/theyeon_cambodia"><i class="fab fa-instagram-square">sdfdf</i></a> -->
           <!-- <i class="fab fa-instagram-square"></i> -->
           <br>
-          <a href=" https://www.instagram.com/theyeon_cambodia"><i class="fab fa-instagram fa-3x"></i></a>
-          <i class="pl-4 fab fa-facebook-square fa-3x"></i>      
+          <a href=" https://www.instagram.com/theyeon_cambodia" target="_blank"><i class="fab fa-instagram fa-3x"></i></a>
+          <a href="https://www.facebook.com/theyeoncambodia" target="_blank"><i class="pl-4 fab fa-facebook-square fa-3x"></i></a>    
         </div>
 
         <div class="pt-2 col-12 col-md-4 text-center-sm">
@@ -51,7 +51,7 @@
         <div class="row text-center-sm">
           <div data-toggle="tooltip" data-placement="top" class="col text-center" title="">
             <!-- <p class="pt-2">COPYRIGHT © THEYEON CAMBODIA ALL RIGHTS RESERVED.</p> -->
-            <p class="">© រក្សា​សិទ្ធិ​គ្រប់​យ៉ាង​ដោយ​ The Yeon Cambodia 2020</p>
+            <p class="">© 2020 រក្សា​សិទ្ធិ​គ្រប់​យ៉ាង​ដោយ​ The Yeon Cambodia</p>
           </div>
         </div>
 
