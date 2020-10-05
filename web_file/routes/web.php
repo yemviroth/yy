@@ -57,31 +57,9 @@ Route::resource('gallery','GalleryController');
 
 Route::middleware(['auth'])->group(function () {
 
-    Route::get('rooms/main','RoomsController@main_index')->name('rooms.main');
-    Route::get('rooms/main/create','RoomsController@main_create')->name('rooms.main.create');
-    Route::post('rooms/main/store','RoomsController@main_store')->name('rooms.main.store');
-    Route::get('rooms/main/{id}/edit','RoomsController@main_edit')->name('rooms.main.edit');
-    //Route::put('rooms/main/update','RoomsController@main_update')->name('rooms.main.update');
-    Route::match(['put', 'patch'],'rooms/main/{id}','RoomsController@main_update')->name('rooms.main.update');
-
-    Route::get('rooms/list','RoomsController@list')->name('rooms.list');
+      Route::resource('user','UserController');
     
-    //Detail
-    Route::get('rooms/detail','RoomsController@detail_list')->name('rooms.detail.list');
-    Route::get('rooms/detail/{id}/edit','RoomsController@detail_edit')->name('rooms.detail.edit');
-    Route::match(['put', 'patch'],'rooms/detail/{id}','RoomsController@detail_update')->name('rooms.detail.update');
-
-    Route::match(['delete'],'rooms/detail/{id}','RoomsController@detail_delete')->name('rooms.detail.delete');
-    Route::get('rooms/detail/create','RoomsController@detail_create')->name('rooms.detail.create');
-    Route::post('rooms/detail/store','RoomsController@detail_store')->name('rooms.detail.store');
-
-
-    Route::resource('rooms','RoomsController');
-    Route::resource('user','UserController');
-    
-    // product detail
-    // Route::match(['put', 'patch'],'products/update/{proId}','ProductController@update')->name('productdetail.update');
-    // Route::PUT('products/update/{proId}','ProductController@update');
+  
     Route::PUT('products/update/{proId}','ProductController@update')->name('productdetail.update');
     Route::get('products/list','ProductController@list')->name('productdetail.list');
 
@@ -107,8 +85,6 @@ Route::middleware(['auth'])->group(function () {
 Route::get('categories/{cateId}','CategoryController@subCate')->name('categories');
 });
 
-Route::get('rooms','RoomsController@index')->name('rooms.index');
-Route::get('rooms/{room}','RoomsController@show')->name('rooms.show');
 
 
 // Product Detail
@@ -126,17 +102,17 @@ Route::get('category/subCates/{subCateId}','CategoryController@subCate_edit')->n
 Route::PUT('category/subCates/update/{subCateId}','CategoryController@subCate_update')->name('category/subcategory.update');
 Route::match(['delete'],'category/subCates/{subCateId}','CategoryController@subCate_destroy')->name('category/subcategory.destroy');
 
-Route::get('sitemap/',function (){ 
-  return view('sitemap.sitemap');
-})->name('sitemap');
+// Route::get('sitemap/',function (){ 
+//   return view('sitemap.sitemap');
+// })->name('sitemap');
 
-Route::get('healthybar/',function (){ 
-  return view('healthybar.index');
-})->name('healthybar');
+// Route::get('healthybar/',function (){ 
+//   return view('healthybar.index');
+// })->name('healthybar');
 
-Route::get('snooker/',function (){ 
-  return view('snooker.index');
-})->name('snooker');
+// Route::get('snooker/',function (){ 
+//   return view('snooker.index');
+// })->name('snooker');
 
 Route::get('about/ingre',function (){ 
   return view('about/ingre/ingre');

@@ -436,14 +436,18 @@ class ProductController extends Controller
 
         if($request->ajax()){
             $data = DB::table('products')->orderBy('proId','desc')->get();
+            // $data = Category::with(['products' => function ($q) {
+            //     $q->orderBy('proId', 'DESC');
+            // }], 'subCategories')
+            //     ->get();
             return DataTables::of($data)
             // ->setRowData([
             //     'proImage' => '<img src='.'{{asset("images/product/$proImage")}}'.'>',
             // ])
-
+         
             ->addIndexColumn()
             ->addColumn('action', function($row){
-                            $btn = '<form action="'.route('productdetail.destroy',$row->proId).'" method="POST">';
+                           $btn = '<form action="'.route('productdetail.destroy',$row->proId).'" method="POST">';
                            $btn = $btn.'</div><a href="'.route('productdetail.show',$row->proId).'" class="edit btn btn-success btn-sm"><i class="fas fa-eye fa-sm" style="font-size:8px"></i></a></div>';
                            $btn = $btn.'</div><a href="'.route('productdetail.edit',$row->proId).'" class="edit btn btn-warning btn-sm"><i class="fas fa-edit fa-sm" style="font-size:8px"></i></a></div>';
                            $btn=$btn.csrf_field();
@@ -452,7 +456,8 @@ class ProductController extends Controller
                            $btn=$btn.'</form>';
                             return $btn;
                     })
-                    ->rawColumns(['action'])                   
+                    ->rawColumns(['action'])
+                                     
             ->make(true);
         }
         return view('productdetail.list');

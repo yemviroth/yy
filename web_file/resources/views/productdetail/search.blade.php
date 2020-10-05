@@ -72,6 +72,12 @@
                     <span class="badge badge-light mb-4">SOLDOUT</span>
                     @endif
                     <h6>{!!$pro->proName!!}</h6>
+                    @if($pro->proColor1!="")<span class="badge pl-4  border" style="background-color:{!!$pro->proColor1!!};">  </span>@endif
+                    @if($pro->proColor2!="")<span class="badge pl-4  border" style="background-color:{!!$pro->proColor2!!};">  </span>@endif
+                    @if($pro->proColor3!="")<span class="badge pl-4  border" style="background-color:{!!$pro->proColor3!!};">  </span>@endif
+                    @if($pro->proColor4!="")<span class="badge pl-4  border" style="background-color:{!!$pro->proColor4!!};">  </span>@endif
+                    @if($pro->proColor5!="")<span class="badge pl-4  border" style="background-color:{!!$pro->proColor5!!};">  </span>@endif
+
                     <p class="price">${{$pro->proPrice}}</p>
                     <p>{!!$pro->proTextIntro!!}</p>
                   </div>
@@ -81,6 +87,16 @@
               <div class="d-block d-md-none">
                 <div class="text-under-product">
 
+                    <div class="pt-3">
+
+                    @if($pro->proColor1!="")<span class="badge pl-4  border" style="background-color:{!!$pro->proColor1!!};">  </span>@endif
+                    @if($pro->proColor2!="")<span class="badge pl-4  border" style="background-color:{!!$pro->proColor2!!};">  </span>@endif
+                    @if($pro->proColor3!="")<span class="badge pl-4  border" style="background-color:{!!$pro->proColor3!!};">  </span>@endif
+                    @if($pro->pror4!="")<span class="badge pl-4  border" style="background-color:{!!$pro->proColor4!!};">  </span>@endif
+                    @if($pro->proColor5!="")<span class="badge pl-4  border" style="background-color:{!!$pro->proColor5!!};">  </span>@endif
+
+          
+                    </div>
                   <h6>{!!$pro->proName!!}</h6>
                   @if($pro->proIsInStock=='No')
                   <span class="badge badge-dark mb-2">SOLDOUT</span>

@@ -8,14 +8,7 @@
 
     <div class="row p-4" style="font-size:13px;">
                           
-                        @if ($message = Session::get('success'))
-                        <div id="malert" class="alert alert-success alert-dismissible fade show"  role="alert">{{ $message }}
-                            <button type="button" class="close" data-dismiss="alert" aria-label="Close">
-                                <span aria-hidden="true">&times;</span>
-                              </button>
-                        </div>
                         
-                         @endif
               
 
                     <div class="col-12">
@@ -30,7 +23,7 @@
 
                         <table id="myTable" class="table table-border">
                             <thead class="fixed">
-                                <!-- <th>#</th> -->
+                                <th>#</th>
                                  <th >Image</th>
                                
                                 <th style="width: 180px;">Product Name</th>
@@ -87,6 +80,7 @@
         
         columns: [
             // {data: 'DT_RowData.proImage',name: 'proImage'},
+            { data: 'DT_RowIndex', name: 'DT_RowIndex' },
             { data: 'proImage', name: 'proImage',
                     render: function( data, type, full, meta ) {
                         return "<img src=\"{{asset('images/product')}}/" + data + "\" height=\"75\"/>";
@@ -112,10 +106,11 @@
         
     });
 
-    
+    order:[7,'DESC']
   
 });
 
+// {data: 'drivers.name', name:'drivers.name', searchable: true, sortable : true, visible:false},
 
   
 

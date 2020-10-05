@@ -12,7 +12,7 @@ TheYeon Cambodia
                     <div class="modal-header modal-md  text-light bg-dark">
                     
                         <p class="modal-title">
-                        <span><i class="fas fa-plus-square"></i></span><span class="ml-2">Campany Info</span>
+                        <span><i class="fas fa-building"></i></span><span class="ml-2">Campany Info</span>
                         </p>
                     </div>
                     <form action="{{route('company.update','1')}}" method="POST" enctype="multipart/form-data" class="">

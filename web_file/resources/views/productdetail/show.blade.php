@@ -5,6 +5,12 @@
 <div class="wrapper">
   <div class="container-fluid">
   <div class="d-none d-lg-block" style="padding-top: 8%;"></div>
+    @auth
+    <div class="float-right">
+       <a target="_blank" href="{{route('productdetail.edit', $products[0]->proId)}}" class="btn btn-success"><i class="fas fa-edit" title="Edit"></i></a>
+    </div>
+     
+    @endauth
 
     <div class="text-center header-title pt-3 d-none d-md-block">
 
@@ -16,6 +22,7 @@
       @endforeach
       @endforeach
     </div>
+
 
     <?php
 
@@ -39,6 +46,7 @@
           </div>
         </div>
 
+
         <div class="p-sm-3 col-md-5 col-sm-12 col-12">
           <img class="img-fluid" src="{{asset('images/product/'.$products[0]->proImage)}}">
         </div>
@@ -48,8 +56,14 @@
             <h5><span class="badge badge-danger p-2">មិនមានក្នុងស្តុក</span></h5>
           @endif
           <h5 class="font-weight-normal">{!!$products[0]->proName!!}</h5>
-
           <h6 id="priceS" class="pt-3 price">${{$products[0]->proPrice}}</h6>
+
+          @if($pro->proColor1!="")<span class="badge pl-4 pt-2 border" style="background-color:{!!$pro->proColor1!!};">  </span>@endif
+          @if($pro->proColor2!="")<span class="badge pl-4 pt-2 border" style="background-color:{!!$pro->proColor2!!};">  </span>@endif
+          @if($pro->proColor3!="")<span class="badge pl-4 pt-2 border" style="background-color:{!!$pro->proColor3!!};">  </span>@endif
+          @if($pro->proColor4!="")<span class="badge pl-4 pt-2 border" style="background-color:{!!$pro->proColor4!!};">  </span>@endif
+          @if($pro->proColor5!="")<span class="badge pl-4 pt-2 border" style="background-color:{!!$pro->proColor5!!};">  </span>@endif
+       
           <p class="pt-3 text-muted">{!!$products[0]->proTextIntro!!}</p>
 
           <h6 class="text-kh-bold pt-3">របៀបប្រើ</h6>
@@ -94,6 +108,15 @@
       </div>
 
       <div class="text-center">
+        <div class="pt-2">
+        @if($pro->proColor1!="")<span class="badge pl-4 pt-1 border" style="background-color:{!!$pro->proColor1!!};">  </span>@endif
+      @if($pro->proColor2!="")<span class="badge pl-4 pt-1 border" style="background-color:{!!$pro->proColor2!!};">  </span>@endif
+      @if($pro->proColor3!="")<span class="badge pl-4 pt-1 border" style="background-color:{!!$pro->proColor3!!};">  </span>@endif
+      @if($pro->proColor4!="")<span class="badge pl-4 pt-1 border" style="background-color:{!!$pro->proColor4!!};">  </span>@endif
+      @if($pro->proColor5!="")<span class="badge pl-4 pt-1 border" style="background-color:{!!$pro->proColor5!!};">  </span>@endif
+
+        </div>
+
         <h5 class="font-weight-normal text-center pt-3 pb-3">{!!$products[0]->proName!!}</h5>
           @if($products[0]->proIsInStock=='No')
               <p class=" badge badge-danger badge-md p-2">មិនមានក្នុងស្តុក</p>

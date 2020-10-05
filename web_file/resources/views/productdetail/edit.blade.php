@@ -10,8 +10,8 @@ The Yeon Cambodia
 <div class="container-fluid pt-4 text-kh">
 
     <div class="card">
-        <div class="card-header">
-            <i class="fas fa-plus-square"></i> Edit Product
+        <div class="card-header bg-dark text-light">
+        <i class="fas fa-edit"></i> Edit Product
         </div>
         <div class="card-body">
        
@@ -19,11 +19,15 @@ The Yeon Cambodia
           
                 {{csrf_field()}}
                 {{method_field('PUT')}}
+   
+ 
+
+  
             
                 <div class="form-group row">
-                    <label for="" class="col-md-2 col-form-label">Product Category :</label>
+                    <label for="" class="col-md-2 col-form-label text-md-right">Product Category :</label>
                     <div class="col-md-10">
-                        <select name="cateId" class="custom-select my-1 mr-sm-2" id="category">
+                        <select name="cateId" class="custom-select" id="category">
                             <option selected>Choose Product Category</option>
                             @foreach($cates as $cat)
                             @if ($products[0]->cateId == $cat->cateId)
@@ -36,10 +40,10 @@ The Yeon Cambodia
                     </div>
                 </div>
 
-                <div class="form-group row">
+                    <div class="form-group row">
                     <label for="subCateId" class="col-md-2 col-form-label text-md-right">Sub Category :</label>
                     <div class="col-md-10">
-                        <select name="subCateId" class="custom-select my-1 mr-sm-2" id="subCategory">
+                        <select name="subCateId" class="custom-select" id="subCategory">
                             <option value="0">-- Select Sub Category --</option>
 
                         </select>
@@ -55,6 +59,43 @@ The Yeon Cambodia
                     </div>
                 </div>
 
+     
+
+
+                <div class="form-group row">
+                    <label for="proName" class="col-md-2 col-form-label text-md-right">Image :</label>
+                    <div class="col-md-10">
+                        <div class="row">
+                            <div class="col-md-2 col-12" style="height: 150px;">
+                                @if($products[0]->proImage)
+                                     <img class="text-md-right" style="height:150px;width:auto" id="output" src="{{asset('images/product/'.$products[0]->proImage)}}" alt="">
+                                @endif
+                            </div>
+                        </div>
+                        <div class="row">
+                            <div class="col-md-4">
+                                <div class="custom-file col-12">
+                                    <input type="file" class="custom-file-input" id="customFile" name="filephoto" onchange="loadFile(event)">
+                                    <label class="custom-file-label" for="filephoto">Choose file..</label>
+                                    <script>
+                                        var loadFile = function(event) {
+                                            var image = document.getElementById('output');
+                                            image.src = URL.createObjectURL(event.target.files[0]);
+                                        };
+                                    </script>
+                                    @if ($errors->has('filephoto'))
+                                    <div class="error"> <strong>{{ $errors->first('filephoto') }}</strong></div>
+                                    @endif
+
+                                </div>
+                               
+                            </div>
+                        </div>
+                       
+                    </div>
+                </div>
+                                            
+  
                 <div class="form-group row">
                         <label for="proName" class="col-md-2 form-label text-md-right">Color :</label>
                         <div class="col-md-2">
@@ -151,7 +192,7 @@ The Yeon Cambodia
                 <div class="form-group row">
                     <label for="proPrice" class="col-md-2 col-form-label text-md-right">Product Price :</label>
                     <div class="col-md-4">
-                        <input type="text" id="proPrice" value="{{$products[0]->proPrice}}" class="form-control" name="proPrice" required>
+                        <input type="number" id="proPrice" value="{{$products[0]->proPrice}}" class="form-control" name="proPrice" required>
                     </div>
 
                     <!-- <label for="proOrderBy" class="col-md-2 col-form-label text-md-right">Product Order List :</label>
@@ -161,30 +202,9 @@ The Yeon Cambodia
 
                 </div>
 
-
-                <div class="form-group row">
-                    <label for="full_name" class="col-md-2 col-form-label text-md-right">Image :</label>
-                    <div class="col-md-10">
-                        <div class="custom-file col-sm-7">
-                            <input type="file" class="custom-file-input" id="customFile" name="filephoto" onchange="loadFile(event)">
-                            <label class="custom-file-label" for="filephoto">Choose file</label>
-                            <script>
-                                var loadFile = function(event) {
-                                    var image = document.getElementById('output');
-                                    image.src = URL.createObjectURL(event.target.files[0]);
-                                };
-                            </script>
-                            @if ($errors->has('filephoto'))
-                            <div class="error"> <strong>{{ $errors->first('filephoto') }}</strong></div>
-                            @endif
-
-                        </div>
-                        @if($products[0]->proImage)
-                        <img class="img-view col-md-2 text-md-right" style="width:100px" id="output" src="{{asset('images/product/'.$products[0]->proImage)}}" alt="">
-                        @endif
-                    </div>
-
-                </div>
+         
+                
+              
                 <div class="form-group row">
                     <label for="proTextIntro" class="col-md-2 col-form-label text-md-right">Product Intro :</label>
                     <div class="col-md-10">

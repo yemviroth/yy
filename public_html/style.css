@@ -32,7 +32,9 @@ p {
 
 .list-horizon{
 
-padding:10px;
+
+padding-top: 5px;
+padding-bottom: 5px;
 display:block;
 text-align:center;
 font-weight: 200;
@@ -435,15 +437,24 @@ p img{
     
 }
 
+.navbar .nav-item .dropdown .active
+{
+    
+  color: #d2638d;
+
+    
+}
 
 .navbar-light .navbar-nav .active > .nav-link{
 	/*color: #cda274;*/
-	color: #a70101;
+	color: #d2638d;
 }
 
 .dropdown:hover .dropdown-menu {
     display: block;
 }
+
+
 .dropdown-menu {
     margin-top: 9px;
 }
@@ -659,6 +670,8 @@ border:0px solid gray;
   position: relative;
   display: inline-block;
 }
+
+
 
 .dropdown-content {
   display: none;

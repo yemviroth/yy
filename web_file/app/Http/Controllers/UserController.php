@@ -15,12 +15,12 @@ class UserController extends Controller
      */
     public function index()
     {
-        $rooms = User::orderBy('id', 'asc')
+        $users = User::orderBy('id', 'asc')
         // ->where('lang','EN')
         ->get();
                                 
 
-         return view ('user.index',compact('rooms'));
+         return view ('user.index',compact('users'));
     }
 
     /**
@@ -142,6 +142,6 @@ class UserController extends Controller
         $user = User::findOrFail($id);
         $user->delete();
         return redirect()->route('user.index')
-                             ->with('success', 'User deleted successfully');
+                             ->with('Warning', 'User deleted successfully');
     }
 }

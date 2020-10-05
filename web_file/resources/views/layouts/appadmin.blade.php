@@ -107,9 +107,7 @@
               </li>
 
             
-             <!--   <li class="nav-item {{ (\Request::route()->getName()=='rooms.detail.list' ? 'active' : '') }}">
-                <a class="nav-link" href="{{route('rooms.detail.list')}}">ROOM DETAIL</a>
-              </li> -->
+
 
               <li class="nav-item {{ (\Request::route()->getName()=='user.index' ? 'active' : '') }}">
                 <a class="nav-link" href="{{route('user.index')}}">USER</a>

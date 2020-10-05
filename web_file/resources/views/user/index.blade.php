@@ -30,41 +30,13 @@ USER
                                     <div class=" ml-0 mr-2 pt-0 pb-1">                                    
                                                     <a href="{{ route('user.create') }}" class="btn btn-sm btn-success"><i class="fas fa-plus-square"></i> Create New</a>                                
                                     </div>
-                                    <div class="ml-0 text-left">
-                                                    <a data-toggle="collapse" href="#collapseSearch" role="button" aria-expanded="false" aria-controls="collapseSearch" class="btn btn-sm btn-primary"><i class="fas fa-search"></i> Filter</a>
-                                    </div>
+                                   
                             </div>
                             
                                    
                                
                         </div>
-                        <div class="container-fluid  collapse @if (Request::is('rooms/search'))
-                            show 
-                        @endif"  id="collapseSearch">
-                        <form action="{{ route('rooms.index') }}" method="get">
-                                {{-- @csrf --}}
-                                <div class="row">
-                                        <div class=" col-12 mb-1 form-inline p-1" style="border: 1px #ccc solid;">
-                                            
 
-                                                <div class="ml-2">
-                                                    Date: <input type="text" value="@php if (session()->has('index_logging_logdate')) { echo session()->get('index_logging_logdate');}@endphp" name="logdate" id="logdate" autocomplete="off" class="form-control form-control-sm">
-                                                </div> 
-                                                <div class="ml-2">
-                                                        Problem: <input type="text" value="@php if (session()->has('index_logging_problem')) { echo session()->get('index_logging_problem');}@endphp" name="problem" class="form-control form-control-sm">
-                                                 </div> 
-                                                
-                                                 <div class="ml-2">
-                                                                                                                            
-                                                                <button name="btnsearch" type="submit" class="btn btn-sm btn-success"><i class="fas fa-search"></i></button>
-                                                            
-                                                 </div> 
-                                                
-                                        </div>
-                                    
-                                </div>
-                            </form>
-                            </div>
                         <div class="w-100"></div>
                         <div class="table-responsive">
 
@@ -88,7 +60,7 @@ USER
                                 
                             </tr>
                 
-                            @foreach ($rooms as $room) 
+                            @foreach ($users as $room) 
                             <tr>
                            
                             <td>{{$room->id}}</td>                                                        
