@@ -435,17 +435,25 @@ class ProductController extends Controller
         // return view ('productdetail.list',compact('products','cates'));
 
         if($request->ajax()){
-            $data = DB::table('products')->orderBy('proId','desc')->get();
-            // $data = Category::with(['products' => function ($q) {
-            //     $q->orderBy('proId', 'DESC');
-            // }], 'subCategories')
-            //     ->get();
-            return DataTables::of($data)
-            // ->setRowData([
-            //     'proImage' => '<img src='.'{{asset("images/product/$proImage")}}'.'>',
-            // ])
+            // $data = DB::table('products')->orderBy('proId','desc')->get();
+          
+            // return DataTables::of($data)
          
+
+            $data = DB::table('categories')->join('products', 'categories.cateId', '=', 'products.cateId')
+            ->select(['categories.*','products.*']);
+           
+            return DataTables::of($data)
             ->addIndexColumn()
+            ->addColumn('Instock', function($row){
+                if($row->proIsInStock==='Yes'){
+                    $bag = '<h6><span class="badge badge-primary">Yes</span></h6>';
+                   return  $bag;
+                }else{
+                   return '<h6><span class="badge badge-danger">No</span></h6>';
+                }
+            })
+
             ->addColumn('action', function($row){
                            $btn = '<form action="'.route('productdetail.destroy',$row->proId).'" method="POST">';
                            $btn = $btn.'</div><a href="'.route('productdetail.show',$row->proId).'" class="edit btn btn-success btn-sm"><i class="fas fa-eye fa-sm" style="font-size:8px"></i></a></div>';
@@ -456,8 +464,10 @@ class ProductController extends Controller
                            $btn=$btn.'</form>';
                             return $btn;
                     })
+                    
+                    ->rawColumns(['Instock'])
                     ->rawColumns(['action'])
-                                     
+                    ->escapeColumns([])                         
             ->make(true);
         }
         return view('productdetail.list');
