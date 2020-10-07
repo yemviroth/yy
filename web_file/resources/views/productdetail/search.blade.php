@@ -57,6 +57,7 @@
       </div>
 
       <div class="row border">
+        @if($pros->count()>0)
         @foreach ($pros as $pro)
 
         <div class="col-sm-4 col-md-4 col-6 mt-3">
@@ -114,7 +115,9 @@
 
 
         @endforeach
-
+        @else
+        <img class="w-100" src="{{asset('images/404.png')}}" alt="">
+      @endif
       </div>
     </section>
   </div>

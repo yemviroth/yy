@@ -5,7 +5,7 @@
 @section('content')
 <br>
 <!-- slide -->
-<div class="" style="padding-top: 10px">
+<div class="d-md-block d-sm-none" style="padding-top: 60px"></div>
 
 
   <section class="d-none d-md-block">
@@ -18,7 +18,7 @@
       </ol>
       <div class="carousel-inner">
         <div class="carousel-item active">
-          <img src="{{asset('images/slide/slide1.jpg')}}" class="d-block" style="height:40vw" class="" alt="...">
+          <img src="{{asset('images/slide/slide1.jpg')}}" class="d-block" style="" class="img-fluid" alt="...">
 
           <div class="carousel-caption d-none d-md-block">
             <!-- <h5>First slide label</h5> -->
@@ -26,14 +26,14 @@
           </div>
         </div>
         <div class="carousel-item">
-          <img src="{{asset('images/slide/slide2.jpg')}}" class="d-block" style="height:40vw" class="" alt="...">
+          <img src="{{asset('images/slide/slide2.jpg')}}" class="d-block" style="" class="img-fluid" alt="...">
           <div class="carousel-caption d-none d-md-block">
             <!-- <h5>Second slide label</h5> -->
             <!-- <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit.</p> -->
           </div>
         </div>
         <div class="carousel-item">
-          <img src="{{asset('images/slide/slide3.jpg')}}" class="d-block" style="height:40vw" class="" alt="...">
+          <img src="{{asset('images/slide/slide3.jpg')}}" class="d-block" style="" class="img-fluid" alt="...">
           <div class="carousel-caption d-none d-md-block">
             <!-- <h5>Third slide label</h5> -->
             <!-- <p>Praesent commodo cursus magna, vel scelerisque nisl consectetur.</p> -->
@@ -51,7 +51,7 @@
       </a>
     </div>
   </section>
-</div>
+
 
 <!-- mobile -->
 <div class="">
@@ -118,8 +118,7 @@
     persist: true,
     savedirection: true
   });
-</script>
-
+</script35
 <!-- <div class="row"> -->
 <div class="d-none d-md-block">
 

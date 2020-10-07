@@ -1,13 +1,10 @@
-@extends('layouts.appadmin')
+@extends('layouts.dash.app')
 @section('title')
 The Yeon Cambodia
 @endsection
 @section('content')
 
-<div class="wrapper">
 
-
-    <div class="container-fluid pt-4">
         <div class="card text-kh">
             <div class="card-header bg-dark text-light">
                 <span><i class="fas fa-plus-square"></i></span><span class="ml-2">Add New Product</span>
@@ -288,21 +285,12 @@ The Yeon Cambodia
                 </form>
             </div>
         </div>
-    </div>
 
-</div>
-</div>
+<br>
+
 <!-- include summernote css/js -->
 <!-- <link href="https://cdn.jsdelivr.net/npm/summernote@0.8.16/dist/summernote.min.css" rel="stylesheet">
 <script src="https://cdn.jsdelivr.net/npm/summernote@0.8.16/dist/summernote.min.js"></script> -->
-
-
-
-
-
-
-
-<br><br>
 
 
 

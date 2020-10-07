@@ -1,4 +1,4 @@
-@extends('layouts.appadmin')
+@extends('layouts.dash.app')
 @section('title')
 TheYeon Cambodia
 @endsection
@@ -7,7 +7,7 @@ TheYeon Cambodia
 
 <div class="container p-4">
     <div class="row justify-content-center">
-        <div class="col-md-8 ">
+        <div class="col-md-12 ">
                 <div class="modal-content shadow m=3">
                     <div class="modal-header modal-md  text-light bg-dark">
                     
@@ -60,7 +60,7 @@ TheYeon Cambodia
                                             <label for="campanyAddress" class="col-md-3 col-form-label text-md-right">Address:</label>
                                             <div class="col-md-9">                                              
                                                 
-                                                <textarea id="campanyAddress" class="form-control" name="campanyAddress">{{$campany[0]->campanyAddress}}</textarea>
+                                                <textarea id="campanyAddress" class="form-control" name="campanyAddress" rows="5">{{$campany[0]->campanyAddress}}</textarea>
                                             </div>
                                         </div>
 
@@ -74,9 +74,9 @@ TheYeon Cambodia
                             
                     </div>
                     <div class="modal-footer">
-                            <a class="btn  btn-secondary text-md-left" href="{{route('category.list')}}">Back</a>
+                           
                                         
-                           <button class="btn  btn-success text-md-left" type="submit">Submit</button>
+                           <button class="btn  btn-success text-md-left" type="submit">Update</button>
                     </div>
                     </form>
                 </div>

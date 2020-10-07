@@ -1,7 +1,5 @@
-@extends('layouts.appadmin')
-@section('title')
-TROPICANA - ROOMS
-@endsection
+@extends('layouts.dash.app')
+
 @section('content')   
 
 <div class="container p-4">
@@ -11,7 +9,7 @@ TROPICANA - ROOMS
                     <div class="modal-header modal-md  text-light bg-dark">
                     
                         <p class="modal-title">
-                        <span><i class="fas fa-plus-square"></i></span><span class="ml-2">Add Category</span>
+                        <span><i class="fas fa-edit"></i></span><span class="ml-2">Edit Category</span>
                         </p>
                     </div>
                     <form action="{{route('category.update',$edit->cateId)}}" method="POST" class="">

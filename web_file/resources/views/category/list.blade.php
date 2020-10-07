@@ -1,7 +1,5 @@
-@extends('layouts.appadmin')
-@section('title')
-TROPICANA - ROOMS
-@endsection
+@extends('layouts.dash.app')
+
 @section('content')
 
 
@@ -18,7 +16,7 @@ TROPICANA - ROOMS
 
 
 <div class="">
-    <div class="container">
+    <div class="">
 
 
 

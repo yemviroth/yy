@@ -149,7 +149,6 @@
 @endcomponent
 
 
-
   @yield('script')
 
   <script>

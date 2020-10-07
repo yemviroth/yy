@@ -1,4 +1,4 @@
-@extends('layouts.appadmin')
+@extends('layouts.dash.app')
 @section('title')
 USER
 @endsection

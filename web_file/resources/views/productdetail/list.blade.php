@@ -1,20 +1,18 @@
-@extends('layouts.appadmin')
+@extends('layouts.dash.app')
 
 @section('content')
 
-<div class="wrapper">
-    <div class="container-fluid">
 
-        <div class="row">
+        <div class="">
             <div class=" ml-0 mr-2 pt-2 pb-1">
                 <a href="{{ route('productdetail.create') }}" class="btn btn-sm btn-success"><i class="fas fa-plus-square"></i> Add New Product</a>
             </div>
 
         </div>
-        <div class="row" style="font-size:13px;">
+        <div class="" style="font-size:13px;">
 
             <div class="card shadow">
-                <h6 class="card-header bg-dark text-light"><i class="fas fa-suitcase ">   Products List   </i>    </h6>
+                <h6 class="card-header bg-dark text-light"><i class="fas fa-suitcase ">    </i>   Products List   </h6>
                 <div class="card-body">
                     <div class="table-responsive">
                     <table id="myTable" class="table table-border">
@@ -42,28 +40,15 @@
                     </div>
                 </div>
             </div>
-
-
-
-
-
-
-
+            
         </div>
         <hr>
-        <div class="container">
-            <div class="row justify-content-center">
-                <div class="col-m-6">
-                    <?php //{{$products->links() }}
-                    ?>
-                </div>
-            </div>
-        </div>
+        <div class="pt-5"></div>
+      
 
 
 
-    </div>
-</div>
+   
 <!-- </div> -->
 
 <script>
@@ -151,6 +136,6 @@
 
     // {data: 'drivers.name', name:'drivers.name', searchable: true, sortable : true, visible:false},
 </script>
-</div>
+
 
 @endsection

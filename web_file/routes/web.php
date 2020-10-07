@@ -78,6 +78,7 @@ Route::middleware(['auth'])->group(function () {
     Route::match(['delete'],'category/{cateId}','CategoryController@destroy')->name('category.destroy');
 
     // 
+    Route::resource('dashboard','DashController');
 
     //Company
     Route::resource('company','CampanyController');

@@ -10,12 +10,18 @@
   <div class="header-title pt-4 text-center">{{$pros[0]->cateName}}</div>
   <div class="text-center pt-2">
 
-    @foreach ($pros as $pross)
+  
+  @foreach ($pros as $pross)
     @foreach($pross->subCategories as $subcate)
 
-    <a href="{{route('category/subcategory.show',$subcate->subCateId)}}">{{$subcate->subCateName}}</a>
+    <li class="list-horizon d-inline pl-4"><a href="{{route('category/subcategory.show',$subcate->subCateId)}}">{{$subcate->subCateName}}</a></li>
     @endforeach
     @endforeach
+
+
+
+
+    
   </div>
 
 
@@ -53,7 +59,8 @@
 
 
       </div>
-
+     
+@if($pross->products->count()>0)
       <div class="row">
         @foreach ($pros as $pross)
         @foreach($pross->products as $pro)
@@ -107,8 +114,11 @@
         @endforeach
 
         @endforeach
-
+        @else
+      <img class="w-100" src="{{asset('images/404.png')}}" alt="">
+    @endif
       </div>
+     
 </section>
 </div>
 </div>

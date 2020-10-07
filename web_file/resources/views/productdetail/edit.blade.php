@@ -1,13 +1,10 @@
-@extends('layouts.appadmin')
+@extends('layouts.dash.app')
 @section('title')
 The Yeon Cambodia
 @endsection
 @section('content')
 
-<div class="wrapper">
 
-
-<div class="container-fluid pt-4 text-kh">
 
     <div class="card">
         <div class="card-header bg-dark text-light">
@@ -283,9 +280,7 @@ The Yeon Cambodia
 
 
     </div>
-</div>
 
-</div>
 <br><br>
 
 
