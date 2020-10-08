@@ -118,8 +118,8 @@
     persist: true,
     savedirection: true
   });
-</script35
-<!-- <div class="row"> -->
+</script>
+<div class="">
 <div class="d-none d-md-block">
 
   <div class="marquee" id="mycrawler2" style="width:100%;">
@@ -129,7 +129,7 @@
     @endforeach
   </div>
 </div>
-<!-- </div>                        -->
+</div>                       
 
 
 
@@ -143,7 +143,7 @@
       'width': '100%',
       // 'height': '180px'
     },
-    inc: 3, //speed - pixel increment for each iteration of this marquee's movement
+    inc: 2, //speed - pixel increment for each iteration of this marquee's movement
     mouse: 'cursor pause', //mouseover behavior ('pause' 'cursor driven' or false)
     moveatleast: 2,
     neutral: 150,
@@ -152,20 +152,7 @@
   });
 </script>
 
-<!-- 
-<div class="">
-  <div class="container-fluid">
-    <div class="d-sm-none text-kh">
-      <div class="row">
-        @foreach($cates as $cate)
-        <div class="col-4 border">
-          <a class="list-horizon" href="{{route('category.show', $cate->cateId)}}"><strong>{{$cate->cateName}}</strong></a>
-        </div>
-        @endforeach
-      </div>
-    </diV>
-  </div>
-</div> -->
+
 <div class="" style="margin-top:-50px;">
 @component('layouts.mobile-cate')
 @endcomponent

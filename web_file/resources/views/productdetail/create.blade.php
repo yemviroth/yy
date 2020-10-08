@@ -202,7 +202,7 @@ The Yeon Cambodia
                     </div>
 
 
-                    <div class="form-group row">
+                    <!-- <div class="form-group row">
                         <label for="full_name" class="col-md-2 col-form-label text-md-right">Image :</label>
                         <div class="col-md-10">
                             <div class="custom-file col-sm-12">
@@ -215,15 +215,49 @@ The Yeon Cambodia
 
                             </div>
 
-                            <!-- <div class="col-sm-3 img-view">
+                           <div class="col-sm-3 img-view">
                     
                 <img id="output" src="" width="100" height="100">
 
                     
                 </div> -->
 
+                        <!-- </div>
+                    </div> -->
+
+                    <div class="form-group row">
+                    <label for="proName" class="col-md-2 col-form-label text-md-right">Image :</label>
+                    <div class="col-md-10">
+                        <div class="row">
+                            <div class="col-md-2 col-12 border" style="height: 150px;">
+                               
+                                     <img class="text-md-right " style="height:150px;width:auto" id="output" src="" alt="">
+                                
+                            </div>
                         </div>
+                        <div class="row">
+                            <div class="col-md-4">
+                                <div class="custom-file col-12">
+                                    <input type="file" class="custom-file-input" id="customFile" name="filephoto1" onchange="loadFile(event)">
+                                    <label class="custom-file-label" for="customFile">Choose file..</label>
+                                    <script>
+                                        var loadFile = function(event) {
+                                            var image = document.getElementById('output');
+                                            image.src = URL.createObjectURL(event.target.files[0]);
+                                        };
+                                    </script>
+                                    @if ($errors->has('filephoto'))
+                                    <div class="error"> <strong>{{ $errors->first('filephoto') }}</strong></div>
+                                    @endif
+
+                                </div>
+                               
+                            </div>
+                        </div>
+                       
                     </div>
+                </div>
+
 
                     <div class="form-group row">
                         <label for="proTextIntro" class="col-md-2 col-form-label text-md-right">Product Intro :</label>
