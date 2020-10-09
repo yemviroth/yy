@@ -98,14 +98,14 @@
               <a class="nav-link {{ (\Request::route()->getName()=='about.index' ? 'active' : '') }}{{ (\Request::route()->getName()=='ingrediant' ? 'active' : '') }}"  href="#">អំពីយើង</a>
               <div class="dropdown-content">
                 <a class="{{ (\Request::route()->getName()=='about.index' ? 'active' : '') }}" href="{{route('about.index')}}">Branh Story</a>
-                <a class="" href="{{route('about.index')}}">ដំណាងចែកចាយ</a>
+                <a class="" href="{{route('branch.index')}}">ដំណាងចែកចាយ</a>
                 <a class="{{ (\Request::route()->getName()=='ingrediant' ? 'active' : '') }}" href="{{route('ingrediant')}}">គ្រឿងផ្សំ</a>
               </div>
             </div>
           </li>
 
           <li class="nav-item {{ (\Request::route()->getName()=='service.index' ? 'active' : '') }}">
-            <a class="nav-link" href="#">ដំណាងចែកចាយ</a>
+            <a class="nav-link" href="{{route('branch.index')}}">ដំណាងចែកចាយ</a>
           </li>
          
 

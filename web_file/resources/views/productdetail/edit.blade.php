@@ -60,7 +60,7 @@ The Yeon Cambodia
 
 
                 <div class="form-group row">
-                    <label for="proName" class="col-md-2 col-form-label text-md-right">Image :</label>
+                    <label for="" class="col-md-2 col-form-label text-md-right">Image :</label>
                     <div class="col-md-10">
                         <div class="row">
                             <div class="col-md-2 col-12" style="height: 150px;">
@@ -70,9 +70,9 @@ The Yeon Cambodia
                             </div>
                         </div>
                         <div class="row">
-                            <div class="col-md-4">
+                            <div class="col-md-2 col-2">
                                 <div class="custom-file col-12">
-                                    <input type="file" class="custom-file-input" id="customFile" name="filephoto" onchange="loadFile(event)">
+                                    <input type="file" multiple accept='image/*' class="custom-file-input" id="customFile" name="filephoto" onchange="loadFile(event)">
                                     <label class="custom-file-label" for="filephoto">Choose file..</label>
                                     <script>
                                         var loadFile = function(event) {
@@ -189,7 +189,7 @@ The Yeon Cambodia
                 <div class="form-group row">
                     <label for="proPrice" class="col-md-2 col-form-label text-md-right">Product Price :</label>
                     <div class="col-md-4">
-                        <input type="number" id="proPrice" value="{{$products[0]->proPrice}}" class="form-control" name="proPrice" required>
+                        <input type="number" step="any" id="proPrice" value="{{$products[0]->proPrice}}" class="form-control" name="proPrice" required>
                     </div>
 
                     <!-- <label for="proOrderBy" class="col-md-2 col-form-label text-md-right">Product Order List :</label>
@@ -257,7 +257,7 @@ The Yeon Cambodia
 
 
 
-                <nav class="navbar fixed-bottom navbar-light bg-danger justify-content-end">
+                <nav class="navbar fixed-bottom navbar-dark bg-light justify-content-end">
                     
                         <div class="float-right">
                             <a href="{{route('productdetail.list')}}" class="btn btn-secondary text-md-left">Back</a>

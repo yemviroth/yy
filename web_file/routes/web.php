@@ -79,6 +79,7 @@ Route::middleware(['auth'])->group(function () {
 
     // 
     Route::resource('dashboard','DashController');
+    Route::resource('branch','BranchController');
 
     //Company
     Route::resource('company','CampanyController');

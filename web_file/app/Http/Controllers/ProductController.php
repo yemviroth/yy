@@ -438,7 +438,7 @@ class ProductController extends Controller
             // $data = DB::table('products')->orderBy('proId','desc')->get();
           
             // return DataTables::of($data)
-         
+           
 
             $data = DB::table('categories')->join('products', 'categories.cateId', '=', 'products.cateId')
             ->select(['categories.*','products.*']);
@@ -453,6 +453,15 @@ class ProductController extends Controller
                    return '<h6><span class="badge badge-danger">No</span></h6>';
                 }
             })
+
+            // ->filter(function ($instance) use ($request) {
+            //     if ($request->get('cates') !=0) {
+            //         $instance->where('products.cateId', $request->get('cates'));
+            //     }
+               
+            // })
+
+
 
             ->addColumn('action', function($row){
                            $btn = '<form action="'.route('productdetail.destroy',$row->proId).'" method="POST">';
@@ -470,6 +479,7 @@ class ProductController extends Controller
                     ->escapeColumns([])                         
             ->make(true);
         }
-        return view('productdetail.list');
+        $cates = Category::orderBy('cateId','desc')->get();
+        return view('productdetail.list',compact('cates'));
     }
 }

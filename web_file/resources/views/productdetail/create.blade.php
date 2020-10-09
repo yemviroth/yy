@@ -85,6 +85,43 @@ The Yeon Cambodia
                             <input type="text" id="proName" class="form-control" name="proName" required>
                         </div>
                     </div>
+
+                    <div class="form-group row">
+                    <label for="" class="col-md-2 col-form-label text-md-right">Image :</label>
+                    <div class="col-md-10">
+                        <div class="pb-2">
+                            <div class="col-md-2 col-12 border" style="height: 150px;">
+                               
+                                     <img class="text-md-right " style="height:150px;width:auto" id="output" src="" alt="">
+                                
+                            </div>
+                        </div>
+                        
+
+                        <div class="row">
+                            <div class="col-md-3 col-3">
+                                <div class="custom-file col-12">
+                                    <input type="file" multiple accept='image/*' class="custom-file-input" id="customFile" name="filephoto1" onchange="loadFile(event)">
+                                    <label class="custom-file-label" for="customFile">Choose file..</label>
+                                    <script>
+                                        var loadFile = function(event) {
+                                            var image = document.getElementById('output');
+                                            image.src = URL.createObjectURL(event.target.files[0]);
+                                        };
+                                    </script>
+                                    @if ($errors->has('filephoto'))
+                                    <div class="error"> <strong>{{ $errors->first('filephoto') }}</strong></div>
+                                    @endif
+
+                                </div>
+                               
+                            </div>
+                        </div>
+                       
+                    </div>
+                </div>
+
+
                     <div class="form-group row">
                         <label for="proName" class="col-md-2 form-label text-md-right">Color :</label>
                         <div class="col-md-2">
@@ -186,7 +223,8 @@ The Yeon Cambodia
 
                             <div class="input-group mb-2">
 
-                                <input type="text" class="form-control" id="proPrice" placeholder="$" name="proPrice" required autocomplete="off">
+                                <input type="text" type="number" step="any"  class="form-control" id="proPrice" placeholder="$" name="proPrice" required autocomplete="off">
+                                
                                 <div class="input-group-prepend">
                                     <div class="input-group-text">$</div>
                                 </div>
@@ -194,69 +232,16 @@ The Yeon Cambodia
 
                         </div>
 
-                        <label for="proOrderBy" class="col-md-2 col-form-label text-md-right">Product Order List :</label>
+                        <!-- <label for="proOrderBy" class="col-md-2 col-form-label text-md-right">Product Order List :</label>
                         <div class="col-md-4">
                             <input type="text" id="proOrderBy" class="form-control" name="proOrderBy">
-                        </div>
+                        </div> -->
 
                     </div>
 
 
-                    <!-- <div class="form-group row">
-                        <label for="full_name" class="col-md-2 col-form-label text-md-right">Image :</label>
-                        <div class="col-md-10">
-                            <div class="custom-file col-sm-12">
-
-                                <input type="file" name="filephoto1" class="custom-file-input" id="validatedCustomFile">
-                                <label class="custom-file-label" for="validatedCustomFile">Choose file...</label>
-                                @if ($errors->has('proImage'))
-                                <div class="error"> <strong>{{ $errors->first('filephoto1') }}</strong></div>
-                                @endif
-
-                            </div>
-
-                           <div class="col-sm-3 img-view">
-                    
-                <img id="output" src="" width="100" height="100">
 
                     
-                </div> -->
-
-                        <!-- </div>
-                    </div> -->
-
-                    <div class="form-group row">
-                    <label for="proName" class="col-md-2 col-form-label text-md-right">Image :</label>
-                    <div class="col-md-10">
-                        <div class="row">
-                            <div class="col-md-2 col-12 border" style="height: 150px;">
-                               
-                                     <img class="text-md-right " style="height:150px;width:auto" id="output" src="" alt="">
-                                
-                            </div>
-                        </div>
-                        <div class="row">
-                            <div class="col-md-4">
-                                <div class="custom-file col-12">
-                                    <input type="file" class="custom-file-input" id="customFile" name="filephoto1" onchange="loadFile(event)">
-                                    <label class="custom-file-label" for="customFile">Choose file..</label>
-                                    <script>
-                                        var loadFile = function(event) {
-                                            var image = document.getElementById('output');
-                                            image.src = URL.createObjectURL(event.target.files[0]);
-                                        };
-                                    </script>
-                                    @if ($errors->has('filephoto'))
-                                    <div class="error"> <strong>{{ $errors->first('filephoto') }}</strong></div>
-                                    @endif
-
-                                </div>
-                               
-                            </div>
-                        </div>
-                       
-                    </div>
-                </div>
 
 
                     <div class="form-group row">
@@ -307,6 +292,10 @@ The Yeon Cambodia
 
 
                     <hr>
+                   
+
+                    <nav class="navbar fixed-bottom navbar-dark bg-light justify-content-end">
+                    
                     <div class="float-right">
 
                         <!-- <button class="btn  btn-secondary text-md-left" type="">Back</button> -->
@@ -315,6 +304,9 @@ The Yeon Cambodia
                         <button class="btn  btn-success text-md-left" type="submit">Submit</button>
 
                     </div>
+                   
+
+                    </nav>
 
                 </form>
             </div>
