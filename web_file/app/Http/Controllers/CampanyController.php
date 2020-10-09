@@ -79,7 +79,7 @@ class CampanyController extends Controller
         //
         $campany= Campany::where('id',$id)->first();
         $campany->update($request->all());
-        return back()->with('success','Item Update!');
+        return back()->with('success','Company Info Updated!');
     }
 
     /**

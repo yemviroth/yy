@@ -19,7 +19,7 @@ The Yeon Cambodia
                     <div class="form-group row">
                         <label for="" class="col-md-2 col-form-label text-md-right">Product Category :</label>
                         <div class="col-md-10">
-                            <select name="cateId" class="custom-select my-1 mr-sm-2" id="category">
+                            <select name="cateId" class="custom-select my-1 mr-sm-2" id="category" required>
                                 <option selected value="">Choose Product Category</option>
                                 @foreach($cate as $cat)
                                 <option class="" value="{{$cat->cateId}}">{{$cat->cateName}}</option>
@@ -91,8 +91,8 @@ The Yeon Cambodia
                     <div class="col-md-10">
                         <div class="pb-2">
                             <div class="col-md-2 col-12 border" style="height: 150px;">
-                               
-                                     <img class="text-md-right " style="height:150px;width:auto" id="output" src="" alt="">
+                                
+                                     <img for="customFile" class="text-md-right " style="height:150px;width:auto" id="output" src="" alt="">
                                 
                             </div>
                         </div>
@@ -101,7 +101,7 @@ The Yeon Cambodia
                         <div class="row">
                             <div class="col-md-3 col-3">
                                 <div class="custom-file col-12">
-                                    <input type="file" multiple accept='image/*' class="custom-file-input" id="customFile" name="filephoto1" onchange="loadFile(event)">
+                                    <input type="file" multiple accept='image/*' class="custom-file-input" id="customFile" name="filephoto1" onchange="loadFile(event)" required>
                                     <label class="custom-file-label" for="customFile">Choose file..</label>
                                     <script>
                                         var loadFile = function(event) {
@@ -110,7 +110,7 @@ The Yeon Cambodia
                                         };
                                     </script>
                                     @if ($errors->has('filephoto'))
-                                    <div class="error"> <strong>{{ $errors->first('filephoto') }}</strong></div>
+                                        <div class="error"> <strong>{{ $errors->first('filephoto1') }}</strong></div>
                                     @endif
 
                                 </div>

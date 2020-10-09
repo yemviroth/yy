@@ -79,14 +79,15 @@ Route::middleware(['auth'])->group(function () {
 
     // 
     Route::resource('dashboard','DashController');
-    Route::resource('branch','BranchController');
+   
 
     //Company
     Route::resource('company','CampanyController');
 
 Route::get('categories/{cateId}','CategoryController@subCate')->name('categories');
 });
-
+Route::get('brand/list','BranchController@list')->name('brand.list');
+Route::resource('brand','BranchController');
 
 
 // Product Detail

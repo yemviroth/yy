@@ -13,8 +13,7 @@
 
     <link href="https://cdn.datatables.net/1.10.20/css/dataTables.bootstrap4.min.css" rel="stylesheet" crossorigin="anonymous" />
     <script src="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.13.0/js/all.min.js" crossorigin="anonymous"></script>
-    <link href="https://cdnjs.cloudflare.com/ajax/libs/bootstrap-colorpicker/3.2.0/css/bootstrap-colorpicker.min.css"
-    rel="stylesheet">
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/bootstrap-colorpicker/3.2.0/css/bootstrap-colorpicker.min.css" rel="stylesheet">
     <script src="https://code.jquery.com/jquery-2.2.4.min.js" integrity="sha256-BbhdlvQf/xTY9gja0Dq3HiwQF8LaCRTXxZKRutelT44=" crossorigin="anonymous"></script>
     <script src="//cdn.tinymce.com/4/tinymce.min.js"></script>
 </head>
@@ -37,10 +36,16 @@
             <li class="nav-item dropdown">
                 <a class="nav-link dropdown-toggle" id="userDropdown" href="#" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false"><i class="fas fa-user fa-fw"></i></a>
                 <div class="dropdown-menu dropdown-menu-right" aria-labelledby="userDropdown">
-                   
+
                     <!-- <a class="dropdown-item" href="#">Activity Log</a> -->
-                    <div class="dropdown-divider"></div>
-                    <a class="dropdown-item" href="login.html">Logout</a>
+                    <a class="dropdown-item" href="{{ route('logout') }}" onclick="event.preventDefault();
+                                             document.getElementById('logout-form').submit();">
+                        {{ __('Logout') }}
+                    </a>
+
+                    <form id="logout-form" action="{{ route('logout') }}" method="POST" style="display: none;">
+                        @csrf
+                    </form>
                 </div>
             </li>
         </ul>
@@ -50,7 +55,7 @@
             <nav class="sb-sidenav accordion sb-sidenav-dark" id="sidenavAccordion">
                 <div class="sb-sidenav-menu">
                     <div class="nav">
-                       
+
                         <a class="nav-link" href="{{route('dashboard.index')}}">
                             <div class="sb-nav-link-icon"><i class="fas fa-tachometer-alt"></i></div>
                             Dashboard
@@ -63,8 +68,8 @@
                         </a>
                         <div class="collapse" id="collapseLayouts" aria-labelledby="headingOne" data-parent="#sidenavAccordion">
                             <nav class="sb-sidenav-menu-nested nav">
-                                <a class="nav-link" href="{{route('category.create')}}">Add New Categories</a>
-                                <a class="nav-link" href="{{route('category.list')}}">Categories List</a>
+                                <a class="nav-link" href="{{route('category.create')}}">Add Category</a>
+                                <a class="nav-link" href="{{route('category.list')}}">Category List</a>
                             </nav>
                         </div>
                         <a class="nav-link collapsed" href="#" data-toggle="collapse" data-target="#collapseSub" aria-expanded="false" aria-controls="collapsePages">
@@ -75,7 +80,7 @@
 
                         <div class="collapse" id="collapseSub" aria-labelledby="headingOne" data-parent="#sidenavAccordion">
                             <nav class="sb-sidenav-menu-nested nav">
-                                <a class="nav-link" href="layout-static.html">Add New Sub Categories</a>
+                                <a class="nav-link" href="layout-static.html">Add Sub Category</a>
 
                             </nav>
                         </div>
@@ -114,15 +119,30 @@
                             </nav>
                         </div>
 
+                        <div class="sb-sidenav-menu-heading">Brand</div>
+                        <a class="nav-link collapsed" href="#" data-toggle="collapse" data-target="#collapseDis" aria-expanded="false" aria-controls="collapseDis">
+                            <div class="sb-nav-link-icon"><i class="fas fa-user"></i></div>
+                            Distributor
+                            <div class="sb-sidenav-collapse-arrow"><i class="fas fa-angle-down"></i></div>
+                        </a>
+
+                        <div class="collapse" id="collapseDis" aria-labelledby="headingOne" data-parent="#sidenavAccordion">
+                            <nav class="sb-sidenav-menu-nested nav">
+                                <a class="nav-link" href="{{route('brand.create')}}">Add Distributor</a>
+                                <a class="nav-link" href="{{route('brand.list')}}">Distributor List</a>
+
+                            </nav>
+                        </div>
+
                         <div class="sb-sidenav-menu-heading">Company</div>
-                       <a class="nav-link" href="{{route('company.edit','1')}}"> <i class="fas fa-building"></i> <span class="pl-2">Company Info</span></a>
+                        <a class="nav-link" href="{{route('company.edit','1')}}"> <i class="fas fa-building"></i> <span class="pl-2">Company Info</span></a>
 
 
                     </div>
                 </div>
                 <div class="sb-sidenav-footer">
-                    <div class="small">Logged in as:  {{ Auth::user()->name}}</div>
-                   
+                    <div class="small">Logged in as: {{ Auth::user()->name}}</div>
+
                 </div>
             </nav>
         </div>
@@ -137,53 +157,53 @@
 
                     @if ($message = Session::get('success'))
 
-<div class="alert alert-success fade show" role="alert" style="position:fixed;z-index:10000; width: 96%; left:2%;bottom:2px;">
-  <button type="button" class="close" data-dismiss="alert" aria-label="Close"><span aria-hidden="true">&times;</span></button>
-  <center><strong>{{ $message }}</strong></center>
-</div>
+                    <div class="alert alert-success fade show" role="alert" style="position:fixed;z-index:10000; width: 96%; left:2%;bottom:2px;">
+                        <button type="button" class="close" data-dismiss="alert" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+                        <center><strong>{{ $message }}</strong></center>
+                    </div>
 
-@endif
-
-
-@if ($message = Session::get('error'))
-
-<div class="alert alert-error fade show" role="alert" style="position:fixed;z-index:10000; width: 96%; left:2%;bottom:2px;">
-  <button type="button" class="close" data-dismiss="alert" aria-label="Close"><span aria-hidden="true">&times;</span></button>
-  <center><strong>{{ $message }}</strong></center>
-</div>
-
-@endif
+                    @endif
 
 
-@if ($message = Session::get('warning'))
+                    @if ($message = Session::get('error'))
 
-<div class="alert alert-warning fade show" role="alert" style="position:fixed;z-index:10000; width: 96%; left:2%;bottom:2px;">
-  <button type="button" class="close" data-dismiss="alert" aria-label="Close"><span aria-hidden="true">&times;</span></button>
-  <center><strong>{{ $message }}</strong></center>
-</div>
+                    <div class="alert alert-error fade show" role="alert" style="position:fixed;z-index:10000; width: 96%; left:2%;bottom:2px;">
+                        <button type="button" class="close" data-dismiss="alert" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+                        <center><strong>{{ $message }}</strong></center>
+                    </div>
 
-@endif
-
-
-@if ($message = Session::get('info'))
-
-<div class="alert alert-info fade show" role="alert" style="position:fixed;z-index:10000; width: 96%; left:2%;bottom:2px;">
-  <button type="button" class="close" data-dismiss="alert" aria-label="Close"><span aria-hidden="true">&times;</span></button>
-  <center><strong>{{ $message }}</strong></center>
-</div>
-
-@endif
+                    @endif
 
 
-@if ($errors->any())
+                    @if ($message = Session::get('warning'))
 
-<div class="alert alert-danger fade show" role="alert" style="position:fixed;z-index:10000; width: 96%; left:2%;bottom:2px;">
-  <button type="button" class="close" data-dismiss="alert" aria-label="Close"><span aria-hidden="true">&times;</span></button>
-  <center><strong>{{ $message }}</strong></center>
-</div>
+                    <div class="alert alert-warning fade show" role="alert" style="position:fixed;z-index:10000; width: 96%; left:2%;bottom:2px;">
+                        <button type="button" class="close" data-dismiss="alert" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+                        <center><strong>{{ $message }}</strong></center>
+                    </div>
 
-@endif
+                    @endif
 
 
-@component('layouts.dash.app-footer')
-@endcomponent
+                    @if ($message = Session::get('info'))
+
+                    <div class="alert alert-info fade show" role="alert" style="position:fixed;z-index:10000; width: 96%; left:2%;bottom:2px;">
+                        <button type="button" class="close" data-dismiss="alert" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+                        <center><strong>{{ $message }}</strong></center>
+                    </div>
+
+                    @endif
+
+
+                    @if ($errors->any())
+
+                    <div class="alert alert-danger fade show" role="alert" style="position:fixed;z-index:10000; width: 96%; left:2%;bottom:2px;">
+                        <button type="button" class="close" data-dismiss="alert" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+                        <center><strong>{{ $message }}</strong></center>
+                    </div>
+
+                    @endif
+
+
+                    @component('layouts.dash.app-footer')
+                    @endcomponent

@@ -4,6 +4,9 @@ namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
 use App\User;
+use App\Brand;
+
+
 class DashController extends Controller
 {
     /**
@@ -13,12 +16,12 @@ class DashController extends Controller
      */
     public function index()
     {
-        //
+        $brands = Brand::orderBy('id', 'desc')->get();
         $users = User::orderBy('id', 'asc')
-        // ->where('lang','EN')
-        ->get();
+            // ->where('lang','EN')
+            ->get();
 
-        return view('dashboard.index',compact('users'));
+        return view('dashboard.index', compact('users','brands'));
     }
 
     /**
