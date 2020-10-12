@@ -11,7 +11,7 @@ TheYeon Cambodia
                     <div class="modal-header modal-md  text-light bg-dark">
                     
                         <p class="modal-title">
-                        <span><i class="fas fa-plus-square"></i></span><span class="ml-2">Edit Sub Category</span>
+                        <span><i class="fas fa-edit"></i></span><span class="ml-2">Edit Sub Category</span>
                         </p>
                     </div>
                     <form action="{{route('category/subcategory.update',$edit->subCateId)}}" method="POST" enctype="multipart/form-data" class="">
@@ -40,7 +40,7 @@ TheYeon Cambodia
                                         <div class="form-group row">
                                             <label for="cateOrderBy" class="col-md-3 form-label text-md-right">In Order :</label>
                                             <div class="col-md-9">
-                                                <input type="text" id="cateOrderBy" class="form-control" name="cateOrderBy" value="{{$edit->cateOrderBy}}" required>
+                                                <input type="text" id="cateOrderBy" class="form-control" name="cateOrderBy" value="{{$edit->cateOrderBy}}">
                                             </div>
                                         </div>
 

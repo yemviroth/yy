@@ -27,7 +27,7 @@ TheYeon Cambodia
                                         <div class="form-group row">
                                             <label for="cateOrderBy" class="col-md-3 form-label text-md-right">In Order :</label>
                                             <div class="col-md-9">
-                                                <input type="text" id="cateOrderBy" class="form-control" name="cateOrderBy" required>
+                                                <input type="text" id="cateOrderBy" class="form-control" name="cateOrderBy">
                                             </div>
                                         </div>
 

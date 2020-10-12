@@ -84,7 +84,7 @@
                                         <div class="pb-2">
                                             <div class="col-md-8 col-sm-12 border" style="height: 250px;">
 
-                                                <img for="customFile" class="text-md-right img-fluid " style="height:250px;" id="output" src="" alt="">
+                                                <img for="customFile" class="text-md-right img-fluid " style="height:250px;" id="output" src="@if($edit->dsPhoto!=''){{asset('images/profile/'.$edit->dsPhoto)}} @else {{asset('images/profile/noImg.png')}}@endif " alt="">
 
                                             </div>
                                         </div>

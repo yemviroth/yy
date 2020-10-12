@@ -39,6 +39,7 @@
                         <table class="table table-border datatable" style="font-size:14px;" id="">
 
                             <thead class="">
+                                <th>Image</th>
                                 <th>Distributor Name</th>
                                 <th>Location</th>
                                 <th>Address</th>
@@ -51,6 +52,7 @@
                             @foreach($brands as $brand)
                             <tbody id="">
                                 <tr style="">
+                                    <td><img class="rounded-circle" style="width: 80px;height:80px;" src="@if($brand->dsPhoto!=''){{asset('images/profile/'.$brand->dsPhoto)}} @else {{asset('images/profile/noImg.png')}}@endif" alt=""></td>
                                     <td>{{$brand->dsName}}</td>
                                     <td>{{$brand->dsLocation}}</td>
                                     <td>{{$brand->dsAddress}}</td>

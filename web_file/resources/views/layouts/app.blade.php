@@ -69,7 +69,7 @@
 
   
 
-  <div class="overlay"></div>
+  <div id="myOverlay" class="overlay"></div>
   <div class=""></div>
 
 

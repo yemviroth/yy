@@ -190,7 +190,7 @@ class CategoryController extends Controller
         $subcate = SubCategory::where('subCateId', $id)->first();
         $subcate->update($request->all());
         return redirect()->route('category.list')
-            ->with('success', 'Category created successfully');
+            ->with('success', 'Sub Category Update successfully');
     }
 
     public function subCate_destroy($id)
@@ -198,7 +198,7 @@ class CategoryController extends Controller
         $subcate = SubCategory::where('subCateId', $id)->first();
         $subcate->destroy($id);
         return redirect()->route('category.list')
-            ->with('danger', 'Sub Category Deleted successfully');
+            ->with('warning', 'Sub Category Deleted successfully');
     }
 
 

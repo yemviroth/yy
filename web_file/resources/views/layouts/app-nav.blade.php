@@ -116,10 +116,29 @@
         </ul>
       </div>
 
-      <button class="btn btn-sm btn-outline-dark border-0" data-toggle="modal" data-target=".bd-example-modal-lg"><i class="fas fa-search"></i></button>
+      <!-- <button class="btn btn-sm btn-outline-dark border-0" data-toggle="modal" data-target=".bd-example-modal-lg"><i class="fas fa-search"></i></button> -->
+
+      <form class="d-none d-md-inline-block form-inline ml-auto mr-0 mr-md-3 my-2 my-md-0">
+            <div class="input-group">
+               
+                <div class="input-group-append">
+                    <button class="btn btn-primary" type="button" onclick="openSearch()"><i class="fas fa-search"></i></button>
+                </div>
+            </div>
+        </form>
     </nav>
     <!-- end nav me -->
+<script>
+  function openSearch() {
+  document.getElementById("myOverlay").style.display = "block";
+  document.getElementById("myOverlay").style.opacity = 1;
+}
 
+// Close the full screen search box
+function closeSearch() {
+  document.getElementById("myOverlay").style.display = "none";
+}
+</script>
   </section>
 
   <!-- end of navbar -->
