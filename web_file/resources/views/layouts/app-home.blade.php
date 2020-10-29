@@ -27,7 +27,7 @@
 
 
     <!-- test side nav -->
-    <link rel="stylesheet" href="{{ asset('style3.css')}}">
+    <link rel="stylesheet" href="{{ asset('style3.css')}}">s
 
     <!-- nav -->
 

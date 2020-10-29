@@ -116,16 +116,16 @@
         </ul>
       </div>
 
-      <!-- <button class="btn btn-sm btn-outline-dark border-0" data-toggle="modal" data-target=".bd-example-modal-lg"><i class="fas fa-search"></i></button> -->
+      <button class="btn btn-outline-primary border-0" data-toggle="modal" data-target=".bd-example-modal-lg"><i class="fas fa-search"></i></button>
 
-      <form class="d-none d-md-inline-block form-inline ml-auto mr-0 mr-md-3 my-2 my-md-0">
+      <!-- <form class="d-none d-md-inline-block form-inline ml-auto mr-0 mr-md-3 my-2 my-md-0">
             <div class="input-group">
                
                 <div class="input-group-append">
                     <button class="btn btn-primary" type="button" onclick="openSearch()"><i class="fas fa-search"></i></button>
                 </div>
             </div>
-        </form>
+        </form> -->
     </nav>
     <!-- end nav me -->
 <script>
