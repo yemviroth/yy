@@ -323,6 +323,16 @@ p img{
 	background:#8e171b;
 }
 
+.bg-footer{
+  background-image:url("../image/footer.png") ;
+  background-size: 100%;
+  
+}
+
+.footer-heigh{
+  height: 500px;
+}
+
 .title-sm a {
 	color: #057374;
 	text-decoration: underline;
@@ -379,12 +389,13 @@ p img{
 }
 
 .navbar-dark .navbar-nav .nav-link.active{
-  color:#8e171b;
+  /* color:#8e171b; */
+  color: #fff;
 }
 
 .navbar{
-  background: #fff !important;
-  /* background: #8e171b !important; */
+  /* background: #fff !important; */
+  background: #8e171b !important;
   width: 100%;
  
   /* position: fixed; */
@@ -425,14 +436,15 @@ p img{
      font-size: 1.1rem;
      /* font-family: 'Francois One','Bayon'!important; */
      text-align: left;
-     color: #0b0000;
+     /* color: #0b0000; */
+     color: #fff;
 
     
 }
 .navbar .nav-item .nav-link:hover
 {
     
-    color: rgb(147 136 136 / 60%);
+    /* color: rgb(147 136 136 / 60%); */
 
     
 }
