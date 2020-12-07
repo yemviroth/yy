@@ -223,197 +223,14 @@
 
   <section id="gellery" class="">
     <div class="container">
-    <div class="container">
+      <div class="container">
         <h1>My Photographs</h1>
 
-        <div class="grid">
-            <div class="grid-col grid-col--1">
+        <!-- ----img -->
 
-            </div>
-            <div class="grid-col grid-col--2">
+        <section id="photos"></section>
 
-            </div>
-            <div class="grid-col grid-col--3">
-
-            </div>
-            <div class="grid-col grid-col--4">
-
-            </div>
-
-            <div class="grid-item">
-                <div class="content">
-                    <h2>Airplane</h2>
-                </div>
-                <img src="https://s3-us-west-2.amazonaws.com/s.cdpn.io/2621168/6.jpg" alt="picture">
-            </div>
-
-            <div class="grid-item">
-                <div class="content">
-                    <h2>Airplane</h2>
-                </div>
-                <img src="https://s3-us-west-2.amazonaws.com/s.cdpn.io/2621168/1_copy.jpg" alt="picture">
-            </div>
-
-            <div class="grid-item">
-                <div class="content">
-                    <h2>Airplane</h2>
-                </div>
-                <img src="https://s3-us-west-2.amazonaws.com/s.cdpn.io/2621168/5.jpg" alt="picture">
-            </div>
-
-            <div class="grid-item">
-                <div class="content">
-                    <h2>Airplane</h2>
-                </div>
-                <img src="https://s3-us-west-2.amazonaws.com/s.cdpn.io/2621168/4.jpg" alt="picture">
-            </div>
-
-
-            <div class="grid-item">
-                <div class="content">
-                    <h2>Airplane</h2>
-                </div>
-                <img src="https://s3-us-west-2.amazonaws.com/s.cdpn.io/2621168/3_copy.jpg" alt="picture">
-            </div>
-
-            <div class="grid-item">
-                <div class="content">
-                    <h2>Airplane</h2>
-                </div>
-                <img src="https://s3-us-west-2.amazonaws.com/s.cdpn.io/2621168/2_copy.jpg" alt="picture">
-            </div>
-            <div class="grid-item">
-                <div class="content">
-                    <h2>Airplane</h2>
-                </div>
-                <img src="https://s3-us-west-2.amazonaws.com/s.cdpn.io/2621168/6.jpg" alt="picture">
-            </div>
-
-            <div class="grid-item">
-                <div class="content">
-                    <h2>Airplane</h2>
-                </div>
-                <img src="https://s3-us-west-2.amazonaws.com/s.cdpn.io/2621168/1_copy.jpg" alt="picture">
-            </div>
-
-            <div class="grid-item">
-                <div class="content">
-                    <h2>Airplane</h2>
-                </div>
-                <img src="https://s3-us-west-2.amazonaws.com/s.cdpn.io/2621168/5.jpg" alt="picture">
-            </div>
-
-            <div class="grid-item">
-                <div class="content">
-                    <h2>Airplane</h2>
-                </div>
-                <img src="https://s3-us-west-2.amazonaws.com/s.cdpn.io/2621168/4.jpg" alt="picture">
-            </div>
-
-
-            <div class="grid-item">
-                <div class="content">
-                    <h2>Airplane</h2>
-                </div>
-                <img src="https://s3-us-west-2.amazonaws.com/s.cdpn.io/2621168/3_copy.jpg" alt="picture">
-            </div>
-
-            <div class="grid-item">
-                <div class="content">
-                    <h2>Airplane</h2>
-                </div>
-                <img src="https://s3-us-west-2.amazonaws.com/s.cdpn.io/2621168/2_copy.jpg" alt="picture">
-            </div>
-          
-                      <div class="grid-item">
-                <div class="content">
-                    <h2>Airplane</h2>
-                </div>
-                <img src="https://s3-us-west-2.amazonaws.com/s.cdpn.io/2621168/6.jpg" alt="picture">
-            </div>
-
-            <div class="grid-item">
-                <div class="content">
-                    <h2>Airplane</h2>
-                </div>
-                <img src="https://s3-us-west-2.amazonaws.com/s.cdpn.io/2621168/1_copy.jpg" alt="picture">
-            </div>
-
-            <div class="grid-item">
-                <div class="content">
-                    <h2>Airplane</h2>
-                </div>
-                <img src="https://s3-us-west-2.amazonaws.com/s.cdpn.io/2621168/5.jpg" alt="picture">
-            </div>
-
-            <div class="grid-item">
-                <div class="content">
-                    <h2>Airplane</h2>
-                </div>
-                <img src="https://s3-us-west-2.amazonaws.com/s.cdpn.io/2621168/4.jpg" alt="picture">
-            </div>
-
-
-            <div class="grid-item">
-                <div class="content">
-                    <h2>Airplane</h2>
-                </div>
-                <img src="https://s3-us-west-2.amazonaws.com/s.cdpn.io/2621168/3_copy.jpg" alt="picture">
-            </div>
-
-            <div class="grid-item">
-                <div class="content">
-                    <h2>Airplane</h2>
-                </div>
-                <img src="https://s3-us-west-2.amazonaws.com/s.cdpn.io/2621168/2_copy.jpg" alt="picture">
-            </div>
-          
-                      <div class="grid-item">
-                <div class="content">
-                    <h2>Airplane</h2>
-                </div>
-                <img src="https://s3-us-west-2.amazonaws.com/s.cdpn.io/2621168/6.jpg" alt="picture">
-            </div>
-
-            <div class="grid-item">
-                <div class="content">
-                    <h2>Airplane</h2>
-                </div>
-                <img src="https://s3-us-west-2.amazonaws.com/s.cdpn.io/2621168/1_copy.jpg" alt="picture">
-            </div>
-
-            <div class="grid-item">
-                <div class="content">
-                    <h2>Airplane</h2>
-                </div>
-                <img src="https://s3-us-west-2.amazonaws.com/s.cdpn.io/2621168/5.jpg" alt="picture">
-            </div>
-
-            <div class="grid-item">
-                <div class="content">
-                    <h2>Airplane</h2>
-                </div>
-                <img src="https://s3-us-west-2.amazonaws.com/s.cdpn.io/2621168/4.jpg" alt="picture">
-            </div>
-
-
-            <div class="grid-item">
-                <div class="content">
-                    <h2>Airplane</h2>
-                </div>
-                <img src="https://s3-us-west-2.amazonaws.com/s.cdpn.io/2621168/3_copy.jpg" alt="picture">
-            </div>
-
-            <div class="grid-item">
-                <div class="content">
-                    <h2>Airplane</h2>
-                </div>
-                <img src="https://s3-us-west-2.amazonaws.com/s.cdpn.io/2621168/2_copy.jpg" alt="picture">
-            </div>
-
-        </div>
-    </div>
-      </div>
+        <!-- ---------img------------------ -->
 
 
     </div>
@@ -423,27 +240,34 @@
   <section id="contact" style="background: url(image/contact_BG.png) no-repeat; background-size: cover;background-attachment: fixed;height: 400px;">
     <div class="container">
       <div class="row pt-5">
-        <div class="col-lg-12 mx-auto">
-          <h2 class="text-header">ទំនាក់ទំនង</h2>
+        <div class="col-12 col-md-8 mx-auto my-auto">
 
-          <div class="text-center text-kh text-white">
+          <div style="background-color: #000; padding:10px;opacity:0.4">
+            <div style="opacity:1">
+
+              <h2 class="text-header text-white text-center">ទំនាក់ទំនង</h2>
+
+              <div class="text-center text-kh text-white">
 
 
-            <h6> អាសយដ្ឋាន </h6>
-            <p> អគារ​លេខ ៣០៨ មហាវិថីព្រះមុន្នីវង្ស
-              សង្កាត់បឹងរាំង ខណ្ឌដូនពេញ </p>
-            <br />
-            <h6> E-MAIL </h6>
-            <p> theyeoncambodia@gmail.com </p>
-            <br />
-            <h6> លេខទូរស័ព្ទ </h6>
+                <h4> អាសយដ្ឋាន </h4>
+                <h5> អគារ​លេខ ៣០៨ មហាវិថីព្រះមុន្នីវង្ស
+                  សង្កាត់បឹងរាំង ខណ្ឌដូនពេញ </h5>
+                <br />
+                <h4> E-MAIL </h4>
+                <h5> theyeoncambodia@gmail.com </h5>
+                <br />
+                <h4> លេខទូរស័ព្ទ </h4>
 
-            <h6> +855 93400 000 </h6>
+                <h4> +855 93400 000 </h4>
+              </div>
+            </div>
           </div>
-          <!-- end contact -->
+        </div>
+        <!-- end contact -->
 
-        </div> <!-- --container-- -->
-      </div>
+      </div> <!-- --container-- -->
+    </div>
   </section>
 
 
@@ -505,13 +329,14 @@
   <script src="js/simple-lightbox.min.js"></script>
 
   <script src='https://unpkg.com/colcade@0/colcade.js'></script>
-  
-      <script id="rendered-js" >
-var colc = new Colcade('.grid', {
-  columns: '.grid-col',
-  items: '.grid-item' });
-//# sourceURL=pen.js
-    </script>
+
+  <script id="rendered-js">
+    var colc = new Colcade('.grid', {
+      columns: '.grid-col',
+      items: '.grid-item'
+    });
+    //# sourceURL=pen.js
+  </script>
 
 </body>
 
@@ -535,3 +360,19 @@ var colc = new Colcade('.grid', {
     }
   });
 </Script>
+<script>
+  function getRandomSize(min, max) {
+    return Math.round(Math.random() * (max - min) + min);
+  }
+
+  var allImages = "";
+
+  for (var i = 1; i < 25; i++) {
+    var width = getRandomSize(30, 70);
+    var height = getRandomSize(30, 70);
+    // allImages += '<img src="image/gallery/'+i+'.jpg" style=width:'+  width + '%;height:' + height + '%;" alt="pretty kitty">';
+     allImages += '<img src="image/gallery/'+i+'.jpg" alt="pretty kitty">';
+  }
+
+  $('#photos').append(allImages);
+</script>
