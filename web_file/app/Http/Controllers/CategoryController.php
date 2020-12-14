@@ -21,6 +21,7 @@ use Image;
 
 class CategoryController extends Controller
 {
+    private $x;
     /**
      * Display a listing of the resource.
      *
@@ -129,44 +130,47 @@ class CategoryController extends Controller
     }
 
 
-    public function subCate_show($id)
+    public function subCate_show($xid)
     {
-        $category = Category::with('products', 'subCategories')->where('cateId', $id)->get();
+        //$this->x = $xx;
 
+        $category = Category::with('products', 'subCategories')->where('cateId', $xid)->get();
+         $subcatee = subCategory::where('cateId',$xid)->get();
 
 
         $pros = subCategory::with('subCategories_product', 'subCategories_Category')
-            ->where('subCateId', $id)
+            ->where('subCateId', $xid)
             ->get();
 
 
 
 
-        if (request()->has('sort')) {
-            if (request('sort') == 1) {
-                $pros = subCategory::with(['subCategories_product' => function ($q) {
-                    $q->orderBy('proId', 'DESC');
-                }], 'subCategories_Category')->where('cateId', $id)
-                    ->get();
-            } else if (request('sort') == 2) {
-                $pros = subCategory::with(['subCategories_product' => function ($q) {
-                    $q->orderBy('proName', 'DESC');
-                }], 'subCategories_Category')->where('cateId', $id)
-                    ->get();
-            } else if (request('sort') == 3) {
-                $pros = subCategory::with(['subCategories_product' => function ($q) {
-                    $q->orderBy('proPrice', 'DESC');
-                }], 'subCategories_Category')->where('cateId', $id)
-                    ->get();
-            } else if (request('sort') == 4) {
-                $pros = subCategory::with(['subCategories_product' => function ($q) {
-                    $q->orderBy('proPrice', 'asc');
-                }], 'subCategories_Category')->where('cateId', $id)
-                    ->get();
-            }
-        }
+        // if (request()->has('sort')) {
+        //     if (request('sort') == 1) {
+        //         $pros = subCategory::with(['subCategories_product' => function ($q) {
+        //             $q->orderBy('proId', 'DESC');
+        //         }], 'subCategories_Category')->where('cateId', $id)
+        //             ->get();
+        //     } else if (request('sort') == 2) {
+        //         $pros = subCategory::with(['subCategories_product' => function ($q) {
+        //             $q->orderBy('proName', 'DESC');
+        //         }], 'subCategories_Category')->where('cateId', $id)
+        //             ->get();
+        //     } else if (request('sort') == 3) {
+        //         $pros = subCategory::with(['subCategories_product' => function ($q) {
+        //             $q->orderBy('proPrice', 'DESC');
+        //         }], 'subCategories_Category')->where('cateId', $id)
+        //             ->get();
+        //     } else if (request('sort') == 4) {
+        //         $pros = subCategory::with(['subCategories_product' => function ($q) {
+        //             $q->orderBy('proPrice', 'asc');
+        //         }], 'subCategories_Category')->where('cateId', $id)
+        //             ->get();
+        //     }
+        // }
 
         return view('category/subcategory.show', compact('pros', 'category'));
+        
     }
 
     public function subCate($cateId)

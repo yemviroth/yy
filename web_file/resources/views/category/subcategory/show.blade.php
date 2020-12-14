@@ -9,6 +9,8 @@
 
 <section class="" style="background: #fff">
     <div class="header-title pt-4 text-center">{{$pros[0]->subCategories_Category->cateName }}</div>
+    {{$pros[0]->subCateName}}
+    
         <div class="text-center pt-2">
            @foreach ($category as $cate)
               @foreach($cate->subCategories as $subcate)  
@@ -18,6 +20,11 @@
           @endforeach  
         </div>
         </div>
+
+     
+             
+     
+     
     
       <div class="row pt-4">
           <div class="col-md-6">

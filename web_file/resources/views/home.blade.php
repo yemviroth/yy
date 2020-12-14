@@ -17,6 +17,9 @@
       <li data-target="#carouselExampleCaptions" data-slide-to="3"></li>
     </ol>
     <div class="carousel-inner">
+
+    
+
       <div class="carousel-item active">
         <img src="{{asset('images/slide/slide1.jpg')}}" class="d-block"  class="img-fluid" alt="...">
 
@@ -25,6 +28,7 @@
           <!-- <p>Nulla vitae elit libero, a pharetra augue mollis interdum.</p> -->
         </div>
       </div>
+
       <div class="carousel-item">
         <img src="{{asset('images/slide/slide2.jpg')}}" class="d-block"  class="img-fluid" alt="...">
         <div class="carousel-caption d-none d-md-block">
@@ -32,6 +36,7 @@
           <!-- <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit.</p> -->
         </div>
       </div>
+
       <div class="carousel-item">
         <img src="{{asset('images/slide/slide3.jpg')}}" class="d-block"  class="img-fluid" alt="...">
         <div class="carousel-caption d-none d-md-block">
@@ -39,6 +44,16 @@
           <!-- <p>Praesent commodo cursus magna, vel scelerisque nisl consectetur.</p> -->
         </div>
       </div>
+
+      <div class="carousel-item">
+        <img src="{{asset('images/slide/slide4.jpg')}}" class="d-block"  class="img-fluid" alt="...">
+        <div class="carousel-caption d-none d-md-block">
+          <!-- <h5>Third slide label</h5> -->
+          <!-- <p>Praesent commodo cursus magna, vel scelerisque nisl consectetur.</p> -->
+        </div>
+      </div>
+
+     
 
     </div>
     <a class="carousel-control-prev" href="#carouselExampleCaptions" role="button" data-slide="prev">

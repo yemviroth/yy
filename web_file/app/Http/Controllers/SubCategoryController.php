@@ -12,7 +12,7 @@ use App\Product;
 use App\Category;
 use App\RoomDetail;
 use App\Http\Controllers\Controller;
-
+use App\SubCategory;
 use Auth;
 use Image;
 
@@ -92,7 +92,8 @@ class SubCategoryController extends Controller
         
         $subCates = Category::with('products','subCategories')->where('subCateId',$id)->get();
        // $pros = Product::where('cateId',$id)->get();
-        return view ('subcategory.show',compact('$subCates')); 
+       
+        return view ('subcategory.show',compact('subCates')); 
         //dd($pros);
 // dd($pros);
     }
