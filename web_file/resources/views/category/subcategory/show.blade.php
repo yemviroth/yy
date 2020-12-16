@@ -8,16 +8,19 @@
 
 
 <section class="" style="background: #fff">
-    <div class="header-title pt-4 text-center">{{$pros[0]->subCategories_Category->cateName }}</div>
-    {{$pros[0]->subCateName}}
+    <div class="header-title pt-4 text-center">{{$pros[0]->subCateName}}</div>
+    <!-- {{$pros[0]->subCategories_Category->cateName }} -->
+    @foreach($pros as $pro)
+      
+      
+    @endforeach
     
         <div class="text-center pt-2">
-           @foreach ($category as $cate)
-              @foreach($cate->subCategories as $subcate)  
+        
 
-              <li class="list-horizon d-inline pl-4"><a href="{{route('category/subcategory.show',$subcate->subCateId)}}">{{$subcate->subCateName}}</a></li>
-              @endforeach
-          @endforeach  
+          @foreach ($subcatee as $subb)
+          <li class="list-horizon d-inline pl-4"><a href="{{url("/category/$subb->cateId/subCates/$subb->subCateId")}}">{{$subb->subCateName}}</a></li>
+          @endforeach
         </div>
         </div>
 

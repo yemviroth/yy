@@ -14,12 +14,12 @@
   @foreach ($pros as $pross)
     @foreach($pross->subCategories as $subcate)
 
-    <li class="list-horizon d-inline pl-4"><a href="{{route('category/subcategory.show',$subcate->subCateId)}}">{{$subcate->subCateName}}</a></li>
+    <li class="list-horizon d-inline pl-4"><a href="{{url("/category/$pross->cateId/subCates/$subcate->subCateId")}}">{{$subcate->subCateName}}</a></li>
     @endforeach
     @endforeach
 
 
-
+    
 
     
   </div>

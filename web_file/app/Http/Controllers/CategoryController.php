@@ -130,12 +130,12 @@ class CategoryController extends Controller
     }
 
 
-    public function subCate_show($xid)
+    public function subCate_show($xx,$xid)
     {
         //$this->x = $xx;
 
         $category = Category::with('products', 'subCategories')->where('cateId', $xid)->get();
-         $subcatee = subCategory::where('cateId',$xid)->get();
+        $subcatee = subCategory::where('cateId',$xx)->get();
 
 
         $pros = subCategory::with('subCategories_product', 'subCategories_Category')
@@ -169,7 +169,7 @@ class CategoryController extends Controller
         //     }
         // }
 
-        return view('category/subcategory.show', compact('pros', 'category'));
+       return view('category/subcategory.show', compact('pros', 'category','subcatee'));
         
     }
 
