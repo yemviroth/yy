@@ -1,6 +1,7 @@
 /* @import url('https://fonts.googleapis.com/css?family=Koulen|Roboto:400,700|Suwannaphum'); */
 @import url('https://fonts.googleapis.com/css?family=Hanuman:400,700');
 @import url('https://fonts.googleapis.com/css?family=Kantumruy:400,700|Ubuntu:400,500,700&subset=khmer');
+@import url('https://fonts.googleapis.com/css?family=Kantumruy:400,700|Ubuntu:400,500,700&subset=khmer');
 body {
        /* font-family: 'Roboto',nanum gothic,sans-serif,dotum,verdana,arial; */
        /* font-family: "Suwannaphum", "Roboto"; */
@@ -10,6 +11,49 @@ body {
 p {
   font-family: Ubuntu,Kantumruy,sans-serif!important;
 }
+
+.block {
+  position: relative;
+  
+}
+
+.image-cover {
+  opacity: 1;
+  display: block;
+  width: 100%;
+  height: auto;
+  transition: .5s ease;
+  backface-visibility: hidden;
+}
+
+.middle-cover {
+  transition: .5s ease;
+  opacity: 1;
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  -ms-transform: translate(-50%, -50%);
+  text-align: center;
+}
+
+.block:hover .image-cover {
+  opacity: 0.7;
+}
+
+.block:hover .middle-cover {
+  opacity: 0;
+}
+
+.text-cover {
+  /* background-color: #d6d6d6; */
+  color: white;
+  /* font-size: 16px; */
+  padding: 16px 32px;
+  /* opacity: 0.7; */
+}
+
+
 
 .li-block{
   display: inline-flex;
@@ -83,6 +127,7 @@ font-size: 0.8rem;
 .text-kh{
   /* font-family: Battambang,Arial,Helvetica,sans-serif; */
   font-family: Ubuntu,Kantumruy,sans-serif;
+  
   color:#000;
   font-size: .9rem;
   /* line-height: 2rem; */

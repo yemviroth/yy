@@ -23,16 +23,16 @@
           </ol>
           <div class="carousel-inner">
             <div class="carousel-item active">
-            <img class="w-100 img-fluid" src="https://theyeon.net/mainimage/shopinfo/ingredient3.jpg" alt="">
+            <img class="w-100 img-fluid" src="{{asset('images/ingredient3.jpg')}}" alt="">
               
             
             </div>
             <div class="carousel-item">
-              <img src="https://theyeon.net/mainimage/shopinfo/ingredient1.jpg" class="w-100 img-fluid">
+              <img src="{{asset('images/ingredient1.jpg')}}" class="w-100 img-fluid">
              
             </div>
             <div class="carousel-item">
-              <img src="https://theyeon.net/mainimage/shopinfo/ingredient2.jpg" class="w-100 img-fluid">
+              <img src="{{asset('images/ingredient2.jpg')}}" class="w-100 img-fluid">
              
             </div>
            

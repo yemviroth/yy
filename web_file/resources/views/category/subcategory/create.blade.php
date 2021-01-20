@@ -20,7 +20,7 @@ TheYeon Cambodia
                                         @csrf
 
                                          <div class="form-group row">
-                                            <label for="cateId" class="col-md-3 form-label text-md-right">ក្នុងប្រភេទប្រភេទផលិតផល :</label>
+                                            <label for="cateId" class="col-md-3 col-form-label text-md-right">ក្នុងប្រភេទផលិតផល :</label>
                                             <div class="col-md-9">
                                                 <select name="cateId" id="" class="form-control">
                                                      @foreach($cates as $cate)
@@ -31,13 +31,13 @@ TheYeon Cambodia
                                         </div>
 
                                         <div class="form-group row">
-                                            <label for="subCateName" class="col-md-3 form-label text-md-right">ឈ្មោះប្រភេទរង :</label>
+                                            <label for="subCateName" class="col-md-3 col-form-label text-md-right">ឈ្មោះប្រភេទរង :</label>
                                             <div class="col-md-9">
                                                 <input type="text" id="proName" class="form-control" name="subCateName" autocomplete="off" required>
                                             </div>                                            
                                         </div>
                                         <div class="form-group row">
-                                            <label for="cateOrderBy" class="col-md-3 form-label text-md-right">តម្រៀប :</label>
+                                            <label for="cateOrderBy" class="col-md-3 col-form-label text-md-right">តម្រៀប :</label>
                                             <div class="col-md-9">
                                                 <input type="text" id="cateOrderBy" class="form-control" name="cateOrderBy" autocomplete="off">
                                             </div>

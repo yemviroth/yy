@@ -10,7 +10,7 @@
 
 @endcomponent
 <div class="pt-5">
-    <img class="w-100" src="https://theyeon.net/mainimage/shopinfo/brand_story.jpg" alt="">
+    <img class="w-100" src="{{asset('images/brand_story.jpg')}}" alt="">
 </div>
 
 

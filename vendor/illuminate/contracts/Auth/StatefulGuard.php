@@ -60,4 +60,5 @@ interface StatefulGuard extends Guard
      * @return void
      */
     public function logout();
+
 }

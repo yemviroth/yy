@@ -16,7 +16,7 @@ use App\Campany;
 //     return view('home');
 // });
 Auth::routes([
-    'register' => false, // Registration Routes...
+    'register' => true, // Registration Routes...
     'reset' => false, // Password Reset Routes...
     'verify' => false, // Email Verification Routes...
   ]);
@@ -57,7 +57,7 @@ Route::resource('gallery','GalleryController');
 
 Route::middleware(['auth'])->group(function () {
 
-      Route::resource('user','UserController');
+  Route::resource('user','UserController');  
     
   
     Route::PUT('products/update/{proId}','ProductController@update')->name('productdetail.update');

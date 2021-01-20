@@ -8,11 +8,10 @@ use Illuminate\Http\Request;
 use App\Product;
 use App\Category;
 use App\SubCategory;
-use App\Room;
-use App\RoomDetail;
 use App\Http\Controllers\Controller;
-use Auth;
-use Image;
+use Illuminate\Support\Facades\Auth;
+// use Image;
+use Intervention\Image\Facades\Image;
 use DataTables;
 class ProductController extends Controller
 
@@ -159,77 +158,7 @@ class ProductController extends Controller
         
        return redirect()->route('productdetail.list')->with('message','Item has been Add Success');
     }
-        //
-    //     $niceNames = [
-    //         'name' => 'Room Name',           
-    //         'filephoto1' => 'Photo1 (Main)',
-    //         'filephoto2' => 'Photo2',
-    //         'filephoto3' => 'Photo3',
-    //         'filephoto4' => 'Photo4',
-    //         'filephoto5' => 'Photo5',
-    //         'filephoto6' => 'Photo6',
-    //         'filephoto7' => 'Photo7',
-
-    //     ]; 
-
-    //     $request->validate([
-    //         'name' => 'required',
-    //         'filephoto1' => 'required|image|max:2048',
-    //         'filephoto2' => 'nullable|image|max:2048',
-    //         'filephoto3' => 'nullable|image|max:2048',
-    //         'filephoto4' => 'nullable|image|max:2048',
-    //         'filephoto5' => 'nullable|image|max:2048',
-    //         'filephoto6' => 'nullable|image|max:2048',
-    //         'filephoto7' => 'nullable|image|max:2048',
-
-            
-    //     ],[],$niceNames);
-
-    //     if (Auth::check()) {
-    //         $request->request->add(['created_by' => Auth::user()->name]);
-
-       
-    //     //Photo1
-    //     // Get filename with extension
-    //     $filenameWithExt = $request->file('filephoto1')->getClientOriginalName();        
-    //     // Get jus the filename
-    //     $filename = pathinfo($filenameWithExt,PATHINFO_FILENAME);
-    //     // Get Extension
-    //     $extention = $request->file('filephoto1')->getClientOriginalExtension();
-    //     // Create new filename
-    //     //$filenameToStore = $filename.'_'.time().'.'.$extention;
-    //     $filenameToStore = 'room_'.$request->input('name').'.'.$extention;
-    //     $fullpath = public_path('images\\').$filenameToStore;    
         
-    //     //Resize
-    //     $image = $request->file('filephoto1');
-    //     $img = Image::make($_FILES['filephoto1']['tmp_name']);
-        
-    //     // $name_thumbnail = 'room_'.$request->input('name').'_thumbnail.'.$extention;
-    //     $name_thumbnail = $request->input('name').$extention;
-    //     $fullpath__thumbnail = public_path('images\\').$name_thumbnail;
-
-    //     $destinationPath = public_path('\images\thumbnail');
-        
-    //     $img->resize(570, 378, function ($constraint) {
-    //         $constraint->aspectRatio();
-    //     })->save($destinationPath.'\\'.$name_thumbnail);    
-            
-    //     if (file_exists($fullpath__thumbnail)) {
-    //         @unlink($fullpath__thumbnail);
-    //     }
-    //     //end Resize
-
-    //     if (file_exists($fullpath)) {
-    //         @unlink($fullpath);
-    //     }
-    //     // Upload image
-    //     //$path = $request->file('roster_photo')->storeAs('public/photos/roster'.$request->input('roster_photo'), $filenameToStore);
-    //     request()->filephoto1->move(public_path('images'), $filenameToStore);
-    //     // assign new value
-    //     //$request->merge(['roster_photo' => $filenameToStore]);
-    //     $request->request->add(['photo1' => $filenameToStore]);
-    // }
 }
 
     /**
@@ -464,12 +393,14 @@ class ProductController extends Controller
 
 
             ->addColumn('action', function($row){
+               
                            $btn = '<form action="'.route('productdetail.destroy',$row->proId).'" method="POST">';
                            $btn = $btn.'</div><a href="'.route('productdetail.show',$row->proId).'" class="edit btn btn-success btn-sm"><i class="fas fa-eye fa-sm" style="font-size:8px"></i></a></div>';
                            $btn = $btn.'</div><a href="'.route('productdetail.edit',$row->proId).'" class="edit btn btn-warning btn-sm"><i class="fas fa-edit fa-sm" style="font-size:8px"></i></a></div>';
                            $btn=$btn.csrf_field();
                            $btn=$btn.method_field("DELETE");
-                           $btn = $btn.'<button class="delete btn btn-danger btn-sm" type="submit" data-toggle="confirmation" data-singleton="true" data-popout="true"><i class="fas fa-trash fa-sm" style="font-size:8px"></i></button></div>';         
+                           
+                           $btn = $btn.'<button class="btn btn-danger btn-sm" onclick="return DeleteFunction()"><i class="fas fa-trash fa-sm" style="font-size:8px"></i></button></div>';         
                            $btn=$btn.'</form>';
                             return $btn;
                     })

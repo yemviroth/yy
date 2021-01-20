@@ -5,10 +5,11 @@ The Yeon Cambodia
 @section('content')
 
 <div class="col-md-11 col-sm-12 mx-auto ml-0 mt-3">
-        <div class="card text-kh">
+        <div class="card">
             <h6 class="card-header bg-dark text-light">
                 <span><i class="fas fa-plus-square"></i></span><span class="ml-2">បន្ថែមផលិតផល</span>
             </h6>
+
             <div class="card-body shadow">
                 <!-- <h5 class="card-title">Special title treatment</h5> -->
 
@@ -87,7 +88,7 @@ The Yeon Cambodia
 
 
                     <div class="form-group row">
-                        <label for="proName" class="col-md-2 form-label text-md-right">ឈ្មោះផលិតផល :</label>
+                        <label for="proName" class="col-md-2 col-form-label text-md-right">ឈ្មោះផលិតផល :</label>
                         <div class="col-md-10">
                             <input type="text" id="proName" class="form-control" name="proName" required>
                         </div>
@@ -130,7 +131,7 @@ The Yeon Cambodia
 
 
                     <div class="form-group row">
-                        <label for="proName" class="col-md-2 form-label text-md-right">ពណ៌ផលិតផល :</label>
+                        <label for="proName" class="col-md-2 col-form-label text-md-right">ពណ៌ផលិតផល :</label>
                         <div class="col-md-2">
                             <div id="" class="input-group dd colorpicker-component">
                                 <input name="proColor1" placeholder="Color 1" type="text" class="form-control color1" />
@@ -252,16 +253,16 @@ The Yeon Cambodia
 
 
                     <div class="form-group row">
-                        <label for="proTextIntro" class="col-md-2 col-form-label text-md-right">Product Intro :</label>
+                        <label for="proTextIntro" class="col-md-2 col-form-label text-md-right">មតិលើផលិតផល :</label>
                         <div class="col-md-10">
                             <textarea class="form-control" name="proTextIntro" id="textIntro-textarea" rows="2"></textarea>
                         </div>
                     </div>
 
-                    <div class="form-group row text-kh">
+                    <div class="form-group row">
                         <label for="proHowTo" class="col-md-2 col-form-label text-md-right">របៀបប្រើ :</label>
                         <div class="col-md-10">
-                            <textarea class="form-control sm text-kh" name="proHowTo" id="txt-sm" rows="2"></textarea>
+                            <textarea class="form-control sm" name="proHowTo" id="txt-sm" rows="2"></textarea>
 
                         </div>
                     </div>
@@ -272,7 +273,7 @@ The Yeon Cambodia
                         <label for="proDescription" class="col-md-2 col-form-label text-md-right">បរិយាយ :</label>
 
                         <div class="col-md-10">
-                            <textarea class="form-control sm text-kh" name="proDescription" id="txt-sm" rows="8"></textarea>
+                            <textarea class="form-control sm" name="proDescription" id="txt-sm" rows="8"></textarea>
 
                         </div>
                     </div>
@@ -293,7 +294,7 @@ The Yeon Cambodia
                         <label for="proDetail" class="col-md-2 col-form-label text-md-right">លំអិតពីផលិតផល :</label>
 
                         <div class="col-md-10">
-                            <textarea class="form-control text-kh" name="proDetail" id="txt-lg" rows="8"></textarea>
+                            <textarea class="form-control" name="proDetail" id="txt-lg" rows="8"></textarea>
                         </div>
                     </div>
 

@@ -6,7 +6,7 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge" />
     <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no" />
     <meta name="description" content="" />
-    <meta name="author" content="" />
+    
     <title>Dashboard</title>
     <link href="{{asset('css/styles4.css')}}" rel="stylesheet" />
 
@@ -71,28 +71,17 @@
                 <div class="sb-sidenav-menu">
                     <div class="nav">
 
-                        <a class="nav-link" href="{{route('dashboard.index')}}">
-                            <div class="sb-nav-link-icon"><i class="fas fa-tachometer-alt"></i></div>
-                            Dashboard
+                        <a class="nav-link" href="{{route('home.index')}}" target="_blank">
+                            <!-- <div class="sb-nav-link-icon"><i class="fas fa-tachometer-alt"></i></div> -->
+                            <img class="mx-auto my-0 rounded-circle" style="width:110px" src="{{asset('images/logo-sm.jpg')}}" alt="">
                         </a>
-
                         <div class="sb-sidenav-menu-heading">ផលិតផល</div>
-
-
-
-                       
 
                         <div class="" id="collapseProduct" aria-labelledby="headingOne" data-parent="#sidenavAccordion">
                             <nav class="sb-sidenav-menu-nested nav">
-                                <a class="nav-link" href="{{route('category.list')}}">បញ្ជីរប្រភេទផលិតផល</a>
-                               
-
+                                <a class="nav-link" href="{{route('category.list')}}">បញ្ជីរប្រភេទផលិតផល</a>                            
                             </nav>
                         </div>
-
-
-
-                      
 
                         <div class="" id="collapseProduct" aria-labelledby="headingOne" data-parent="#sidenavAccordion">
                             <nav class="sb-sidenav-menu-nested nav">
@@ -101,9 +90,6 @@
 
                             </nav>
                         </div>
-
-
-
 
                         <div class="sb-sidenav-menu-heading">អ្នកប្រើប្រាស់</div>
                        
@@ -122,7 +108,6 @@
                         <div class="" id="collapseDis" aria-labelledby="headingOne" data-parent="#sidenavAccordion">
                             <nav class="sb-sidenav-menu-nested nav">
                                 <a class="nav-link" href="{{route('brand.list')}}">បញ្ជីរដំណាងចែកចាយ</a>
-                             
 
                             </nav>
                         </div>
@@ -143,10 +128,7 @@
         <div id="layoutSidenav_content">
             <main>
                 <div class="container-fluid">
-                    <!-- <h4 class="mt-4">Dashboard</h4> -->
-                    <!-- <ol class="breadcrumb mb-2 mt-2">
-                        <li class="breadcrumb-item active">Dashboard</li>
-                    </ol> -->
+                   
                     @yield('content')
 
                     @if ($message = Session::get('success'))

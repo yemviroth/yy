@@ -10,9 +10,9 @@ TheYeon Cambodia
             <div class="modal-content shadow m=3">
                 <div class="modal-header modal-md  text-light bg-dark">
 
-                    <p class="modal-title">
-                        <span><i class="fas fa-plus-square"></i></span><span class="ml-2">Add Distributor</span>
-                    </p>
+                    <h6 class="modal-title">
+                        <span><i class="fas fa-plus-square"></i></span><span class="ml-2">បន្ថែមដំណាងចែកចាយ</span>
+                    </h6>
                 </div>
                 <form action="{{route('brand.store')}}" method="post" enctype="multipart/form-data" class="">
                     <div class="modal-body">
@@ -22,20 +22,20 @@ TheYeon Cambodia
                             <div class="col-sm-7">
 
                                 <div class="form-group row">
-                                    <label for="dsName" class="col-md-3 form-label text-md-right">Distributor Name :</label>
+                                    <label for="dsName" class="col-md-3 col-form-label text-md-right">ឈ្មោះដំណាងចែកចាយ :</label>
                                     <div class="col-md-9">
                                         <input type="text" id="dsName" class="form-control" name="dsName" required>
                                     </div>
                                 </div>
                                 <div class="form-group row">
-                                    <label for="dsLocation" class="col-md-3 form-label text-md-right">Location :</label>
+                                    <label for="dsLocation" class="col-md-3 col-form-label text-md-right">ទីតាំង / ខេត្ត :</label>
                                     <div class="col-md-9">
                                         <input type="text" id="dsLocation" class="form-control" name="dsLocation" required>
                                     </div>
                                 </div>
 
                                 <div class="form-group row">
-                                    <label for="dsAddress" class="col-md-3 col-form-label text-md-right">Address:</label>
+                                    <label for="dsAddress" class="col-md-3 col-form-label text-md-right">អស័យដ្ឋាន:</label>
                                     <div class="col-md-9">
 
                                         <textarea name="dsAddress" class="form-control" id="" rows="3"></textarea>
@@ -43,28 +43,28 @@ TheYeon Cambodia
                                 </div>
 
                                 <div class="form-group row">
-                                    <label for="dsPhone" class="col-md-3 form-label text-md-right">Phone :</label>
+                                    <label for="dsPhone" class="col-md-3 col-form-label text-md-right">លេខទូរស័ព្ទ :</label>
                                     <div class="col-md-9">
                                         <input type="text" id="dsPhone" class="form-control" name="dsPhone" required>
                                     </div>
                                 </div>
 
                                 <div class="form-group row">
-                                    <label for="dsFb" class="col-md-3 form-label text-md-right">FB :</label>
+                                    <label for="dsFb" class="col-md-3 col-form-label text-md-right">FB :</label>
                                     <div class="col-md-9">
                                         <input type="text" id="dsFb" class="form-control" name="dsFb">
                                     </div>
                                 </div>
 
                                 <div class="form-group row">
-                                    <label for="dsIg" class="col-md-3 form-label text-md-right">IG :</label>
+                                    <label for="dsIg" class="col-md-3 col-form-label text-md-right">IG :</label>
                                     <div class="col-md-9">
                                         <input type="text" id="dsIg" class="form-control" name="dsIg">
                                     </div>
                                 </div>
 
                                 <div class="form-group row">
-                                    <label for="dsDescription" class="col-md-3 col-form-label text-md-right">Description:</label>
+                                    <label for="dsDescription" class="col-md-3 col-form-label text-md-right">បរិយាយ:</label>
                                     <div class="col-md-9">
 
                                         <textarea name="dsDescription" class="form-control" id="" rows="3"></textarea>
@@ -79,7 +79,7 @@ TheYeon Cambodia
                             <div class="col-sm-5">
 
                                 <div class="form-group row">
-                                    <label for="" class="col-md-2 col-form-label text-md-right">Image :</label>
+                                    <label for="" class="col-md-2 col-form-label text-md-right">រូបថត :</label>
                                     <div class="col-md-10">
                                         <div class="pb-2">
                                             <div class="col-md-8 col-sm-12 border" style="height: 250px;">
@@ -120,9 +120,9 @@ TheYeon Cambodia
 
                     </div>
                     <div class="modal-footer">
-                        <a class="btn  btn-secondary text-md-left" href="{{route('brand.list')}}">Back</a>
+                        <a class="btn  btn-secondary text-md-left" href="{{route('brand.list')}}">ត្រលប់ក្រោយ</a>
 
-                        <button class="btn  btn-success text-md-left" type="submit">Submit</button>
+                        <button class="btn  btn-success text-md-left" type="submit">រក្សាទុក</button>
                     </div>
                 </form>
             </div>

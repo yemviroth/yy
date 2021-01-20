@@ -19,13 +19,13 @@ TheYeon Cambodia
                             
                                         @csrf
                                         <div class="form-group row">
-                                            <label for="cateName" class="col-md-3 form-label text-md-right">ឈ្មោះប្រភេទផលិតផល :</label>
+                                            <label for="cateName" class="col-md-3 col-form-label text-md-right">ឈ្មោះប្រភេទផលិតផល :</label>
                                             <div class="col-md-9">
                                                 <input type="text" id="proName" class="form-control" name="cateName" autocomplete="off" required>
                                             </div>                                            
                                         </div>
                                         <div class="form-group row">
-                                            <label for="cateOrderBy" class="col-md-3 form-label text-md-right">តម្រៀប :</label>
+                                            <label for="cateOrderBy" class="col-md-3 col-form-label text-md-right">តម្រៀប :</label>
                                             <div class="col-md-9">
                                                 <input type="text" id="cateOrderBy" class="form-control" name="cateOrderBy" autocomplete="off">
                                             </div>

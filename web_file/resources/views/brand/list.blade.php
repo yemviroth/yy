@@ -22,7 +22,7 @@
 
         <div class="">
             <div class=" ml-0 mr-0 pt-2 pb-1">
-                <a href="{{ route('brand.create') }}" class="btn btn-success btn-sm"><i class="fas fa-plus-square"></i> New Distributor</a>
+                <a href="{{ route('brand.create') }}" class="btn btn-success btn-sm"><i class="fas fa-plus-square"></i> បន្ថែមដំណាងចែកចាយ</a>
 
             </div>
 
@@ -30,23 +30,23 @@
 
         <div class="">
             <div class="card">
-                <div class="card-header bg-dark text-light">
-                    <i class="fas fa-users"></i><span class="ml-2">Distributor List</span>
+                <H6 class="card-header bg-dark text-light">
+                    <i class="fas fa-users"></i><span class="ml-2">បញ្ជីដំណាងចែកចាយ</span>
 
-                </div>
+                </H6>
                 <div class="card-body shadow">
                     <div class="table-responsive">
                         <table class="table table-border datatable" style="font-size:14px;" id="">
 
                             <thead class="">
-                                <th>Image</th>
-                                <th>Distributor Name</th>
-                                <th>Location</th>
-                                <th>Address</th>
-                                <th>Phone</th>
+                                <th>រូបថត</th>
+                                <th>ឈ្មោះដំណាងចែកចាយ</th>
+                                <th>ទីតាំង / ខេត្ត</th>
+                                <th>អស័យដ្ឋាន</th>
+                                <th>លេខទូរស័ព្ទ</th>
                                 <th>FB</th>
                                 <th>IG</th>
-                                <th>Action</th>
+                                <th>សកម្មភាព</th>
 
                             </thead>
                             @foreach($brands as $brand)

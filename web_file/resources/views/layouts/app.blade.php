@@ -6,19 +6,16 @@
   <meta charset="utf-8">
   <!-- <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no"> -->
   <meta name="viewport" content="width=device-width, initial-scale=1,shrink-to-fit=yes">
-
+  <meta name="description" content="The yeon cambodia, the yeon,korea product in cambodia,livlica"/>
   @yield('meta')
 
   <link rel="shortcut icon" href="{{asset('favicon.ico')}}" type="image/x-icon">
-  <link href='https://fonts.googleapis.com/css?family=Bayon|Francois+One' rel='stylesheet' type='text/css'>
-  <!-- Bootstrap CSS -->
+    <!-- Bootstrap CSS -->
 
   <link rel="stylesheet" href="{{asset('css/bootstrap.css')}}">
   <link rel="stylesheet" href="{{asset('css/bootstrap-grid.css')}}">
 
-  <!-- <link rel="stylesheet" href="https://unpkg.com/bootstrap-material-design@4.1.1/dist/css/bootstrap-material-design.min.css" integrity="sha384-wXznGJNEXNG1NFsbm0ugrLFMQPWswR3lds2VeinahP8N0zJw9VWSopbjv2x7WCvX" crossorigin="anonymous"> -->
-
-
+  
   <link rel="stylesheet" type="text/css" href="{{asset('fontawesome-free-5.12.0-web/css/all.min.css')}}  ">
   <link rel="stylesheet" href="{{asset('owlcarousel/owl.carousel.min.css')}} ">
   <link rel="stylesheet" href="{{asset('owlcarousel/owl.theme.default.min.css')}}">
@@ -47,6 +44,15 @@
   <script src="{{asset('owlcarousel/owl.carousel.min.js')}}"></script>
   <script src="{{asset('js/crawler.js')}}"></script>
 
+<!-- Global site tag (gtag.js) - Google Analytics -->
+<script async src="https://www.googletagmanager.com/gtag/js?id=G-9DNDRKBJD3"></script>
+<script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('js', new Date());
+
+  gtag('config', 'G-9DNDRKBJD3');
+</script>
 
 
 

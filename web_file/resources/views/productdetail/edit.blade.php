@@ -5,52 +5,58 @@ The Yeon Cambodia
 @section('content')
 
 
-
-    <div class="card">
-        <div class="card-header bg-dark text-light">
-        <i class="fas fa-edit"></i> Edit Product
-        </div>
+<div class="col-md-11 mx-auto my-0">
+    <div class="card mt-5">
+        <H6 class="card-header bg-dark text-light">
+        <i class="fas fa-edit"></i> កែប្រែទំនិញ
+        </H6>
         <div class="card-body">
        
             <form action="{{url('products/update/'.$products[0]->proId)}}" enctype="multipart/form-data" class="" method="post">
           
                 {{csrf_field()}}
                 {{method_field('PUT')}}
-   
- 
 
-  
-            
-                <div class="form-group row">
-                    <label for="" class="col-md-2 col-form-label text-md-right">Product Category :</label>
-                    <div class="col-md-10">
-                        <select name="cateId" class="custom-select" id="category">
-                            <option selected>Choose Product Category</option>
-                            @foreach($cates as $cat)
-                            @if ($products[0]->cateId == $cat->cateId)
-                            <option value="{{ $cat->cateId }}" selected>{{ $cat->cateName }}</option>
-                            @else
-                            <option value="{{$cat->cateId}}">{{$cat->cateName}}</option>
-                            @endif
-                            @endforeach
-                        </select>
+                <div class="row mb-3">
+                    <div class="col-md-6">
+                        <div class="row">
+                        <label for="" class="col-md-4 col-form-label text-md-right">ប្រភេទទំនិញ :</label>
+                        <div class="col-md-8">
+                            <select name="cateId" class="custom-select" id="category">
+                                <option selected>ជ្រើសរើសប្រភេទំនិញ</option>
+                                @foreach($cates as $cat)
+                                @if ($products[0]->cateId == $cat->cateId)
+                                <option value="{{ $cat->cateId }}" selected>{{ $cat->cateName }}</option>
+                                @else
+                                <option value="{{$cat->cateId}}">{{$cat->cateName}}</option>
+                                @endif
+                                @endforeach
+                            </select>
+                        </div>
+                        </div>
                     </div>
+
+                    <div class="col-md-6">
+                        <div class="row">
+                        <label for="" class="col-md-4 col-form-label text-md-right">ប្រភេទរងទំនិញ :</label>
+                            <div class="col-md-8">
+                                <select name="subCateId" class="custom-select" id="subCategory">
+                                    <option value="0">-- ជ្រើសរើស--</option>
+
+                                </select>
+                            </div>
+                        </div>
+                    </div>
+
+
                 </div>
 
-                    <div class="form-group row">
-                    <label for="subCateId" class="col-md-2 col-form-label text-md-right">Sub Category :</label>
-                    <div class="col-md-10">
-                        <select name="subCateId" class="custom-select" id="subCategory">
-                            <option value="0">-- Select Sub Category --</option>
-
-                        </select>
-                    </div>
-                </div>
+                  
 
 
 
                 <div class="form-group row">
-                    <label for="proName" class="col-md-2 col-form-label text-md-right">Product Name :</label>
+                    <label for="proName" class="col-md-2 col-form-label text-md-right">ឈ្មោះផលិតផល :</label>
                     <div class="col-md-10">
                         <input type="text" id="proName" value="{{$products[0]->proName}}" class="form-control" name="proName" required>
                     </div>
@@ -59,21 +65,21 @@ The Yeon Cambodia
      
 
 
-                <div class="form-group row">
-                    <label for="" class="col-md-2 col-form-label text-md-right">Image :</label>
+                <div class="form-group row mb-2">
+                    <label for="" class="col-md-2 col-form-label text-md-right">រូបភាព :</label>
                     <div class="col-md-10">
                         <div class="row">
-                            <div class="col-md-2 col-12" style="height: 150px;">
+                            <div class="col-md-6 col-sm-12" style="height: 150px;">
                                 @if($products[0]->proImage)
                                      <img class="text-md-right" style="height:150px;width:auto" id="output" src="{{asset('images/product/'.$products[0]->proImage)}}" alt="">
                                 @endif
                             </div>
                         </div>
-                        <div class="row">
-                            <div class="col-md-2 col-2">
+                        <div class="row mt-3">
+                            <div class="col-md-3 col-sm-12">
                                 <div class="custom-file col-12">
                                     <input type="file" multiple accept='image/*' class="custom-file-input" id="customFile" name="filephoto" onchange="loadFile(event)">
-                                    <label class="custom-file-label" for="filephoto">Choose file..</label>
+                                    <label class="custom-file-label" for="filephoto">ជ្រើសរើសរូបភាព..</label>
                                     <script>
                                         var loadFile = function(event) {
                                             var image = document.getElementById('output');
@@ -94,8 +100,8 @@ The Yeon Cambodia
                                             
   
                 <div class="form-group row">
-                        <label for="proName" class="col-md-2 form-label text-md-right">Color :</label>
-                        <div class="col-md-2">
+                        <label for="proName" class="col-md-2 col-form-label text-md-right">ពណ៌ :</label>
+                        <div class="col-md-2 mb-2">
                             <div id="" class="input-group dd colorpicker-component">
                                 <input autocomplete="off" name="proColor1" value="{{$products[0]->proColor1}}" placeholder="Color 1" type="text" class="form-control color1" />
 
@@ -116,7 +122,7 @@ The Yeon Cambodia
                             </script>
                         </div>
 
-                        <div class="col-md-2">
+                        <div class="col-md-2 mb-2">
                             <div id="" class="input-group color2 colorpicker-component">
                                 <input autocomplete="off" name="proColor2" value="{{$products[0]->proColor2}}" placeholder="Color 2" type="text"  class="form-control vaLcolor2" />
                             </div>
@@ -133,7 +139,7 @@ The Yeon Cambodia
                             </script>
                         </div>
 
-                        <div class="col-md-2">
+                        <div class="col-md-2 mb-2">
                             <div id="" class="input-group color3 colorpicker-component">
                                 <input autocomplete="off" name="proColor3" value="{{$products[0]->proColor3}}" placeholder="Color 3" type="text"  class="form-control vaLcolor3" />
                             </div>
@@ -150,7 +156,7 @@ The Yeon Cambodia
                             </script>
                         </div>
 
-                        <div class="col-md-2">
+                        <div class="col-md-2 mb-2">
                             <div id="" class="input-group color4 colorpicker-component">
                                 <input autocomplete="off" name="proColor4" value="{{$products[0]->proColor4}}" placeholder="Color 4" type="text" class="form-control vaLcolor4" />
                             </div>
@@ -167,7 +173,7 @@ The Yeon Cambodia
                             </script>
                         </div>
 
-                        <div class="col-md-2">
+                        <div class="col-md-2 mb-2">
                             <div id="" class="input-group color5 colorpicker-component">
                                 <input autocomplete="off" name="proColor5" value="{{$products[0]->proColor5}}" placeholder="Color 5" type="text" class="form-control vaLcolor5" />
                             </div>
@@ -187,7 +193,7 @@ The Yeon Cambodia
 
 
                 <div class="form-group row">
-                    <label for="proPrice" class="col-md-2 col-form-label text-md-right">Product Price :</label>
+                    <label for="proPrice" class="col-md-2 col-form-label text-md-right">តំលៃ :</label>
                     <div class="col-md-4">
                         <input type="number" step="any" id="proPrice" value="{{$products[0]->proPrice}}" class="form-control" name="proPrice" required>
                     </div>
@@ -203,7 +209,7 @@ The Yeon Cambodia
                 
               
                 <div class="form-group row">
-                    <label for="proTextIntro" class="col-md-2 col-form-label text-md-right">Product Intro :</label>
+                    <label for="proTextIntro" class="col-md-2 col-form-label text-md-right">មតិលើផលិតផល:</label>
                     <div class="col-md-10">
                         <textarea class="form-control" name="proTextIntro" id="txt-sm" rows="4">{{$products[0]->proTextIntro}}</textarea>
 
@@ -213,7 +219,7 @@ The Yeon Cambodia
 
 
                 <div class="form-group row">
-                    <label for="proHowTo" class="col-md-2 col-form-label text-md-right">How To Use :</label>
+                    <label for="proHowTo" class="col-md-2 col-form-label text-md-right">របៀបប្រើ :</label>
                     <div class="col-md-10">
                         <textarea class="form-control sm text-kh" name="proHowTo" id="txt-sm" rows="8">{{$products[0]->proHowTo}}</textarea>
 
@@ -223,7 +229,7 @@ The Yeon Cambodia
 
 
                 <div class="form-group row">
-                    <label for="proDescription" class="col-md-2 col-form-label text-md-right">Description :</label>
+                    <label for="proDescription" class="col-md-2 col-form-label text-md-right">បរិយាយ :</label>
 
                     <div class="col-md-10">
                         <textarea class="form-control sm text-kh" name="proDescription" id="" rows="9">{!!$products[0]->proDescription!!}</textarea>
@@ -231,7 +237,7 @@ The Yeon Cambodia
                 </div>
 
                 <div class="form-group row">
-                    <label for="Is In Stock" class="col-md-2 col-form-label text-md-right">Product Is In Stock :</label>
+                    <label for="Is In Stock" class="col-md-2 col-form-label text-md-right">មានក្នុងស្តុក :</label>
 
                     <div class="col-md-10">
                         <select name="proIsInStock" class="form-control">
@@ -243,7 +249,7 @@ The Yeon Cambodia
                 </div>
 
                 <div class="form-group row">
-                    <label for="proDescription" class="col-md-2 col-form-label text-md-right">Product Detail :</label>
+                    <label for="proDescription" class="col-md-2 col-form-label text-md-right">ព័ត៌មាន/រូបភាព លំអីត:</label>
 
                     <div class="col-md-10">
 
@@ -260,8 +266,8 @@ The Yeon Cambodia
                 <nav class="navbar fixed-bottom navbar-dark bg-light justify-content-end">
                     
                         <div class="float-right">
-                            <a href="{{route('productdetail.list')}}" class="btn btn-secondary text-md-left">Back</a>
-                            <button class="btn btn-primary text-md-left" type="submit">Update</button>
+                            <a href="{{route('productdetail.list')}}" class="btn btn-secondary text-md-left">ត្រលប់ក្រោយ</a>
+                            <button class="btn btn-primary text-md-left" type="submit">កែប្រែ</button>
                         </div>
                    
 
@@ -280,7 +286,7 @@ The Yeon Cambodia
 
 
     </div>
-
+</div>
 <br><br>
 
 
