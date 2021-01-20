@@ -6,7 +6,7 @@
 <div class="">
     <div class="row">
         <div class="col-12 col-sm-3  ml-0 mr-2 pt-2 pb-1 ">
-            <a href="{{ route('productdetail.create') }}" class="btn btn-sm btn-success"><i class="fas fa-plus-square"></i> Add New Product</a>
+            <a href="{{ route('productdetail.create') }}" class="btn btn-sm btn-success"><i class="fas fa-plus-square"></i> បន្ថែមផលិតផល</a>
         </div>
 
     <div class="col-5">
@@ -49,26 +49,26 @@
 <div class="" style="font-size:13px;">
 
     <div class="card shadow">
-        <h6 class="card-header bg-dark text-light"><i class="fas fa-suitcase "> </i> Products List </h6>
+        <h6 class="card-header bg-dark text-light"><i class="fas fa-suitcase "> </i> បញ្ចីរផលិតផល </h6>
         <div class="card-body">
             <div class="table-responsive">
                 <table id="myTable" class="table table-border">
                     <thead class="fixed">
                         <th>#</th>
-                        <th>Image</th>
+                        <th>រូបភាព</th>
 
-                        <th style="width: 180px;">Product Name</th>
-                        <th>Price</th>
-                        <th>catId</th>
+                        <th style="width: 180px;">ឈ្មោះផលិតផល</th>
+                        <th>តំលៃ</th>
+                        <th>ប្រភេទ</th>
                         <!-- <th style="width:200px">How To Use</th>
                                 <th style="width:200px">Description</th> -->
                         <th style="width: 280px;">product Intro</th>
-                        <th style="">In Stock</th>
+                        <th style="">ក្នុងស្តុក</th>
                         <!-- <th>Order</th> -->
-                        <th>Created At</th>
-                        <th>Update At</th>
-                        <th>By</th>
-                        <th style="width:90px;">Action</th>
+                        <!-- <th>Created At</th>
+                        <th>Update At</th> -->
+                        <th>បញ្ជូលដោយ</th>
+                        <th style="width:90px;">សកម្មភាព</th>
                     </thead>
                     <?php $i = 0; ?>
 
@@ -148,14 +148,14 @@
                     orderable: true,
                     sortable: true
                 },
-                {
-                    data: 'created_at',
-                    name: 'products.created_at'
-                },
-                {
-                    data: 'updated_at',
-                    name: 'products.updated_at'
-                },
+                // {
+                //     data: 'created_at',
+                //     name: 'products.created_at'
+                // },
+                // {
+                //     data: 'updated_at',
+                //     name: 'products.updated_at'
+                // },
                 {
                     data: 'createdBy',
                     name: 'products.createdBy'

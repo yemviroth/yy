@@ -4,11 +4,11 @@ The Yeon Cambodia
 @endsection
 @section('content')
 
-
+<div class="col-md-11 col-sm-12 mx-auto ml-0 mt-3">
         <div class="card text-kh">
-            <div class="card-header bg-dark text-light">
-                <span><i class="fas fa-plus-square"></i></span><span class="ml-2">Add New Product</span>
-            </div>
+            <h6 class="card-header bg-dark text-light">
+                <span><i class="fas fa-plus-square"></i></span><span class="ml-2">បន្ថែមផលិតផល</span>
+            </h6>
             <div class="card-body shadow">
                 <!-- <h5 class="card-title">Special title treatment</h5> -->
 
@@ -16,28 +16,35 @@ The Yeon Cambodia
                     @csrf
 
 
-                    <div class="form-group row">
-                        <label for="" class="col-md-2 col-form-label text-md-right">Product Category :</label>
-                        <div class="col-md-10">
-                            <select name="cateId" class="custom-select my-1 mr-sm-2" id="category" required>
-                                <option selected value="">Choose Product Category</option>
-                                @foreach($cate as $cat)
-                                <option class="" value="{{$cat->cateId}}">{{$cat->cateName}}</option>
-                                @endforeach
-                            </select>
+                    <div class="row mb-1">
+                        <div class="col-lg-6 col-sm-12">
+                            <div class="row">
+                                <label for="" class="col-md-4 col-sm-12 col-form-label text-md-right">ប្រភេទផលិតផល :</label>
+                                    <div class="col-md-7 col-sm-12">
+                                        <select name="cateId" class="custom-select my-1 mr-sm-2" id="category" required>
+                                            <option selected value="">ជ្រើសរើសប្រភេទផលិតផល</option>
+                                            @foreach($cate as $cat)
+                                            <option class="" value="{{$cat->cateId}}">{{$cat->cateName}}</option>
+                                            @endforeach
+                                        </select>
+                                </div>
+                            </div>
                         </div>
+
+                        <div class="col-lg-6 col-sm-12">
+                            <div class="row">
+                                <label for="subCateId" class="col-md-5 col-sm-12 col-form-label text-md-right">ប្រភេទរងផលិតផល :</label>
+                                    <div class="col-md-7 col-sm-12">
+                                        <select name="subCateId" class="custom-select my-1 mr-sm-2" id="subCategory">
+                                            <option value="0">-- រើសប្រភេទរងផលិតផល --</option>
+
+                                        </select>
+                                    </div>
+                                </div>
+                            </div>
                     </div>
 
-                    <div class="form-group row">
-                        <label for="subCateId" class="col-md-2 col-form-label text-md-right">Sub Category :</label>
-                        <div class="col-md-10">
-                            <select name="subCateId" class="custom-select my-1 mr-sm-2" id="subCategory">
-                                <option value="0">-- Select Sub Category --</option>
-
-                            </select>
-                        </div>
-                    </div>
-
+                   
 
                     <script type="text/javascript">
                         $(document).ready(function () {
@@ -80,14 +87,14 @@ The Yeon Cambodia
 
 
                     <div class="form-group row">
-                        <label for="proName" class="col-md-2 form-label text-md-right">Product Name :</label>
+                        <label for="proName" class="col-md-2 form-label text-md-right">ឈ្មោះផលិតផល :</label>
                         <div class="col-md-10">
                             <input type="text" id="proName" class="form-control" name="proName" required>
                         </div>
                     </div>
 
                     <div class="form-group row">
-                    <label for="" class="col-md-2 col-form-label text-md-right">Image :</label>
+                    <label for="" class="col-md-2 col-form-label text-md-right">រូបភាព :</label>
                     <div class="col-md-10">
                         <div class="pb-2">
                             <div class="col-md-2 col-12 border" style="height: 150px;">
@@ -102,7 +109,7 @@ The Yeon Cambodia
                             <div class="col-md-3 col-3">
                                 <div class="custom-file col-12">
                                     <input type="file" multiple accept='image/*' class="custom-file-input" id="customFile" name="filephoto1" onchange="loadFile(event)" required>
-                                    <label class="custom-file-label" for="customFile">Choose file..</label>
+                                    <label class="custom-file-label" for="customFile">រើសរូបភាព..</label>
                                     <script>
                                         var loadFile = function(event) {
                                             var image = document.getElementById('output');
@@ -123,7 +130,7 @@ The Yeon Cambodia
 
 
                     <div class="form-group row">
-                        <label for="proName" class="col-md-2 form-label text-md-right">Color :</label>
+                        <label for="proName" class="col-md-2 form-label text-md-right">ពណ៌ផលិតផល :</label>
                         <div class="col-md-2">
                             <div id="" class="input-group dd colorpicker-component">
                                 <input name="proColor1" placeholder="Color 1" type="text" class="form-control color1" />
@@ -217,7 +224,7 @@ The Yeon Cambodia
                     </div>
 
                     <div class="form-group row">
-                        <label for="proPrice" class="col-md-2 col-form-label text-md-right">Product Price :</label>
+                        <label for="proPrice" class="col-md-2 col-form-label text-md-right">តំលៃ :</label>
                         <div class="col-md-4">
                             <!-- <input type="text" id="proPrice" class="form-control" name="proPrice" required> -->
 
@@ -252,7 +259,7 @@ The Yeon Cambodia
                     </div>
 
                     <div class="form-group row text-kh">
-                        <label for="proHowTo" class="col-md-2 col-form-label text-md-right">How To Use :</label>
+                        <label for="proHowTo" class="col-md-2 col-form-label text-md-right">របៀបប្រើ :</label>
                         <div class="col-md-10">
                             <textarea class="form-control sm text-kh" name="proHowTo" id="txt-sm" rows="2"></textarea>
 
@@ -262,7 +269,7 @@ The Yeon Cambodia
 
 
                     <div class="form-group row">
-                        <label for="proDescription" class="col-md-2 col-form-label text-md-right">Description :</label>
+                        <label for="proDescription" class="col-md-2 col-form-label text-md-right">បរិយាយ :</label>
 
                         <div class="col-md-10">
                             <textarea class="form-control sm text-kh" name="proDescription" id="txt-sm" rows="8"></textarea>
@@ -271,19 +278,19 @@ The Yeon Cambodia
                     </div>
 
                     <div class="form-group row">
-                        <label for="Is In Stock" class="col-md-2 col-form-label text-md-right">Product Is In Stock :</label>
+                        <label for="Is In Stock" class="col-md-2 col-form-label text-md-right">មានក្នុងស្តុក :</label>
 
                         <div class="col-md-10">
                             <select name="proIsInStock" class="form-control">
-                                <option @if (old('proIsInStock')=='Yes' ) {{'selected'}} @endif value="Yes">Yes</option>
-                                <option @if (old('proIsInStock')=='No' ) {{'selected'}} @endif value="No">No</option>
+                                <option @if (old('proIsInStock')=='Yes' ) {{'selected'}} @endif value="Yes">មាន</option>
+                                <option @if (old('proIsInStock')=='No' ) {{'selected'}} @endif value="No">មិនមាន</option>
 
                             </select>
                         </div>
                     </div>
 
                     <div class="form-group row">
-                        <label for="proDetail" class="col-md-2 col-form-label text-md-right">Product Detail :</label>
+                        <label for="proDetail" class="col-md-2 col-form-label text-md-right">លំអិតពីផលិតផល :</label>
 
                         <div class="col-md-10">
                             <textarea class="form-control text-kh" name="proDetail" id="txt-lg" rows="8"></textarea>
@@ -299,9 +306,9 @@ The Yeon Cambodia
                     <div class="float-right">
 
                         <!-- <button class="btn  btn-secondary text-md-left" type="">Back</button> -->
-                        <a class="btn  btn-secondary text-md-left" href="{{route('productdetail.list')}}">Back</a>
+                        <a class="btn  btn-secondary text-md-left" href="{{route('productdetail.list')}}">ត្រលប់ក្រោយ</a>
 
-                        <button class="btn  btn-success text-md-left" type="submit">Submit</button>
+                        <button class="btn  btn-success text-md-left" type="submit">រក្សាទុក</button>
 
                     </div>
                    
@@ -311,7 +318,7 @@ The Yeon Cambodia
                 </form>
             </div>
         </div>
-
+                            </div>
 <br>
 
 <!-- include summernote css/js -->
